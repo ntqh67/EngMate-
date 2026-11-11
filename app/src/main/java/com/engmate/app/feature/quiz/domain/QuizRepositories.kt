@@ -24,7 +24,9 @@ data class AttemptDraft(
     val answers: List<AnswerDraft>,
 )
 
-data class AttemptResult(val attemptId: Long, val correctCount: Int, val totalQuestions: Int, val xpEarned: Int, val level: String?)
+/** [level] is set for placement attempts; [levelSaved] tells whether the profile was updated with it. */
+data class AttemptResult(val attemptId: Long, val correctCount: Int, val totalQuestions: Int, val xpEarned: Int,
+                         val level: String?, val levelSaved: Boolean = false)
 
 data class AttemptSummary(
     val id: Long,
