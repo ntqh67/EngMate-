@@ -5,10 +5,15 @@ ngữ pháp, quiz và thói quen học mỗi ngày.
 
 ## Trạng thái
 
-Repository hiện chứa **khung thư mục và tài liệu kiến trúc**. Chưa khởi tạo
-Android/Gradle, chưa có mã chức năng, chưa thể build hoặc chạy ứng dụng.
-Các file `.gitkeep` giúp Git lưu những thư mục chưa có mã nguồn; xóa chúng
-khi thư mục có file triển khai thực tế.
+Đã có project Android chạy được và CRUD hồ sơ cá nhân: tạo, xem, sửa, xóa
+hồ sơ cục bộ bằng Room, qua Repository và ViewModel. Giao diện Compose có
+validation, trạng thái tải/lỗi và xác nhận xóa. Các chức năng khác vẫn là khung.
+
+Có hai biến thể: **demo** chạy ngay với tài khoản cục bộ minh họa; **live** lấy
+UID từ phiên Firebase Auth, không tự đăng nhập và không dùng tài khoản demo.
+Xem [hướng dẫn CRUD hồ sơ](docs/profile-crud.md) để chạy và tích hợp Firebase.
+
+Các file `.gitkeep` còn lại giữ những thư mục chưa có mã nguồn trong Git.
 
 ## Định hướng kỹ thuật
 
@@ -92,15 +97,28 @@ Mỗi thành viên làm việc trên nhánh `feat/<ten-chuc-nang>`, tạo Pull R
 vào `main`. Thay đổi database, điều hướng và dependency dùng chung cần được
 phối hợp trong nhóm trước khi tích hợp.
 
+## Chạy và kiểm thử
+
+Mở repository bằng Android Studio hỗ trợ AGP 9.3.3, cài Android SDK 37 và
+Build Tools 36.0.0. Gradle Wrapper 9.5.0 được commit trong repo; Gradle cần
+JDK 17 trở lên tương thích Gradle 9.5 (môi trường đã kiểm tra dùng JDK 25).
+Chọn build variant `demoDebug`, rồi Run trên Android 8.0 trở lên.
+
+```bash
+./gradlew :app:assembleDemoDebug
+./gradlew :app:testDemoDebugUnitTest :app:lintDemoDebug
+./gradlew :app:assembleLiveDebug
+```
+
+APK demo: `app/build/outputs/apk/demo/debug/app-demo-debug.apk`.
+Hướng dẫn chi tiết và giới hạn: [CRUD hồ sơ](docs/profile-crud.md).
+
 ## Bước triển khai tiếp theo
 
-1. Khởi tạo Android project và Gradle Wrapper; xác nhận applicationId
-   (`com.engmate.app` hiện là package dự kiến).
-2. Thiết lập Compose, Hilt, Navigation và theme theo Figma.
-3. Thống nhất ERD rồi triển khai Room, migrations và dữ liệu mẫu.
-4. Cấu hình Firebase project và triển khai xác thực, hồ sơ.
-5. Phát triển từng chức năng, bổ sung kiểm thử tương ứng.
+1. Cấu hình Firebase cho `com.engmate.app`, triển khai màn hình đăng ký/đăng nhập.
+2. Nối đăng ký thành công vào luồng tạo hồ sơ; bổ sung xác thực email theo SRS.
+3. Mở rộng Room cho từ vựng, tiến độ, quiz và thêm migrations từ schema v1.
+4. Tích hợp Navigation và các chức năng còn lại, hoàn thiện giao diện theo Figma.
 
-Khi cấu hình Firebase, đặt file cấu hình môi trường tại
-`app/google-services.json`; file này được bỏ qua trong Git để nhóm chủ động
-chọn môi trường. Không đưa service-account key vào ứng dụng Android.
+`app/google-services.json` và `local.properties` được bỏ qua trong Git.
+Không đưa service-account key vào ứng dụng Android.
