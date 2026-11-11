@@ -1,0 +1,11 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application>
+        <!-- Debug-only launcher for the grammar / quiz CRUD demo (week 3). -->
+        <activity android:name=".debug.DongDebugActivity" android:exported="true" android:label="EngMate · Module Đông">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
