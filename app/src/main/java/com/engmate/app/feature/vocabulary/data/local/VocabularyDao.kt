@@ -22,6 +22,10 @@ interface VocabularyDao {
     @Query("DELETE FROM words WHERE id = :id") suspend fun deleteWord(id: Long): Int
     @Query("SELECT * FROM words WHERE id = :id") suspend fun getWord(id: Long): WordEntity?
     @Query("SELECT * FROM words WHERE word = :word COLLATE NOCASE") suspend fun findWord(word: String): WordEntity?
+    @Query("SELECT * FROM words WHERE word = :word COLLATE NOCASE") fun observeWord(word: String): Flow<WordEntity?>
+    // substr keeps %, _ literal like instr above; ORDER BY length gives "apply" before "appreciate".
+    @Query("SELECT word FROM words WHERE substr(lower(word), 1, length(:prefix)) = lower(:prefix) ORDER BY length(word), word LIMIT :limit")
+    suspend fun wordsStartingWith(prefix: String, limit: Int): List<String>
     @Query("SELECT * FROM words WHERE topic_id = :topicId ORDER BY word, id")
     fun observeWords(topicId: Long): Flow<List<WordEntity>>
     // instr treats %, _ and quotes as literal input instead of wildcard SQL.
