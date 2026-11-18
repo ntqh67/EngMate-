@@ -98,8 +98,7 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
                             onOpenLesson = { lessonId = it; tab = MainTab.LEARN }, onOpenWord = { openWord = it.word })
                         // Đông's grammar screens (restored from before 2d5cb51).
                         MainTab.LEARN -> lessonId?.let { GrammarLessonScreen(lessons, it, onBack = { lessonId = null },
-                            onPractice = { id -> if (user == null) showAuth = true else openQuiz(QuizRoute.Quiz(QuizSource.Lesson(id))) },
-                            onPronunciationScored = actions::pronunciationScored) }
+                            onPractice = { id -> if (user == null) showAuth = true else openQuiz(QuizRoute.Quiz(QuizSource.Lesson(id))) }) }
                             ?: Column(Modifier.fillMaxSize()) {
                                 PrimaryTabRow(selectedTabIndex = if (learnVocabulary) 1 else 0, Modifier.statusBarsPadding()) {
                                     Tab(selected = !learnVocabulary, onClick = { learnVocabulary = false }, text = { Text("Ngữ pháp") })

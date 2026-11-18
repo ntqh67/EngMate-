@@ -15,7 +15,7 @@ Thời gian chỉ là ước tính theo từng hành động (app chưa đo th�
 Dữ liệu `learning_activity` được đồng bộ lên Firestore (xem [cloud-sync.md](cloud-sync.md)).
 
 ## Luyện phát âm (ghi âm)
-- Nút mic cạnh mỗi câu ví dụ trong bài ngữ pháp, nút **Luyện phát âm** ở cuối bài, và chip **Luyện nói** ở chi tiết từ.
+- Chip **Luyện nói** ở màn chi tiết từ (bài ngữ pháp chỉ có nút loa để nghe câu ví dụ, không có luyện phát âm).
 - Luồng: nghe câu mẫu (TTS) → bấm **Ghi âm** (xin quyền micro lần đầu) → đọc → app nhận dạng bằng `SpeechRecognizer` của Android (en-US).
 - Chấm điểm (`PronunciationScorer`): so từng từ của câu mẫu với câu nhận dạng được, tính tỉ lệ từ đúng theo thứ tự (LCS);
   từ dài từ 5 chữ cái chấp nhận sai một ký tự. Từ đúng tô xanh, từ sai tô đỏ.

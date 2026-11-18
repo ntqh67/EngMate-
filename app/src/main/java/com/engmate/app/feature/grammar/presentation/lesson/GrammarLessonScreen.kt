@@ -25,14 +25,11 @@ private val chipBg = Color(0xFFE1F0FF)
 
 @Composable
 /** [onPractice] starts the quiz for this lesson; null keeps the quiz button disabled. */
-fun GrammarLessonScreen(viewModel: GrammarLessonsViewModel, lessonId: Long, onBack: () -> Unit, onPractice: ((Long) -> Unit)? = null,
-    onPronunciationScored: (Int) -> Unit = {}) {
-    var practiceTarget by remember { mutableStateOf<String?>(null) }
+fun GrammarLessonScreen(viewModel: GrammarLessonsViewModel, lessonId: Long, onBack: () -> Unit, onPractice: ((Long) -> Unit)? = null) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     val lesson = state.lesson(lessonId)
     var tab by rememberSaveable(lessonId) { mutableIntStateOf(0) }
     val pronounce = rememberPronouncer()
-    practiceTarget?.let { com.engmate.app.feature.pronunciation.presentation.PronunciationDialog(it, { practiceTarget = null }, onPronunciationScored) }
     Scaffold(topBar = { BackTopBar(lesson?.title ?: "Ngữ pháp", onBack) }) { padding ->
         when {
             state.loading -> Box(Modifier.fillMaxSize().padding(padding), Alignment.Center) { CircularProgressIndicator() }
@@ -74,10 +71,6 @@ fun GrammarLessonScreen(viewModel: GrammarLessonsViewModel, lessonId: Long, onBa
                                     IconButton(onClick = { pronounce(ex.en, null) }, Modifier.size(36.dp).background(blueCard, RoundedCornerShape(50))) {
                                         Icon(painterResource(R.drawable.ic_volume), "Nghe câu ví dụ", Modifier.size(18.dp), tint = MaterialTheme.colorScheme.primary)
                                     }
-                                    Spacer(Modifier.width(8.dp))
-                                    IconButton(onClick = { practiceTarget = ex.en }, Modifier.size(36.dp).background(blueCard, RoundedCornerShape(50))) {
-                                        Icon(painterResource(R.drawable.ic_mic), "Luyện nói câu ví dụ", Modifier.size(18.dp), tint = MaterialTheme.colorScheme.primary)
-                                    }
                                 }
                             }
                         }
@@ -87,11 +80,7 @@ fun GrammarLessonScreen(viewModel: GrammarLessonsViewModel, lessonId: Long, onBa
                     }
                 }
                 Row(Modifier.fillMaxWidth().padding(horizontal = 20.dp, vertical = 12.dp), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                    // Pronunciation practice: open the examples and start recording on the first one; each example also has its own mic button.
-                    OutlinedButton(onClick = { tab = 1; practiceTarget = lesson.examples.firstOrNull()?.en }, enabled = lesson.examples.isNotEmpty(), modifier = Modifier.weight(1f).height(48.dp), shape = RoundedCornerShape(24.dp)) {
-                        Icon(painterResource(R.drawable.ic_mic), null, Modifier.size(18.dp)); Spacer(Modifier.width(6.dp)); Text("Luyện phát âm", maxLines = 1)
-                    }
-                    Button(onClick = { onPractice?.invoke(lesson.id) }, enabled = onPractice != null, modifier = Modifier.weight(1f).height(48.dp), shape = RoundedCornerShape(24.dp)) {
+                    Button(onClick = { onPractice?.invoke(lesson.id) }, enabled = onPractice != null, modifier = Modifier.fillMaxWidth().height(48.dp), shape = RoundedCornerShape(24.dp)) {
                         Icon(painterResource(R.drawable.ic_bolt), null, Modifier.size(18.dp)); Spacer(Modifier.width(6.dp)); Text("Làm quiz", maxLines = 1)
                     }
                 }
