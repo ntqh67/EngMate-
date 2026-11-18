@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <application android:name=".EngMateApplication" android:label="EngMate"
         android:allowBackup="false" android:dataExtractionRules="@xml/data_extraction_rules" android:icon="@drawable/ic_engmate" android:supportsRtl="true" android:theme="@style/Theme.EngMate">
         <activity android:name=".MainActivity" android:exported="true">

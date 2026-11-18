@@ -49,6 +49,8 @@ dependencies {
     ksp("com.google.dagger:hilt-compiler:2.60.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")
     implementation("io.coil-kt:coil-compose:2.7.0")
+    implementation("androidx.datastore:datastore-preferences:1.1.3")
+    implementation("androidx.work:work-runtime-ktx:2.11.2")
     "liveImplementation"(platform("com.google.firebase:firebase-bom:34.0.0"))
     "liveImplementation"("com.google.firebase:firebase-auth")
     "liveImplementation"("com.google.firebase:firebase-firestore")
