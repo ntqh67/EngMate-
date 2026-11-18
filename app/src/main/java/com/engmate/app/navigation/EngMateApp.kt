@@ -23,6 +23,7 @@ import com.engmate.app.feature.vocabulary.presentation.worddetail.WordDetailScre
 import com.engmate.app.feature.notebook.presentation.NotebookScreen
 import com.engmate.app.feature.profile.presentation.*
 import com.engmate.app.feature.progress.presentation.*
+import com.engmate.app.feature.quiz.domain.QuizSource
 
 /** Bottom bar, in design order. */
 enum class MainTab(val label: String, @DrawableRes val icon: Int) {
@@ -41,6 +42,10 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
     // Full-screen pages over the tabs: Chi tiết từ vựng, and a flashcard round for a handbook.
     var openWord by rememberSaveable(user?.uid) { mutableStateOf<String?>(null) }
     var studyHandbook by rememberSaveable(user?.uid) { mutableStateOf<Long?>(null) }
+    // Đông's quiz, result, placement and reminder pages (see QuizRoutes.kt).
+    var quizRouteKey by rememberSaveable(user?.uid) { mutableStateOf<String?>(null) }
+    val quizRoute = QuizRoute.decode(quizRouteKey)
+    fun openQuiz(route: QuizRoute?) { quizRouteKey = route?.encode() }
     if (user == null) AuthScreen(auth) else if (profileState.user?.uid != user?.uid || profileState.loading) {
         Box(Modifier.fillMaxSize(), contentAlignment = androidx.compose.ui.Alignment.Center) { CircularProgressIndicator() }
     } else if (profileState.profile == null && !profileState.loadFailed) {
@@ -54,6 +59,8 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
     } else if (studyHandbook != null) {
         BackHandler { studyHandbook = null }
         FlashcardScreen(viewModel(), studyHandbook!!, onClose = { studyHandbook = null })
+    } else if (quizRoute != null) {
+        QuizRouteHost(quizRoute, navigate = ::openQuiz, onOpenProfile = { openQuiz(null); tab = MainTab.PROFILE })
     } else {
         BackHandler(enabled = tab != MainTab.HOME || lessonId != null) {
             if (tab == MainTab.LEARN && lessonId != null) lessonId = null else tab = MainTab.HOME
@@ -73,10 +80,12 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
                         MainTab.HOME -> HomeScreen(viewModel(), onOpenLessons = { lessonId = null; tab = MainTab.LEARN },
                             onOpenLesson = { lessonId = it; tab = MainTab.LEARN }, onOpenWord = { openWord = it.word })
                         // Đông's grammar screens (restored from before 2d5cb51).
-                        MainTab.LEARN -> lessonId?.let { GrammarLessonScreen(lessons, it, onBack = { lessonId = null }) }
+                        MainTab.LEARN -> lessonId?.let { GrammarLessonScreen(lessons, it, onBack = { lessonId = null },
+                            onPractice = { id -> openQuiz(QuizRoute.Quiz(QuizSource.Lesson(id))) }) }
                             ?: GrammarLessonsScreen(lessons, onOpenLesson = { lessonId = it })
                         MainTab.NOTEBOOK -> NotebookScreen(viewModel(), onOpenWord = { openWord = it }, onStudy = { studyHandbook = it })
-                        MainTab.PROFILE -> ProfileTab(profile, progress, user?.email.orEmpty(), auth::signOut)
+                        MainTab.PROFILE -> ProfileTab(profile, progress, user?.email.orEmpty(), auth::signOut,
+                            onPlacement = { openQuiz(QuizRoute.Placement) }, onReminder = { openQuiz(QuizRoute.Reminder) })
                     }
                 }
             }
@@ -85,7 +94,8 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
 }
 
 /** Hồ sơ holds the profile and Huân's statistics; ⚙ opens settings with sign-out. */
-@Composable private fun ProfileTab(profile: ProfileViewModel, progress: ProgressViewModel, email: String, onSignOut: () -> Unit) {
+@Composable private fun ProfileTab(profile: ProfileViewModel, progress: ProgressViewModel, email: String, onSignOut: () -> Unit,
+    onPlacement: () -> Unit = {}, onReminder: () -> Unit = {}) {
     var showProgress by rememberSaveable { mutableStateOf(false) }
     var settings by rememberSaveable { mutableStateOf(false) }
     if (settings) {
@@ -93,6 +103,7 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
         Column {
             BackTopBar("Cài đặt", onBack = { settings = false })
             Column(Modifier.padding(24.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
+                LearningShortcuts(onPlacement, onReminder)
                 Text(email)
                 OutlinedButton(onClick = onSignOut, modifier = Modifier.fillMaxWidth()) { Text("Đăng xuất") }
             }

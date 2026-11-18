@@ -3,15 +3,12 @@
 Main đã bỏ bản demo; chạy bản **liveDebug** (`./gradlew :app:assembleLiveDebug`, cần
 `app/google-services.json`) và đăng nhập. Dữ liệu mẫu: 3 bài ngữ pháp × 10 câu và 15 câu kiểm tra trình độ.
 
-> Sau khi rebase lên main, màn quiz, kết quả, kiểm tra trình độ và nhắc học chưa được nối vào
-> điều hướng mới, nên các bước dưới đây chỉ chạy được sau khi nối lại lối vào.
-
 Chuẩn bị: mở tab **Hồ sơ**, bấm "Tạo hồ sơ" và lưu (để lưu được kết quả). Muốn thử ca "chưa có
 hồ sơ" thì làm ca đó trước bước này.
 
 ## Luồng chính
 
-1. **Làm bài tập ngữ pháp**: tab Ngữ pháp → chọn một bài → "Làm bài tập".
+1. **Làm bài tập ngữ pháp**: tab Học → chọn một bài → "Làm quiz" (hoặc tab "Bài tập" → "Làm bài tập").
    - Mỗi câu: chọn một đáp án hoặc gõ câu trả lời; nút "Kiểm tra" chỉ bật khi đã trả lời.
    - Bấm "Kiểm tra": hiện Đúng/Sai (màu và icon), đáp án đúng, giải thích. Không đổi được câu đã kiểm tra.
    - Câu điền từ: thử gõ thừa khoảng trắng hoặc chữ hoa (vd. `  GOES `) vẫn được chấm đúng.
@@ -20,10 +17,10 @@ hồ sơ" thì làm ca đó trước bước này.
    - Màn kết quả hiện số câu đúng, % đúng, XP; danh sách mở sẵn ở "Câu sai" nếu có câu sai.
    - Đổi chip Tất cả / Câu sai / Câu đúng. "Làm lại" bắt đầu bài mới cùng nguồn; "Xong" đóng.
    - Lượt làm cũng có trong tab Lịch sử.
-3. **Kiểm tra trình độ**: Hồ sơ → "Kiểm tra trình độ" → "Bắt đầu", làm 15 câu.
+3. **Kiểm tra trình độ**: Hồ sơ → ⚙ Cài đặt → "Kiểm tra trình độ" → "Bắt đầu", làm 15 câu.
    - Kết quả hiện trình độ (A1–B2) và "Đã cập nhật trình độ vào hồ sơ"; mở Hồ sơ để thấy trình độ mới.
    - "Xem chi tiết" mở phần xem lại; "Để sau" ở màn giới thiệu thì đóng mà không làm bài.
-4. **Bật nhắc học**: Hồ sơ → "Nhắc học hằng ngày".
+4. **Bật nhắc học**: Hồ sơ → ⚙ Cài đặt → "Nhắc học hằng ngày".
    - Bấm "Giờ nhắc", chọn giờ **sau 1–2 phút** so với hiện tại, bấm Lưu (snackbar "Đã lưu").
    - Bật công tắc, Android 13+ hỏi quyền thông báo → Cho phép. Chờ thông báo "Đến giờ học rồi!";
      bấm vào để mở app.

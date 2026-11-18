@@ -6,9 +6,10 @@ xem lại, kiểm tra trình độ, nhắc học). Cách demo: [demo-dong.md](de
 
 ## Lối vào màn hình
 
-**Trạng thái:** sau khi rebase lên main (điều hướng theo tab của PR #4), các màn dưới đây
-biên dịch và có test nhưng **chưa được nối** vào `navigation/EngMateApp.kt`. Bảng mô tả
-nơi cần gọi; `Detail.X` là tên lối vào dự kiến khi nối lại.
+Điều hướng nằm trong `navigation/QuizRoutes.kt` (`QuizRoute`, mã hoá thành chuỗi như `quiz:lesson:3`
+để giữ được khi app bị huỷ); `EngMateApp.kt` chỉ giữ một biến `quizRouteKey`. Đã nối: nút "Làm quiz"
+và tab "Bài tập" trong bài ngữ pháp; "Kiểm tra trình độ" và "Nhắc học hằng ngày" ở Hồ sơ → ⚙ Cài đặt.
+Cột `Detail.X` dưới đây tương ứng `QuizRoute.Quiz`, `QuizRoute.Result`, `QuizRoute.Placement`, `QuizRoute.Reminder`.
 
 | Lối vào | Màn hình | Người gọi | Khi xong |
 | --- | --- | --- | --- |
