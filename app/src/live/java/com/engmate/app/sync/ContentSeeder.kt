@@ -91,8 +91,17 @@ class ContentSeeder @Inject constructor(
         try {
             val lessonIds = withTimeoutOrNull(10_000) { remote.lessons()?.get()?.await()?.documents?.map { it.id }?.toSet() } ?: return
             val questionIds = withTimeoutOrNull(10_000) { remote.questions()?.get()?.await()?.documents?.map { it.id }?.toSet() } ?: return
-            lessons.all().filter { it.id < LEGACY_LESSON_LIMIT && it.id.toString() !in lessonIds }.forEach { remote.putLesson(it) }
-            questions.all().filter { it.question.id < QUESTION_BASE && it.question.id.toString() !in questionIds }.forEach { remote.putQuestion(it) }
+            // Wait for the server to accept each write; the flag is only set once everything is really in Firestore.
+            val lessonRef = remote.lessons() ?: return
+            val questionRef = remote.questions() ?: return
+            val ok = withTimeoutOrNull(30_000) {
+                lessons.all().filter { it.id < LEGACY_LESSON_LIMIT && it.id.toString() !in lessonIds }
+                    .forEach { lessonRef.document(it.id.toString()).set(it.toRemote()).await() }
+                questions.all().filter { it.question.id < QUESTION_BASE && it.question.id.toString() !in questionIds }
+                    .forEach { questionRef.document(it.question.id.toString()).set(it.toRemote()).await() }
+                true
+            } ?: false
+            if (!ok) return
             prefs.edit().putBoolean(LEGACY_FLAG, true).apply()
         } catch (e: CancellationException) { throw e } catch (e: Exception) { Log.w(FirestoreContent.TAG, "Legacy upload failed", e) }
     }
