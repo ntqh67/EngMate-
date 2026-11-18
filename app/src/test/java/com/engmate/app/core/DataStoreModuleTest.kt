@@ -13,7 +13,7 @@ import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 
-@RunWith(RobolectricTestRunner::class) @Config(sdk = [34])
+@RunWith(RobolectricTestRunner::class) @Config(sdk = [26]) // same SDK as the database tests so the native runtime loads once
 class DataStoreModuleTest {
     @Test fun settingsStoreReadsBackWhatWasWritten() = runBlocking<Unit> {
         val store = DataStoreModule.settings(ApplicationProvider.getApplicationContext<Context>())

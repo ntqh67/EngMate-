@@ -12,7 +12,8 @@ import com.engmate.app.core.ui.components.ChipRow
 import com.engmate.app.core.ui.theme.successText
 import com.engmate.app.feature.quiz.domain.AnswerType
 import com.engmate.app.feature.quiz.domain.AnsweredQuestion
-import com.engmate.app.feature.quiz.presentation.history.AnswerFilter
+
+enum class AnswerFilter(val label: String) { ALL("Tất cả"), WRONG("Câu sai"), CORRECT("Câu đúng") }
 
 /** Filter chips with the count of each group. */
 @Composable

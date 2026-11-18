@@ -15,7 +15,6 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.engmate.app.core.ui.components.BackTopBar
 import com.engmate.app.core.ui.components.EmptyState
 import com.engmate.app.feature.quiz.domain.QuizSource
-import com.engmate.app.feature.quiz.presentation.history.AnswerFilter
 
 /** Result of a saved attempt with the answer review. [onRetry] starts a new quiz from the same source. */
 @Composable

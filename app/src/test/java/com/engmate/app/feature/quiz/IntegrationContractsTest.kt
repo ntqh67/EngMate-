@@ -67,6 +67,9 @@ class IntegrationContractsTest {
         grammar = RoomGrammarRepository(db.grammarLessons(), clock)
         questions = RoomQuestionRepository(db.questions(), clock)
         profiles.create("alice", ProfileInput("Nguyễn An"))
+        // questions.topic_id references topics; ids 7 and 8 are used below.
+        db.vocabulary().insertTopic(com.engmate.app.feature.vocabulary.data.local.TopicEntity(id = 7, title = "T7"))
+        db.vocabulary().insertTopic(com.engmate.app.feature.vocabulary.data.local.TopicEntity(id = 8, title = "T8"))
     }
     @After fun close() = db.close()
 

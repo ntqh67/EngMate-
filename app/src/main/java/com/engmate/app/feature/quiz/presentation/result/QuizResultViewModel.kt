@@ -4,7 +4,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.engmate.app.feature.auth.domain.UserSession
 import com.engmate.app.feature.quiz.domain.*
-import com.engmate.app.feature.quiz.presentation.history.AnswerFilter
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.CancellationException

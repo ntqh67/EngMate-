@@ -43,21 +43,21 @@ data class AttemptRow(
     @ColumnInfo(name = "lesson_title") val lessonTitle: String?,
 )
 
-internal fun attemptTitle(attempt: QuizAttemptEntity, lessonTitle: String?): String = when {
+/** [topicTitles] comes from TopicLookup; a topic without a name falls back to "Chủ đề #id". */
+internal fun attemptTitle(attempt: QuizAttemptEntity, lessonTitle: String?, topicTitles: Map<Long, String> = emptyMap()): String = when {
     attempt.isPlacement -> PLACEMENT_TITLE
     lessonTitle != null -> lessonTitle
-    // TODO(Khang): show the topic name once the topics table exists.
-    attempt.topicId != null -> "Chủ đề #${attempt.topicId}"
+    attempt.topicId != null -> topicTitles[attempt.topicId] ?: "Chủ đề #${attempt.topicId}"
     else -> "Bài làm"
 }
 
-fun AttemptRow.toSummary() = AttemptSummary(
-    attempt.id, attemptTitle(attempt, lessonTitle), attempt.isPlacement, attempt.correctCount,
-    attempt.totalQuestions, attempt.xpEarned, attempt.completedAt,
+fun AttemptRow.toSummary(topicTitles: Map<Long, String> = emptyMap()) = AttemptSummary(
+    attempt.id, attemptTitle(attempt, lessonTitle, topicTitles), attempt.isPlacement, attempt.correctCount,
+    attempt.totalQuestions, attempt.xpEarned, attempt.completedAt, attempt.lessonId, attempt.topicId,
 )
 
-fun AttemptDetailWithAnswers.toDetail() = AttemptDetail(
-    AttemptRow(attempt, lessonTitle).toSummary(),
+fun AttemptDetailWithAnswers.toDetail(topicTitles: Map<Long, String> = emptyMap()) = AttemptDetail(
+    AttemptRow(attempt, lessonTitle).toSummary(topicTitles),
     answers.sortedBy { it.answer.id }.map { row ->
         val question = row.question.toDomain()
         AnsweredQuestion(

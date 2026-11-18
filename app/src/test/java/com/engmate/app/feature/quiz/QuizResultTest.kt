@@ -1,7 +1,7 @@
 package com.engmate.app.feature.quiz
 
 import com.engmate.app.feature.quiz.domain.*
-import com.engmate.app.feature.quiz.presentation.history.AnswerFilter
+import com.engmate.app.feature.quiz.presentation.result.AnswerFilter
 import com.engmate.app.feature.quiz.presentation.result.QuizResultUiState
 import com.engmate.app.feature.quiz.presentation.result.QuizResultViewModel
 import org.junit.Assert.*
