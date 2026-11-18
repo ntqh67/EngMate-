@@ -62,4 +62,18 @@ interface QuestionDao {
         insertOptions(options.map { it.copy(id = 0, questionId = question.id) })
         return 1
     }
+
+    @Transaction
+    @Query("SELECT * FROM questions")
+    suspend fun all(): List<QuestionWithOptions>
+
+    @Upsert suspend fun upsertQuestion(question: QuestionEntity)
+
+    /** Inserts or updates the question under its own id and replaces all of its options. */
+    @Transaction
+    suspend fun upsertWithOptions(question: QuestionEntity, options: List<QuestionOptionEntity>) {
+        upsertQuestion(question)
+        deleteOptions(question.id)
+        insertOptions(options.map { it.copy(id = 0, questionId = question.id) })
+    }
 }

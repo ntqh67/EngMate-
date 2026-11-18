@@ -51,6 +51,7 @@ dependencies {
     implementation("io.coil-kt:coil-compose:2.7.0")
     "liveImplementation"(platform("com.google.firebase:firebase-bom:34.0.0"))
     "liveImplementation"("com.google.firebase:firebase-auth")
+    "liveImplementation"("com.google.firebase:firebase-firestore")
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.10.2")
     testImplementation("org.robolectric:robolectric:4.16.1")

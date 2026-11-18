@@ -23,6 +23,13 @@ interface GrammarLessonDao {
     @Update
     suspend fun update(lesson: GrammarLessonEntity): Int
 
+    /** Insert-or-update by id. Never deletes the row, so questions and attempts that reference it stay intact. */
+    @Upsert
+    suspend fun upsert(lesson: GrammarLessonEntity)
+
+    @Query("SELECT * FROM grammar_lessons")
+    suspend fun all(): List<GrammarLessonEntity>
+
     /** Questions of this lesson that appear in someone's attempt, plus attempts pointing at the lesson. */
     @Query("""SELECT (SELECT COUNT(*) FROM attempt_answers aa JOIN questions q ON q.id = aa.question_id WHERE q.lesson_id = :id)
               + (SELECT COUNT(*) FROM quiz_attempts WHERE lesson_id = :id)""")
