@@ -97,9 +97,12 @@ class ContentSeeder @Inject constructor(
         } catch (e: CancellationException) { throw e } catch (e: Exception) { Log.w(FirestoreContent.TAG, "Legacy upload failed", e) }
     }
 
-    private companion object {
-        const val QUESTION_BASE = 10_000L
-        const val LEGACY_LESSON_LIMIT = 100L
-        const val LEGACY_FLAG = "legacy_uploaded"
+    companion object {
+        /** Lessons and questions shipped with the app; content sync never removes them locally, even if the upload to Firestore failed. */
+        fun isBundledLesson(id: Long) = id in 101L..999L
+        fun isBundledQuestion(id: Long) = id >= QUESTION_BASE
+        private const val QUESTION_BASE = 10_000L
+        private const val LEGACY_LESSON_LIMIT = 100L
+        private const val LEGACY_FLAG = "legacy_uploaded"
     }
 }

@@ -94,7 +94,7 @@ class FirestoreContentSync @Inject constructor(
 
             // 2. Questions removed from Firestore.
             val localQuestions = questions.all().associateBy { it.question.id }
-            localQuestions.keys.filter { it !in remoteQuestionIds && !questions.isAnswered(it) }.forEach { questions.delete(it) }
+            localQuestions.keys.filter { it !in remoteQuestionIds && !ContentSeeder.isBundledQuestion(it) && !questions.isAnswered(it) }.forEach { questions.delete(it) }
 
             // 3. New or changed questions. Unchanged ones are skipped so option ids stay stable during a quiz.
             validQuestions.forEach { (question, options) ->
@@ -107,7 +107,7 @@ class FirestoreContentSync @Inject constructor(
             }
 
             // 4. Lessons removed from Firestore, unless someone on this device already practised them.
-            localLessons.keys.filter { it !in remoteLessonIds && lessons.usageCount(it) == 0 }.forEach { lessons.deleteWithQuestions(it) }
+            localLessons.keys.filter { it !in remoteLessonIds && !ContentSeeder.isBundledLesson(it) && lessons.usageCount(it) == 0 }.forEach { lessons.deleteWithQuestions(it) }
         }
     }
 
