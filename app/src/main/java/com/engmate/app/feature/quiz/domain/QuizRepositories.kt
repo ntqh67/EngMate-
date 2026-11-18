@@ -6,6 +6,8 @@ interface QuestionRepository {
     fun observeQuestions(): Flow<List<Question>>
     fun observeQuestion(id: Long): Flow<Question?>
     suspend fun questionsForLesson(lessonId: Long): List<Question>
+    /** Vocabulary questions of a topic (topic_id), including those synced from Firestore. */
+    suspend fun questionsForTopic(topicId: Long): List<Question>
     suspend fun placementQuestions(): List<Question>
     /** Saves the question and its options atomically. Throws [InvalidQuestion]. */
     suspend fun create(input: QuestionInput): Long

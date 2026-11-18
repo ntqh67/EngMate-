@@ -26,6 +26,10 @@ interface QuestionDao {
     suspend fun forLesson(lessonId: Long): List<QuestionWithOptions>
 
     @Transaction
+    @Query("SELECT * FROM questions WHERE topic_id = :topicId ORDER BY id")
+    suspend fun forTopic(topicId: Long): List<QuestionWithOptions>
+
+    @Transaction
     @Query("SELECT * FROM questions WHERE is_placement = 1 ORDER BY id LIMIT :limit")
     suspend fun placement(limit: Int): List<QuestionWithOptions>
 
