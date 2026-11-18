@@ -153,4 +153,26 @@ class IntegrationContractsTest {
 
         assertEquals("Chủ đề #7", repository.observeHistory("alice").first().single().title)
     }
+
+    @Test fun questionsForTopicReturnsOnlyThatTopic() = runBlocking<Unit> {
+        val a = questions.create(mc(topicId = 7, content = "T7 a"))
+        val b = questions.create(mc(topicId = 7, content = "T7 b"))
+        questions.create(mc(topicId = 8, content = "T8"))
+        questions.create(mc(lessonId = grammar.create(LessonInput("Bài", "A1", "", "Nội dung", emptyList())), content = "L"))
+
+        assertEquals(listOf(a, b), questions.questionsForTopic(7).map { it.id })
+        assertEquals(4, questions.questionsForTopic(7).first().options.size)
+        assertTrue(questions.questionsForTopic(99).isEmpty())
+    }
+
+    @Test fun summaryCarriesItsSourceForRetry() = runBlocking<Unit> {
+        val repository = attempts()
+        repository.saveAttempt("alice", lessonDraft())
+        topicAttempt(repository, topicId = 7)
+
+        val sources = repository.observeHistory("alice").first().map { it.retrySource() }.toSet()
+        assertEquals(2, sources.size)
+        assertTrue(sources.any { it is QuizSource.Lesson })
+        assertTrue(QuizSource.Topic(7) in sources)
+    }
 }
