@@ -18,7 +18,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.engmate.app.R
 import com.engmate.app.core.ui.components.BackTopBar
 import com.engmate.app.core.ui.components.LevelBadge
-import com.engmate.app.core.ui.theme.success
+import com.engmate.app.core.ui.theme.successText
 import com.engmate.app.feature.quiz.domain.QuizScoring
 import com.engmate.app.feature.quiz.domain.QuizSource
 import com.engmate.app.feature.quiz.presentation.quiz.QuizContent
@@ -115,7 +115,7 @@ private fun LevelResult(level: String, correct: Int, total: Int, levelSaved: Boo
             Text(level, style = MaterialTheme.typography.displayMedium, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
             LevelBadge("$correct/$total câu đúng")
             val (icon, color, message) = if (levelSaved)
-                Triple(R.drawable.ic_check_circle, MaterialTheme.colorScheme.success, "Đã cập nhật trình độ vào hồ sơ")
+                Triple(R.drawable.ic_check_circle, MaterialTheme.colorScheme.successText, "Đã cập nhật trình độ vào hồ sơ")
             else Triple(R.drawable.ic_cancel, MaterialTheme.colorScheme.error, "Chưa cập nhật được hồ sơ, bạn có thể sửa trình độ trong Hồ sơ")
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Icon(painterResource(icon), null, tint = color, modifier = Modifier.size(20.dp))

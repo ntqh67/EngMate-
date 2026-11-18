@@ -21,6 +21,9 @@ internal object SemanticPalette {
 
 val ColorScheme.isDark: Boolean get() = background.luminance() < 0.5f
 
+/** For icons and borders. On the light background it reaches 3:1, enough for graphics but not for body text. */
 val ColorScheme.success: Color get() = if (isDark) SemanticPalette.SuccessDark else SemanticPalette.SuccessLight
+/** Success-colored text on the normal background; meets 4.5:1 in both modes. */
+val ColorScheme.successText: Color get() = if (isDark) SemanticPalette.SuccessDark else SemanticPalette.OnSuccessContainerLight
 val ColorScheme.successContainer: Color get() = if (isDark) SemanticPalette.SuccessContainerDark else SemanticPalette.SuccessContainerLight
 val ColorScheme.onSuccessContainer: Color get() = if (isDark) SemanticPalette.OnSuccessContainerDark else SemanticPalette.OnSuccessContainerLight
