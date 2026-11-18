@@ -43,6 +43,8 @@ interface WordRepository {
     fun observe(word: String): Flow<Word?>
     /** Local words starting with [prefix], shortest first. */
     suspend fun suggest(prefix: String, limit: Int = 6): List<String>
+    /** Local words whose English text or Vietnamese meaning contains [query]; words starting with it come first. */
+    suspend fun search(query: String, limit: Int = 20): List<Word>
     /** Saves a dictionary lookup. Seed fields (Vietnamese, collocations, idioms, topic) of an existing word are kept. Throws [IllegalArgumentException]. */
     suspend fun cache(entry: CachedWord)
 }

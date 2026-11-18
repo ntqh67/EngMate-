@@ -25,6 +25,12 @@ class RoomWordRepository @Inject constructor(
         return if (key.isEmpty()) emptyList() else dao.wordsStartingWith(key, limit)
     }
 
+    override suspend fun search(query: String, limit: Int): List<Word> {
+        val key = WordKey.of(query)
+        if (key.isEmpty()) return emptyList()
+        return dao.search(key, limit).map { it.toDomain() }.sortedWith(compareBy({ !it.word.startsWith(key) }, { it.word.length }))
+    }
+
     override suspend fun cache(entry: CachedWord) {
         val key = WordKey.of(entry.word)
         require(key.isNotEmpty() && entry.meaningEn.isNotBlank()) { "Từ và định nghĩa không được để trống" }

@@ -95,6 +95,15 @@ class VocabularyRepositoryTest {
         assertEquals(emptyList<String>(), words.suggest("  "))
     }
 
+    @Test fun searchMatchesWordOrVietnameseMeaningPrefixFirst() = runBlocking<Unit> {
+        listOf("happy", "apply", "approach").forEach { cache(it) }
+        db.vocabulary().insertWord(WordEntity(word = "diligent", meaningEn = "hard-working", meaningVi = "chăm chỉ"))
+        assertEquals(listOf("apply", "approach", "happy"), words.search(" APP ").map { it.word })
+        assertEquals(listOf("diligent"), words.search("chăm").map { it.word })
+        assertTrue(words.search("%").isEmpty())
+        assertTrue(words.search("  ").isEmpty())
+    }
+
     @Test fun handbookTitleRules() = runBlocking<Unit> {
         val id = handbooks.create("alice", "  Daily Conversation ")
         assertEquals("Daily Conversation", handbooks.observeHandbooks("alice").first().single().title)
