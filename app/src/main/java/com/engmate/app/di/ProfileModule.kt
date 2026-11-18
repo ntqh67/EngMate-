@@ -14,7 +14,9 @@ import javax.inject.Singleton
 @Module @InstallIn(SingletonComponent::class)
 object DatabaseModule {
     @Provides @Singleton fun database(@ApplicationContext context: Context): EngMateDatabase =
-        Room.databaseBuilder(context, EngMateDatabase::class.java, "engmate-${BuildConfig.FLAVOR}.db").build()
+        Room.databaseBuilder(context, EngMateDatabase::class.java, "engmate-${BuildConfig.FLAVOR}.db")
+            .addMigrations(com.engmate.app.core.database.MergeDatabaseMigration)
+            .addCallback(com.engmate.app.feature.quiz.data.local.GrammarQuizSeed.Callback()).build()
     @Provides fun profiles(database: EngMateDatabase) = database.profiles()
     @Provides fun vocabulary(database: EngMateDatabase) = database.vocabulary()
     @Provides fun notebook(database: EngMateDatabase) = database.notebook()

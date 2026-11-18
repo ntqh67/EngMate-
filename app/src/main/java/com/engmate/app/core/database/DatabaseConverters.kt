@@ -20,7 +20,11 @@ class DatabaseConverters {
     @TypeConverter fun encodeStatus(value: WordLearningStatus): String = value.name
     @TypeConverter fun decodeStatus(value: String): WordLearningStatus = WordLearningStatus.valueOf(value)
     @TypeConverter fun encodeAnswerType(value: AnswerType): String = value.name
-    @TypeConverter fun decodeAnswerType(value: String): AnswerType = AnswerType.valueOf(value)
+    @TypeConverter fun decodeAnswerType(value: String): AnswerType = when (value) {
+        "MULTIPLE_CHOICE" -> AnswerType.SINGLE_CHOICE
+        "FILL_BLANK" -> AnswerType.TEXT
+        else -> AnswerType.valueOf(value)
+    }
     @TypeConverter fun encodeActivityType(value: ActivityType): String = value.name
     @TypeConverter fun decodeActivityType(value: String): ActivityType = ActivityType.valueOf(value)
 }

@@ -44,7 +44,7 @@ import com.engmate.app.feature.progress.data.local.DailyStudyStatEntity
     ],
     version = 3,
     exportSchema = true,
-    autoMigrations = [AutoMigration(from = 1, to = 2), AutoMigration(from = 2, to = 3, spec = Migration2To3::class)],
+    autoMigrations = [AutoMigration(from = 1, to = 2, spec = com.engmate.app.feature.quiz.data.local.GrammarQuizSeed.Migration1To2::class), AutoMigration(from = 2, to = 3, spec = Migration2To3::class)],
 )
 @TypeConverters(DatabaseConverters::class)
 abstract class EngMateDatabase : RoomDatabase() {
@@ -54,6 +54,9 @@ abstract class EngMateDatabase : RoomDatabase() {
     abstract fun flashcards(): FlashcardDao
     abstract fun grammar(): GrammarDao
     abstract fun quiz(): QuizDao
+    abstract fun grammarLessons(): com.engmate.app.feature.grammar.data.local.GrammarLessonDao
+    abstract fun questions(): com.engmate.app.feature.quiz.data.local.QuestionDao
+    abstract fun quizAttempts(): com.engmate.app.feature.quiz.data.local.QuizAttemptDao
     abstract fun study(): StudyDao
 }
 

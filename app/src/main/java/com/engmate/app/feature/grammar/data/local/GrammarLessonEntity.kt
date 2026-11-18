@@ -1,6 +1,8 @@
 package com.engmate.app.feature.grammar.data.local
 
 import androidx.room.*
+import com.engmate.app.feature.grammar.domain.GrammarExample
+import com.engmate.app.feature.grammar.domain.GrammarLesson
 
 @Entity(
     tableName = "grammar_lessons",
@@ -12,7 +14,9 @@ data class GrammarLessonEntity(
     val level: String,
     val summary: String? = null,
     val content: String,
-    val examples: List<String> = emptyList(),
+    @TypeConverters(GrammarConverters::class) val examples: List<GrammarExample> = emptyList(),
     @ColumnInfo(name = "order_index", defaultValue = "0") val orderIndex: Int = 0,
     @ColumnInfo(name = "updated_at") val updatedAt: Long? = null,
-)
+) {
+    fun toDomain() = GrammarLesson(id, title, level, summary, content, examples, orderIndex, updatedAt)
+}

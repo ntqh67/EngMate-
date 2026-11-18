@@ -105,7 +105,7 @@ class LearningDatabaseTest {
     }
     @Test fun grammarCrudAndQuestionOptionsAreAtomic() = runBlocking {
         val grammar = db.grammar()
-        val lesson = grammar.insert(GrammarLessonEntity(title = "Present simple", level = "A1", content = "Rules", examples = listOf("I work.")))
+        val lesson = grammar.insert(GrammarLessonEntity(title = "Present simple", level = "A1", content = "Rules", examples = listOf(com.engmate.app.feature.grammar.domain.GrammarExample("I work.", ""))))
         grammar.update(grammar.get(lesson)!!.copy(content = "New rules"))
         assertEquals("New rules", grammar.observeLessons("A1").first().single().content)
         assertTrue(grammar.observeLessons("B2").first().isEmpty())
