@@ -19,6 +19,7 @@ import javax.inject.Inject
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.launch
 
 data class HomeUiState(
     val profile: UserProfile? = null,
@@ -37,7 +38,11 @@ data class HomeUiState(
 /** [notice] explains an empty or partial result: not found, offline, or a failed lookup. */
 data class SearchState(val query: String = "", val results: List<Word> = emptyList(), val searching: Boolean = false, val notice: String? = null)
 
-/** Local matches first; when the exact word is not on the device, ask the dictionary and put the hit on top. */
+/**
+ * Local matches first; when the exact word is not on the device, ask the dictionary and put the hit on top.
+ * The hit is only previewed: it is saved when the learner opens it ([HomeViewModel.open]).
+ * A word the dictionary does not know is not shown.
+ */
 internal fun searchFlow(q: String, words: WordRepository, dictionary: DictionaryRepository): Flow<SearchState> = flow {
     val key = WordKey.of(q)
     if (key.isEmpty()) { emit(SearchState(q)); return@flow }
@@ -46,7 +51,7 @@ internal fun searchFlow(q: String, words: WordRepository, dictionary: Dictionary
         emit(SearchState(q, local, notice = if (local.isEmpty()) "Không tìm thấy “$key”." else null)); return@flow
     }
     emit(SearchState(q, local, searching = true))
-    emit(when (val result = dictionary.lookup(key)) {
+    emit(when (val result = dictionary.preview(key)) {
         is LookupResult.Found -> SearchState(q, listOf(result.word) + local.filter { it.id != result.word.id })
         LookupResult.NotFound -> SearchState(q, local, notice = if (local.isEmpty()) "Không tìm thấy “$key”." else null)
         LookupResult.Offline -> SearchState(q, local, notice = "Không có kết nối Internet. Đang hiện từ đã lưu trong máy.")
@@ -81,5 +86,30 @@ class HomeViewModel @Inject constructor(
         if (found.query == typed) found else found.copy(query = typed, searching = typed.isNotBlank())
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), SearchState())
 
-    fun onQueryChange(value: String) { query.value = value.take(50) }
+    fun onQueryChange(value: String) { openError.value = null; query.value = value.take(50) }
+
+    private val opening = MutableStateFlow(false)
+    private val openError = MutableStateFlow<String?>(null)
+
+    /** Search state plus the progress and error of opening a word. */
+    val searchWithOpen: StateFlow<SearchState> = combine(search, opening, openError) { s, busy, error ->
+        s.copy(searching = s.searching || busy, notice = error ?: s.notice)
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), SearchState())
+
+    /** Saves a dictionary hit on the device (only now, when it is opened), then calls [onReady] with the stored word. */
+    fun open(word: Word, onReady: (Word) -> Unit) {
+        if (word.id != DictionaryRepository.UNSAVED_ID) { onReady(word); return }
+        if (opening.value) return
+        opening.value = true
+        openError.value = null
+        viewModelScope.launch {
+            val result = try { dictionary.lookup(word.word) } finally { opening.value = false }
+            when (result) {
+                is LookupResult.Found -> onReady(result.word)
+                LookupResult.NotFound -> openError.value = "Không tìm thấy “${word.word}”."
+                LookupResult.Offline -> openError.value = "Không có kết nối Internet. Hãy thử lại."
+                LookupResult.Failed -> openError.value = "Không lưu được từ này. Hãy thử lại."
+            }
+        }
+    }
 }

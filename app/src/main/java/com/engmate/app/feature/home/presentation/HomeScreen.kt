@@ -31,8 +31,9 @@ private fun greeting(): String = when (LocalTime.now().hour) {
 @Composable
 fun HomeScreen(viewModel: HomeViewModel, onOpenLessons: () -> Unit, onOpenLesson: (Long) -> Unit, onOpenWord: (Word) -> Unit = {}) {
     val state by viewModel.state.collectAsStateWithLifecycle()
-    val search by viewModel.search.collectAsStateWithLifecycle()
-    HomeContent(state, search, viewModel::onQueryChange, onOpenLessons, onOpenLesson, onOpenWord)
+    val search by viewModel.searchWithOpen.collectAsStateWithLifecycle()
+    // A dictionary hit is saved on the device only when opened.
+    HomeContent(state, search, viewModel::onQueryChange, onOpenLessons, onOpenLesson, onOpenWord = { viewModel.open(it, onOpenWord) })
 }
 
 @Composable
