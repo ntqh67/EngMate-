@@ -3,8 +3,6 @@ import android.content.Context
 import androidx.room.Room
 import com.engmate.app.BuildConfig
 import com.engmate.app.core.database.EngMateDatabase
-import com.engmate.app.feature.profile.data.RoomProfileRepository
-import com.engmate.app.feature.profile.domain.ProfileRepository
 import dagger.*
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -26,7 +24,4 @@ object DatabaseModule {
     @Provides fun study(database: EngMateDatabase) = database.study()
     @Provides fun clock(): Clock = Clock.systemUTC()
 }
-@Module @InstallIn(SingletonComponent::class)
-abstract class ProfileRepositoryModule {
-    @Binds @Singleton abstract fun repository(implementation: RoomProfileRepository): ProfileRepository
-}
+/** ProfileRepository is bound in the flavor's ProfileSyncModule (live: Room + Cloud Firestore). */

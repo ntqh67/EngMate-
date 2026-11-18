@@ -46,12 +46,25 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
     var quizRouteKey by rememberSaveable(user?.uid) { mutableStateOf<String?>(null) }
     val quizRoute = QuizRoute.decode(quizRouteKey)
     fun openQuiz(route: QuizRoute?) { quizRouteKey = route?.encode() }
-    if (user == null) AuthScreen(auth) else if (profileState.user?.uid != user?.uid || profileState.loading) {
+    // Guests can browse: home, dictionary search and grammar lessons. Personal features ask for a login.
+    var showAuth by rememberSaveable { mutableStateOf(false) }
+    LaunchedEffect(user) { if (user != null) showAuth = false }
+    val needsProfile = user != null && (tab == MainTab.NOTEBOOK || tab == MainTab.PROFILE || quizRoute != null || studyHandbook != null)
+    if (showAuth && user == null) {
+        BackHandler { showAuth = false }
+        Box(Modifier.fillMaxSize()) {
+            AuthScreen(auth)
+            TextButton(onClick = { showAuth = false }, modifier = Modifier.align(androidx.compose.ui.Alignment.TopEnd).statusBarsPadding().padding(8.dp)) { Text("Để sau") }
+        }
+    } else if (needsProfile && (profileState.user?.uid != user?.uid || profileState.loading)) {
         Box(Modifier.fillMaxSize(), contentAlignment = androidx.compose.ui.Alignment.Center) { CircularProgressIndicator() }
-    } else if (profileState.profile == null && !profileState.loadFailed) {
+    } else if (needsProfile && profileState.profile == null && !profileState.loadFailed) {
         Column(Modifier.fillMaxSize().safeDrawingPadding()) {
             Box(Modifier.weight(1f)) { ProfileScreen(profile) }
-            TextButton(onClick = auth::signOut, modifier = Modifier.padding(horizontal = 24.dp)) { Text("Đăng xuất") }
+            Row(Modifier.padding(horizontal = 24.dp)) {
+                TextButton(onClick = { tab = MainTab.HOME; quizRouteKey = null; studyHandbook = null }) { Text("Để sau") }
+                TextButton(onClick = auth::signOut) { Text("Đăng xuất") }
+            }
         }
     } else if (openWord != null) {
         BackHandler { openWord = null }
@@ -81,10 +94,10 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
                             onOpenLesson = { lessonId = it; tab = MainTab.LEARN }, onOpenWord = { openWord = it.word })
                         // Đông's grammar screens (restored from before 2d5cb51).
                         MainTab.LEARN -> lessonId?.let { GrammarLessonScreen(lessons, it, onBack = { lessonId = null },
-                            onPractice = { id -> openQuiz(QuizRoute.Quiz(QuizSource.Lesson(id))) }) }
+                            onPractice = { id -> if (user == null) showAuth = true else openQuiz(QuizRoute.Quiz(QuizSource.Lesson(id))) }) }
                             ?: GrammarLessonsScreen(lessons, onOpenLesson = { lessonId = it })
-                        MainTab.NOTEBOOK -> NotebookScreen(viewModel(), onOpenWord = { openWord = it }, onStudy = { studyHandbook = it })
-                        MainTab.PROFILE -> ProfileTab(profile, progress, user?.email.orEmpty(), auth::signOut,
+                        MainTab.NOTEBOOK -> if (user == null) LoginPrompt("Sổ tay từ vựng", onLogin = { showAuth = true }) else NotebookScreen(viewModel(), onOpenWord = { openWord = it }, onStudy = { studyHandbook = it })
+                        MainTab.PROFILE -> if (user == null) LoginPrompt("Hồ sơ và tiến độ học", onLogin = { showAuth = true }) else ProfileTab(profile, progress, user?.email.orEmpty(), auth::signOut,
                             onPlacement = { openQuiz(QuizRoute.Placement) }, onReminder = { openQuiz(QuizRoute.Reminder) })
                     }
                 }
@@ -118,5 +131,17 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
         Box(Modifier.weight(1f)) {
             if (showProgress) ProgressScreen(progress) else ProfileScreen(profile, onSettings = { settings = true })
         }
+    }
+}
+
+/** Shown in place of a personal tab while browsing as a guest. */
+@Composable private fun LoginPrompt(feature: String, onLogin: () -> Unit) {
+    Column(Modifier.fillMaxSize().padding(32.dp), verticalArrangement = Arrangement.Center, horizontalAlignment = androidx.compose.ui.Alignment.CenterHorizontally) {
+        Text(feature, style = MaterialTheme.typography.headlineSmall)
+        Spacer(Modifier.height(8.dp))
+        Text("Đăng nhập để lưu dữ liệu học của bạn và đồng bộ giữa các thiết bị.", style = MaterialTheme.typography.bodyLarge,
+            textAlign = androidx.compose.ui.text.style.TextAlign.Center)
+        Spacer(Modifier.height(24.dp))
+        Button(onClick = onLogin) { Text("Đăng nhập / Đăng ký") }
     }
 }

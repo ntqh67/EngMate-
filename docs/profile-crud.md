@@ -6,8 +6,8 @@
 - Read: theo dõi Room qua Flow, hiển thị tên, ảnh, email, trình độ và mục tiêu.
 - Update: sửa tên, URL ảnh HTTPS (tùy chọn), trình độ và phút học mỗi ngày.
   UID, email và thời điểm tạo không được sửa từ form.
-- Delete: xác nhận trước khi xóa hồ sơ **trên thiết bị**. Không xóa tài khoản
-  Firebase, không gọi API xóa dữ liệu trực tuyến. Có thể tạo lại sau khi xóa.
+- Delete: xác nhận trước khi xóa hồ sơ, xóa cả bản trong Room và bản trên Firestore
+  (`users/{uid}/profile/main`). Không xóa tài khoản Firebase. Có thể tạo lại sau khi xóa.
 - Validation ở cả ViewModel và Repository: tên 2–50 ký tự chữ/khoảng trắng,
   hỗ trợ dấu tiếng Việt; mục tiêu nguyên 5–120; trình độ A1–C2; URL ảnh HTTPS.
 - Trạng thái tải/lỗi, thử tải lại, chống bấm lưu lặp, giữ form khi lưu thất bại.
@@ -51,7 +51,7 @@ form CRUD; thiếu cấu hình Firebase cũng không fallback sang tài khoản 
 2. Đặt cấu hình tại `app/google-services.json`. Google Services plugin chỉ
    được áp dụng khi file tồn tại; xử lý Google Services cho demo được tắt.
 3. Chọn `liveDebug`, đăng ký và xác minh email trước khi đăng nhập.
-4. Tạo hồ sơ trên thiết bị khi đăng nhập lần đầu. Hồ sơ hiện lưu trong Room;
+4. Tạo hồ sơ trên thiết bị khi đăng nhập lần đầu. Hồ sơ lưu trong Room và đồng bộ lên Firestore (xem [cloud-sync.md](cloud-sync.md));
    xem [hướng dẫn tài khoản và tiến độ](auth-progress.md).
 
 Firebase BoM được ghim 34.0.0 để tương thích Kotlin 2.2.10 của AGP đang dùng.

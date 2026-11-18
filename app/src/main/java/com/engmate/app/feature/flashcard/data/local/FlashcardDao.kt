@@ -68,6 +68,11 @@ abstract class FlashcardDao {
     @Query("DELETE FROM word_progress WHERE user_id = :uid AND word_id = :wordId")
     abstract suspend fun deleteProgress(uid: String, wordId: Long): Int
 
+    @Query("SELECT * FROM word_progress WHERE user_id = :uid")
+    abstract fun observeAllProgress(uid: String): Flow<List<WordProgressEntity>>
+    @Query("SELECT f.* FROM flashcards f JOIN flashcard_collections c ON c.id = f.collection_id WHERE c.user_id = :uid ORDER BY f.id")
+    abstract fun observeAllCards(uid: String): Flow<List<FlashcardEntity>>
+
     @Insert abstract suspend fun insertCollection(collection: FlashcardCollectionEntity): Long
     @Query("SELECT * FROM flashcard_collections WHERE user_id = :uid ORDER BY created_at DESC, id DESC")
     abstract fun observeCollections(uid: String): Flow<List<FlashcardCollectionEntity>>

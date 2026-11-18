@@ -45,12 +45,14 @@ class FirestoreContentSync @Inject constructor(
     private val database: EngMateDatabase,
     private val lessons: GrammarLessonDao,
     private val questions: QuestionDao,
+    private val userData: UserDataSync,
 ) : ContentSync {
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
     private val started = AtomicBoolean(false)
 
     @OptIn(ExperimentalCoroutinesApi::class)
     override fun start() {
+        userData.start()
         val lessonsRef = remote.lessons() ?: return
         val questionsRef = remote.questions() ?: return
         if (!started.compareAndSet(false, true)) return
