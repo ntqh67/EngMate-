@@ -13,6 +13,7 @@ các chức năng học tập còn lại đang triển khai.
 Ứng dụng chỉ còn biến thể **live**: UID lấy từ phiên Firebase Auth, cần
 `app/google-services.json` (không commit) để build.
 Xem [hướng dẫn CRUD hồ sơ](docs/profile-crud.md) để chạy và tích hợp Firebase.
+Lối vào màn quiz, kiểm tra trình độ, nhắc học và hợp đồng tích hợp: [docs/integration-dong.md](docs/integration-dong.md).
 
 Các file `.gitkeep` còn lại giữ những thư mục chưa có mã nguồn trong Git.
 

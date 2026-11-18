@@ -24,7 +24,8 @@ private val blueCard = Color(0xFFD5E3FF)
 private val chipBg = Color(0xFFE1F0FF)
 
 @Composable
-fun GrammarLessonScreen(viewModel: GrammarLessonsViewModel, lessonId: Long, onBack: () -> Unit) {
+/** [onPractice] starts the quiz for this lesson; null keeps the quiz button disabled. */
+fun GrammarLessonScreen(viewModel: GrammarLessonsViewModel, lessonId: Long, onBack: () -> Unit, onPractice: ((Long) -> Unit)? = null) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     val lesson = state.lesson(lessonId)
     var tab by rememberSaveable(lessonId) { mutableIntStateOf(0) }
@@ -72,11 +73,13 @@ fun GrammarLessonScreen(viewModel: GrammarLessonsViewModel, lessonId: Long, onBa
                                 }
                             }
                         }
-                        else -> EmptyState("Bài tập đang được chuẩn bị", "Phần bài tập của chủ điểm này sẽ sớm có.")
+                        else -> if (onPractice == null) EmptyState("Bài tập đang được chuẩn bị", "Phần bài tập của chủ điểm này sẽ sớm có.")
+                        else EmptyState("Luyện tập chủ điểm này", "Tối đa 10 câu trắc nghiệm và điền từ, có giải thích sau mỗi câu.",
+                            action = { Button(onClick = { onPractice(lesson.id) }) { Text("Làm bài tập") } })
                     }
                 }
                 Row(Modifier.fillMaxWidth().padding(horizontal = 20.dp, vertical = 12.dp), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                    OutlinedButton(onClick = {}, enabled = false, modifier = Modifier.weight(1f).height(48.dp), shape = RoundedCornerShape(24.dp)) {
+                    OutlinedButton(onClick = { onPractice?.invoke(lesson.id) }, enabled = onPractice != null, modifier = Modifier.weight(1f).height(48.dp), shape = RoundedCornerShape(24.dp)) {
                         Icon(painterResource(R.drawable.ic_mic), null, Modifier.size(18.dp)); Spacer(Modifier.width(6.dp)); Text("Luyện phát âm", maxLines = 1)
                     }
                     Button(onClick = {}, enabled = false, modifier = Modifier.weight(1f).height(48.dp), shape = RoundedCornerShape(24.dp)) {

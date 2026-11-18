@@ -14,6 +14,7 @@ class RoomQuestionRepository @Inject constructor(
     override fun observeQuestions(): Flow<List<Question>> = dao.observeAll().map { list -> list.map { it.toDomain() } }
     override fun observeQuestion(id: Long): Flow<Question?> = dao.observe(id).map { it?.toDomain() }
     override suspend fun questionsForLesson(lessonId: Long) = dao.forLesson(lessonId).map { it.toDomain() }
+    override suspend fun questionsForTopic(topicId: Long) = dao.forTopic(topicId).map { it.toDomain() }
     override suspend fun placementQuestions() = dao.placement(QuizScoring.PLACEMENT_QUESTION_COUNT).map { it.toDomain() }
 
     private fun validate(input: QuestionInput): QuestionInput {

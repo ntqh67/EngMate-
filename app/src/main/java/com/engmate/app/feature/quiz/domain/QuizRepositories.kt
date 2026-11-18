@@ -6,6 +6,8 @@ interface QuestionRepository {
     fun observeQuestions(): Flow<List<Question>>
     fun observeQuestion(id: Long): Flow<Question?>
     suspend fun questionsForLesson(lessonId: Long): List<Question>
+    /** Vocabulary questions of a topic (topic_id), including those synced from Firestore. */
+    suspend fun questionsForTopic(topicId: Long): List<Question>
     suspend fun placementQuestions(): List<Question>
     /** Saves the question and its options atomically. Throws [InvalidQuestion]. */
     suspend fun create(input: QuestionInput): Long
@@ -36,7 +38,17 @@ data class AttemptSummary(
     val totalQuestions: Int,
     val xpEarned: Int,
     val completedAt: Long,
-)
+    val lessonId: Long? = null,
+    val topicId: Long? = null,
+) {
+    /** What "Làm lại" starts: the same lesson, topic or placement test; null for an attempt with no source. */
+    fun retrySource(): QuizSource? = when {
+        isPlacement -> QuizSource.Placement
+        lessonId != null -> QuizSource.Lesson(lessonId)
+        topicId != null -> QuizSource.Topic(topicId)
+        else -> null
+    }
+}
 
 data class AnsweredQuestion(
     val questionId: Long,

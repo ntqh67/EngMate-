@@ -1,5 +1,9 @@
 package com.engmate.app.feature.quiz.data
 
+import com.engmate.app.core.contracts.EmptyTopicLookup
+import com.engmate.app.core.contracts.NoOpProgressRecorder
+import com.engmate.app.core.contracts.ProgressRecorder
+import com.engmate.app.core.contracts.TopicLookup
 import com.engmate.app.feature.auth.domain.UserSession
 import com.engmate.app.feature.profile.domain.ProfileInput
 import com.engmate.app.feature.profile.domain.ProfileRepository
@@ -8,6 +12,8 @@ import com.engmate.app.feature.quiz.domain.*
 import java.time.Clock
 import javax.inject.Inject
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 
@@ -17,19 +23,26 @@ class RoomQuizAttemptRepository @Inject constructor(
     private val profiles: ProfileRepository,
     private val session: UserSession,
     private val clock: Clock,
+    private val progressRecorder: ProgressRecorder = NoOpProgressRecorder(),
+    private val topicLookup: TopicLookup = EmptyTopicLookup(),
 ) : QuizAttemptRepository {
     private fun owner(uid: String) {
         if (uid.isBlank() || session.user.value?.uid != uid) throw AttemptSessionRequired()
     }
 
+    /** Topic names by id; a failing lookup only costs the names, never the history. */
+    private fun topicTitles(): Flow<Map<Long, String>> = topicLookup.observeTopics()
+        .map { topics -> topics.associate { it.id to it.title } }
+        .catch { emit(emptyMap()) }
+
     override fun observeHistory(uid: String): Flow<List<AttemptSummary>> {
         owner(uid)
-        return dao.observeForUser(uid).map { rows -> rows.map { it.toSummary() } }
+        return combine(dao.observeForUser(uid), topicTitles()) { rows, titles -> rows.map { it.toSummary(titles) } }
     }
 
     override fun observeAttempt(uid: String, id: Long): Flow<AttemptDetail?> {
         owner(uid)
-        return dao.observeWithAnswers(uid, id).map { it?.toDetail() }
+        return combine(dao.observeWithAnswers(uid, id), topicTitles()) { row, titles -> row?.toDetail(titles) }
     }
 
     override suspend fun saveAttempt(uid: String, draft: AttemptDraft): AttemptResult {
@@ -63,6 +76,12 @@ class RoomQuizAttemptRepository @Inject constructor(
         val id = dao.saveAttempt(QuizAttemptEntity(userUid = uid, topicId = draft.topicId, lessonId = draft.lessonId,
             isPlacement = draft.isPlacement, correctCount = correct, totalQuestions = graded.size, xpEarned = xp,
             completedAt = now, updatedAt = now), graded)
+
+        // The attempt is stored; progress bookkeeping must not undo or hide that.
+        try {
+            progressRecorder.onQuizCompleted(uid, xp, correct, graded.size, draft.isPlacement, now)
+        } catch (cancelled: kotlinx.coroutines.CancellationException) { throw cancelled }
+        catch (_: Exception) { }
 
         val level = if (category == QuestionCategory.PLACEMENT) QuizScoring.levelFromScore(correct) else null
         var levelSaved = level != null
