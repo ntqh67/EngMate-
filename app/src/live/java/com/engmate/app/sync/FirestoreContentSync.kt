@@ -22,6 +22,7 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.emitAll
 import kotlinx.coroutines.flow.emptyFlow
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.map
@@ -46,6 +47,7 @@ class FirestoreContentSync @Inject constructor(
     private val lessons: GrammarLessonDao,
     private val questions: QuestionDao,
     private val userData: UserDataSync,
+    private val seeder: ContentSeeder,
 ) : ContentSync {
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
     private val started = AtomicBoolean(false)
@@ -53,6 +55,7 @@ class FirestoreContentSync @Inject constructor(
     @OptIn(ExperimentalCoroutinesApi::class)
     override fun start() {
         userData.start()
+        scope.launch { runCatching { seeder.seedRoom() }.onFailure { Log.w(FirestoreContent.TAG, "Seeding lessons failed", it) } }
         val lessonsRef = remote.lessons() ?: return
         val questionsRef = remote.questions() ?: return
         if (!started.compareAndSet(false, true)) return
@@ -60,8 +63,11 @@ class FirestoreContentSync @Inject constructor(
             // Security rules only allow signed-in users, so listen per session and stop on sign-out.
             session.user.map { it?.uid }.distinctUntilChanged().flatMapLatest { uid ->
                 if (uid == null) emptyFlow()
-                else combine(lessonsRef.snapshotFlow(), questionsRef.snapshotFlow(), ::Pair)
-                    .catch { FirestoreContent.log("listen", it) }
+                else kotlinx.coroutines.flow.flow {
+                    // Make sure the bundled lessons exist in Firestore before mirroring it into Room, or they would be removed locally.
+                    runCatching { seeder.seedRoom(); seeder.uploadMissing() }
+                    emitAll(combine(lessonsRef.snapshotFlow(), questionsRef.snapshotFlow(), ::Pair).catch { FirestoreContent.log("listen", it) })
+                }
             }.collect { (lessonSnap, questionSnap) ->
                 runCatching { apply(lessonSnap, questionSnap) }.onFailure { Log.w(FirestoreContent.TAG, "Sync failed", it) }
             }

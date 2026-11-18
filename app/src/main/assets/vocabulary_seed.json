@@ -1,0 +1,3678 @@
+{
+"version": 1,
+"topics": [
+{
+"title": "Gia đình & con người",
+"level": "A1",
+"category": "Family and people",
+"words": [
+{
+"word": "mother",
+"phonetic": "/ˈmʌðər/",
+"pos": "noun",
+"vi": "mẹ",
+"en": "a female parent",
+"example": "My mother cooks dinner every day."
+},
+{
+"word": "father",
+"phonetic": "/ˈfɑːðər/",
+"pos": "noun",
+"vi": "bố, cha",
+"en": "a male parent",
+"example": "My father works in a bank."
+},
+{
+"word": "sister",
+"phonetic": "/ˈsɪstər/",
+"pos": "noun",
+"vi": "chị, em gái",
+"en": "a girl with the same parents",
+"example": "My sister is ten years old."
+},
+{
+"word": "brother",
+"phonetic": "/ˈbrʌðər/",
+"pos": "noun",
+"vi": "anh, em trai",
+"en": "a boy with the same parents",
+"example": "His brother plays football."
+},
+{
+"word": "parent",
+"phonetic": "/ˈpeərənt/",
+"pos": "noun",
+"vi": "cha hoặc mẹ",
+"en": "a mother or father",
+"example": "Both of my parents are teachers."
+},
+{
+"word": "child",
+"phonetic": "/tʃaɪld/",
+"pos": "noun",
+"vi": "đứa trẻ",
+"en": "a young person",
+"example": "The child is playing in the garden."
+},
+{
+"word": "baby",
+"phonetic": "/ˈbeɪbi/",
+"pos": "noun",
+"vi": "em bé",
+"en": "a very young child",
+"example": "The baby is sleeping now."
+},
+{
+"word": "grandmother",
+"phonetic": "/ˈɡrænmʌðər/",
+"pos": "noun",
+"vi": "bà",
+"en": "the mother of your parent",
+"example": "My grandmother tells great stories."
+},
+{
+"word": "grandfather",
+"phonetic": "/ˈɡrænfɑːðər/",
+"pos": "noun",
+"vi": "ông",
+"en": "the father of your parent",
+"example": "My grandfather lives in the countryside."
+},
+{
+"word": "uncle",
+"phonetic": "/ˈʌŋkl/",
+"pos": "noun",
+"vi": "chú, bác, cậu",
+"en": "the brother of your parent",
+"example": "My uncle visits us on weekends."
+},
+{
+"word": "aunt",
+"phonetic": "/ænt/",
+"pos": "noun",
+"vi": "cô, dì, bác gái",
+"en": "the sister of your parent",
+"example": "My aunt lives in Hue."
+},
+{
+"word": "cousin",
+"phonetic": "/ˈkʌzn/",
+"pos": "noun",
+"vi": "anh chị em họ",
+"en": "a child of your uncle or aunt",
+"example": "I play games with my cousin."
+},
+{
+"word": "husband",
+"phonetic": "/ˈhʌzbənd/",
+"pos": "noun",
+"vi": "chồng",
+"en": "a man who is married",
+"example": "Her husband is a doctor."
+},
+{
+"word": "wife",
+"phonetic": "/waɪf/",
+"pos": "noun",
+"vi": "vợ",
+"en": "a woman who is married",
+"example": "His wife works at a school."
+},
+{
+"word": "friend",
+"phonetic": "/frend/",
+"pos": "noun",
+"vi": "bạn bè",
+"en": "a person you like and know well",
+"example": "She is my best friend."
+},
+{
+"word": "neighbor",
+"phonetic": "/ˈneɪbər/",
+"pos": "noun",
+"vi": "hàng xóm",
+"en": "a person who lives near you",
+"example": "Our neighbor is very kind."
+},
+{
+"word": "boy",
+"phonetic": "/bɔɪ/",
+"pos": "noun",
+"vi": "cậu bé",
+"en": "a male child",
+"example": "The boy is reading a book."
+},
+{
+"word": "girl",
+"phonetic": "/ɡɜːrl/",
+"pos": "noun",
+"vi": "cô bé",
+"en": "a female child",
+"example": "The girl has a red bag."
+},
+{
+"word": "man",
+"phonetic": "/mæn/",
+"pos": "noun",
+"vi": "người đàn ông",
+"en": "an adult male person",
+"example": "That man is my teacher."
+},
+{
+"word": "woman",
+"phonetic": "/ˈwʊmən/",
+"pos": "noun",
+"vi": "người phụ nữ",
+"en": "an adult female person",
+"example": "The woman is waiting for the bus."
+},
+{
+"word": "family",
+"phonetic": "/ˈfæməli/",
+"pos": "noun",
+"vi": "gia đình",
+"en": "a group of related people",
+"example": "I have a small family."
+},
+{
+"word": "daughter",
+"phonetic": "/ˈdɔːtər/",
+"pos": "noun",
+"vi": "con gái",
+"en": "someone's female child",
+"example": "Their daughter is a student."
+},
+{
+"word": "son",
+"phonetic": "/sʌn/",
+"pos": "noun",
+"vi": "con trai",
+"en": "someone's male child",
+"example": "Their son likes music."
+},
+{
+"word": "twin",
+"phonetic": "/twɪn/",
+"pos": "noun",
+"vi": "anh em sinh đôi",
+"en": "one of two children born together",
+"example": "My twin sisters look the same."
+},
+{
+"word": "relative",
+"phonetic": "/ˈrelətɪv/",
+"pos": "noun",
+"vi": "họ hàng",
+"en": "a member of your family",
+"example": "Many relatives came to the party."
+},
+{
+"word": "adult",
+"phonetic": "/ˈædʌlt/",
+"pos": "noun",
+"vi": "người lớn",
+"en": "a fully grown person",
+"example": "Adults must buy a ticket."
+},
+{
+"word": "teenager",
+"phonetic": "/ˈtiːneɪdʒər/",
+"pos": "noun",
+"vi": "thiếu niên",
+"en": "a person aged 13 to 19",
+"example": "My brother is a teenager."
+},
+{
+"word": "guest",
+"phonetic": "/ɡest/",
+"pos": "noun",
+"vi": "khách",
+"en": "a person invited to your home",
+"example": "We have a guest tonight."
+},
+{
+"word": "member",
+"phonetic": "/ˈmembər/",
+"pos": "noun",
+"vi": "thành viên",
+"en": "a person who belongs to a group",
+"example": "There are five members in my family."
+},
+{
+"word": "elderly",
+"phonetic": "/ˈeldərli/",
+"pos": "adjective",
+"vi": "cao tuổi",
+"en": "old, used politely",
+"example": "She helps elderly people."
+}
+]
+},
+{
+"title": "Đồ ăn & thức uống",
+"level": "A1",
+"category": "Food and drink",
+"words": [
+{
+"word": "bread",
+"phonetic": "/bred/",
+"pos": "noun",
+"vi": "bánh mì",
+"en": "a food made from flour and baked",
+"example": "I eat bread for breakfast."
+},
+{
+"word": "rice",
+"phonetic": "/raɪs/",
+"pos": "noun",
+"vi": "cơm, gạo",
+"en": "small white grains cooked as food",
+"example": "We eat rice every day."
+},
+{
+"word": "egg",
+"phonetic": "/eɡ/",
+"pos": "noun",
+"vi": "trứng",
+"en": "an oval food laid by a hen",
+"example": "She cooked two eggs."
+},
+{
+"word": "milk",
+"phonetic": "/mɪlk/",
+"pos": "noun",
+"vi": "sữa",
+"en": "a white drink from cows",
+"example": "He drinks a glass of milk."
+},
+{
+"word": "water",
+"phonetic": "/ˈwɔːtər/",
+"pos": "noun",
+"vi": "nước",
+"en": "a clear liquid we drink",
+"example": "Please give me some water."
+},
+{
+"word": "coffee",
+"phonetic": "/ˈkɔːfi/",
+"pos": "noun",
+"vi": "cà phê",
+"en": "a hot brown drink",
+"example": "I drink coffee in the morning."
+},
+{
+"word": "tea",
+"phonetic": "/tiː/",
+"pos": "noun",
+"vi": "trà",
+"en": "a hot drink made from leaves",
+"example": "Would you like some tea?"
+},
+{
+"word": "juice",
+"phonetic": "/dʒuːs/",
+"pos": "noun",
+"vi": "nước ép",
+"en": "a drink made from fruit",
+"example": "I prefer orange juice."
+},
+{
+"word": "apple",
+"phonetic": "/ˈæpl/",
+"pos": "noun",
+"vi": "quả táo",
+"en": "a round red or green fruit",
+"example": "An apple a day is good for you."
+},
+{
+"word": "banana",
+"phonetic": "/bəˈnænə/",
+"pos": "noun",
+"vi": "quả chuối",
+"en": "a long yellow fruit",
+"example": "The monkey ate a banana."
+},
+{
+"word": "orange",
+"phonetic": "/ˈɒrɪndʒ/",
+"pos": "noun",
+"vi": "quả cam",
+"en": "a round orange fruit",
+"example": "She peeled an orange."
+},
+{
+"word": "potato",
+"phonetic": "/pəˈteɪtoʊ/",
+"pos": "noun",
+"vi": "khoai tây",
+"en": "a round vegetable from the ground",
+"example": "He likes fried potatoes."
+},
+{
+"word": "tomato",
+"phonetic": "/təˈmeɪtoʊ/",
+"pos": "noun",
+"vi": "cà chua",
+"en": "a soft red fruit used as a vegetable",
+"example": "Add a tomato to the salad."
+},
+{
+"word": "carrot",
+"phonetic": "/ˈkærət/",
+"pos": "noun",
+"vi": "cà rốt",
+"en": "a long orange vegetable",
+"example": "Rabbits like carrots."
+},
+{
+"word": "chicken",
+"phonetic": "/ˈtʃɪkɪn/",
+"pos": "noun",
+"vi": "thịt gà, con gà",
+"en": "a bird kept for meat and eggs",
+"example": "We had chicken for lunch."
+},
+{
+"word": "beef",
+"phonetic": "/biːf/",
+"pos": "noun",
+"vi": "thịt bò",
+"en": "meat from a cow",
+"example": "She cooks beef with onions."
+},
+{
+"word": "fish",
+"phonetic": "/fɪʃ/",
+"pos": "noun",
+"vi": "cá",
+"en": "an animal that lives in water",
+"example": "My father catches fish on Sundays."
+},
+{
+"word": "soup",
+"phonetic": "/suːp/",
+"pos": "noun",
+"vi": "súp, canh",
+"en": "a liquid food eaten hot",
+"example": "The soup is too hot."
+},
+{
+"word": "salad",
+"phonetic": "/ˈsæləd/",
+"pos": "noun",
+"vi": "rau trộn",
+"en": "a dish of raw vegetables",
+"example": "I ordered a green salad."
+},
+{
+"word": "sandwich",
+"phonetic": "/ˈsænwɪtʃ/",
+"pos": "noun",
+"vi": "bánh mì kẹp",
+"en": "two slices of bread with food inside",
+"example": "He made a cheese sandwich."
+},
+{
+"word": "cake",
+"phonetic": "/keɪk/",
+"pos": "noun",
+"vi": "bánh ngọt",
+"en": "a sweet baked food",
+"example": "We ate birthday cake."
+},
+{
+"word": "sugar",
+"phonetic": "/ˈʃʊɡər/",
+"pos": "noun",
+"vi": "đường",
+"en": "a sweet white substance",
+"example": "I don't take sugar in my tea."
+},
+{
+"word": "salt",
+"phonetic": "/sɔːlt/",
+"pos": "noun",
+"vi": "muối",
+"en": "a white substance that adds flavor",
+"example": "Pass me the salt, please."
+},
+{
+"word": "breakfast",
+"phonetic": "/ˈbrekfəst/",
+"pos": "noun",
+"vi": "bữa sáng",
+"en": "the first meal of the day",
+"example": "I have breakfast at seven."
+},
+{
+"word": "lunch",
+"phonetic": "/lʌntʃ/",
+"pos": "noun",
+"vi": "bữa trưa",
+"en": "the meal in the middle of the day",
+"example": "We eat lunch at school."
+},
+{
+"word": "dinner",
+"phonetic": "/ˈdɪnər/",
+"pos": "noun",
+"vi": "bữa tối",
+"en": "the main evening meal",
+"example": "Dinner is ready."
+},
+{
+"word": "hungry",
+"phonetic": "/ˈhʌŋɡri/",
+"pos": "adjective",
+"vi": "đói",
+"en": "wanting to eat",
+"example": "I am very hungry."
+},
+{
+"word": "delicious",
+"phonetic": "/dɪˈlɪʃəs/",
+"pos": "adjective",
+"vi": "ngon",
+"en": "tasting very good",
+"example": "This soup is delicious."
+},
+{
+"word": "cook",
+"phonetic": "/kʊk/",
+"pos": "verb",
+"vi": "nấu ăn",
+"en": "to prepare food by heating",
+"example": "She cooks dinner every night."
+},
+{
+"word": "drink",
+"phonetic": "/drɪŋk/",
+"pos": "verb",
+"vi": "uống",
+"en": "to take liquid into your mouth",
+"example": "Drink more water."
+},
+{
+"word": "menu",
+"phonetic": "/ˈmenjuː/",
+"pos": "noun",
+"vi": "thực đơn",
+"en": "a list of food in a restaurant",
+"example": "Can I see the menu?"
+}
+]
+},
+{
+"title": "Nhà cửa & đồ dùng",
+"level": "A1",
+"category": "Home and household",
+"words": [
+{
+"word": "house",
+"phonetic": "/haʊs/",
+"pos": "noun",
+"vi": "ngôi nhà",
+"en": "a building where people live",
+"example": "They live in a big house."
+},
+{
+"word": "apartment",
+"phonetic": "/əˈpɑːrtmənt/",
+"pos": "noun",
+"vi": "căn hộ",
+"en": "a set of rooms in a building",
+"example": "We rent a small apartment."
+},
+{
+"word": "room",
+"phonetic": "/ruːm/",
+"pos": "noun",
+"vi": "phòng",
+"en": "a part of a building with walls",
+"example": "My room is on the second floor."
+},
+{
+"word": "kitchen",
+"phonetic": "/ˈkɪtʃɪn/",
+"pos": "noun",
+"vi": "nhà bếp",
+"en": "a room where food is cooked",
+"example": "Mom is in the kitchen."
+},
+{
+"word": "bedroom",
+"phonetic": "/ˈbedruːm/",
+"pos": "noun",
+"vi": "phòng ngủ",
+"en": "a room for sleeping",
+"example": "My bedroom is quiet."
+},
+{
+"word": "bathroom",
+"phonetic": "/ˈbæθruːm/",
+"pos": "noun",
+"vi": "phòng tắm",
+"en": "a room with a bath or shower",
+"example": "The bathroom is next to my room."
+},
+{
+"word": "living room",
+"phonetic": "/ˈlɪvɪŋ ruːm/",
+"pos": "noun",
+"vi": "phòng khách",
+"en": "a room for sitting and relaxing",
+"example": "We watch TV in the living room."
+},
+{
+"word": "garden",
+"phonetic": "/ˈɡɑːrdn/",
+"pos": "noun",
+"vi": "vườn",
+"en": "a piece of land with plants",
+"example": "She grows flowers in the garden."
+},
+{
+"word": "door",
+"phonetic": "/dɔːr/",
+"pos": "noun",
+"vi": "cửa ra vào",
+"en": "a thing you open to enter a room",
+"example": "Please close the door."
+},
+{
+"word": "window",
+"phonetic": "/ˈwɪndoʊ/",
+"pos": "noun",
+"vi": "cửa sổ",
+"en": "an opening in a wall with glass",
+"example": "He opened the window."
+},
+{
+"word": "floor",
+"phonetic": "/flɔːr/",
+"pos": "noun",
+"vi": "sàn nhà, tầng",
+"en": "the surface you walk on",
+"example": "The floor is clean."
+},
+{
+"word": "wall",
+"phonetic": "/wɔːl/",
+"pos": "noun",
+"vi": "bức tường",
+"en": "a side of a room",
+"example": "There is a picture on the wall."
+},
+{
+"word": "roof",
+"phonetic": "/ruːf/",
+"pos": "noun",
+"vi": "mái nhà",
+"en": "the top of a building",
+"example": "The cat is on the roof."
+},
+{
+"word": "table",
+"phonetic": "/ˈteɪbl/",
+"pos": "noun",
+"vi": "cái bàn",
+"en": "a piece of furniture with a flat top",
+"example": "The books are on the table."
+},
+{
+"word": "chair",
+"phonetic": "/tʃeər/",
+"pos": "noun",
+"vi": "cái ghế",
+"en": "a seat for one person",
+"example": "Sit on this chair."
+},
+{
+"word": "bed",
+"phonetic": "/bed/",
+"pos": "noun",
+"vi": "cái giường",
+"en": "a piece of furniture for sleeping",
+"example": "I go to bed at ten."
+},
+{
+"word": "sofa",
+"phonetic": "/ˈsoʊfə/",
+"pos": "noun",
+"vi": "ghế sofa",
+"en": "a long soft seat",
+"example": "The cat sleeps on the sofa."
+},
+{
+"word": "lamp",
+"phonetic": "/læmp/",
+"pos": "noun",
+"vi": "đèn",
+"en": "a light you can move",
+"example": "Turn on the lamp."
+},
+{
+"word": "fridge",
+"phonetic": "/frɪdʒ/",
+"pos": "noun",
+"vi": "tủ lạnh",
+"en": "a machine that keeps food cold",
+"example": "Put the milk in the fridge."
+},
+{
+"word": "television",
+"phonetic": "/ˈtelɪvɪʒn/",
+"pos": "noun",
+"vi": "tivi",
+"en": "a machine that shows programs",
+"example": "We bought a new television."
+},
+{
+"word": "clock",
+"phonetic": "/klɑːk/",
+"pos": "noun",
+"vi": "đồng hồ treo tường",
+"en": "a machine that shows the time",
+"example": "The clock is on the wall."
+},
+{
+"word": "mirror",
+"phonetic": "/ˈmɪrər/",
+"pos": "noun",
+"vi": "cái gương",
+"en": "a glass you can see yourself in",
+"example": "She looked in the mirror."
+},
+{
+"word": "key",
+"phonetic": "/kiː/",
+"pos": "noun",
+"vi": "chìa khóa",
+"en": "a small tool for opening a lock",
+"example": "I lost my key."
+},
+{
+"word": "cup",
+"phonetic": "/kʌp/",
+"pos": "noun",
+"vi": "cái tách",
+"en": "a small container for drinks",
+"example": "He holds a cup of tea."
+},
+{
+"word": "plate",
+"phonetic": "/pleɪt/",
+"pos": "noun",
+"vi": "cái đĩa",
+"en": "a flat dish for food",
+"example": "Wash the plates, please."
+},
+{
+"word": "spoon",
+"phonetic": "/spuːn/",
+"pos": "noun",
+"vi": "cái thìa",
+"en": "a tool for eating soup",
+"example": "Use a spoon for the soup."
+},
+{
+"word": "knife",
+"phonetic": "/naɪf/",
+"pos": "noun",
+"vi": "con dao",
+"en": "a tool for cutting",
+"example": "Be careful with the knife."
+},
+{
+"word": "clean",
+"phonetic": "/kliːn/",
+"pos": "adjective",
+"vi": "sạch",
+"en": "not dirty",
+"example": "My room is clean."
+},
+{
+"word": "dirty",
+"phonetic": "/ˈdɜːrti/",
+"pos": "adjective",
+"vi": "bẩn",
+"en": "not clean",
+"example": "The shoes are dirty."
+},
+{
+"word": "wash",
+"phonetic": "/wɑːʃ/",
+"pos": "verb",
+"vi": "rửa, giặt",
+"en": "to clean with water",
+"example": "I wash my hands before eating."
+},
+{
+"word": "sleep",
+"phonetic": "/sliːp/",
+"pos": "verb",
+"vi": "ngủ",
+"en": "to rest with your eyes closed",
+"example": "Babies sleep a lot."
+}
+]
+},
+{
+"title": "Trường học & học tập",
+"level": "A1",
+"category": "School and study",
+"words": [
+{
+"word": "school",
+"phonetic": "/skuːl/",
+"pos": "noun",
+"vi": "trường học",
+"en": "a place where children learn",
+"example": "I go to school by bike."
+},
+{
+"word": "student",
+"phonetic": "/ˈstuːdnt/",
+"pos": "noun",
+"vi": "học sinh, sinh viên",
+"en": "a person who studies",
+"example": "She is a good student."
+},
+{
+"word": "teacher",
+"phonetic": "/ˈtiːtʃər/",
+"pos": "noun",
+"vi": "giáo viên",
+"en": "a person who teaches",
+"example": "Our teacher is very kind."
+},
+{
+"word": "classroom",
+"phonetic": "/ˈklæsruːm/",
+"pos": "noun",
+"vi": "lớp học",
+"en": "a room where lessons are held",
+"example": "The classroom is big."
+},
+{
+"word": "lesson",
+"phonetic": "/ˈlesn/",
+"pos": "noun",
+"vi": "bài học",
+"en": "a period of teaching",
+"example": "The lesson starts at eight."
+},
+{
+"word": "homework",
+"phonetic": "/ˈhoʊmwɜːrk/",
+"pos": "noun",
+"vi": "bài tập về nhà",
+"en": "school work done at home",
+"example": "I finish my homework after dinner."
+},
+{
+"word": "exam",
+"phonetic": "/ɪɡˈzæm/",
+"pos": "noun",
+"vi": "kỳ thi",
+"en": "a test of knowledge",
+"example": "The exam is next week."
+},
+{
+"word": "test",
+"phonetic": "/test/",
+"pos": "noun",
+"vi": "bài kiểm tra",
+"en": "a short exam",
+"example": "We have a test on Friday."
+},
+{
+"word": "question",
+"phonetic": "/ˈkwestʃən/",
+"pos": "noun",
+"vi": "câu hỏi",
+"en": "a sentence that asks something",
+"example": "Can I ask a question?"
+},
+{
+"word": "answer",
+"phonetic": "/ˈænsər/",
+"pos": "noun",
+"vi": "câu trả lời",
+"en": "something you say to reply",
+"example": "Do you know the answer?"
+},
+{
+"word": "book",
+"phonetic": "/bʊk/",
+"pos": "noun",
+"vi": "quyển sách",
+"en": "a set of printed pages",
+"example": "She is reading a book."
+},
+{
+"word": "notebook",
+"phonetic": "/ˈnoʊtbʊk/",
+"pos": "noun",
+"vi": "vở, sổ tay",
+"en": "a book for writing notes",
+"example": "I write words in my notebook."
+},
+{
+"word": "pen",
+"phonetic": "/pen/",
+"pos": "noun",
+"vi": "bút mực",
+"en": "a tool for writing with ink",
+"example": "May I borrow your pen?"
+},
+{
+"word": "pencil",
+"phonetic": "/ˈpensl/",
+"pos": "noun",
+"vi": "bút chì",
+"en": "a tool for writing or drawing",
+"example": "He drew with a pencil."
+},
+{
+"word": "dictionary",
+"phonetic": "/ˈdɪkʃəneri/",
+"pos": "noun",
+"vi": "từ điển",
+"en": "a book that explains words",
+"example": "Look it up in the dictionary."
+},
+{
+"word": "subject",
+"phonetic": "/ˈsʌbdʒɪkt/",
+"pos": "noun",
+"vi": "môn học",
+"en": "an area of study",
+"example": "My favorite subject is English."
+},
+{
+"word": "library",
+"phonetic": "/ˈlaɪbreri/",
+"pos": "noun",
+"vi": "thư viện",
+"en": "a place with many books",
+"example": "We study in the library."
+},
+{
+"word": "university",
+"phonetic": "/ˌjuːnɪˈvɜːrsəti/",
+"pos": "noun",
+"vi": "trường đại học",
+"en": "a place for higher education",
+"example": "He studies at a university."
+},
+{
+"word": "mathematics",
+"phonetic": "/ˌmæθəˈmætɪks/",
+"pos": "noun",
+"vi": "môn toán",
+"en": "the study of numbers",
+"example": "Mathematics is difficult for me."
+},
+{
+"word": "history",
+"phonetic": "/ˈhɪstri/",
+"pos": "noun",
+"vi": "lịch sử",
+"en": "the study of the past",
+"example": "We learn history on Tuesdays."
+},
+{
+"word": "science",
+"phonetic": "/ˈsaɪəns/",
+"pos": "noun",
+"vi": "khoa học",
+"en": "the study of the natural world",
+"example": "Science is interesting."
+},
+{
+"word": "grade",
+"phonetic": "/ɡreɪd/",
+"pos": "noun",
+"vi": "điểm số, lớp",
+"en": "a mark or a school year",
+"example": "She got a good grade."
+},
+{
+"word": "learn",
+"phonetic": "/lɜːrn/",
+"pos": "verb",
+"vi": "học, học được",
+"en": "to get knowledge or skill",
+"example": "I learn ten new words a day."
+},
+{
+"word": "study",
+"phonetic": "/ˈstʌdi/",
+"pos": "verb",
+"vi": "học, nghiên cứu",
+"en": "to spend time learning",
+"example": "They study together."
+},
+{
+"word": "teach",
+"phonetic": "/tiːtʃ/",
+"pos": "verb",
+"vi": "dạy",
+"en": "to help others learn",
+"example": "She teaches English."
+},
+{
+"word": "read",
+"phonetic": "/riːd/",
+"pos": "verb",
+"vi": "đọc",
+"en": "to look at words and understand them",
+"example": "I read before bed."
+},
+{
+"word": "write",
+"phonetic": "/raɪt/",
+"pos": "verb",
+"vi": "viết",
+"en": "to make letters or words",
+"example": "Write your name here."
+},
+{
+"word": "listen",
+"phonetic": "/ˈlɪsn/",
+"pos": "verb",
+"vi": "nghe",
+"en": "to pay attention to a sound",
+"example": "Listen to the teacher."
+},
+{
+"word": "practice",
+"phonetic": "/ˈpræktɪs/",
+"pos": "verb",
+"vi": "luyện tập",
+"en": "to do something again to improve",
+"example": "You should practice every day."
+},
+{
+"word": "remember",
+"phonetic": "/rɪˈmembər/",
+"pos": "verb",
+"vi": "nhớ",
+"en": "to keep in your mind",
+"example": "I can't remember his name."
+}
+]
+},
+{
+"title": "Công việc & nghề nghiệp",
+"level": "A2",
+"category": "Work and jobs",
+"words": [
+{
+"word": "job",
+"phonetic": "/dʒɑːb/",
+"pos": "noun",
+"vi": "công việc",
+"en": "work you do for money",
+"example": "He is looking for a job."
+},
+{
+"word": "work",
+"phonetic": "/wɜːrk/",
+"pos": "noun",
+"vi": "công việc, làm việc",
+"en": "activity done for a purpose or pay",
+"example": "I start work at nine."
+},
+{
+"word": "office",
+"phonetic": "/ˈɑːfɪs/",
+"pos": "noun",
+"vi": "văn phòng",
+"en": "a place where people work at desks",
+"example": "She works in an office."
+},
+{
+"word": "company",
+"phonetic": "/ˈkʌmpəni/",
+"pos": "noun",
+"vi": "công ty",
+"en": "a business that sells things",
+"example": "He works for a big company."
+},
+{
+"word": "manager",
+"phonetic": "/ˈmænɪdʒər/",
+"pos": "noun",
+"vi": "quản lý",
+"en": "a person who controls a team",
+"example": "The manager called a meeting."
+},
+{
+"word": "doctor",
+"phonetic": "/ˈdɑːktər/",
+"pos": "noun",
+"vi": "bác sĩ",
+"en": "a person who treats sick people",
+"example": "The doctor checked my health."
+},
+{
+"word": "nurse",
+"phonetic": "/nɜːrs/",
+"pos": "noun",
+"vi": "y tá",
+"en": "a person who cares for patients",
+"example": "The nurse was very gentle."
+},
+{
+"word": "engineer",
+"phonetic": "/ˌendʒɪˈnɪr/",
+"pos": "noun",
+"vi": "kỹ sư",
+"en": "a person who designs machines",
+"example": "My uncle is an engineer."
+},
+{
+"word": "farmer",
+"phonetic": "/ˈfɑːrmər/",
+"pos": "noun",
+"vi": "nông dân",
+"en": "a person who grows crops",
+"example": "The farmer gets up early."
+},
+{
+"word": "driver",
+"phonetic": "/ˈdraɪvər/",
+"pos": "noun",
+"vi": "tài xế",
+"en": "a person who drives",
+"example": "The taxi driver was friendly."
+},
+{
+"word": "waiter",
+"phonetic": "/ˈweɪtər/",
+"pos": "noun",
+"vi": "bồi bàn",
+"en": "a man who serves food",
+"example": "The waiter brought the menu."
+},
+{
+"word": "police officer",
+"phonetic": "/pəˈliːs ˈɑːfɪsər/",
+"pos": "noun",
+"vi": "cảnh sát",
+"en": "a person who protects the public",
+"example": "A police officer helped us."
+},
+{
+"word": "lawyer",
+"phonetic": "/ˈlɔɪər/",
+"pos": "noun",
+"vi": "luật sư",
+"en": "a person who gives legal advice",
+"example": "She wants to be a lawyer."
+},
+{
+"word": "artist",
+"phonetic": "/ˈɑːrtɪst/",
+"pos": "noun",
+"vi": "nghệ sĩ",
+"en": "a person who makes art",
+"example": "The artist painted a portrait."
+},
+{
+"word": "singer",
+"phonetic": "/ˈsɪŋər/",
+"pos": "noun",
+"vi": "ca sĩ",
+"en": "a person who sings",
+"example": "The singer has a lovely voice."
+},
+{
+"word": "salary",
+"phonetic": "/ˈsæləri/",
+"pos": "noun",
+"vi": "lương",
+"en": "money paid for work each month",
+"example": "His salary is good."
+},
+{
+"word": "meeting",
+"phonetic": "/ˈmiːtɪŋ/",
+"pos": "noun",
+"vi": "cuộc họp",
+"en": "an event where people discuss things",
+"example": "The meeting lasts one hour."
+},
+{
+"word": "colleague",
+"phonetic": "/ˈkɑːliːɡ/",
+"pos": "noun",
+"vi": "đồng nghiệp",
+"en": "a person you work with",
+"example": "My colleagues are helpful."
+},
+{
+"word": "customer",
+"phonetic": "/ˈkʌstəmər/",
+"pos": "noun",
+"vi": "khách hàng",
+"en": "a person who buys things",
+"example": "The customer asked for a refund."
+},
+{
+"word": "boss",
+"phonetic": "/bɔːs/",
+"pos": "noun",
+"vi": "sếp",
+"en": "the person in charge",
+"example": "My boss is strict."
+},
+{
+"word": "interview",
+"phonetic": "/ˈɪntərvjuː/",
+"pos": "noun",
+"vi": "buổi phỏng vấn",
+"en": "a formal meeting for a job",
+"example": "I have an interview tomorrow."
+},
+{
+"word": "experience",
+"phonetic": "/ɪkˈspɪriəns/",
+"pos": "noun",
+"vi": "kinh nghiệm",
+"en": "knowledge from doing something",
+"example": "She has five years of experience."
+},
+{
+"word": "career",
+"phonetic": "/kəˈrɪr/",
+"pos": "noun",
+"vi": "sự nghiệp",
+"en": "a job you do for a long time",
+"example": "He wants a career in medicine."
+},
+{
+"word": "employ",
+"phonetic": "/ɪmˈplɔɪ/",
+"pos": "verb",
+"vi": "thuê, tuyển dụng",
+"en": "to pay someone to work",
+"example": "The shop employs ten people."
+},
+{
+"word": "earn",
+"phonetic": "/ɜːrn/",
+"pos": "verb",
+"vi": "kiếm được",
+"en": "to receive money for work",
+"example": "She earns a lot of money."
+},
+{
+"word": "apply",
+"phonetic": "/əˈplaɪ/",
+"pos": "verb",
+"vi": "nộp đơn, ứng tuyển",
+"en": "to ask formally for a job",
+"example": "I want to apply for this job."
+},
+{
+"word": "retire",
+"phonetic": "/rɪˈtaɪər/",
+"pos": "verb",
+"vi": "nghỉ hưu",
+"en": "to stop working because of age",
+"example": "He will retire next year."
+},
+{
+"word": "busy",
+"phonetic": "/ˈbɪzi/",
+"pos": "adjective",
+"vi": "bận rộn",
+"en": "having a lot to do",
+"example": "I am busy today."
+},
+{
+"word": "successful",
+"phonetic": "/səkˈsesfl/",
+"pos": "adjective",
+"vi": "thành công",
+"en": "achieving what you want",
+"example": "She is a successful writer."
+}
+]
+},
+{
+"title": "Du lịch & giao thông",
+"level": "A2",
+"category": "Travel and transport",
+"words": [
+{
+"word": "travel",
+"phonetic": "/ˈtrævl/",
+"pos": "verb",
+"vi": "đi du lịch",
+"en": "to go from one place to another",
+"example": "I love to travel."
+},
+{
+"word": "trip",
+"phonetic": "/trɪp/",
+"pos": "noun",
+"vi": "chuyến đi",
+"en": "a journey to a place",
+"example": "We took a trip to Da Nang."
+},
+{
+"word": "holiday",
+"phonetic": "/ˈhɑːlədeɪ/",
+"pos": "noun",
+"vi": "kỳ nghỉ",
+"en": "a time away from work or school",
+"example": "We spent our holiday at the beach."
+},
+{
+"word": "tourist",
+"phonetic": "/ˈtʊrɪst/",
+"pos": "noun",
+"vi": "khách du lịch",
+"en": "a person who visits places for fun",
+"example": "Many tourists visit Hanoi."
+},
+{
+"word": "passport",
+"phonetic": "/ˈpæspɔːrt/",
+"pos": "noun",
+"vi": "hộ chiếu",
+"en": "an official document for travel",
+"example": "Don't forget your passport."
+},
+{
+"word": "ticket",
+"phonetic": "/ˈtɪkɪt/",
+"pos": "noun",
+"vi": "vé",
+"en": "a paper that lets you travel or enter",
+"example": "I bought two train tickets."
+},
+{
+"word": "luggage",
+"phonetic": "/ˈlʌɡɪdʒ/",
+"pos": "noun",
+"vi": "hành lý",
+"en": "bags you take on a trip",
+"example": "My luggage is heavy."
+},
+{
+"word": "suitcase",
+"phonetic": "/ˈsuːtkeɪs/",
+"pos": "noun",
+"vi": "va li",
+"en": "a case for carrying clothes",
+"example": "She packed her suitcase."
+},
+{
+"word": "airport",
+"phonetic": "/ˈerpɔːrt/",
+"pos": "noun",
+"vi": "sân bay",
+"en": "a place where planes take off",
+"example": "We arrived at the airport early."
+},
+{
+"word": "airplane",
+"phonetic": "/ˈerpleɪn/",
+"pos": "noun",
+"vi": "máy bay",
+"en": "a vehicle that flies",
+"example": "The airplane landed safely."
+},
+{
+"word": "train",
+"phonetic": "/treɪn/",
+"pos": "noun",
+"vi": "tàu hỏa",
+"en": "a long vehicle on rails",
+"example": "The train leaves at six."
+},
+{
+"word": "station",
+"phonetic": "/ˈsteɪʃn/",
+"pos": "noun",
+"vi": "nhà ga, trạm",
+"en": "a place where trains or buses stop",
+"example": "Meet me at the station."
+},
+{
+"word": "bus",
+"phonetic": "/bʌs/",
+"pos": "noun",
+"vi": "xe buýt",
+"en": "a large vehicle for many people",
+"example": "I take the bus to work."
+},
+{
+"word": "taxi",
+"phonetic": "/ˈtæksi/",
+"pos": "noun",
+"vi": "xe taxi",
+"en": "a car with a driver you pay",
+"example": "Let's take a taxi."
+},
+{
+"word": "bicycle",
+"phonetic": "/ˈbaɪsɪkl/",
+"pos": "noun",
+"vi": "xe đạp",
+"en": "a vehicle with two wheels",
+"example": "He rides a bicycle to school."
+},
+{
+"word": "motorbike",
+"phonetic": "/ˈmoʊtərbaɪk/",
+"pos": "noun",
+"vi": "xe máy",
+"en": "a two-wheeled vehicle with an engine",
+"example": "Many people use motorbikes."
+},
+{
+"word": "car",
+"phonetic": "/kɑːr/",
+"pos": "noun",
+"vi": "ô tô",
+"en": "a road vehicle with four wheels",
+"example": "My father drives a new car."
+},
+{
+"word": "ship",
+"phonetic": "/ʃɪp/",
+"pos": "noun",
+"vi": "tàu thủy",
+"en": "a large boat",
+"example": "The ship sailed at noon."
+},
+{
+"word": "hotel",
+"phonetic": "/hoʊˈtel/",
+"pos": "noun",
+"vi": "khách sạn",
+"en": "a place where you pay to stay",
+"example": "We stayed in a small hotel."
+},
+{
+"word": "reservation",
+"phonetic": "/ˌrezərˈveɪʃn/",
+"pos": "noun",
+"vi": "sự đặt chỗ",
+"en": "an arrangement to keep a place",
+"example": "I made a reservation online."
+},
+{
+"word": "map",
+"phonetic": "/mæp/",
+"pos": "noun",
+"vi": "bản đồ",
+"en": "a drawing of an area",
+"example": "Look at the map."
+},
+{
+"word": "road",
+"phonetic": "/roʊd/",
+"pos": "noun",
+"vi": "con đường",
+"en": "a hard way for vehicles",
+"example": "The road is busy."
+},
+{
+"word": "bridge",
+"phonetic": "/brɪdʒ/",
+"pos": "noun",
+"vi": "cây cầu",
+"en": "a structure over water or a road",
+"example": "We crossed the bridge."
+},
+{
+"word": "journey",
+"phonetic": "/ˈdʒɜːrni/",
+"pos": "noun",
+"vi": "hành trình",
+"en": "a long trip",
+"example": "The journey took ten hours."
+},
+{
+"word": "arrive",
+"phonetic": "/əˈraɪv/",
+"pos": "verb",
+"vi": "đến nơi",
+"en": "to reach a place",
+"example": "The plane arrives at noon."
+},
+{
+"word": "leave",
+"phonetic": "/liːv/",
+"pos": "verb",
+"vi": "rời đi",
+"en": "to go away from a place",
+"example": "We leave at seven."
+},
+{
+"word": "abroad",
+"phonetic": "/əˈbrɔːd/",
+"pos": "adverb",
+"vi": "ở nước ngoài",
+"en": "in or to another country",
+"example": "She studies abroad."
+},
+{
+"word": "late",
+"phonetic": "/leɪt/",
+"pos": "adjective",
+"vi": "muộn, trễ",
+"en": "after the expected time",
+"example": "The train is late."
+},
+{
+"word": "safe",
+"phonetic": "/seɪf/",
+"pos": "adjective",
+"vi": "an toàn",
+"en": "not in danger",
+"example": "The city is safe."
+}
+]
+},
+{
+"title": "Mua sắm & tiền bạc",
+"level": "A2",
+"category": "Shopping and money",
+"words": [
+{
+"word": "shop",
+"phonetic": "/ʃɑːp/",
+"pos": "noun",
+"vi": "cửa hàng",
+"en": "a place that sells things",
+"example": "The shop opens at nine."
+},
+{
+"word": "market",
+"phonetic": "/ˈmɑːrkɪt/",
+"pos": "noun",
+"vi": "chợ",
+"en": "a place to buy and sell goods",
+"example": "We buy fruit at the market."
+},
+{
+"word": "supermarket",
+"phonetic": "/ˈsuːpərmɑːrkɪt/",
+"pos": "noun",
+"vi": "siêu thị",
+"en": "a large shop selling food",
+"example": "I go to the supermarket on Sundays."
+},
+{
+"word": "price",
+"phonetic": "/praɪs/",
+"pos": "noun",
+"vi": "giá",
+"en": "the amount of money to pay",
+"example": "What is the price of this shirt?"
+},
+{
+"word": "money",
+"phonetic": "/ˈmʌni/",
+"pos": "noun",
+"vi": "tiền",
+"en": "coins and notes used to pay",
+"example": "I don't have enough money."
+},
+{
+"word": "cash",
+"phonetic": "/kæʃ/",
+"pos": "noun",
+"vi": "tiền mặt",
+"en": "money in coins or notes",
+"example": "Do you pay in cash?"
+},
+{
+"word": "credit card",
+"phonetic": "/ˈkredɪt kɑːrd/",
+"pos": "noun",
+"vi": "thẻ tín dụng",
+"en": "a plastic card used to pay",
+"example": "Can I use a credit card?"
+},
+{
+"word": "bank",
+"phonetic": "/bæŋk/",
+"pos": "noun",
+"vi": "ngân hàng",
+"en": "a place that keeps money",
+"example": "I need to go to the bank."
+},
+{
+"word": "discount",
+"phonetic": "/ˈdɪskaʊnt/",
+"pos": "noun",
+"vi": "giảm giá",
+"en": "a lower price",
+"example": "There is a ten percent discount."
+},
+{
+"word": "sale",
+"phonetic": "/seɪl/",
+"pos": "noun",
+"vi": "đợt giảm giá",
+"en": "a time when prices are lower",
+"example": "The shoes are on sale."
+},
+{
+"word": "receipt",
+"phonetic": "/rɪˈsiːt/",
+"pos": "noun",
+"vi": "hóa đơn",
+"en": "a paper that shows you paid",
+"example": "Keep the receipt."
+},
+{
+"word": "bag",
+"phonetic": "/bæɡ/",
+"pos": "noun",
+"vi": "túi",
+"en": "a container for carrying things",
+"example": "She carries a heavy bag."
+},
+{
+"word": "size",
+"phonetic": "/saɪz/",
+"pos": "noun",
+"vi": "kích cỡ",
+"en": "how big something is",
+"example": "What size do you wear?"
+},
+{
+"word": "color",
+"phonetic": "/ˈkʌlər/",
+"pos": "noun",
+"vi": "màu sắc",
+"en": "red, blue, green, etc.",
+"example": "What color do you like?"
+},
+{
+"word": "gift",
+"phonetic": "/ɡɪft/",
+"pos": "noun",
+"vi": "món quà",
+"en": "something you give to someone",
+"example": "I bought a gift for her."
+},
+{
+"word": "cheap",
+"phonetic": "/tʃiːp/",
+"pos": "adjective",
+"vi": "rẻ",
+"en": "low in price",
+"example": "This bag is cheap."
+},
+{
+"word": "expensive",
+"phonetic": "/ɪkˈspensɪv/",
+"pos": "adjective",
+"vi": "đắt",
+"en": "high in price",
+"example": "The watch is too expensive."
+},
+{
+"word": "free",
+"phonetic": "/friː/",
+"pos": "adjective",
+"vi": "miễn phí",
+"en": "costing no money",
+"example": "The ticket is free."
+},
+{
+"word": "open",
+"phonetic": "/ˈoʊpn/",
+"pos": "adjective",
+"vi": "mở cửa",
+"en": "not closed",
+"example": "The shop is open now."
+},
+{
+"word": "closed",
+"phonetic": "/kloʊzd/",
+"pos": "adjective",
+"vi": "đóng cửa",
+"en": "not open",
+"example": "The bank is closed on Sunday."
+},
+{
+"word": "buy",
+"phonetic": "/baɪ/",
+"pos": "verb",
+"vi": "mua",
+"en": "to get something by paying",
+"example": "I want to buy a new phone."
+},
+{
+"word": "sell",
+"phonetic": "/sel/",
+"pos": "verb",
+"vi": "bán",
+"en": "to give something for money",
+"example": "They sell fresh bread."
+},
+{
+"word": "pay",
+"phonetic": "/peɪ/",
+"pos": "verb",
+"vi": "trả tiền",
+"en": "to give money for something",
+"example": "I'll pay for the tickets."
+},
+{
+"word": "spend",
+"phonetic": "/spend/",
+"pos": "verb",
+"vi": "tiêu tiền",
+"en": "to use money to buy things",
+"example": "He spends too much money."
+},
+{
+"word": "save",
+"phonetic": "/seɪv/",
+"pos": "verb",
+"vi": "tiết kiệm",
+"en": "to keep money for later",
+"example": "She saves some money every month."
+},
+{
+"word": "cost",
+"phonetic": "/kɔːst/",
+"pos": "verb",
+"vi": "có giá",
+"en": "to have a price",
+"example": "How much does it cost?"
+},
+{
+"word": "choose",
+"phonetic": "/tʃuːz/",
+"pos": "verb",
+"vi": "chọn",
+"en": "to pick from several things",
+"example": "Choose a color."
+},
+{
+"word": "try on",
+"phonetic": "/traɪ ɑːn/",
+"pos": "verb",
+"vi": "mặc thử",
+"en": "to wear clothes to see if they fit",
+"example": "Can I try on this jacket?"
+},
+{
+"word": "afford",
+"phonetic": "/əˈfɔːrd/",
+"pos": "verb",
+"vi": "đủ khả năng chi trả",
+"en": "to have enough money for",
+"example": "I can't afford a new car."
+}
+]
+},
+{
+"title": "Sức khỏe & cơ thể",
+"level": "A2",
+"category": "Health and body",
+"words": [
+{
+"word": "head",
+"phonetic": "/hed/",
+"pos": "noun",
+"vi": "cái đầu",
+"en": "the top part of the body",
+"example": "She has a pain in her head."
+},
+{
+"word": "face",
+"phonetic": "/feɪs/",
+"pos": "noun",
+"vi": "khuôn mặt",
+"en": "the front of the head",
+"example": "Wash your face."
+},
+{
+"word": "eye",
+"phonetic": "/aɪ/",
+"pos": "noun",
+"vi": "con mắt",
+"en": "the part of the body you see with",
+"example": "She has blue eyes."
+},
+{
+"word": "ear",
+"phonetic": "/ɪr/",
+"pos": "noun",
+"vi": "cái tai",
+"en": "the part of the body you hear with",
+"example": "My ears are cold."
+},
+{
+"word": "nose",
+"phonetic": "/noʊz/",
+"pos": "noun",
+"vi": "cái mũi",
+"en": "the part of the face for smelling",
+"example": "He has a runny nose."
+},
+{
+"word": "mouth",
+"phonetic": "/maʊθ/",
+"pos": "noun",
+"vi": "cái miệng",
+"en": "the part of the face you eat with",
+"example": "Open your mouth."
+},
+{
+"word": "tooth",
+"phonetic": "/tuːθ/",
+"pos": "noun",
+"vi": "cái răng",
+"en": "a hard white part in your mouth",
+"example": "I brush my teeth twice a day."
+},
+{
+"word": "hand",
+"phonetic": "/hænd/",
+"pos": "noun",
+"vi": "bàn tay",
+"en": "the part at the end of your arm",
+"example": "Raise your hand."
+},
+{
+"word": "arm",
+"phonetic": "/ɑːrm/",
+"pos": "noun",
+"vi": "cánh tay",
+"en": "the part from shoulder to hand",
+"example": "He broke his arm."
+},
+{
+"word": "leg",
+"phonetic": "/leɡ/",
+"pos": "noun",
+"vi": "cái chân",
+"en": "the part of the body for walking",
+"example": "My legs are tired."
+},
+{
+"word": "foot",
+"phonetic": "/fʊt/",
+"pos": "noun",
+"vi": "bàn chân",
+"en": "the part at the end of your leg",
+"example": "My foot hurts."
+},
+{
+"word": "back",
+"phonetic": "/bæk/",
+"pos": "noun",
+"vi": "lưng",
+"en": "the rear part of the body",
+"example": "I have a pain in my back."
+},
+{
+"word": "stomach",
+"phonetic": "/ˈstʌmək/",
+"pos": "noun",
+"vi": "dạ dày, bụng",
+"en": "the organ that digests food",
+"example": "My stomach hurts."
+},
+{
+"word": "heart",
+"phonetic": "/hɑːrt/",
+"pos": "noun",
+"vi": "trái tim",
+"en": "the organ that pumps blood",
+"example": "Exercise is good for your heart."
+},
+{
+"word": "health",
+"phonetic": "/helθ/",
+"pos": "noun",
+"vi": "sức khỏe",
+"en": "the condition of your body",
+"example": "Health is important."
+},
+{
+"word": "medicine",
+"phonetic": "/ˈmedsn/",
+"pos": "noun",
+"vi": "thuốc",
+"en": "something you take when you are ill",
+"example": "Take this medicine twice a day."
+},
+{
+"word": "hospital",
+"phonetic": "/ˈhɑːspɪtl/",
+"pos": "noun",
+"vi": "bệnh viện",
+"en": "a place where sick people are treated",
+"example": "He is in the hospital."
+},
+{
+"word": "pain",
+"phonetic": "/peɪn/",
+"pos": "noun",
+"vi": "cơn đau",
+"en": "the feeling of being hurt",
+"example": "I have a pain in my leg."
+},
+{
+"word": "fever",
+"phonetic": "/ˈfiːvər/",
+"pos": "noun",
+"vi": "cơn sốt",
+"en": "a high body temperature",
+"example": "The child has a fever."
+},
+{
+"word": "cold",
+"phonetic": "/koʊld/",
+"pos": "noun",
+"vi": "cảm lạnh",
+"en": "a common illness",
+"example": "I caught a cold."
+},
+{
+"word": "cough",
+"phonetic": "/kɔːf/",
+"pos": "noun",
+"vi": "cơn ho",
+"en": "a sudden noise from the throat",
+"example": "She has a bad cough."
+},
+{
+"word": "headache",
+"phonetic": "/ˈhedeɪk/",
+"pos": "noun",
+"vi": "đau đầu",
+"en": "a pain in the head",
+"example": "I have a headache."
+},
+{
+"word": "sick",
+"phonetic": "/sɪk/",
+"pos": "adjective",
+"vi": "ốm, bệnh",
+"en": "not well",
+"example": "He is sick today."
+},
+{
+"word": "healthy",
+"phonetic": "/ˈhelθi/",
+"pos": "adjective",
+"vi": "khỏe mạnh",
+"en": "strong and well",
+"example": "Eat healthy food."
+},
+{
+"word": "tired",
+"phonetic": "/ˈtaɪərd/",
+"pos": "adjective",
+"vi": "mệt",
+"en": "needing rest",
+"example": "I feel tired."
+},
+{
+"word": "hurt",
+"phonetic": "/hɜːrt/",
+"pos": "verb",
+"vi": "đau, làm đau",
+"en": "to feel or cause pain",
+"example": "My head hurts."
+},
+{
+"word": "exercise",
+"phonetic": "/ˈeksərsaɪz/",
+"pos": "verb",
+"vi": "tập thể dục",
+"en": "to do physical activity",
+"example": "I exercise every morning."
+},
+{
+"word": "rest",
+"phonetic": "/rest/",
+"pos": "verb",
+"vi": "nghỉ ngơi",
+"en": "to relax after effort",
+"example": "You should rest."
+},
+{
+"word": "recover",
+"phonetic": "/rɪˈkʌvər/",
+"pos": "verb",
+"vi": "hồi phục",
+"en": "to become well again",
+"example": "She is recovering from the flu."
+},
+{
+"word": "breathe",
+"phonetic": "/briːð/",
+"pos": "verb",
+"vi": "thở",
+"en": "to take air in and out",
+"example": "Breathe slowly."
+}
+]
+},
+{
+"title": "Thời tiết & thiên nhiên",
+"level": "A1",
+"category": "Weather and nature",
+"words": [
+{
+"word": "weather",
+"phonetic": "/ˈweðər/",
+"pos": "noun",
+"vi": "thời tiết",
+"en": "the condition of the air outside",
+"example": "The weather is nice today."
+},
+{
+"word": "sun",
+"phonetic": "/sʌn/",
+"pos": "noun",
+"vi": "mặt trời",
+"en": "the star that gives us light",
+"example": "The sun is bright."
+},
+{
+"word": "rain",
+"phonetic": "/reɪn/",
+"pos": "noun",
+"vi": "mưa",
+"en": "water falling from clouds",
+"example": "The rain stopped."
+},
+{
+"word": "wind",
+"phonetic": "/wɪnd/",
+"pos": "noun",
+"vi": "gió",
+"en": "moving air",
+"example": "The wind is strong."
+},
+{
+"word": "cloud",
+"phonetic": "/klaʊd/",
+"pos": "noun",
+"vi": "đám mây",
+"en": "a white or gray mass in the sky",
+"example": "There are dark clouds."
+},
+{
+"word": "snow",
+"phonetic": "/snoʊ/",
+"pos": "noun",
+"vi": "tuyết",
+"en": "white frozen rain",
+"example": "Children play in the snow."
+},
+{
+"word": "storm",
+"phonetic": "/stɔːrm/",
+"pos": "noun",
+"vi": "cơn bão",
+"en": "bad weather with wind and rain",
+"example": "A storm is coming."
+},
+{
+"word": "temperature",
+"phonetic": "/ˈtemprətʃər/",
+"pos": "noun",
+"vi": "nhiệt độ",
+"en": "how hot or cold something is",
+"example": "The temperature is thirty degrees."
+},
+{
+"word": "season",
+"phonetic": "/ˈsiːzn/",
+"pos": "noun",
+"vi": "mùa",
+"en": "one of four parts of the year",
+"example": "Summer is my favorite season."
+},
+{
+"word": "spring",
+"phonetic": "/sprɪŋ/",
+"pos": "noun",
+"vi": "mùa xuân",
+"en": "the season after winter",
+"example": "Flowers bloom in spring."
+},
+{
+"word": "summer",
+"phonetic": "/ˈsʌmər/",
+"pos": "noun",
+"vi": "mùa hè",
+"en": "the hottest season",
+"example": "We swim in summer."
+},
+{
+"word": "autumn",
+"phonetic": "/ˈɔːtəm/",
+"pos": "noun",
+"vi": "mùa thu",
+"en": "the season after summer",
+"example": "Leaves fall in autumn."
+},
+{
+"word": "winter",
+"phonetic": "/ˈwɪntər/",
+"pos": "noun",
+"vi": "mùa đông",
+"en": "the coldest season",
+"example": "It is cold in winter."
+},
+{
+"word": "tree",
+"phonetic": "/triː/",
+"pos": "noun",
+"vi": "cái cây",
+"en": "a tall plant with a trunk",
+"example": "The bird is in the tree."
+},
+{
+"word": "flower",
+"phonetic": "/ˈflaʊər/",
+"pos": "noun",
+"vi": "bông hoa",
+"en": "the colored part of a plant",
+"example": "She picked a flower."
+},
+{
+"word": "river",
+"phonetic": "/ˈrɪvər/",
+"pos": "noun",
+"vi": "dòng sông",
+"en": "a large natural stream of water",
+"example": "The river is wide."
+},
+{
+"word": "sea",
+"phonetic": "/siː/",
+"pos": "noun",
+"vi": "biển",
+"en": "a large area of salt water",
+"example": "We swim in the sea."
+},
+{
+"word": "beach",
+"phonetic": "/biːtʃ/",
+"pos": "noun",
+"vi": "bãi biển",
+"en": "sandy land beside the sea",
+"example": "The beach is crowded."
+},
+{
+"word": "mountain",
+"phonetic": "/ˈmaʊntn/",
+"pos": "noun",
+"vi": "ngọn núi",
+"en": "a very high hill",
+"example": "They climbed the mountain."
+},
+{
+"word": "forest",
+"phonetic": "/ˈfɔːrɪst/",
+"pos": "noun",
+"vi": "khu rừng",
+"en": "a large area with many trees",
+"example": "We walked in the forest."
+},
+{
+"word": "lake",
+"phonetic": "/leɪk/",
+"pos": "noun",
+"vi": "cái hồ",
+"en": "a large area of water with land around",
+"example": "The lake is calm."
+},
+{
+"word": "sky",
+"phonetic": "/skaɪ/",
+"pos": "noun",
+"vi": "bầu trời",
+"en": "the space above the Earth",
+"example": "The sky is blue."
+},
+{
+"word": "star",
+"phonetic": "/stɑːr/",
+"pos": "noun",
+"vi": "ngôi sao",
+"en": "a bright point in the night sky",
+"example": "I can see many stars."
+},
+{
+"word": "moon",
+"phonetic": "/muːn/",
+"pos": "noun",
+"vi": "mặt trăng",
+"en": "the object that shines at night",
+"example": "The moon is full tonight."
+},
+{
+"word": "hot",
+"phonetic": "/hɑːt/",
+"pos": "adjective",
+"vi": "nóng",
+"en": "having a high temperature",
+"example": "It's hot in July."
+},
+{
+"word": "sunny",
+"phonetic": "/ˈsʌni/",
+"pos": "adjective",
+"vi": "có nắng",
+"en": "full of sunshine",
+"example": "It is a sunny day."
+},
+{
+"word": "rainy",
+"phonetic": "/ˈreɪni/",
+"pos": "adjective",
+"vi": "có mưa",
+"en": "with a lot of rain",
+"example": "It was a rainy week."
+},
+{
+"word": "cloudy",
+"phonetic": "/ˈklaʊdi/",
+"pos": "adjective",
+"vi": "nhiều mây",
+"en": "covered with clouds",
+"example": "Today is cloudy."
+},
+{
+"word": "windy",
+"phonetic": "/ˈwɪndi/",
+"pos": "adjective",
+"vi": "có gió",
+"en": "with a lot of wind",
+"example": "It is windy outside."
+}
+]
+},
+{
+"title": "Cảm xúc & tính cách",
+"level": "A2",
+"category": "Feelings and personality",
+"words": [
+{
+"word": "happy",
+"phonetic": "/ˈhæpi/",
+"pos": "adjective",
+"vi": "vui, hạnh phúc",
+"en": "feeling pleasure",
+"example": "I am happy to see you."
+},
+{
+"word": "sad",
+"phonetic": "/sæd/",
+"pos": "adjective",
+"vi": "buồn",
+"en": "feeling unhappy",
+"example": "She looks sad today."
+},
+{
+"word": "angry",
+"phonetic": "/ˈæŋɡri/",
+"pos": "adjective",
+"vi": "tức giận",
+"en": "feeling strong displeasure",
+"example": "He was angry with me."
+},
+{
+"word": "afraid",
+"phonetic": "/əˈfreɪd/",
+"pos": "adjective",
+"vi": "sợ hãi",
+"en": "feeling fear",
+"example": "I'm afraid of dogs."
+},
+{
+"word": "excited",
+"phonetic": "/ɪkˈsaɪtɪd/",
+"pos": "adjective",
+"vi": "hào hứng",
+"en": "very happy and interested",
+"example": "The kids are excited."
+},
+{
+"word": "bored",
+"phonetic": "/bɔːrd/",
+"pos": "adjective",
+"vi": "chán",
+"en": "not interested",
+"example": "I'm bored with this film."
+},
+{
+"word": "worried",
+"phonetic": "/ˈwɜːrid/",
+"pos": "adjective",
+"vi": "lo lắng",
+"en": "anxious about something",
+"example": "She is worried about the exam."
+},
+{
+"word": "nervous",
+"phonetic": "/ˈnɜːrvəs/",
+"pos": "adjective",
+"vi": "hồi hộp",
+"en": "a little afraid or anxious",
+"example": "I feel nervous before speaking."
+},
+{
+"word": "surprised",
+"phonetic": "/sərˈpraɪzd/",
+"pos": "adjective",
+"vi": "ngạc nhiên",
+"en": "feeling something unexpected",
+"example": "I was surprised by the news."
+},
+{
+"word": "proud",
+"phonetic": "/praʊd/",
+"pos": "adjective",
+"vi": "tự hào",
+"en": "feeling pleased about an achievement",
+"example": "Her parents are proud of her."
+},
+{
+"word": "lonely",
+"phonetic": "/ˈloʊnli/",
+"pos": "adjective",
+"vi": "cô đơn",
+"en": "sad because you are alone",
+"example": "He feels lonely in a new city."
+},
+{
+"word": "shy",
+"phonetic": "/ʃaɪ/",
+"pos": "adjective",
+"vi": "nhút nhát",
+"en": "nervous about meeting people",
+"example": "She is shy with strangers."
+},
+{
+"word": "kind",
+"phonetic": "/kaɪnd/",
+"pos": "adjective",
+"vi": "tốt bụng",
+"en": "friendly and generous",
+"example": "The old man is very kind."
+},
+{
+"word": "polite",
+"phonetic": "/pəˈlaɪt/",
+"pos": "adjective",
+"vi": "lịch sự",
+"en": "having good manners",
+"example": "Be polite to everyone."
+},
+{
+"word": "rude",
+"phonetic": "/ruːd/",
+"pos": "adjective",
+"vi": "thô lỗ",
+"en": "not polite",
+"example": "It's rude to interrupt."
+},
+{
+"word": "honest",
+"phonetic": "/ˈɑːnɪst/",
+"pos": "adjective",
+"vi": "trung thực",
+"en": "telling the truth",
+"example": "He is an honest boy."
+},
+{
+"word": "lazy",
+"phonetic": "/ˈleɪzi/",
+"pos": "adjective",
+"vi": "lười biếng",
+"en": "not wanting to work",
+"example": "Don't be lazy."
+},
+{
+"word": "clever",
+"phonetic": "/ˈklevər/",
+"pos": "adjective",
+"vi": "thông minh",
+"en": "quick at learning",
+"example": "She is a clever student."
+},
+{
+"word": "friendly",
+"phonetic": "/ˈfrendli/",
+"pos": "adjective",
+"vi": "thân thiện",
+"en": "kind and pleasant",
+"example": "The staff are friendly."
+},
+{
+"word": "funny",
+"phonetic": "/ˈfʌni/",
+"pos": "adjective",
+"vi": "hài hước",
+"en": "making you laugh",
+"example": "He tells funny stories."
+},
+{
+"word": "brave",
+"phonetic": "/breɪv/",
+"pos": "adjective",
+"vi": "dũng cảm",
+"en": "not afraid of danger",
+"example": "The firefighter was brave."
+},
+{
+"word": "patient",
+"phonetic": "/ˈpeɪʃnt/",
+"pos": "adjective",
+"vi": "kiên nhẫn",
+"en": "able to wait calmly",
+"example": "A teacher must be patient."
+},
+{
+"word": "generous",
+"phonetic": "/ˈdʒenərəs/",
+"pos": "adjective",
+"vi": "hào phóng",
+"en": "happy to give to others",
+"example": "She is generous with her time."
+},
+{
+"word": "smile",
+"phonetic": "/smaɪl/",
+"pos": "verb",
+"vi": "mỉm cười",
+"en": "to show happiness with your mouth",
+"example": "She smiled at me."
+},
+{
+"word": "laugh",
+"phonetic": "/læf/",
+"pos": "verb",
+"vi": "cười",
+"en": "to make sounds when something is funny",
+"example": "We laughed a lot."
+},
+{
+"word": "cry",
+"phonetic": "/kraɪ/",
+"pos": "verb",
+"vi": "khóc",
+"en": "to have tears from your eyes",
+"example": "The baby began to cry."
+},
+{
+"word": "love",
+"phonetic": "/lʌv/",
+"pos": "verb",
+"vi": "yêu",
+"en": "to like someone very much",
+"example": "I love my family."
+},
+{
+"word": "hate",
+"phonetic": "/heɪt/",
+"pos": "verb",
+"vi": "ghét",
+"en": "to dislike strongly",
+"example": "I hate waiting."
+},
+{
+"word": "feel",
+"phonetic": "/fiːl/",
+"pos": "verb",
+"vi": "cảm thấy",
+"en": "to experience an emotion",
+"example": "I feel great today."
+},
+{
+"word": "miss",
+"phonetic": "/mɪs/",
+"pos": "verb",
+"vi": "nhớ, bỏ lỡ",
+"en": "to feel sad that someone is away",
+"example": "I miss my friends."
+}
+]
+},
+{
+"title": "Sở thích & thể thao",
+"level": "A1",
+"category": "Hobbies and sports",
+"words": [
+{
+"word": "hobby",
+"phonetic": "/ˈhɑːbi/",
+"pos": "noun",
+"vi": "sở thích",
+"en": "an activity you enjoy",
+"example": "My hobby is photography."
+},
+{
+"word": "music",
+"phonetic": "/ˈmjuːzɪk/",
+"pos": "noun",
+"vi": "âm nhạc",
+"en": "sounds made by instruments or voices",
+"example": "I listen to music every day."
+},
+{
+"word": "song",
+"phonetic": "/sɔːŋ/",
+"pos": "noun",
+"vi": "bài hát",
+"en": "words and music sung together",
+"example": "This song is popular."
+},
+{
+"word": "movie",
+"phonetic": "/ˈmuːvi/",
+"pos": "noun",
+"vi": "bộ phim",
+"en": "a story shown on a screen",
+"example": "We watched a funny movie."
+},
+{
+"word": "game",
+"phonetic": "/ɡeɪm/",
+"pos": "noun",
+"vi": "trò chơi",
+"en": "an activity with rules",
+"example": "The kids play a game."
+},
+{
+"word": "sport",
+"phonetic": "/spɔːrt/",
+"pos": "noun",
+"vi": "môn thể thao",
+"en": "a physical activity with rules",
+"example": "Football is a popular sport."
+},
+{
+"word": "football",
+"phonetic": "/ˈfʊtbɔːl/",
+"pos": "noun",
+"vi": "bóng đá",
+"en": "a team game with a round ball",
+"example": "They play football after school."
+},
+{
+"word": "basketball",
+"phonetic": "/ˈbæskɪtbɔːl/",
+"pos": "noun",
+"vi": "bóng rổ",
+"en": "a game where you throw a ball in a net",
+"example": "He is good at basketball."
+},
+{
+"word": "tennis",
+"phonetic": "/ˈtenɪs/",
+"pos": "noun",
+"vi": "quần vợt",
+"en": "a game played with rackets",
+"example": "She plays tennis on Sundays."
+},
+{
+"word": "swimming",
+"phonetic": "/ˈswɪmɪŋ/",
+"pos": "noun",
+"vi": "bơi lội",
+"en": "moving through water",
+"example": "Swimming is good exercise."
+},
+{
+"word": "running",
+"phonetic": "/ˈrʌnɪŋ/",
+"pos": "noun",
+"vi": "chạy bộ",
+"en": "moving fast on foot",
+"example": "Running keeps me healthy."
+},
+{
+"word": "cycling",
+"phonetic": "/ˈsaɪklɪŋ/",
+"pos": "noun",
+"vi": "đạp xe",
+"en": "riding a bicycle",
+"example": "We go cycling at weekends."
+},
+{
+"word": "dance",
+"phonetic": "/dæns/",
+"pos": "verb",
+"vi": "nhảy múa",
+"en": "to move to music",
+"example": "They dance at parties."
+},
+{
+"word": "sing",
+"phonetic": "/sɪŋ/",
+"pos": "verb",
+"vi": "hát",
+"en": "to make music with your voice",
+"example": "She sings very well."
+},
+{
+"word": "draw",
+"phonetic": "/drɔː/",
+"pos": "verb",
+"vi": "vẽ",
+"en": "to make a picture with a pencil",
+"example": "He likes to draw animals."
+},
+{
+"word": "paint",
+"phonetic": "/peɪnt/",
+"pos": "verb",
+"vi": "sơn, vẽ tranh",
+"en": "to make a picture with colors",
+"example": "She paints landscapes."
+},
+{
+"word": "camp",
+"phonetic": "/kæmp/",
+"pos": "verb",
+"vi": "cắm trại",
+"en": "to stay in a tent",
+"example": "We camp by the lake."
+},
+{
+"word": "collect",
+"phonetic": "/kəˈlekt/",
+"pos": "verb",
+"vi": "sưu tầm",
+"en": "to gather things as a hobby",
+"example": "He collects stamps."
+},
+{
+"word": "play",
+"phonetic": "/pleɪ/",
+"pos": "verb",
+"vi": "chơi",
+"en": "to take part in a game",
+"example": "They play in the park."
+},
+{
+"word": "win",
+"phonetic": "/wɪn/",
+"pos": "verb",
+"vi": "thắng",
+"en": "to be first in a competition",
+"example": "Our team won the match."
+},
+{
+"word": "lose",
+"phonetic": "/luːz/",
+"pos": "verb",
+"vi": "thua, mất",
+"en": "to fail to win",
+"example": "We lost the game."
+},
+{
+"word": "team",
+"phonetic": "/tiːm/",
+"pos": "noun",
+"vi": "đội",
+"en": "a group playing together",
+"example": "Our team is strong."
+},
+{
+"word": "match",
+"phonetic": "/mætʃ/",
+"pos": "noun",
+"vi": "trận đấu",
+"en": "a sports competition",
+"example": "The match starts at five."
+},
+{
+"word": "photo",
+"phonetic": "/ˈfoʊtoʊ/",
+"pos": "noun",
+"vi": "bức ảnh",
+"en": "a picture taken with a camera",
+"example": "She took a photo of the sea."
+},
+{
+"word": "guitar",
+"phonetic": "/ɡɪˈtɑːr/",
+"pos": "noun",
+"vi": "đàn ghi-ta",
+"en": "a musical instrument with strings",
+"example": "He plays the guitar."
+},
+{
+"word": "concert",
+"phonetic": "/ˈkɑːnsərt/",
+"pos": "noun",
+"vi": "buổi hòa nhạc",
+"en": "a live music event",
+"example": "We went to a concert."
+},
+{
+"word": "puzzle",
+"phonetic": "/ˈpʌzl/",
+"pos": "noun",
+"vi": "trò chơi xếp hình",
+"en": "a game of fitting pieces together",
+"example": "The puzzle is difficult."
+},
+{
+"word": "free time",
+"phonetic": "/friː taɪm/",
+"pos": "noun",
+"vi": "thời gian rảnh",
+"en": "time when you are not working",
+"example": "What do you do in your free time?"
+}
+]
+},
+{
+"title": "Công nghệ",
+"level": "B1",
+"category": "Technology",
+"words": [
+{
+"word": "computer",
+"phonetic": "/kəmˈpjuːtər/",
+"pos": "noun",
+"vi": "máy tính",
+"en": "an electronic machine for data",
+"example": "I use a computer at work."
+},
+{
+"word": "laptop",
+"phonetic": "/ˈlæptɑːp/",
+"pos": "noun",
+"vi": "máy tính xách tay",
+"en": "a portable computer",
+"example": "She carries her laptop everywhere."
+},
+{
+"word": "phone",
+"phonetic": "/foʊn/",
+"pos": "noun",
+"vi": "điện thoại",
+"en": "a device for calling people",
+"example": "My phone is new."
+},
+{
+"word": "smartphone",
+"phonetic": "/ˈsmɑːrtfoʊn/",
+"pos": "noun",
+"vi": "điện thoại thông minh",
+"en": "a phone that works like a computer",
+"example": "Most people have a smartphone."
+},
+{
+"word": "internet",
+"phonetic": "/ˈɪntərnet/",
+"pos": "noun",
+"vi": "mạng internet",
+"en": "a worldwide computer network",
+"example": "The internet is very fast here."
+},
+{
+"word": "website",
+"phonetic": "/ˈwebsaɪt/",
+"pos": "noun",
+"vi": "trang web",
+"en": "a set of pages on the internet",
+"example": "Visit our website."
+},
+{
+"word": "email",
+"phonetic": "/ˈiːmeɪl/",
+"pos": "noun",
+"vi": "thư điện tử",
+"en": "a message sent by computer",
+"example": "I sent you an email."
+},
+{
+"word": "message",
+"phonetic": "/ˈmesɪdʒ/",
+"pos": "noun",
+"vi": "tin nhắn",
+"en": "a written or spoken note",
+"example": "I got a message from him."
+},
+{
+"word": "password",
+"phonetic": "/ˈpæswɜːrd/",
+"pos": "noun",
+"vi": "mật khẩu",
+"en": "a secret word to enter a system",
+"example": "Don't share your password."
+},
+{
+"word": "screen",
+"phonetic": "/skriːn/",
+"pos": "noun",
+"vi": "màn hình",
+"en": "the flat part that shows images",
+"example": "The screen is broken."
+},
+{
+"word": "keyboard",
+"phonetic": "/ˈkiːbɔːrd/",
+"pos": "noun",
+"vi": "bàn phím",
+"en": "the keys you type on",
+"example": "The keyboard is wireless."
+},
+{
+"word": "camera",
+"phonetic": "/ˈkæmərə/",
+"pos": "noun",
+"vi": "máy ảnh",
+"en": "a device for taking photos",
+"example": "He bought a new camera."
+},
+{
+"word": "battery",
+"phonetic": "/ˈbætəri/",
+"pos": "noun",
+"vi": "pin",
+"en": "a device that stores power",
+"example": "My battery is low."
+},
+{
+"word": "charger",
+"phonetic": "/ˈtʃɑːrdʒər/",
+"pos": "noun",
+"vi": "bộ sạc",
+"en": "a device for charging",
+"example": "I forgot my charger."
+},
+{
+"word": "app",
+"phonetic": "/æp/",
+"pos": "noun",
+"vi": "ứng dụng",
+"en": "a program on a phone",
+"example": "This app is free."
+},
+{
+"word": "software",
+"phonetic": "/ˈsɔːftwer/",
+"pos": "noun",
+"vi": "phần mềm",
+"en": "programs that run on a computer",
+"example": "Update the software."
+},
+{
+"word": "file",
+"phonetic": "/faɪl/",
+"pos": "noun",
+"vi": "tệp tin",
+"en": "a set of data on a computer",
+"example": "Save the file."
+},
+{
+"word": "data",
+"phonetic": "/ˈdeɪtə/",
+"pos": "noun",
+"vi": "dữ liệu",
+"en": "facts and numbers",
+"example": "The data is stored online."
+},
+{
+"word": "network",
+"phonetic": "/ˈnetwɜːrk/",
+"pos": "noun",
+"vi": "mạng lưới",
+"en": "connected computers or systems",
+"example": "The network is down."
+},
+{
+"word": "social media",
+"phonetic": "/ˈsoʊʃl ˈmiːdiə/",
+"pos": "noun",
+"vi": "mạng xã hội",
+"en": "websites for sharing things",
+"example": "She uses social media a lot."
+},
+{
+"word": "robot",
+"phonetic": "/ˈroʊbɑːt/",
+"pos": "noun",
+"vi": "người máy",
+"en": "a machine that does tasks",
+"example": "Robots build cars."
+},
+{
+"word": "download",
+"phonetic": "/ˈdaʊnloʊd/",
+"pos": "verb",
+"vi": "tải xuống",
+"en": "to copy a file from the internet",
+"example": "Download the app first."
+},
+{
+"word": "upload",
+"phonetic": "/ˈʌploʊd/",
+"pos": "verb",
+"vi": "tải lên",
+"en": "to send a file to the internet",
+"example": "I uploaded the photos."
+},
+{
+"word": "search",
+"phonetic": "/sɜːrtʃ/",
+"pos": "verb",
+"vi": "tìm kiếm",
+"en": "to look for information",
+"example": "Search for it online."
+},
+{
+"word": "click",
+"phonetic": "/klɪk/",
+"pos": "verb",
+"vi": "nhấp chuột",
+"en": "to press a button on a mouse",
+"example": "Click the link."
+},
+{
+"word": "type",
+"phonetic": "/taɪp/",
+"pos": "verb",
+"vi": "gõ phím",
+"en": "to write using a keyboard",
+"example": "He types very fast."
+},
+{
+"word": "connect",
+"phonetic": "/kəˈnekt/",
+"pos": "verb",
+"vi": "kết nối",
+"en": "to join together",
+"example": "Connect to the Wi-Fi."
+},
+{
+"word": "install",
+"phonetic": "/ɪnˈstɔːl/",
+"pos": "verb",
+"vi": "cài đặt",
+"en": "to put software on a device",
+"example": "I installed a new game."
+},
+{
+"word": "online",
+"phonetic": "/ˈɑːnlaɪn/",
+"pos": "adjective",
+"vi": "trực tuyến",
+"en": "connected to the internet",
+"example": "She studies online."
+},
+{
+"word": "digital",
+"phonetic": "/ˈdɪdʒɪtl/",
+"pos": "adjective",
+"vi": "kỹ thuật số",
+"en": "using computer technology",
+"example": "We live in a digital world."
+},
+{
+"word": "modern",
+"phonetic": "/ˈmɑːdərn/",
+"pos": "adjective",
+"vi": "hiện đại",
+"en": "new and up to date",
+"example": "This is a modern phone."
+}
+]
+},
+{
+"title": "Thành phố & địa điểm",
+"level": "A1",
+"category": "City and places",
+"words": [
+{
+"word": "city",
+"phonetic": "/ˈsɪti/",
+"pos": "noun",
+"vi": "thành phố",
+"en": "a large and important town",
+"example": "Hanoi is a big city."
+},
+{
+"word": "town",
+"phonetic": "/taʊn/",
+"pos": "noun",
+"vi": "thị trấn",
+"en": "a place smaller than a city",
+"example": "They live in a small town."
+},
+{
+"word": "village",
+"phonetic": "/ˈvɪlɪdʒ/",
+"pos": "noun",
+"vi": "ngôi làng",
+"en": "a very small town in the countryside",
+"example": "My grandparents live in a village."
+},
+{
+"word": "street",
+"phonetic": "/striːt/",
+"pos": "noun",
+"vi": "đường phố",
+"en": "a road in a town",
+"example": "The street is noisy."
+},
+{
+"word": "park",
+"phonetic": "/pɑːrk/",
+"pos": "noun",
+"vi": "công viên",
+"en": "a public area with grass and trees",
+"example": "We walk in the park."
+},
+{
+"word": "restaurant",
+"phonetic": "/ˈrestrɑːnt/",
+"pos": "noun",
+"vi": "nhà hàng",
+"en": "a place to eat meals",
+"example": "Let's go to a restaurant."
+},
+{
+"word": "cafe",
+"phonetic": "/kæˈfeɪ/",
+"pos": "noun",
+"vi": "quán cà phê",
+"en": "a small place for drinks",
+"example": "We met at a cafe."
+},
+{
+"word": "cinema",
+"phonetic": "/ˈsɪnəmə/",
+"pos": "noun",
+"vi": "rạp chiếu phim",
+"en": "a place to watch films",
+"example": "The cinema is full."
+},
+{
+"word": "museum",
+"phonetic": "/mjuˈziːəm/",
+"pos": "noun",
+"vi": "bảo tàng",
+"en": "a place that shows old things",
+"example": "The museum opens at ten."
+},
+{
+"word": "church",
+"phonetic": "/tʃɜːrtʃ/",
+"pos": "noun",
+"vi": "nhà thờ",
+"en": "a building for Christian worship",
+"example": "The church is very old."
+},
+{
+"word": "temple",
+"phonetic": "/ˈtempl/",
+"pos": "noun",
+"vi": "ngôi chùa, đền",
+"en": "a building for worship",
+"example": "We visited a temple."
+},
+{
+"word": "post office",
+"phonetic": "/ˈpoʊst ɑːfɪs/",
+"pos": "noun",
+"vi": "bưu điện",
+"en": "a place to send letters",
+"example": "I'm going to the post office."
+},
+{
+"word": "pharmacy",
+"phonetic": "/ˈfɑːrməsi/",
+"pos": "noun",
+"vi": "hiệu thuốc",
+"en": "a shop that sells medicine",
+"example": "The pharmacy is near here."
+},
+{
+"word": "police station",
+"phonetic": "/pəˈliːs steɪʃn/",
+"pos": "noun",
+"vi": "đồn cảnh sát",
+"en": "the office of the police",
+"example": "Go to the police station."
+},
+{
+"word": "traffic",
+"phonetic": "/ˈtræfɪk/",
+"pos": "noun",
+"vi": "giao thông",
+"en": "vehicles on the road",
+"example": "There is a lot of traffic."
+},
+{
+"word": "corner",
+"phonetic": "/ˈkɔːrnər/",
+"pos": "noun",
+"vi": "góc đường",
+"en": "a place where two streets meet",
+"example": "The shop is on the corner."
+},
+{
+"word": "building",
+"phonetic": "/ˈbɪldɪŋ/",
+"pos": "noun",
+"vi": "tòa nhà",
+"en": "a structure with walls and a roof",
+"example": "That building is tall."
+},
+{
+"word": "square",
+"phonetic": "/skwer/",
+"pos": "noun",
+"vi": "quảng trường",
+"en": "an open area in a town",
+"example": "People gather in the square."
+},
+{
+"word": "crowded",
+"phonetic": "/ˈkraʊdɪd/",
+"pos": "adjective",
+"vi": "đông đúc",
+"en": "full of people",
+"example": "The market is crowded."
+},
+{
+"word": "quiet",
+"phonetic": "/ˈkwaɪət/",
+"pos": "adjective",
+"vi": "yên tĩnh",
+"en": "making little noise",
+"example": "It is a quiet street."
+},
+{
+"word": "noisy",
+"phonetic": "/ˈnɔɪzi/",
+"pos": "adjective",
+"vi": "ồn ào",
+"en": "making a lot of noise",
+"example": "The city is noisy."
+},
+{
+"word": "near",
+"phonetic": "/nɪr/",
+"pos": "adverb",
+"vi": "gần",
+"en": "not far away",
+"example": "My school is near."
+},
+{
+"word": "far",
+"phonetic": "/fɑːr/",
+"pos": "adverb",
+"vi": "xa",
+"en": "a long distance away",
+"example": "The airport is far."
+},
+{
+"word": "next to",
+"phonetic": "/nekst tuː/",
+"pos": "preposition",
+"vi": "bên cạnh",
+"en": "beside",
+"example": "The bank is next to the shop."
+},
+{
+"word": "opposite",
+"phonetic": "/ˈɑːpəzɪt/",
+"pos": "preposition",
+"vi": "đối diện",
+"en": "facing",
+"example": "The hotel is opposite the park."
+},
+{
+"word": "between",
+"phonetic": "/bɪˈtwiːn/",
+"pos": "preposition",
+"vi": "ở giữa",
+"en": "in the middle of two things",
+"example": "The cafe is between two shops."
+},
+{
+"word": "turn left",
+"phonetic": "/tɜːrn left/",
+"pos": "verb",
+"vi": "rẽ trái",
+"en": "to go to the left",
+"example": "Turn left at the corner."
+},
+{
+"word": "turn right",
+"phonetic": "/tɜːrn raɪt/",
+"pos": "verb",
+"vi": "rẽ phải",
+"en": "to go to the right",
+"example": "Turn right at the bank."
+},
+{
+"word": "go straight",
+"phonetic": "/ɡoʊ streɪt/",
+"pos": "verb",
+"vi": "đi thẳng",
+"en": "to continue forward",
+"example": "Go straight for two blocks."
+},
+{
+"word": "cross",
+"phonetic": "/krɔːs/",
+"pos": "verb",
+"vi": "băng qua",
+"en": "to go from one side to the other",
+"example": "Cross the road carefully."
+},
+{
+"word": "find",
+"phonetic": "/faɪnd/",
+"pos": "verb",
+"vi": "tìm thấy",
+"en": "to discover something",
+"example": "I can't find the hotel."
+}
+]
+},
+{
+"title": "Quần áo & thời trang",
+"level": "A1",
+"category": "Clothes and fashion",
+"words": [
+{
+"word": "clothes",
+"phonetic": "/kloʊðz/",
+"pos": "noun",
+"vi": "quần áo",
+"en": "things you wear",
+"example": "She bought new clothes."
+},
+{
+"word": "shirt",
+"phonetic": "/ʃɜːrt/",
+"pos": "noun",
+"vi": "áo sơ mi",
+"en": "clothing for the upper body",
+"example": "He wears a white shirt."
+},
+{
+"word": "t-shirt",
+"phonetic": "/ˈtiː ʃɜːrt/",
+"pos": "noun",
+"vi": "áo phông",
+"en": "a short-sleeved cotton shirt",
+"example": "I like this blue t-shirt."
+},
+{
+"word": "dress",
+"phonetic": "/dres/",
+"pos": "noun",
+"vi": "cái váy liền",
+"en": "a piece of clothing for women",
+"example": "She wore a red dress."
+},
+{
+"word": "skirt",
+"phonetic": "/skɜːrt/",
+"pos": "noun",
+"vi": "chân váy",
+"en": "clothing that hangs from the waist",
+"example": "The skirt is too short."
+},
+{
+"word": "trousers",
+"phonetic": "/ˈtraʊzərz/",
+"pos": "noun",
+"vi": "quần dài",
+"en": "clothing for the legs",
+"example": "These trousers are tight."
+},
+{
+"word": "jeans",
+"phonetic": "/dʒiːnz/",
+"pos": "noun",
+"vi": "quần bò",
+"en": "trousers made of denim",
+"example": "He always wears jeans."
+},
+{
+"word": "jacket",
+"phonetic": "/ˈdʒækɪt/",
+"pos": "noun",
+"vi": "áo khoác",
+"en": "a short coat",
+"example": "Take your jacket."
+},
+{
+"word": "coat",
+"phonetic": "/koʊt/",
+"pos": "noun",
+"vi": "áo choàng",
+"en": "a long warm piece of clothing",
+"example": "Wear a coat in winter."
+},
+{
+"word": "sweater",
+"phonetic": "/ˈswetər/",
+"pos": "noun",
+"vi": "áo len",
+"en": "a warm knitted top",
+"example": "She knitted a sweater."
+},
+{
+"word": "shoes",
+"phonetic": "/ʃuːz/",
+"pos": "noun",
+"vi": "giày",
+"en": "things you wear on your feet",
+"example": "My shoes are new."
+},
+{
+"word": "boots",
+"phonetic": "/buːts/",
+"pos": "noun",
+"vi": "ủng, bốt",
+"en": "shoes that cover the ankle",
+"example": "Wear boots in the snow."
+},
+{
+"word": "socks",
+"phonetic": "/sɑːks/",
+"pos": "noun",
+"vi": "tất",
+"en": "things you wear inside shoes",
+"example": "I need clean socks."
+},
+{
+"word": "hat",
+"phonetic": "/hæt/",
+"pos": "noun",
+"vi": "cái mũ",
+"en": "a covering for the head",
+"example": "He wore a straw hat."
+},
+{
+"word": "cap",
+"phonetic": "/kæp/",
+"pos": "noun",
+"vi": "mũ lưỡi trai",
+"en": "a soft hat with a peak",
+"example": "He has a baseball cap."
+},
+{
+"word": "scarf",
+"phonetic": "/skɑːrf/",
+"pos": "noun",
+"vi": "khăn quàng",
+"en": "a cloth worn around the neck",
+"example": "A scarf keeps you warm."
+},
+{
+"word": "gloves",
+"phonetic": "/ɡlʌvz/",
+"pos": "noun",
+"vi": "găng tay",
+"en": "coverings for the hands",
+"example": "Wear gloves outside."
+},
+{
+"word": "belt",
+"phonetic": "/belt/",
+"pos": "noun",
+"vi": "thắt lưng",
+"en": "a band worn around the waist",
+"example": "He bought a leather belt."
+},
+{
+"word": "uniform",
+"phonetic": "/ˈjuːnɪfɔːrm/",
+"pos": "noun",
+"vi": "đồng phục",
+"en": "special clothes for a group",
+"example": "Students wear a uniform."
+},
+{
+"word": "pocket",
+"phonetic": "/ˈpɑːkɪt/",
+"pos": "noun",
+"vi": "túi áo",
+"en": "a small bag sewn into clothes",
+"example": "Put it in your pocket."
+},
+{
+"word": "button",
+"phonetic": "/ˈbʌtn/",
+"pos": "noun",
+"vi": "cái cúc áo",
+"en": "a small round fastener",
+"example": "A button fell off."
+},
+{
+"word": "wear",
+"phonetic": "/wer/",
+"pos": "verb",
+"vi": "mặc, đội",
+"en": "to have clothes on your body",
+"example": "She wears a uniform."
+},
+{
+"word": "put on",
+"phonetic": "/pʊt ɑːn/",
+"pos": "verb",
+"vi": "mặc vào",
+"en": "to dress yourself in something",
+"example": "Put on your coat."
+},
+{
+"word": "take off",
+"phonetic": "/teɪk ɔːf/",
+"pos": "verb",
+"vi": "cởi ra",
+"en": "to remove clothes",
+"example": "Take off your shoes."
+},
+{
+"word": "fit",
+"phonetic": "/fɪt/",
+"pos": "verb",
+"vi": "vừa vặn",
+"en": "to be the right size",
+"example": "These jeans fit well."
+},
+{
+"word": "suit",
+"phonetic": "/suːt/",
+"pos": "verb",
+"vi": "hợp với",
+"en": "to look good on someone",
+"example": "Red suits you."
+},
+{
+"word": "tight",
+"phonetic": "/taɪt/",
+"pos": "adjective",
+"vi": "chật",
+"en": "fitting closely",
+"example": "The shirt is tight."
+},
+{
+"word": "loose",
+"phonetic": "/luːs/",
+"pos": "adjective",
+"vi": "rộng",
+"en": "not tight",
+"example": "These pants are loose."
+},
+{
+"word": "fashionable",
+"phonetic": "/ˈfæʃnəbl/",
+"pos": "adjective",
+"vi": "hợp thời trang",
+"en": "popular at the moment",
+"example": "That jacket is fashionable."
+},
+{
+"word": "casual",
+"phonetic": "/ˈkæʒuəl/",
+"pos": "adjective",
+"vi": "giản dị",
+"en": "relaxed and informal",
+"example": "I wear casual clothes on weekends."
+}
+]
+},
+{
+"title": "Động vật",
+"level": "A1",
+"category": "Animals",
+"words": [
+{
+"word": "animal",
+"phonetic": "/ˈænɪml/",
+"pos": "noun",
+"vi": "động vật",
+"en": "a living creature",
+"example": "Dogs are friendly animals."
+},
+{
+"word": "dog",
+"phonetic": "/dɔːɡ/",
+"pos": "noun",
+"vi": "con chó",
+"en": "a common pet that barks",
+"example": "My dog likes to run."
+},
+{
+"word": "cat",
+"phonetic": "/kæt/",
+"pos": "noun",
+"vi": "con mèo",
+"en": "a small furry pet",
+"example": "The cat is sleeping."
+},
+{
+"word": "bird",
+"phonetic": "/bɜːrd/",
+"pos": "noun",
+"vi": "con chim",
+"en": "an animal with wings and feathers",
+"example": "A bird sings in the tree."
+},
+{
+"word": "horse",
+"phonetic": "/hɔːrs/",
+"pos": "noun",
+"vi": "con ngựa",
+"en": "a large animal people ride",
+"example": "She rides a horse."
+},
+{
+"word": "cow",
+"phonetic": "/kaʊ/",
+"pos": "noun",
+"vi": "con bò",
+"en": "a farm animal that gives milk",
+"example": "The cow eats grass."
+},
+{
+"word": "pig",
+"phonetic": "/pɪɡ/",
+"pos": "noun",
+"vi": "con lợn",
+"en": "a farm animal kept for meat",
+"example": "The pig is in the yard."
+},
+{
+"word": "duck",
+"phonetic": "/dʌk/",
+"pos": "noun",
+"vi": "con vịt",
+"en": "a water bird",
+"example": "Ducks swim on the lake."
+},
+{
+"word": "sheep",
+"phonetic": "/ʃiːp/",
+"pos": "noun",
+"vi": "con cừu",
+"en": "a farm animal with wool",
+"example": "The sheep are on the hill."
+},
+{
+"word": "rabbit",
+"phonetic": "/ˈræbɪt/",
+"pos": "noun",
+"vi": "con thỏ",
+"en": "a small animal with long ears",
+"example": "The rabbit eats carrots."
+},
+{
+"word": "mouse",
+"phonetic": "/maʊs/",
+"pos": "noun",
+"vi": "con chuột",
+"en": "a small animal with a long tail",
+"example": "A mouse ran across the floor."
+},
+{
+"word": "elephant",
+"phonetic": "/ˈelɪfənt/",
+"pos": "noun",
+"vi": "con voi",
+"en": "a very large animal with a trunk",
+"example": "The elephant is huge."
+},
+{
+"word": "tiger",
+"phonetic": "/ˈtaɪɡər/",
+"pos": "noun",
+"vi": "con hổ",
+"en": "a large wild cat with stripes",
+"example": "Tigers live in forests."
+},
+{
+"word": "lion",
+"phonetic": "/ˈlaɪən/",
+"pos": "noun",
+"vi": "con sư tử",
+"en": "a large wild cat",
+"example": "The lion roared loudly."
+},
+{
+"word": "monkey",
+"phonetic": "/ˈmʌŋki/",
+"pos": "noun",
+"vi": "con khỉ",
+"en": "an animal that climbs trees",
+"example": "The monkey ate a banana."
+},
+{
+"word": "bear",
+"phonetic": "/ber/",
+"pos": "noun",
+"vi": "con gấu",
+"en": "a large strong wild animal",
+"example": "A bear lives in the forest."
+},
+{
+"word": "snake",
+"phonetic": "/sneɪk/",
+"pos": "noun",
+"vi": "con rắn",
+"en": "a long animal with no legs",
+"example": "Be careful of snakes."
+},
+{
+"word": "frog",
+"phonetic": "/frɔːɡ/",
+"pos": "noun",
+"vi": "con ếch",
+"en": "a small animal that jumps",
+"example": "The frog jumped into the pond."
+},
+{
+"word": "butterfly",
+"phonetic": "/ˈbʌtərflaɪ/",
+"pos": "noun",
+"vi": "con bướm",
+"en": "an insect with colored wings",
+"example": "A butterfly landed on a flower."
+},
+{
+"word": "bee",
+"phonetic": "/biː/",
+"pos": "noun",
+"vi": "con ong",
+"en": "an insect that makes honey",
+"example": "Bees make honey."
+},
+{
+"word": "insect",
+"phonetic": "/ˈɪnsekt/",
+"pos": "noun",
+"vi": "côn trùng",
+"en": "a small animal with six legs",
+"example": "Ants are insects."
+},
+{
+"word": "pet",
+"phonetic": "/pet/",
+"pos": "noun",
+"vi": "thú cưng",
+"en": "an animal kept at home",
+"example": "Do you have a pet?"
+},
+{
+"word": "wild",
+"phonetic": "/waɪld/",
+"pos": "adjective",
+"vi": "hoang dã",
+"en": "living in nature",
+"example": "Wild animals need space."
+},
+{
+"word": "cute",
+"phonetic": "/kjuːt/",
+"pos": "adjective",
+"vi": "dễ thương",
+"en": "attractive and sweet",
+"example": "The puppy is cute."
+},
+{
+"word": "dangerous",
+"phonetic": "/ˈdeɪndʒərəs/",
+"pos": "adjective",
+"vi": "nguy hiểm",
+"en": "likely to cause harm",
+"example": "Snakes can be dangerous."
+},
+{
+"word": "feed",
+"phonetic": "/fiːd/",
+"pos": "verb",
+"vi": "cho ăn",
+"en": "to give food to",
+"example": "I feed the cat every morning."
+},
+{
+"word": "fly",
+"phonetic": "/flaɪ/",
+"pos": "verb",
+"vi": "bay",
+"en": "to move through the air",
+"example": "Birds fly south in winter."
+},
+{
+"word": "swim",
+"phonetic": "/swɪm/",
+"pos": "verb",
+"vi": "bơi",
+"en": "to move through water",
+"example": "Fish swim in the sea."
+}
+]
+}
+]
+}

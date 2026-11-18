@@ -13,6 +13,8 @@ ngữ pháp, quiz và thói quen học mỗi ngày.
   dùng (hồ sơ, sổ tay, flashcard, tiến độ ôn từ, quiz, hoạt động học) được đồng
   bộ lên Cloud Firestore tại `users/{uid}/...`, nên đổi máy vẫn lấy lại được.
   Chi tiết: [docs/cloud-sync.md](docs/cloud-sync.md).
+- **Nội dung học có sẵn:** ~446 từ vựng theo 15 chủ đề, 17 bài ngữ pháp (có 14 bài về các thì và động từ);
+  từ ngoài bộ này tra bằng API và dịch sang tiếng Việt bằng ML Kit. Xem [docs/vocabulary-grammar-seed.md](docs/vocabulary-grammar-seed.md).
 
 Ứng dụng chỉ còn biến thể **live**: UID lấy từ phiên Firebase Auth, cần
 `app/google-services.json` (không commit) để build.

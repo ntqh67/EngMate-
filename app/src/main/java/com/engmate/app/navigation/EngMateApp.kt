@@ -20,6 +20,7 @@ import com.engmate.app.feature.grammar.presentation.topics.GrammarLessonsViewMod
 import com.engmate.app.feature.flashcard.presentation.review.FlashcardScreen
 import com.engmate.app.feature.home.presentation.HomeScreen
 import com.engmate.app.feature.vocabulary.presentation.worddetail.WordDetailScreen
+import com.engmate.app.feature.vocabulary.presentation.topics.VocabularyTopicsScreen
 import com.engmate.app.feature.notebook.presentation.NotebookScreen
 import com.engmate.app.feature.profile.presentation.*
 import com.engmate.app.feature.progress.presentation.*
@@ -47,6 +48,7 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
     val quizRoute = QuizRoute.decode(quizRouteKey)
     fun openQuiz(route: QuizRoute?) { quizRouteKey = route?.encode() }
     // Guests can browse: home, dictionary search and grammar lessons. Personal features ask for a login.
+    var learnVocabulary by rememberSaveable { mutableStateOf(false) }
     var showAuth by rememberSaveable { mutableStateOf(false) }
     LaunchedEffect(user) { if (user != null) showAuth = false }
     val needsProfile = user != null && (tab == MainTab.NOTEBOOK || tab == MainTab.PROFILE || quizRoute != null || studyHandbook != null)
@@ -95,7 +97,16 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
                         // Đông's grammar screens (restored from before 2d5cb51).
                         MainTab.LEARN -> lessonId?.let { GrammarLessonScreen(lessons, it, onBack = { lessonId = null },
                             onPractice = { id -> if (user == null) showAuth = true else openQuiz(QuizRoute.Quiz(QuizSource.Lesson(id))) }) }
-                            ?: GrammarLessonsScreen(lessons, onOpenLesson = { lessonId = it })
+                            ?: Column(Modifier.fillMaxSize()) {
+                                PrimaryTabRow(selectedTabIndex = if (learnVocabulary) 1 else 0, Modifier.statusBarsPadding()) {
+                                    Tab(selected = !learnVocabulary, onClick = { learnVocabulary = false }, text = { Text("Ngữ pháp") })
+                                    Tab(selected = learnVocabulary, onClick = { learnVocabulary = true }, text = { Text("Từ vựng") })
+                                }
+                                Box(Modifier.weight(1f).consumeWindowInsets(WindowInsets.statusBars)) {
+                                    if (learnVocabulary) VocabularyTopicsScreen(viewModel(), onOpenWord = { openWord = it })
+                                    else GrammarLessonsScreen(lessons, onOpenLesson = { lessonId = it })
+                                }
+                            }
                         MainTab.NOTEBOOK -> if (user == null) LoginPrompt("Sổ tay từ vựng", onLogin = { showAuth = true }) else NotebookScreen(viewModel(), onOpenWord = { openWord = it }, onStudy = { studyHandbook = it })
                         MainTab.PROFILE -> if (user == null) LoginPrompt("Hồ sơ và tiến độ học", onLogin = { showAuth = true }) else ProfileTab(profile, progress, user?.email.orEmpty(), auth::signOut,
                             onPlacement = { openQuiz(QuizRoute.Placement) }, onReminder = { openQuiz(QuizRoute.Reminder) })
