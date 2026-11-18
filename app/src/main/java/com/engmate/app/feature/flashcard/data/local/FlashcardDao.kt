@@ -3,8 +3,53 @@ package com.engmate.app.feature.flashcard.data.local
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 
+data class CollectionWithCounts(
+    @Embedded val collection: FlashcardCollectionEntity,
+    @ColumnInfo(name = "word_count") val wordCount: Int,
+    @ColumnInfo(name = "known_count") val knownCount: Int,
+)
+
+/** A card joined with its word's live data, the owner's note and progress. */
+data class CardWithWordData(
+    @Embedded val card: FlashcardEntity,
+    @ColumnInfo(name = "meaning_vi") val meaningVi: String?,
+    @ColumnInfo(name = "custom_meaning") val customMeaning: String?,
+    val status: com.engmate.app.core.database.WordLearningStatus?,
+)
+
 @Dao
 abstract class FlashcardDao {
+    // Cards store the word text; words.word is NOCASE-unique, so the join finds the shared word row.
+    @Query("""SELECT c.*, COUNT(f.id) AS word_count, COUNT(CASE WHEN p.status = 'MASTERED' THEN 1 END) AS known_count
+              FROM flashcard_collections c
+              LEFT JOIN flashcards f ON f.collection_id = c.id
+              LEFT JOIN words w ON w.word = f.word COLLATE NOCASE
+              LEFT JOIN word_progress p ON p.word_id = w.id AND p.user_id = c.user_id
+              WHERE c.user_id = :uid GROUP BY c.id ORDER BY c.created_at DESC, c.id DESC""")
+    abstract fun observeCollectionsWithCounts(uid: String): Flow<List<CollectionWithCounts>>
+
+    @Query("""SELECT f.*, w.meaning_vi, n.custom_meaning, p.status
+              FROM flashcards f
+              JOIN flashcard_collections c ON c.id = f.collection_id
+              LEFT JOIN words w ON w.word = f.word COLLATE NOCASE
+              LEFT JOIN word_notes n ON n.word_id = w.id AND n.user_uid = c.user_id
+              LEFT JOIN word_progress p ON p.word_id = w.id AND p.user_id = c.user_id
+              WHERE c.user_id = :uid AND c.id = :collectionId ORDER BY f.id""")
+    abstract fun observeCardsWithWordData(uid: String, collectionId: Long): Flow<List<CardWithWordData>>
+
+    @Query("""SELECT f.collection_id FROM flashcards f JOIN flashcard_collections c ON c.id = f.collection_id
+              WHERE c.user_id = :uid AND f.word = :word COLLATE NOCASE""")
+    abstract fun observeCollectionIdsWithWord(uid: String, word: String): Flow<List<Long>>
+
+    @Query("SELECT * FROM word_progress WHERE user_id = :uid AND word_id = :wordId")
+    abstract fun observeProgress(uid: String, wordId: Long): Flow<WordProgressEntity?>
+
+    @Query("SELECT * FROM flashcard_collections WHERE user_id = :uid")
+    abstract suspend fun collectionsOf(uid: String): List<FlashcardCollectionEntity>
+
+    @Query("SELECT * FROM flashcards WHERE collection_id = :collectionId AND word = :word COLLATE NOCASE")
+    abstract suspend fun cardsWithWord(collectionId: Long, word: String): List<FlashcardEntity>
+
     @Insert protected abstract suspend fun insertProgress(progress: WordProgressEntity): Long
     @Update protected abstract suspend fun updateProgress(progress: WordProgressEntity): Int
     @Query("SELECT * FROM word_progress WHERE user_id = :uid AND word_id = :wordId")

@@ -24,6 +24,8 @@ abstract class NotebookDao {
 
     @Query("SELECT * FROM word_notes WHERE user_uid = :uid AND word_id = :wordId")
     abstract suspend fun getWordNote(uid: String, wordId: Long): WordNoteEntity?
+    @Query("SELECT * FROM word_notes WHERE user_uid = :uid AND word_id = :wordId")
+    abstract fun observeWordNote(uid: String, wordId: Long): Flow<WordNoteEntity?>
     @Insert protected abstract suspend fun insertWordNote(note: WordNoteEntity): Long
     @Update protected abstract suspend fun updateWordNote(note: WordNoteEntity): Int
     @Transaction
