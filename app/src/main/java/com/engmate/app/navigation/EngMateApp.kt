@@ -48,6 +48,8 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
     val quizRoute = QuizRoute.decode(quizRouteKey)
     fun openQuiz(route: QuizRoute?) { quizRouteKey = route?.encode() }
     // Guests can browse: home, dictionary search and grammar lessons. Personal features ask for a login.
+    val actions: ProgressActionsViewModel = viewModel()
+    LaunchedEffect(lessonId, user?.uid) { if (user != null) lessonId?.let(actions::lessonOpened) }
     var learnVocabulary by rememberSaveable { mutableStateOf(false) }
     var showAuth by rememberSaveable { mutableStateOf(false) }
     LaunchedEffect(user) { if (user != null) showAuth = false }
@@ -70,7 +72,7 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
         }
     } else if (openWord != null) {
         BackHandler { openWord = null }
-        WordDetailScreen(viewModel(), openWord!!, onBack = { openWord = null })
+        WordDetailScreen(viewModel(), openWord!!, onBack = { openWord = null }, onPronunciationScored = actions::pronunciationScored)
     } else if (studyHandbook != null) {
         BackHandler { studyHandbook = null }
         FlashcardScreen(viewModel(), studyHandbook!!, onClose = { studyHandbook = null })
@@ -96,7 +98,8 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
                             onOpenLesson = { lessonId = it; tab = MainTab.LEARN }, onOpenWord = { openWord = it.word })
                         // Đông's grammar screens (restored from before 2d5cb51).
                         MainTab.LEARN -> lessonId?.let { GrammarLessonScreen(lessons, it, onBack = { lessonId = null },
-                            onPractice = { id -> if (user == null) showAuth = true else openQuiz(QuizRoute.Quiz(QuizSource.Lesson(id))) }) }
+                            onPractice = { id -> if (user == null) showAuth = true else openQuiz(QuizRoute.Quiz(QuizSource.Lesson(id))) },
+                            onPronunciationScored = actions::pronunciationScored) }
                             ?: Column(Modifier.fillMaxSize()) {
                                 PrimaryTabRow(selectedTabIndex = if (learnVocabulary) 1 else 0, Modifier.statusBarsPadding()) {
                                     Tab(selected = !learnVocabulary, onClick = { learnVocabulary = false }, text = { Text("Ngữ pháp") })

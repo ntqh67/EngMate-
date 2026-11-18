@@ -34,7 +34,8 @@ private val mangoBg = Color(0xFFFFF2EC)
 private val mango = Color(0xFF803D09)
 
 @Composable
-fun WordDetailScreen(viewModel: WordDetailViewModel, word: String, onBack: () -> Unit) {
+fun WordDetailScreen(viewModel: WordDetailViewModel, word: String, onBack: () -> Unit, onPronunciationScored: (Int) -> Unit = {}) {
+    var speaking by remember { mutableStateOf(false) }
     LaunchedEffect(word) { viewModel.open(word) }
     val state by viewModel.state.collectAsStateWithLifecycle()
     val sheet by viewModel.sheet.collectAsStateWithLifecycle()
@@ -79,7 +80,10 @@ fun WordDetailScreen(viewModel: WordDetailViewModel, word: String, onBack: () ->
                             fontStyle = if (word.phonetic == null) FontStyle.Italic else FontStyle.Normal)
                         AssistChip(onClick = { pronounce(word.word, word.audioUrl) }, label = { Text("Nghe") },
                             leadingIcon = { Icon(painterResource(R.drawable.ic_volume), null, Modifier.size(16.dp)) })
+                        AssistChip(onClick = { speaking = true }, label = { Text("Luyện nói") },
+                            leadingIcon = { Icon(painterResource(R.drawable.ic_mic), null, Modifier.size(16.dp)) })
                     }
+                    if (speaking) com.engmate.app.feature.pronunciation.presentation.PronunciationDialog(word.word, { speaking = false }, onPronunciationScored)
                     HorizontalDivider(color = line)
                     val meaning = state.customMeaning ?: word.meaningVi
                     if (meaning != null) Row(verticalAlignment = Alignment.Top) {
