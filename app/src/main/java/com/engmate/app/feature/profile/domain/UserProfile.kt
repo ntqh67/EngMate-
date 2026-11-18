@@ -34,3 +34,5 @@ class InvalidProfile(val errors: Map<ProfileField, String>) : IllegalArgumentExc
 class ProfileAlreadyExists : IllegalStateException("Hồ sơ đã tồn tại")
 class ProfileMissing : IllegalStateException("Hồ sơ không còn tồn tại")
 class SessionRequired : IllegalStateException("Bạn cần đăng nhập lại")
+
+class ProfileHasLearningData : IllegalStateException("Hồ sơ còn dữ liệu học liên quan")

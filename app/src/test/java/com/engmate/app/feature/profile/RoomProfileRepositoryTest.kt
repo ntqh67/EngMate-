@@ -78,4 +78,17 @@ class RoomProfileRepositoryTest {
         session.user.value = null
         try { repo.delete("alice"); fail("Expected signed out") } catch (_: SessionRequired) { }
     }
+    @Test fun deleteWithLearningDataReportsConflictAndPreservesData() = runBlocking {
+        val repo = repository()
+        repo.create("alice", ProfileInput("Nguyễn An"))
+        db.study().record(com.engmate.app.feature.progress.data.local.LearningActivityEntity(
+            activityId = "study-1", userUid = "alice",
+            activityType = com.engmate.app.core.database.ActivityType.GRAMMAR,
+            occurredAt = 1, studyDate = "2026-11-12", xpEarned = 10))
+        try { repo.delete("alice"); fail("Expected learning data conflict") }
+        catch (_: ProfileHasLearningData) { }
+        assertNotNull(repo.observe("alice").first())
+        assertEquals(10L, db.study().getStat("alice", "2026-11-12")!!.xpEarned)
+    }
+
 }

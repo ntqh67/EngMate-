@@ -12,10 +12,16 @@ import dagger.hilt.components.SingletonComponent
 import java.time.Clock
 import javax.inject.Singleton
 @Module @InstallIn(SingletonComponent::class)
-object ProfileStorageModule {
+object DatabaseModule {
     @Provides @Singleton fun database(@ApplicationContext context: Context): EngMateDatabase =
         Room.databaseBuilder(context, EngMateDatabase::class.java, "engmate-${BuildConfig.FLAVOR}.db").build()
     @Provides fun profiles(database: EngMateDatabase) = database.profiles()
+    @Provides fun vocabulary(database: EngMateDatabase) = database.vocabulary()
+    @Provides fun notebook(database: EngMateDatabase) = database.notebook()
+    @Provides fun flashcards(database: EngMateDatabase) = database.flashcards()
+    @Provides fun grammar(database: EngMateDatabase) = database.grammar()
+    @Provides fun quiz(database: EngMateDatabase) = database.quiz()
+    @Provides fun study(database: EngMateDatabase) = database.study()
     @Provides fun clock(): Clock = Clock.systemUTC()
 }
 @Module @InstallIn(SingletonComponent::class)

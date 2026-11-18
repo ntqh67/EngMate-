@@ -114,6 +114,7 @@ class ProfileViewModel @Inject constructor(
                     it.copy(busy = false, confirmDelete = false,
                         errors = (error as? InvalidProfile)?.errors.orEmpty(), message = when (error) {
                             is ProfileAlreadyExists -> "Hồ sơ đã tồn tại. Hãy hủy và mở lại phần chỉnh sửa."
+                            is ProfileHasLearningData -> "Không thể xóa hồ sơ đang có dữ liệu học. Lịch sử và tiến độ của bạn vẫn được giữ nguyên."
                             is ProfileMissing -> "Hồ sơ không còn tồn tại. Vui lòng tải lại."
                             is SessionRequired -> "Phiên đăng nhập đã thay đổi. Vui lòng đăng nhập lại."
                             is InvalidProfile -> "Vui lòng kiểm tra thông tin nhập."

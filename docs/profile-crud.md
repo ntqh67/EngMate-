@@ -26,7 +26,7 @@ ProfileScreen → ProfileViewModel → ProfileRepository
 ```
 
 Hilt cung cấp database, DAO, Clock, Repository và UserSession. Domain không
-phụ thuộc Room/Firebase. Schema v1 đã được export tại `app/schemas`.
+phụ thuộc Room/Firebase. Schema v1 và v2 đã được export tại `app/schemas`; v2 thêm các bảng học tập.
 Không bật destructive migration; tăng version và thêm migration khi đổi schema.
 
 ## Chạy ngay bản demo
@@ -50,16 +50,14 @@ form CRUD; thiếu cấu hình Firebase cũng không fallback sang tài khoản 
 1. Thêm Android app `com.engmate.app` vào Firebase project.
 2. Đặt cấu hình tại `app/google-services.json`. Google Services plugin chỉ
    được áp dụng khi file tồn tại; xử lý Google Services cho demo được tắt.
-3. Khi module auth hoàn thành, đăng nhập bằng Firebase SDK rồi điều hướng vào
-   ProfileScreen. UserSession tự cập nhật qua AuthStateListener.
-4. Sau đăng ký, có thể gọi ProfileRepository.create với UID vừa nhận; nếu hồ
-   sơ đã có, đọc lại thay vì ghi đè thông tin người dùng đã sửa.
+3. Chọn `liveDebug`, đăng ký và xác minh email trước khi đăng nhập.
+4. Tạo hồ sơ trên thiết bị khi đăng nhập lần đầu. Hồ sơ hiện lưu trong Room;
+   xem [hướng dẫn tài khoản và tiến độ](auth-progress.md).
 
 Firebase BoM được ghim 34.0.0 để tương thích Kotlin 2.2.10 của AGP đang dùng.
-Chưa thực hiện đăng nhập Firebase thật trong phần CRUD này. Build live thành
-công chỉ xác nhận mã adapter tích hợp biên dịch, không xác nhận cấu hình
-Firebase hay luồng đăng nhập. Chính sách bắt buộc xác thực email cần được
-triển khai trong luồng auth theo SRS.
+Build live thành công chỉ xác nhận mã tích hợp biên dịch, không xác nhận cấu hình
+Firebase hay luồng đăng nhập trên thiết bị thật. Luồng live yêu cầu email đã
+xác minh trước khi vào ứng dụng.
 
 ## Khác biệt với ERD ban đầu
 
@@ -70,9 +68,9 @@ triển khai trong luồng auth theo SRS.
   từ backend/Firebase khi triển khai, không dựa vào giá trị người dùng sửa.
 - Email là snapshot tại thời điểm tạo hồ sơ; UI hiển thị email của phiên hiện
   tại. Thay đổi email Firebase là luồng riêng, cần đồng bộ snapshot khi bổ sung.
-- Chưa có quan hệ với bảng học tập. Trước khi thêm bảng liên quan, quyết định
-  chính sách xóa/cascade và migration; không dùng chức năng này như xóa toàn
-  bộ tài khoản hoặc toàn bộ dữ liệu học.
+- Từ database v2, các bảng học tập tham chiếu hồ sơ bằng FK RESTRICT. Xóa
+  hồ sơ có dữ liệu học liên quan sẽ bị chặn và hiển thị thông báo; không tự
+  xóa lịch sử, tài khoản hoặc toàn bộ dữ liệu học. Xem [database.md](database.md).
 
 ## Kiểm thử
 

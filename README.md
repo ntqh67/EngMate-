@@ -5,9 +5,10 @@ ngữ pháp, quiz và thói quen học mỗi ngày.
 
 ## Trạng thái
 
-Đã có project Android chạy được và CRUD hồ sơ cá nhân: tạo, xem, sửa, xóa
-hồ sơ cục bộ bằng Room, qua Repository và ViewModel. Giao diện Compose có
-validation, trạng thái tải/lỗi và xác nhận xóa. Các chức năng khác vẫn là khung.
+Ứng dụng có đăng ký/đăng nhập bằng email, xác minh email, đặt lại mật khẩu và
+đăng xuất ở bản live dùng Firebase Auth. Hồ sơ cá nhân lưu bằng Room; màn hình
+tiến độ hiển thị dữ liệu học cục bộ. Database v2 có 15 bảng cùng DAO và migration;
+các chức năng học tập còn lại đang triển khai.
 
 Có hai biến thể: **demo** chạy ngay với tài khoản cục bộ minh họa; **live** lấy
 UID từ phiên Firebase Auth, không tự đăng nhập và không dùng tài khoản demo.
@@ -81,6 +82,12 @@ feature/profile/
 API service và DTO. Chỉ tạo lớp lưu trữ khi chức năng cần: `home` dùng các
 Repository hiện có để tổng hợp dữ liệu, không có kho dữ liệu riêng.
 
+## Database
+
+Room v2 có 15 bảng, migration bảo toàn hồ sơ từ v1, DAO cho các nhóm chức
+năng và transaction cho quiz/thống kê. Xem [hướng dẫn database](docs/database.md)
+và [ADR-0003](docs/adr/0003-room-database-v2.md).
+
 ## Phân công
 
 | Thành viên | Chức năng | Trách nhiệm chung |
@@ -115,10 +122,9 @@ Hướng dẫn chi tiết và giới hạn: [CRUD hồ sơ](docs/profile-crud.md
 
 ## Bước triển khai tiếp theo
 
-1. Cấu hình Firebase cho `com.engmate.app`, triển khai màn hình đăng ký/đăng nhập.
-2. Nối đăng ký thành công vào luồng tạo hồ sơ; bổ sung xác thực email theo SRS.
-3. Mở rộng Room cho từ vựng, tiến độ, quiz và thêm migrations từ schema v1.
-4. Tích hợp Navigation và các chức năng còn lại, hoàn thiện giao diện theo Figma.
+1. Cấu hình Firebase và kiểm tra đăng ký/đăng nhập trên thiết bị thật.
+2. Tích hợp các chức năng học với DAO v2 để ghi hoạt động và kết quả quiz.
+3. Hoàn thiện điều hướng và các màn hình còn lại theo Figma.
 
 `app/google-services.json` và `local.properties` được bỏ qua trong Git.
 Không đưa service-account key vào ứng dụng Android.

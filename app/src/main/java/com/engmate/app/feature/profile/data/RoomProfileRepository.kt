@@ -35,6 +35,10 @@ class RoomProfileRepository @Inject constructor(
     }
     override suspend fun delete(uid: String) {
         owner(uid)
-        if (dao.delete(uid) == 0) throw ProfileMissing()
+        try {
+            if (dao.delete(uid) == 0) throw ProfileMissing()
+        } catch (_: android.database.sqlite.SQLiteConstraintException) {
+            throw ProfileHasLearningData()
+        }
     }
 }
