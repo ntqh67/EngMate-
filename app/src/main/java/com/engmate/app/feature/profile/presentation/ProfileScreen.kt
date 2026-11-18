@@ -34,11 +34,9 @@ fun ProfileScreen(viewModel: ProfileViewModel, onSettings: (() -> Unit)? = null)
         Column(Modifier.fillMaxSize().padding(padding).imePadding()
             .verticalScroll(rememberScrollState()).padding(horizontal = 24.dp, vertical = 16.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
             Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.SpaceBetween) {
-                Text("Hồ sơ cá nhân", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
+                Text("Hồ sơ cá nhân", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
                 if (onSettings != null) IconButton(onClick = onSettings) { Icon(androidx.compose.ui.res.painterResource(com.engmate.app.R.drawable.ic_settings), "Cài đặt", tint = MaterialTheme.colorScheme.primary) }
             }
-            if (viewModel.isDemo) Text("Bản demo • Dữ liệu chỉ lưu trên thiết bị", style = MaterialTheme.typography.labelLarge,
-                color = MaterialTheme.colorScheme.tertiary)
             state.message?.let { Text(it, color = MaterialTheme.colorScheme.primary) }
             when {
                 state.user == null -> Text("Vui lòng đăng nhập để quản lý hồ sơ cá nhân.")
@@ -92,13 +90,25 @@ fun ProfileScreen(viewModel: ProfileViewModel, onSettings: (() -> Unit)? = null)
     Text("Trình độ tiếng Anh", style = MaterialTheme.typography.labelLarge, fontWeight = FontWeight.Bold)
     ProfileLevel(input.englishLevel, !state.busy) { update(input.copy(englishLevel = it)) }
     Text("Mục tiêu mỗi ngày", style = MaterialTheme.typography.labelLarge, fontWeight = FontWeight.Bold)
-    OutlinedTextField(value = input.dailyGoalMinutes, onValueChange = { update(input.copy(dailyGoalMinutes = it)) }, modifier = Modifier.fillMaxWidth(), singleLine = true, enabled = !state.busy,
-        leadingIcon = { LineIcon("target", MaterialTheme.colorScheme.primary) }, suffix = { Text("phút/ngày") }, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-        shape = RoundedCornerShape(12.dp), colors = OutlinedTextFieldDefaults.colors(unfocusedContainerColor = Color.White, focusedContainerColor = Color.White),
-        isError = state.errors[ProfileField.GOAL] != null, supportingText = state.errors[ProfileField.GOAL]?.let { error -> { Text(error) } })
+    ProfileGoal(input.dailyGoalMinutes, !state.busy, state.errors[ProfileField.GOAL]) { update(input.copy(dailyGoalMinutes = it)) }
     Button(onClick = vm::save, enabled = state.editing && !state.busy, modifier = Modifier.fillMaxWidth().height(48.dp), shape = RoundedCornerShape(12.dp)) { Text(if (state.busy) "Đang lưu…" else "Lưu thay đổi") }
     if (state.editing) TextButton(onClick = vm::cancelEdit, enabled = !state.busy, modifier = Modifier.fillMaxWidth()) { Text("Hủy") }
     TextButton(onClick = vm::askDelete, enabled = !state.busy, modifier = Modifier.fillMaxWidth()) { Text("Xóa hồ sơ trên thiết bị", color = MaterialTheme.colorScheme.error) }
+}
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable private fun ProfileGoal(value: String, enabled: Boolean, error: String?, onChange: (String) -> Unit) {
+    var expanded by remember { mutableStateOf(false) }
+    val options = (listOf("15", "30", "45", "60", "90") + value).filter { it.isNotBlank() }.distinct().sortedBy { it.toIntOrNull() ?: 0 }
+    ExposedDropdownMenuBox(expanded = expanded, onExpandedChange = { if (enabled) expanded = it }) {
+        OutlinedTextField(value = "$value phút/ngày", onValueChange = {}, readOnly = true, enabled = enabled, isError = error != null,
+            modifier = Modifier.fillMaxWidth().menuAnchor(ExposedDropdownMenuAnchorType.PrimaryNotEditable, enabled),
+            leadingIcon = { LineIcon("target", MaterialTheme.colorScheme.primary) }, trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded) },
+            supportingText = error?.let { e -> { Text(e) } }, shape = RoundedCornerShape(12.dp),
+            colors = OutlinedTextFieldDefaults.colors(unfocusedContainerColor = Color.White, focusedContainerColor = Color.White))
+        ExposedDropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
+            options.forEach { m -> DropdownMenuItem(text = { Text("$m phút/ngày") }, onClick = { onChange(m); expanded = false }) }
+        }
+    }
 }
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable private fun ProfileLevel(value: String, enabled: Boolean, onChange: (String) -> Unit) {
