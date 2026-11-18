@@ -4,12 +4,9 @@ plugins {
     id("com.google.devtools.ksp")
     id("com.google.dagger.hilt.android")
 }
-// Firebase config is supplied locally; the demo does not need it.
-if (file("google-services.json").exists()) {
-    apply(plugin = "com.google.gms.google-services")
-    tasks.matching { it.name.startsWith("processDemo") && it.name.endsWith("GoogleServices") }
-        .configureEach { enabled = false }
-}
+// Firebase config (google-services.json) is supplied locally and is not committed.
+check(file("google-services.json").exists()) { "Thiếu app/google-services.json (Firebase). Xem docs/profile-crud.md." }
+apply(plugin = "com.google.gms.google-services")
 android {
     namespace = "com.engmate.app"
     compileSdk = 37
@@ -23,7 +20,6 @@ android {
     }
     flavorDimensions += "environment"
     productFlavors {
-        create("demo") { dimension = "environment"; applicationIdSuffix = ".demo"; versionNameSuffix = "-demo" }
         create("live") { dimension = "environment" }
     }
     compileOptions { sourceCompatibility = JavaVersion.VERSION_17; targetCompatibility = JavaVersion.VERSION_17 }

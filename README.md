@@ -10,8 +10,8 @@ ngữ pháp, quiz và thói quen học mỗi ngày.
 tiến độ hiển thị dữ liệu học cục bộ. Database v3 có 15 bảng cùng DAO và migration;
 các chức năng học tập còn lại đang triển khai.
 
-Có hai biến thể: **demo** chạy ngay với tài khoản cục bộ minh họa; **live** lấy
-UID từ phiên Firebase Auth, không tự đăng nhập và không dùng tài khoản demo.
+Ứng dụng chỉ còn biến thể **live**: UID lấy từ phiên Firebase Auth, cần
+`app/google-services.json` (không commit) để build.
 Xem [hướng dẫn CRUD hồ sơ](docs/profile-crud.md) để chạy và tích hợp Firebase.
 
 Các file `.gitkeep` còn lại giữ những thư mục chưa có mã nguồn trong Git.
@@ -109,15 +109,14 @@ phối hợp trong nhóm trước khi tích hợp.
 Mở repository bằng Android Studio hỗ trợ AGP 9.3.3, cài Android SDK 37 và
 Build Tools 36.0.0. Gradle Wrapper 9.5.0 được commit trong repo; Gradle cần
 JDK 17 trở lên tương thích Gradle 9.5 (môi trường đã kiểm tra dùng JDK 25).
-Chọn build variant `demoDebug`, rồi Run trên Android 8.0 trở lên.
+Chọn build variant `liveDebug`, rồi Run trên Android 8.0 trở lên.
 
 ```bash
-./gradlew :app:assembleDemoDebug
-./gradlew :app:testDemoDebugUnitTest :app:lintDemoDebug
+./gradlew :app:testLiveDebugUnitTest :app:lintLiveDebug
 ./gradlew :app:assembleLiveDebug
 ```
 
-APK demo: `app/build/outputs/apk/demo/debug/app-demo-debug.apk`.
+APK: `app/build/outputs/apk/live/debug/app-live-debug.apk`.
 Hướng dẫn chi tiết và giới hạn: [CRUD hồ sơ](docs/profile-crud.md).
 
 ## Bước triển khai tiếp theo
