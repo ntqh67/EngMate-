@@ -24,7 +24,7 @@ private val dateFormat = DateTimeFormatter.ofPattern("HH:mm · dd/MM/yyyy")
 private fun formatDate(millis: Long) = dateFormat.format(Instant.ofEpochMilli(millis).atZone(ZoneId.systemDefault()))
 
 @Composable
-fun QuizHistoryScreen(viewModel: QuizHistoryViewModel, onBack: () -> Unit) {
+fun QuizHistoryScreen(viewModel: QuizHistoryViewModel, onBack: (() -> Unit)? = null) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     val snackbar = remember { SnackbarHostState() }
     MessageEffect(state.message, snackbar, viewModel::messageShown)
@@ -61,14 +61,13 @@ private fun AttemptList(state: QuizHistoryUiState, viewModel: QuizHistoryViewMod
     Column(Modifier.fillMaxSize()) {
         if (BuildConfig.DEBUG) {
             OutlinedButton(onClick = viewModel::createSample, enabled = !state.busy, modifier = Modifier.padding(horizontal = 16.dp)) {
-                Text(if (state.busy) "Đang tạo…" else "Tạo lượt làm mẫu (debug)")
+                Text(if (state.busy) "Đang tạo…" else "Tạo lượt làm mẫu")
             }
         }
         when {
             state.loading -> Box(Modifier.fillMaxSize(), Alignment.Center) { CircularProgressIndicator() }
-            state.attempts.isEmpty() -> Box(Modifier.fillMaxSize().padding(24.dp), Alignment.Center) {
-                Text("Chưa có lượt làm bài nào.")
-            }
+            state.attempts.isEmpty() -> EmptyState("Chưa có lượt làm bài nào",
+                "Kết quả và câu trả lời của mỗi lượt làm bài tập sẽ được lưu tại đây để bạn xem lại.")
             else -> LazyColumn(contentPadding = PaddingValues(16.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 items(state.attempts, key = { it.id }) { a ->
                     Card(Modifier.fillMaxWidth().clickable { viewModel.open(a.id) }) {
