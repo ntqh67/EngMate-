@@ -1,6 +1,6 @@
-# Room database v2 — EngMate
+# Room database v3 — EngMate
 
-Database cục bộ đã có đủ 15 bảng từ ERD nhóm cung cấp. Phần này cung cấp
+Database cục bộ v3 đã có đủ 15 bảng từ ERD nhóm cung cấp. Phần này cung cấp
 Entity, DAO, các transaction và migration; chưa triển khai giao diện hay
 Repository nghiệp vụ cho các chức năng ngoài hồ sơ, chưa nhập bộ dữ liệu
 20 chủ đề × 20 từ và chưa đồng bộ Firestore.
@@ -34,7 +34,7 @@ Repository của từng chức năng phải gọi DAO, ViewModel gọi Repositor
 
 ## Quy ước và khác biệt với bản ERD
 
-- UID Firebase là TEXT. Bảng cá nhân dùng `user_uid`, FK đến `user_profile.uid`.
+- UID Firebase là TEXT. Các bảng quiz_attempts, flashcard_collections và word_progress dùng `user_id`; các bảng thống kê dùng `user_uid`, FK đến `user_profile.uid`.
   Giữ nguyên schema hồ sơ v1: không password, chưa username/role.
 - ID số là Kotlin Long, SQLite INTEGER; các bảng nội dung tự sinh ID khi id = 0.
 - Các FK từ tiến độ, ghi chú, sổ tay dùng `word_id`, không dùng chuỗi `word`.
@@ -45,7 +45,7 @@ Repository của từng chức năng phải gọi DAO, ViewModel gọi Repositor
 - `total_words` được COUNT qua truy vấn `TopicWithWordCount`, không lưu một
   cột đếm có thể lệch khi thêm/xóa từ.
 - Timestamp dùng Long epoch milliseconds UTC; thời lượng dùng giây, mục tiêu
-  dùng phút, khoảng ôn dùng ngày. Tên `interval` đổi thành `interval_days`.
+  dùng phút, khoảng ôn dùng ngày. Cột `interval` lưu số ngày giữa hai lần ôn.
 - Thêm `ease_factor` (mặc định 2.5) cho lịch ôn. Đây là lưu trữ trạng thái;
   thuật toán SM-2 sẽ được triển khai riêng, DAO không tự tính lịch.
 - Mảng ví dụ/collocations/idioms dùng `List<String>` và TypeConverter JSON TEXT;
@@ -169,8 +169,8 @@ khi được triển khai.
 
 ## Migration và kiểm thử
 
-- `EngMateDatabase` version 2 dùng `AutoMigration(from = 1, to = 2)`.
-- Schema `1.json` giữ nguyên; schema `2.json` được Room sinh và cần commit.
+- `EngMateDatabase` version 3 dùng auto migration từ 1 → 2 và từ 2 → 3. Bản 3 đổi tên các cột `user_uid` thành `user_id` trong quiz_attempts, flashcard_collections và word_progress, cùng `interval_days` thành `interval`.
+- Schema `1.json` và `2.json` giữ nguyên; schema `3.json` được Room sinh.
 - Không dùng `fallbackToDestructiveMigration`.
 - Dữ liệu hồ sơ v1 được giữ nguyên; 14 bảng mới bắt đầu rỗng.
 - Kiểm thử migration tạo database từ **schema v1 đã export**, mở bằng Room

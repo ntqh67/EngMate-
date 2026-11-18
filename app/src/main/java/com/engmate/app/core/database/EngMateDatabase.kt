@@ -42,9 +42,9 @@ import com.engmate.app.feature.progress.data.local.DailyStudyStatEntity
         LearningActivityEntity::class,
         DailyStudyStatEntity::class,
     ],
-    version = 2,
+    version = 3,
     exportSchema = true,
-    autoMigrations = [AutoMigration(from = 1, to = 2)],
+    autoMigrations = [AutoMigration(from = 1, to = 2), AutoMigration(from = 2, to = 3, spec = Migration2To3::class)],
 )
 @TypeConverters(DatabaseConverters::class)
 abstract class EngMateDatabase : RoomDatabase() {
@@ -56,3 +56,9 @@ abstract class EngMateDatabase : RoomDatabase() {
     abstract fun quiz(): QuizDao
     abstract fun study(): StudyDao
 }
+
+@RenameColumn(tableName = "quiz_attempts", fromColumnName = "user_uid", toColumnName = "user_id")
+@RenameColumn(tableName = "flashcard_collections", fromColumnName = "user_uid", toColumnName = "user_id")
+@RenameColumn(tableName = "word_progress", fromColumnName = "user_uid", toColumnName = "user_id")
+@RenameColumn(tableName = "word_progress", fromColumnName = "interval_days", toColumnName = "interval")
+class Migration2To3 : androidx.room.migration.AutoMigrationSpec

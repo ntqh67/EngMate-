@@ -55,11 +55,11 @@ abstract class QuizDao {
 
     @Insert protected abstract suspend fun insertAttempt(attempt: QuizAttemptEntity): Long
     @Insert protected abstract suspend fun insertAnswers(answers: List<AttemptAnswerEntity>)
-    @Transaction @Query("SELECT * FROM quiz_attempts WHERE user_uid = :uid AND id = :id")
+    @Transaction @Query("SELECT * FROM quiz_attempts WHERE user_id = :uid AND id = :id")
     abstract suspend fun getAttempt(uid: String, id: Long): AttemptWithAnswers?
-    @Query("SELECT * FROM quiz_attempts WHERE user_uid = :uid ORDER BY completed_at DESC, id DESC")
+    @Query("SELECT * FROM quiz_attempts WHERE user_id = :uid ORDER BY completed_at DESC, id DESC")
     abstract fun observeAttempts(uid: String): Flow<List<QuizAttemptEntity>>
-    @Query("DELETE FROM quiz_attempts WHERE user_uid = :uid AND id = :id")
+    @Query("DELETE FROM quiz_attempts WHERE user_id = :uid AND id = :id")
     abstract suspend fun deleteAttempt(uid: String, id: Long): Int
 
     // Completed attempts are immutable; a retake creates a new attempt.

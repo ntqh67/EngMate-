@@ -7,7 +7,7 @@ ngữ pháp, quiz và thói quen học mỗi ngày.
 
 Ứng dụng có đăng ký/đăng nhập bằng email, xác minh email, đặt lại mật khẩu và
 đăng xuất ở bản live dùng Firebase Auth. Hồ sơ cá nhân lưu bằng Room; màn hình
-tiến độ hiển thị dữ liệu học cục bộ. Database v2 có 15 bảng cùng DAO và migration;
+tiến độ hiển thị dữ liệu học cục bộ. Database v3 có 15 bảng cùng DAO và migration;
 các chức năng học tập còn lại đang triển khai.
 
 Có hai biến thể: **demo** chạy ngay với tài khoản cục bộ minh họa; **live** lấy
@@ -84,7 +84,7 @@ Repository hiện có để tổng hợp dữ liệu, không có kho dữ liệu
 
 ## Database
 
-Room v2 có 15 bảng, migration bảo toàn hồ sơ từ v1, DAO cho các nhóm chức
+Room v3 có 15 bảng, migration bảo toàn hồ sơ từ v1, DAO cho các nhóm chức
 năng và transaction cho quiz/thống kê. Xem [hướng dẫn database](docs/database.md)
 và [ADR-0003](docs/adr/0003-room-database-v2.md).
 
@@ -123,7 +123,7 @@ Hướng dẫn chi tiết và giới hạn: [CRUD hồ sơ](docs/profile-crud.md
 ## Bước triển khai tiếp theo
 
 1. Cấu hình Firebase và kiểm tra đăng ký/đăng nhập trên thiết bị thật.
-2. Tích hợp các chức năng học với DAO v2 để ghi hoạt động và kết quả quiz.
+2. Tích hợp các chức năng học với DAO v3 để ghi hoạt động và kết quả quiz.
 3. Hoàn thiện điều hướng và các màn hình còn lại theo Figma.
 
 `app/google-services.json` và `local.properties` được bỏ qua trong Git.

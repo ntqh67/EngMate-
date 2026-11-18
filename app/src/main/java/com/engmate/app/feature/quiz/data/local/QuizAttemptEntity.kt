@@ -8,15 +8,15 @@ import com.engmate.app.feature.grammar.data.local.GrammarLessonEntity
 @Entity(
     tableName = "quiz_attempts",
     foreignKeys = [
-        ForeignKey(entity = UserProfileEntity::class, parentColumns = ["uid"], childColumns = ["user_uid"], onDelete = ForeignKey.RESTRICT),
+        ForeignKey(entity = UserProfileEntity::class, parentColumns = ["uid"], childColumns = ["user_id"], onDelete = ForeignKey.RESTRICT),
         ForeignKey(entity = TopicEntity::class, parentColumns = ["id"], childColumns = ["topic_id"], onDelete = ForeignKey.RESTRICT),
         ForeignKey(entity = GrammarLessonEntity::class, parentColumns = ["id"], childColumns = ["lesson_id"], onDelete = ForeignKey.RESTRICT)
     ],
-    indices = [Index(value = ["user_uid", "completed_at"]), Index(value = ["topic_id"]), Index(value = ["lesson_id"])]
+    indices = [Index(value = ["user_id", "completed_at"]), Index(value = ["topic_id"]), Index(value = ["lesson_id"])]
 )
 data class QuizAttemptEntity(
 @PrimaryKey(autoGenerate = true) val id: Long = 0,
-    @ColumnInfo(name = "user_uid") val userUid: String,
+    @ColumnInfo(name = "user_id") val userUid: String,
     @ColumnInfo(name = "topic_id") val topicId: Long? = null,
     @ColumnInfo(name = "lesson_id") val lessonId: Long? = null,
     @ColumnInfo(name = "is_placement", defaultValue = "0") val isPlacement: Boolean = false,
