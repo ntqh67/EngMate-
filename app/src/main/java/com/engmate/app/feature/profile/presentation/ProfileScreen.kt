@@ -35,7 +35,7 @@ fun ProfileScreen(viewModel: ProfileViewModel, onSettings: (() -> Unit)? = null)
             .verticalScroll(rememberScrollState()).padding(horizontal = 24.dp, vertical = 16.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
             Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.SpaceBetween) {
                 Text("Hồ sơ cá nhân", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
-                if (onSettings != null) TextButton(onClick = onSettings) { Text("⚙", fontSize = 24.sp) }
+                if (onSettings != null) IconButton(onClick = onSettings) { Icon(androidx.compose.ui.res.painterResource(com.engmate.app.R.drawable.ic_settings), "Cài đặt", tint = MaterialTheme.colorScheme.primary) }
             }
             if (viewModel.isDemo) Text("Bản demo • Dữ liệu chỉ lưu trên thiết bị", style = MaterialTheme.typography.labelLarge,
                 color = MaterialTheme.colorScheme.tertiary)

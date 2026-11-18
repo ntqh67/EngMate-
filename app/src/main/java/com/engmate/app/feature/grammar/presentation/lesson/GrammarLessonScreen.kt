@@ -1,57 +1,96 @@
 package com.engmate.app.feature.grammar.presentation.lesson
 
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.engmate.app.R
 import com.engmate.app.core.ui.components.*
 import com.engmate.app.feature.grammar.presentation.topics.GrammarLessonsViewModel
+
+private val blueCard = Color(0xFFD5E3FF)
+private val chipBg = Color(0xFFE1F0FF)
 
 @Composable
 fun GrammarLessonScreen(viewModel: GrammarLessonsViewModel, lessonId: Long, onBack: () -> Unit) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     val lesson = state.lesson(lessonId)
-    Scaffold(topBar = { BackTopBar("Ngữ pháp", onBack) }) { padding ->
+    var tab by rememberSaveable(lessonId) { mutableIntStateOf(0) }
+    Scaffold(topBar = { BackTopBar(lesson?.title ?: "Ngữ pháp", onBack) }) { padding ->
         when {
             state.loading -> Box(Modifier.fillMaxSize().padding(padding), Alignment.Center) { CircularProgressIndicator() }
             lesson == null -> Box(Modifier.padding(padding)) {
                 EmptyState("Bài học không còn tồn tại", action = { OutlinedButton(onClick = onBack) { Text("Quay lại") } })
             }
-            else -> Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState())
-                .padding(horizontal = 20.dp, vertical = 16.dp).widthIn(max = 680.dp)) {
-                LevelBadge(lesson.level)
-                Spacer(Modifier.height(12.dp))
-                Text(lesson.title, style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.SemiBold)
-                lesson.summary?.let {
-                    Spacer(Modifier.height(8.dp))
-                    Text(it, style = MaterialTheme.typography.bodyLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            else -> Column(Modifier.fillMaxSize().padding(padding)) {
+                TabRow(selectedTabIndex = tab, containerColor = Color.Transparent) {
+                    listOf("Lý thuyết", "Ví dụ", "Bài tập").forEachIndexed { i, label ->
+                        Tab(selected = tab == i, onClick = { tab = i }, text = { Text(label) })
+                    }
                 }
-                Spacer(Modifier.height(24.dp))
-                Text(lesson.content, style = MaterialTheme.typography.bodyLarge)
-                if (lesson.examples.isNotEmpty()) {
-                    SectionHeader("Ví dụ", Modifier.padding(top = 12.dp))
-                    Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surfaceContainerLow,
-                        modifier = Modifier.fillMaxWidth().padding(top = 4.dp)) {
-                        Column(Modifier.padding(vertical = 4.dp)) {
-                            lesson.examples.forEachIndexed { i, ex ->
-                                if (i > 0) HorizontalDivider(Modifier.padding(horizontal = 16.dp), color = MaterialTheme.colorScheme.outlineVariant)
-                                Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
-                                    Text(ex.en, style = MaterialTheme.typography.bodyLarge, fontWeight = FontWeight.Medium)
-                                    Text(ex.vi, style = MaterialTheme.typography.bodyMedium, fontStyle = FontStyle.Italic,
-                                        color = MaterialTheme.colorScheme.onSurfaceVariant)
+                Column(Modifier.weight(1f).verticalScroll(rememberScrollState()).padding(horizontal = 20.dp, vertical = 16.dp),
+                    verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                    when (tab) {
+                        0 -> {
+                            Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
+                                Pill(lesson.level)
+                                Pill("${(lesson.content.split(Regex("\\s+")).size / 150 + 1)} phút", R.drawable.ic_clock)
+                            }
+                            Text(lesson.title, style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
+                            lesson.summary?.let { Text(it, color = MaterialTheme.colorScheme.onSurfaceVariant) }
+                            Card(Modifier.fillMaxWidth(), shape = RoundedCornerShape(14.dp), colors = CardDefaults.cardColors(containerColor = Color.White),
+                                border = BorderStroke(1.dp, Color(0xFFDDE4EB))) {
+                                Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                                    Text("Cách dùng", fontWeight = FontWeight.SemiBold)
+                                    Text(lesson.content, style = MaterialTheme.typography.bodyLarge)
                                 }
                             }
                         }
+                        1 -> if (lesson.examples.isEmpty()) EmptyState("Bài này chưa có ví dụ") else lesson.examples.forEach { ex ->
+                            Card(Modifier.fillMaxWidth(), shape = RoundedCornerShape(14.dp), colors = CardDefaults.cardColors(containerColor = Color.White),
+                                border = BorderStroke(1.dp, Color(0xFFDDE4EB))) {
+                                Row(Modifier.padding(14.dp), verticalAlignment = Alignment.CenterVertically) {
+                                    Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(2.dp)) {
+                                        Text(ex.en, fontWeight = FontWeight.SemiBold)
+                                        Text(ex.vi, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                                    }
+                                    Box(Modifier.size(36.dp).background(blueCard, RoundedCornerShape(50)), Alignment.Center) {
+                                        Icon(painterResource(R.drawable.ic_volume), "Nghe", Modifier.size(18.dp), tint = MaterialTheme.colorScheme.primary)
+                                    }
+                                }
+                            }
+                        }
+                        else -> EmptyState("Bài tập đang được chuẩn bị", "Phần bài tập của chủ điểm này sẽ sớm có.")
+                    }
+                }
+                Row(Modifier.fillMaxWidth().padding(horizontal = 20.dp, vertical = 12.dp), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                    OutlinedButton(onClick = {}, enabled = false, modifier = Modifier.weight(1f).height(48.dp), shape = RoundedCornerShape(24.dp)) {
+                        Icon(painterResource(R.drawable.ic_mic), null, Modifier.size(18.dp)); Spacer(Modifier.width(6.dp)); Text("Luyện phát âm", maxLines = 1)
+                    }
+                    Button(onClick = {}, enabled = false, modifier = Modifier.weight(1f).height(48.dp), shape = RoundedCornerShape(24.dp)) {
+                        Icon(painterResource(R.drawable.ic_bolt), null, Modifier.size(18.dp)); Spacer(Modifier.width(6.dp)); Text("Làm quiz", maxLines = 1)
                     }
                 }
             }
         }
+    }
+}
+
+@Composable private fun Pill(text: String, icon: Int? = null) {
+    Row(Modifier.background(chipBg, RoundedCornerShape(50)).padding(horizontal = 10.dp, vertical = 4.dp), verticalAlignment = Alignment.CenterVertically) {
+        if (icon != null) { Icon(painterResource(icon), null, Modifier.size(14.dp)); Spacer(Modifier.width(4.dp)) }
+        Text(text, style = MaterialTheme.typography.labelMedium)
     }
 }
