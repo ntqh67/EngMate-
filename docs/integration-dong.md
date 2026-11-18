@@ -6,17 +6,18 @@ xem lại, kiểm tra trình độ, nhắc học). Cách demo: [demo-dong.md](de
 
 ## Lối vào màn hình
 
-Điều hướng tự viết trong `navigation/EngMateApp.kt`: gọi `open(Detail.X)` để mở,
-`close()` để đóng. Khoá lưu trạng thái là chuỗi, ví dụ `quiz:lesson:3`.
+**Trạng thái:** sau khi rebase lên main (điều hướng theo tab của PR #4), các màn dưới đây
+biên dịch và có test nhưng **chưa được nối** vào `navigation/EngMateApp.kt`. Bảng mô tả
+nơi cần gọi; `Detail.X` là tên lối vào dự kiến khi nối lại.
 
 | Lối vào | Màn hình | Người gọi | Khi xong |
 | --- | --- | --- | --- |
-| `Detail.Quiz(QuizSource.Lesson(id))` | `QuizScreen` | Nút "Làm bài tập" trong bài ngữ pháp (đã nối) | Mở `Detail.QuizResult(attemptId)` |
+| `Detail.Quiz(QuizSource.Lesson(id))` | `QuizScreen` | Nút "Làm bài tập" trong bài ngữ pháp | Mở `Detail.QuizResult(attemptId)` |
 | `Detail.Quiz(QuizSource.Topic(id))` | `QuizScreen` | **Khang**: nút "Làm quiz" ở màn chủ đề từ vựng | Mở `Detail.QuizResult(attemptId)` |
 | `Detail.Quiz(QuizSource.Placement)` | `QuizScreen` | Dự phòng; thường dùng `Detail.Placement` | Mở `Detail.QuizResult(attemptId)` |
 | `Detail.QuizResult(attemptId)` | `QuizResultScreen` | Tự mở sau khi làm quiz | "Làm lại" mở `Detail.Quiz(source)`, "Xong" đóng |
-| `Detail.Placement` | `PlacementScreen` | **Huân**: Onboarding; mục "Kiểm tra trình độ" trong Hồ sơ (đã nối) | Đóng; `level` là A1–B2 hoặc `null` nếu chọn "Để sau" |
-| `Detail.ReminderSettings` | `ReminderSettingsScreen` | Mục "Nhắc học hằng ngày" trong Hồ sơ (đã nối) | Đóng |
+| `Detail.Placement` | `PlacementScreen` | **Huân**: Onboarding; mục "Kiểm tra trình độ" trong Hồ sơ | Đóng; `level` là A1–B2 hoặc `null` nếu chọn "Để sau" |
+| `Detail.ReminderSettings` | `ReminderSettingsScreen` | Mục "Nhắc học hằng ngày" trong Hồ sơ | Đóng |
 
 Chữ ký công khai:
 

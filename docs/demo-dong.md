@@ -1,7 +1,10 @@
 # Demo: ngữ pháp, quiz, kiểm tra trình độ, nhắc học
 
-Chạy bản **demoDebug** (`./gradlew :app:assembleDemoDebug`). Bản demo có sẵn tài khoản cục bộ và
-dữ liệu mẫu: 3 bài ngữ pháp × 10 câu và 15 câu kiểm tra trình độ.
+Main đã bỏ bản demo; chạy bản **liveDebug** (`./gradlew :app:assembleLiveDebug`, cần
+`app/google-services.json`) và đăng nhập. Dữ liệu mẫu: 3 bài ngữ pháp × 10 câu và 15 câu kiểm tra trình độ.
+
+> Sau khi rebase lên main, màn quiz, kết quả, kiểm tra trình độ và nhắc học chưa được nối vào
+> điều hướng mới, nên các bước dưới đây chỉ chạy được sau khi nối lại lối vào.
 
 Chuẩn bị: mở tab **Hồ sơ**, bấm "Tạo hồ sơ" và lưu (để lưu được kết quả). Muốn thử ca "chưa có
 hồ sơ" thì làm ca đó trước bước này.
