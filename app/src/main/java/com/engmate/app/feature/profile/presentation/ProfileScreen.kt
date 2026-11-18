@@ -20,15 +20,15 @@ import coil.compose.SubcomposeAsyncImage
 import com.engmate.app.feature.profile.domain.*
 
 @Composable
-fun ProfileScreen(viewModel: ProfileViewModel) {
+fun ProfileScreen(viewModel: ProfileViewModel, extraContent: @Composable ColumnScope.() -> Unit = {}) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     BackHandler(enabled = state.editing) { if (!state.busy) viewModel.cancelEdit() }
     Scaffold { padding ->
         Column(Modifier.fillMaxSize().padding(padding).imePadding()
             .verticalScroll(rememberScrollState()).padding(24.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
             Text("Hồ sơ cá nhân", style = MaterialTheme.typography.headlineMedium)
-            if (viewModel.isDemo) Text("Bản demo • Dữ liệu chỉ lưu trên thiết bị", style = MaterialTheme.typography.labelLarge,
-                color = MaterialTheme.colorScheme.tertiary)
+            if (viewModel.isDemo) Text("Dữ liệu được lưu trên thiết bị này", style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant)
             state.message?.let { Text(it, color = MaterialTheme.colorScheme.primary) }
             when {
                 state.user == null -> Text("Vui lòng đăng nhập để quản lý hồ sơ cá nhân.")
@@ -58,6 +58,7 @@ fun ProfileScreen(viewModel: ProfileViewModel) {
                 }
             }
             if (state.busy) LinearProgressIndicator(Modifier.fillMaxWidth())
+            if (!state.editing) extraContent()
         }
     }
     if (state.confirmDelete) AlertDialog(
