@@ -28,13 +28,11 @@ import com.engmate.app.feature.notebook.domain.HandbookEntry
 import com.engmate.app.feature.notebook.domain.NotebookRules
 
 /** Sổ tay: the learner's handbooks, then the words of one handbook with search, status and swipe-to-remove. */
-@Composable
-fun NotebookScreen(viewModel: NotebookViewModel, onOpenWord: (String) -> Unit = {}, onStudy: (Long) -> Unit = {},
-                   onFindWords: () -> Unit = {}, onBrowseTopics: () -> Unit = {}) {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NotebookScreen(viewModel: NotebookViewModel, onOpenWord: (String) -> Unit = {}, onStudy: (Long) -> Unit = {},
-    refreshing: Boolean = false, onRefresh: () -> Unit = {}) {
+                   onFindWords: () -> Unit = {}, onBrowseTopics: () -> Unit = {},
+                   refreshing: Boolean = false, onRefresh: () -> Unit = {}) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     val dialog by viewModel.dialog.collectAsStateWithLifecycle()
     val message by viewModel.message.collectAsStateWithLifecycle()
@@ -60,14 +58,12 @@ fun NotebookScreen(viewModel: NotebookViewModel, onOpenWord: (String) -> Unit = 
         },
     ) { padding ->
         Box(Modifier.fillMaxSize().padding(padding)) {
-            if (opened == null) HandbookList(state, viewModel::open, viewModel::showCreate, onFindWords, onBrowseTopics)
+            // Pull to refresh on the handbook list syncs with other devices (from main).
+            if (opened == null) PullToRefreshBox(isRefreshing = refreshing, onRefresh = onRefresh, modifier = Modifier.fillMaxSize()) {
+                HandbookList(state, viewModel::open, viewModel::showCreate, onFindWords, onBrowseTopics)
+            }
             else HandbookDetail(opened, state.entries, query, viewModel::search, viewModel::close, onDelete = { confirmDelete = true },
                 onOpenWord = onOpenWord, onRemove = viewModel::removeWord, onFindWords = onFindWords)
-            val opened = state.opened
-            if (opened == null) PullToRefreshBox(isRefreshing = refreshing, onRefresh = onRefresh, modifier = Modifier.fillMaxSize()) {
-                HandbookList(state, viewModel::open, viewModel::showCreate)
-            }
-            else HandbookDetail(opened, state.entries, viewModel::close, onDelete = { confirmDelete = true }, onOpenWord = onOpenWord, onStudy = { onStudy(opened.id) })
         }
     }
 

@@ -22,7 +22,7 @@ import com.engmate.app.feature.vocabulary.domain.Word
  */
 @Composable
 fun SearchScreen(viewModel: HomeViewModel, onBack: () -> Unit, onOpenWord: (Word) -> Unit) {
-    val search by viewModel.searchWithOpen.collectAsStateWithLifecycle()
+    val search by viewModel.search.collectAsStateWithLifecycle()
     val recent by viewModel.recentSearches.collectAsStateWithLifecycle()
     SearchContent(search, recent, viewModel::onQueryChange, onBack) { viewModel.open(it, onOpenWord) }
 }

@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
+import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -18,6 +19,7 @@ import com.engmate.app.feature.progress.presentation.ProgressSections
 import com.engmate.app.feature.progress.presentation.ProgressViewModel
 
 /** Hồ sơ tab: who you are on top, then your progress, in one scrolling page without sub-tabs. */
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProfileHomeScreen(
     profile: ProfileViewModel,
@@ -26,9 +28,13 @@ fun ProfileHomeScreen(
     onSettings: () -> Unit,
     onStudy: () -> Unit,
     onReviewDue: () -> Unit,
+    refreshing: Boolean = false,
+    onRefresh: () -> Unit = {},
 ) {
     val p by profile.state.collectAsStateWithLifecycle()
     val s by progress.state.collectAsStateWithLifecycle()
+    // Pull to refresh syncs with other devices (from main).
+    PullToRefreshBox(isRefreshing = refreshing, onRefresh = onRefresh, modifier = Modifier.fillMaxSize()) {
     Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).statusBarsPadding()
         .padding(horizontal = screenPadding).padding(bottom = Spacing.xl), verticalArrangement = Arrangement.spacedBy(Spacing.m)) {
         Row(Modifier.fillMaxWidth().padding(top = Spacing.l), verticalAlignment = Alignment.CenterVertically) {
@@ -53,5 +59,6 @@ fun ProfileHomeScreen(
         }
         SectionHeader("Tiến độ")
         ProgressSections(s, progress::setRange, onStudy, onReviewDue)
+    }
     }
 }

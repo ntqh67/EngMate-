@@ -128,14 +128,12 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
     } else {
         BackHandler(enabled = tab != MainTab.HOME) { tab = MainTab.HOME }
         val lessons: GrammarLessonsViewModel = viewModel()
-        Scaffold(bottomBar = {
-            NavigationBar(containerColor = MaterialTheme.colorScheme.surface) {
         val syncing by sync.refreshing.collectAsStateWithLifecycle()
         val syncMessage by sync.message.collectAsStateWithLifecycle()
         val snackbar = remember { SnackbarHostState() }
         MessageEffect(syncMessage, snackbar, sync::messageShown)
         Scaffold(snackbarHost = { SnackbarHost(snackbar) }, bottomBar = {
-            NavigationBar {
+            NavigationBar(containerColor = MaterialTheme.colorScheme.surface) {
                 MainTab.entries.forEach { t ->
                     // Selected icon and label share one color.
                     NavigationBarItem(selected = tab == t, onClick = { tab = t },
@@ -177,52 +175,14 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
                             }
                         }
                         MainTab.NOTEBOOK -> if (user == null) LoginPrompt("Sổ tay", onLogin = { showAuth = true }) else NotebookScreen(viewModel(), onOpenWord = { openWord = it }, onStudy = { studyHandbook = it },
-                            onFindWords = { searching = true }, onBrowseTopics = { learnVocabulary = true; tab = MainTab.LEARN })
+                            onFindWords = { searching = true }, onBrowseTopics = { learnVocabulary = true; tab = MainTab.LEARN },
+                            refreshing = syncing, onRefresh = sync::refresh)
                         MainTab.PROFILE -> if (user == null) LoginPrompt("Hồ sơ và tiến độ học", onLogin = { showAuth = true }, icon = R.drawable.ic_chart) else ProfileHomeScreen(profile, progress, onEdit = { editProfile = true }, onSettings = { settingsOpen = true },
-                            onStudy = { learnVocabulary = false; tab = MainTab.LEARN }, onReviewDue = { studyDue = true })
-                    }
-                }
-            }
-        }
-    }
-}
-
-                        MainTab.NOTEBOOK -> if (user == null) LoginPrompt("Sổ tay từ vựng", onLogin = { showAuth = true }) else NotebookScreen(viewModel(), onOpenWord = { openWord = it }, onStudy = { studyHandbook = it },
-                            refreshing = syncing, onRefresh = sync::refresh)
-                        MainTab.PROFILE -> if (user == null) LoginPrompt("Hồ sơ và tiến độ học", onLogin = { showAuth = true }) else ProfileTab(profile, progress, user?.email.orEmpty(), auth::signOut,
-                            onPlacement = { openQuiz(QuizRoute.Placement) }, onReminder = { openQuiz(QuizRoute.Reminder) },
+                            onStudy = { learnVocabulary = false; tab = MainTab.LEARN }, onReviewDue = { studyDue = true },
                             refreshing = syncing, onRefresh = sync::refresh)
                     }
                 }
             }
-        }
-    }
-}
-
-/** Hồ sơ holds the profile and Huân's statistics; ⚙ opens settings with sign-out. */
-@Composable private fun ProfileTab(profile: ProfileViewModel, progress: ProgressViewModel, email: String, onSignOut: () -> Unit,
-    onPlacement: () -> Unit = {}, onReminder: () -> Unit = {}, refreshing: Boolean = false, onRefresh: () -> Unit = {}) {
-    var showProgress by rememberSaveable { mutableStateOf(false) }
-    var settings by rememberSaveable { mutableStateOf(false) }
-    if (settings) {
-        BackHandler { settings = false }
-        Column {
-            BackTopBar("Cài đặt", onBack = { settings = false })
-            Column(Modifier.padding(24.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
-                LearningShortcuts(onPlacement, onReminder)
-                Text(email)
-                OutlinedButton(onClick = onSignOut, modifier = Modifier.fillMaxWidth()) { Text("Đăng xuất") }
-            }
-        }
-        return
-    }
-    Column(Modifier.fillMaxSize()) {
-        PrimaryTabRow(selectedTabIndex = if (showProgress) 1 else 0, Modifier.statusBarsPadding()) {
-            Tab(selected = !showProgress, onClick = { showProgress = false }, text = { Text("Hồ sơ") })
-            Tab(selected = showProgress, onClick = { showProgress = true }, text = { Text("Tiến độ") })
-        }
-        Box(Modifier.weight(1f)) {
-            if (showProgress) ProgressScreen(progress, refreshing, onRefresh) else ProfileScreen(profile, onSettings = { settings = true })
         }
     }
 }

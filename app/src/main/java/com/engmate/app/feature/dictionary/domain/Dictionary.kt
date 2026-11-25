@@ -12,22 +12,15 @@ sealed interface LookupResult {
 
 interface DictionaryRepository {
     /**
-     * The word from the device if known, otherwise from dictionaryapi.dev **without saving it**.
-     * A word that only exists online comes back with id [UNSAVED_ID]; it is kept in memory so
-     * opening it later does not call the API again.
+     * The word from the device if known, otherwise from dictionaryapi.dev.
+     * API hits are written to the device only when [save] is true (opening, studying or editing a word),
+     * so words passed while typing a search are not stored.
      */
-    suspend fun preview(raw: String): LookupResult
-
-    /** Like [preview], but a word from the API is saved on the device. Call it when the learner opens the word. */
-    suspend fun lookup(raw: String): LookupResult
+    suspend fun lookup(raw: String, save: Boolean = false): LookupResult
 
     companion object {
-        /** Id of a search result that is not on the device yet. */
-        const val UNSAVED_ID = 0L
-
-        /** Only plausible English entries go online: letters plus space, hyphen or apostrophe, max 50 chars. */
-        private val lookupable = Regex("^[a-z][a-z' -]{0,49}$")
-
+        /** Only plausible English entries go online: 2–50 letters, plus space, hyphen or apostrophe. */
+        private val lookupable = Regex("^[a-z][a-z' -]{1,49}$")
         fun canLookup(key: String) = lookupable.matches(key)
     }
 }

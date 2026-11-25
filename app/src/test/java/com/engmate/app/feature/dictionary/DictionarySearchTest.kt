@@ -7,7 +7,6 @@ import com.engmate.app.core.database.EngMateDatabase
 import com.engmate.app.feature.dictionary.data.ApiDictionaryRepository
 import com.engmate.app.feature.dictionary.data.remote.DictionaryApi
 import com.engmate.app.feature.dictionary.data.remote.EntryDto
-import com.engmate.app.feature.dictionary.domain.DictionaryRepository
 import com.engmate.app.feature.dictionary.domain.LookupResult
 import com.engmate.app.feature.home.presentation.searchFlow
 import com.engmate.app.feature.vocabulary.data.RoomWordRepository
@@ -103,7 +102,7 @@ class DictionarySearchTest {
         assertTrue(api.calls.isEmpty())
     }
 
-    @Test fun searchShowsLocalFirstThenPutsTheDictionaryHitOnTopWithoutSavingIt() = runBlocking<Unit> {
+    @Test fun searchShowsLocalFirstThenPutsTheDictionaryHitOnTop() = runBlocking<Unit> {
         db.vocabulary().insertWord(WordEntity(word = "hello world", meaningEn = "a first program"))
         val api = FakeApi()
         val dictionary = ApiDictionaryRepository(api, words)
@@ -113,31 +112,6 @@ class DictionarySearchTest {
         assertEquals(listOf("hello world"), states[0].results.map { it.word })
         assertEquals(listOf("hello", "hello world"), states[1].results.map { it.word })
         assertFalse(states[1].searching)
-        assertEquals(DictionaryRepository.UNSAVED_ID, states[1].results.first().id)
-        assertNull("searching must not save the word", db.vocabulary().findWord("hello"))
-
-        val again = searchFlow("hello", words, dictionary).toList()
-        assertEquals("previewed word is reused from memory", 1, api.calls.size)
-        assertEquals(listOf("hello", "hello world"), again.last().results.map { it.word })
-        assertNull(db.vocabulary().findWord("hello"))
-    }
-
-    @Test fun openingAPreviewedWordSavesItWithoutAnotherCall() = runBlocking<Unit> {
-        val api = FakeApi()
-        val dictionary = ApiDictionaryRepository(api, words)
-        assertTrue(dictionary.preview("hello") is LookupResult.Found)
-        val opened = dictionary.lookup("hello") as LookupResult.Found
-        assertNotEquals(DictionaryRepository.UNSAVED_ID, opened.word.id)
-        assertTrue(opened.word.isCached)
-        assertNotNull(db.vocabulary().findWord("hello"))
-        assertEquals(listOf("hello"), api.calls)
-    }
-
-    @Test fun wordUnknownToTheDictionaryIsNotShownOrSaved() = runBlocking<Unit> {
-        val api = FakeApi()
-        val last = searchFlow("helo", words, ApiDictionaryRepository(api, words)).toList().last()
-        assertTrue(last.results.isEmpty())
-        assertNull(db.vocabulary().findWord("helo"))
         assertTrue("the search shows the hit but does not save it", words.search("hello").none { it.word == "hello" })
 
         dictionary.lookup("hello", save = true)   // what opening the word does
