@@ -18,6 +18,7 @@ import com.google.firebase.FirebaseApp
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
+import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.QuerySnapshot
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
@@ -29,6 +30,7 @@ import kotlinx.coroutines.flow.callbackFlow
 /**
  * Cloud Firestore layout (document id = the Room id as a decimal string, e.g. "12"):
  *
+ *   grammar_catalog/{id}  title, level, summary, orderIndex, contentVersion (metadata-only list row)
  *   grammar_lessons/{id}  title, level, summary, content, examples[{en, vi}], orderIndex, updatedAt
  *   questions/{id}        lessonId, topicId, isPlacement, answerType, content, explanation,
  *                         options[{content, isCorrect}], createdAt
@@ -37,7 +39,7 @@ import kotlinx.coroutines.flow.callbackFlow
  * cannot put broken content on users' phones.
  */
 @Singleton
-class FirestoreContent @Inject constructor(@ApplicationContext context: Context) {
+class FirestoreContent @Inject constructor(@ApplicationContext internal val context: Context) {
     /** Null when the build has no google-services.json; the app then keeps working from Room alone. */
     val firestore: FirebaseFirestore? =
         if (FirebaseApp.getApps(context).isNotEmpty() || FirebaseApp.initializeApp(context) != null) FirebaseFirestore.getInstance()
@@ -45,14 +47,15 @@ class FirestoreContent @Inject constructor(@ApplicationContext context: Context)
 
     fun lessons() = firestore?.collection(LESSONS)
     fun questions() = firestore?.collection(QUESTIONS)
+    fun catalog() = firestore?.collection(CATALOG)
 
     // Writes are not awaited: Firestore queues them on the device and sends them when the network is back.
     fun putLesson(lesson: GrammarLessonEntity) {
-        lessons()?.document(lesson.id.toString())?.set(lesson.toRemote())?.addOnFailureListener { log("put lesson ${lesson.id}", it) }
+        lessons()?.document(lesson.id.toString())?.set(lesson.toRemote(), SetOptions.merge())?.addOnFailureListener { log("put lesson ${lesson.id}", it) }
     }
 
     fun putQuestion(question: QuestionWithOptions) {
-        questions()?.document(question.question.id.toString())?.set(question.toRemote())
+        questions()?.document(question.question.id.toString())?.set(question.toRemote(), SetOptions.merge())
             ?.addOnFailureListener { log("put question ${question.question.id}", it) }
     }
 
@@ -68,20 +71,10 @@ class FirestoreContent @Inject constructor(@ApplicationContext context: Context)
         questions()?.document(id.toString())?.delete()?.addOnFailureListener { log("delete question $id", it) }
     }
 
-    /** Uploads everything in one or more batches (Firestore allows 500 writes per batch). */
-    fun uploadAll(lessons: List<GrammarLessonEntity>, questions: List<QuestionWithOptions>) {
-        val db = firestore ?: return
-        val writes = lessons.map { db.collection(LESSONS).document(it.id.toString()) to it.toRemote() } +
-            questions.map { db.collection(QUESTIONS).document(it.question.id.toString()) to it.toRemote() }
-        writes.chunked(400).forEach { chunk ->
-            db.batch().apply { chunk.forEach { (ref, data) -> set(ref, data) } }.commit()
-                .addOnFailureListener { log("initial upload", it) }
-        }
-    }
-
     companion object {
         const val LESSONS = "grammar_lessons"
         const val QUESTIONS = "questions"
+        const val CATALOG = "grammar_catalog"
         const val TAG = "FirestoreContent"
         fun log(what: String, error: Throwable) = Log.w(TAG, "Firestore $what failed", error)
     }
@@ -124,6 +117,16 @@ fun DocumentSnapshot.toLessonEntity(): GrammarLessonEntity? {
     val value = input.normalized()
     return GrammarLessonEntity(id, value.title, value.level, value.summary.ifEmpty { null }, value.content, value.examples,
         orderIndex = getLong("orderIndex")?.toInt() ?: 0, updatedAt = getLong("updatedAt"))
+}
+
+/** Metadata-only list row; the full document body is fetched after the learner opens the lesson. */
+fun DocumentSnapshot.toLessonCatalogEntity(): GrammarLessonEntity? {
+    val id = id.toLongOrNull() ?: return null
+    val title = getString("title")?.trim().orEmpty()
+    val level = getString("level")?.trim().orEmpty()
+    if (title.length !in 2..100 || level !in com.engmate.app.feature.grammar.domain.LessonValidator.levels) return null
+    return GrammarLessonEntity(id, title, level, getString("summary"), content = "", examples = emptyList(),
+        orderIndex = getLong("orderIndex")?.toInt() ?: 0, updatedAt = getLong("contentVersion"))
 }
 
 /** Returns the question row and its options (option ids are assigned by Room on insert). */

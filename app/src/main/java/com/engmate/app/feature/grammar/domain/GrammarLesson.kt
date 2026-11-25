@@ -30,14 +30,15 @@ data class LessonInput(
 enum class LessonField { TITLE, LEVEL, CONTENT, EXAMPLES }
 
 object LessonValidator {
-    val levels = listOf("A1", "A2", "B1", "B2")
+    const val UNKNOWN_LEVEL = "Chưa phân loại"
+    val levels = listOf("A1", "A2", "B1", "B2", UNKNOWN_LEVEL)
     fun errors(input: LessonInput): Map<LessonField, String> = buildMap {
         val value = input.normalized()
         if (value.title.length !in 2..100) put(LessonField.TITLE, "Tiêu đề từ 2–100 ký tự.")
-        if (value.level !in levels) put(LessonField.LEVEL, "Chọn trình độ A1, A2, B1 hoặc B2.")
+        if (value.level !in levels) put(LessonField.LEVEL, "Chọn trình độ A1, A2, B1, B2 hoặc Chưa phân loại.")
         if (value.content.isEmpty()) put(LessonField.CONTENT, "Nội dung bài học không được để trống.")
-        if (value.examples.any { it.en.isEmpty() || it.vi.isEmpty() })
-            put(LessonField.EXAMPLES, "Mỗi ví dụ cần cả câu tiếng Anh và nghĩa tiếng Việt.")
+        if (value.examples.any { it.en.isEmpty() })
+            put(LessonField.EXAMPLES, "Mỗi ví dụ cần câu tiếng Anh; bản dịch là tùy chọn.")
     }
 }
 

@@ -3,6 +3,7 @@ package com.engmate.app.feature.grammar.presentation.topics
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.engmate.app.feature.auth.domain.UserSession
+import com.engmate.app.core.sync.ContentSync
 import com.engmate.app.feature.grammar.domain.GrammarLesson
 import com.engmate.app.feature.grammar.domain.GrammarRepository
 import com.engmate.app.feature.profile.domain.ProfileRepository
@@ -49,6 +50,7 @@ class GrammarLessonsViewModel @Inject constructor(
     attempts: QuizAttemptRepository,
     profiles: ProfileRepository,
     private val questions: QuestionRepository,
+    private val contentSync: ContentSync,
 ) : ViewModel() {
     private val level = MutableStateFlow<String?>(null)
     private val query = MutableStateFlow("")
@@ -70,5 +72,12 @@ class GrammarLessonsViewModel @Inject constructor(
 
     /** Number of questions the lesson's quiz will have (at most one quiz round); 0 when it has none or reading fails. */
     suspend fun questionCount(lessonId: Long): Int =
-        runCatching { questions.questionsForLesson(lessonId).size.coerceAtMost(QuizViewModel.QUIZ_SIZE) }.getOrDefault(0)
+        runCatching {
+            if (lessonId < 0) contentSync.loadLesson(lessonId)
+            questions.questionsForLesson(lessonId).size.coerceAtMost(QuizViewModel.QUIZ_SIZE)
+        }.getOrDefault(0)
+
+    suspend fun loadLesson(lessonId: Long) {
+        if (lessonId < 0) runCatching { contentSync.loadLesson(lessonId) }
+    }
 }

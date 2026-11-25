@@ -1,0 +1,422 @@
+[
+  {
+    "sourceId": "brehe:libretexts:1.02:1a",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 0
+  },
+  {
+    "sourceId": "brehe:libretexts:1.02:1b",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 5
+  },
+  {
+    "sourceId": "brehe:libretexts:1.02:1c",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 5
+  },
+  {
+    "sourceId": "brehe:libretexts:1.03:3a",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 0
+  },
+  {
+    "sourceId": "brehe:libretexts:1.03:3b",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 0
+  },
+  {
+    "sourceId": "brehe:libretexts:1.03:3c",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 0
+  },
+  {
+    "sourceId": "brehe:libretexts:1.03:3d",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 0
+  },
+  {
+    "sourceId": "brehe:exercise:3f:3",
+    "reason": "requires_exactly_one_blank",
+    "prompt": "The perfect progressive tenses use forms of two auxiliary verbs: ___ and ___."
+  },
+  {
+    "sourceId": "brehe:libretexts:1.03:3g",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 10
+  },
+  {
+    "sourceId": "brehe:libretexts:1.04:2a",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 12
+  },
+  {
+    "sourceId": "brehe:libretexts:1.04:2b",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 0
+  },
+  {
+    "sourceId": "brehe:libretexts:1.04:2c",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 0
+  },
+  {
+    "sourceId": "brehe:libretexts:1.05:4a",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 0
+  },
+  {
+    "sourceId": "brehe:libretexts:1.05:4b",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 11
+  },
+  {
+    "sourceId": "brehe:libretexts:1.05:4c",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 10
+  },
+  {
+    "sourceId": "brehe:libretexts:1.06:5a",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 7
+  },
+  {
+    "sourceId": "brehe:libretexts:1.06:5b",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 10
+  },
+  {
+    "sourceId": "brehe:libretexts:1.06:5c",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 7
+  },
+  {
+    "sourceId": "brehe:libretexts:1.06:5d",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 10
+  },
+  {
+    "sourceId": "brehe:libretexts:1.07:6a",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 10
+  },
+  {
+    "sourceId": "brehe:libretexts:1.07:6b",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 0
+  },
+  {
+    "sourceId": "brehe:libretexts:1.08:7a",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 5
+  },
+  {
+    "sourceId": "brehe:libretexts:1.08:7b",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 10
+  },
+  {
+    "sourceId": "brehe:libretexts:1.08:7c",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 10
+  },
+  {
+    "sourceId": "brehe:libretexts:1.08:7d",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 10
+  },
+  {
+    "sourceId": "brehe:libretexts:1.08:7e",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 0
+  },
+  {
+    "sourceId": "brehe:libretexts:1.08:7f",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 0
+  },
+  {
+    "sourceId": "brehe:libretexts:1.08:7g",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 0
+  },
+  {
+    "sourceId": "brehe:libretexts:1.09:8b",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 12
+  },
+  {
+    "sourceId": "brehe:libretexts:1.09:8c",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 0
+  },
+  {
+    "sourceId": "brehe:libretexts:1.10:9a",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 0
+  },
+  {
+    "sourceId": "brehe:libretexts:1.10:9b",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 0
+  },
+  {
+    "sourceId": "brehe:libretexts:1.10:9c",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 0
+  },
+  {
+    "sourceId": "brehe:libretexts:1.10:9d",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 10
+  },
+  {
+    "sourceId": "brehe:libretexts:1.10:9e",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 10
+  },
+  {
+    "sourceId": "brehe:libretexts:1.11:10a",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 0
+  },
+  {
+    "sourceId": "brehe:libretexts:1.11:10b",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 12
+  },
+  {
+    "sourceId": "brehe:libretexts:1.11:10c",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 0
+  },
+  {
+    "sourceId": "brehe:libretexts:1.11:10d",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 10
+  },
+  {
+    "sourceId": "brehe:libretexts:1.12:11a",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 7
+  },
+  {
+    "sourceId": "brehe:libretexts:1.12:11b",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 5
+  },
+  {
+    "sourceId": "brehe:libretexts:1.12:11c",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 5
+  },
+  {
+    "sourceId": "brehe:libretexts:1.12:11d",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 5
+  },
+  {
+    "sourceId": "brehe:libretexts:1.14:13a",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 10
+  },
+  {
+    "sourceId": "brehe:libretexts:1.14:13b",
+    "reason": "Duplicate item number"
+  },
+  {
+    "sourceId": "brehe:libretexts:1.14:13c",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 10
+  },
+  {
+    "sourceId": "brehe:libretexts:1.14:13d",
+    "reason": "Duplicate item number"
+  },
+  {
+    "sourceId": "brehe:libretexts:1.14:13e",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 7
+  },
+  {
+    "sourceId": "brehe:libretexts:1.14:13f",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 12
+  },
+  {
+    "sourceId": "brehe:libretexts:1.15:14a",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 7
+  },
+  {
+    "sourceId": "brehe:libretexts:1.15:14b",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 0
+  },
+  {
+    "sourceId": "brehe:libretexts:1.15:14c",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 5
+  },
+  {
+    "sourceId": "brehe:libretexts:1.17:16a",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 0
+  },
+  {
+    "sourceId": "brehe:libretexts:1.17:16b",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 10
+  },
+  {
+    "sourceId": "brehe:libretexts:1.18:17a",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 6
+  },
+  {
+    "sourceId": "brehe:libretexts:1.18:17b",
+    "reason": "Duplicate item number"
+  },
+  {
+    "sourceId": "brehe:libretexts:1.18:17c",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 6
+  },
+  {
+    "sourceId": "brehe:libretexts:1.18:17d",
+    "reason": "Duplicate item number"
+  },
+  {
+    "sourceId": "brehe:libretexts:1.18:17e",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 7
+  },
+  {
+    "sourceId": "brehe:libretexts:1.18:17f",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 7
+  },
+  {
+    "sourceId": "brehe:libretexts:1.18:17g",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 10
+  },
+  {
+    "sourceId": "brehe:libretexts:1.18:17h",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 11
+  },
+  {
+    "sourceId": "brehe:libretexts:1.19:18a",
+    "reason": "Duplicate item number"
+  },
+  {
+    "sourceId": "brehe:libretexts:1.19:18b",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 8
+  },
+  {
+    "sourceId": "brehe:libretexts:1.19:18c",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 8
+  },
+  {
+    "sourceId": "brehe:libretexts:1.19:18d",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 6
+  },
+  {
+    "sourceId": "brehe:libretexts:1.19:18e",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 8
+  },
+  {
+    "sourceId": "brehe:libretexts:1.19:18f",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 8
+  },
+  {
+    "sourceId": "brehe:libretexts:1.19:18g",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 10
+  },
+  {
+    "sourceId": "brehe:libretexts:1.19:18h",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 8
+  },
+  {
+    "sourceId": "brehe:libretexts:1.19:18i",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 10
+  },
+  {
+    "sourceId": "brehe:libretexts:1.20:19a",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 0
+  },
+  {
+    "sourceId": "brehe:libretexts:1.20:19b",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 0
+  },
+  {
+    "sourceId": "brehe:libretexts:1.20:19c",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 0
+  },
+  {
+    "sourceId": "brehe:libretexts:1.20:19d",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 10
+  },
+  {
+    "sourceId": "brehe:libretexts:1.21:20a",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 8
+  },
+  {
+    "sourceId": "brehe:libretexts:1.21:20b",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 3
+  },
+  {
+    "sourceId": "brehe:libretexts:1.21:20c",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 0
+  },
+  {
+    "sourceId": "brehe:libretexts:1.21:20d",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 0
+  },
+  {
+    "sourceId": "brehe:libretexts:1.21:20e",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 0
+  },
+  {
+    "sourceId": "brehe:libretexts:1.22:21a",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 10
+  },
+  {
+    "sourceId": "brehe:libretexts:1.22:21b",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 0
+  },
+  {
+    "sourceId": "brehe:libretexts:1.22:21c",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 6
+  },
+  {
+    "sourceId": "brehe:libretexts:1.22:21d",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 2
+  },
+  {
+    "sourceId": "brehe:libretexts:1.22:21e",
+    "reason": "unsupported_or_unreviewed_exercise_group",
+    "itemCount": 8
+  }
+]

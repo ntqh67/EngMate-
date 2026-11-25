@@ -1,0 +1,39 @@
+{
+  "dataset": "ZanichelliEditore/english-grammar-multiple-choice-generation",
+  "revision": "374f402068cf15bf0e71c44410ba72f3a8c9c301",
+  "originalRows": 27514,
+  "topics": {
+    "articles": 1466,
+    "comparisons": 1993,
+    "conditionals": 785,
+    "future_simple": 738,
+    "modals": 1771,
+    "non_finites": 2043,
+    "passive": 1846,
+    "past_continuous": 899,
+    "past_perfect": 560,
+    "past_simple": 1758,
+    "personal_pronouns": 1042,
+    "possessives": 738,
+    "prepositions": 1969,
+    "present_continuous": 1767,
+    "present_perfect": 1930,
+    "present_simple": 1849,
+    "quantifiers": 1920,
+    "relatives": 1685,
+    "wh_questions": 755
+  },
+  "structurallyValidUniqueMC": 11345,
+  "excludedRows": 16169,
+  "reasons": {
+    "requires_four_source_options": 16161,
+    "duplicate_prompt": 1,
+    "duplicate_options": 3,
+    "conflicting_answer": 2,
+    "not_one_blank": 2
+  },
+  "integratedRows": 0,
+  "releaseBlocked": true,
+  "reason": "README says CC-BY-4.0; LICENSE says CC-BY-NC-ND-4.0; no content distributed",
+  "inputSha256": "4b20c6e8c12c8be8d0e0bd03213d0e79aeb8b1d14f0180ba70dc073b9461462c"
+}

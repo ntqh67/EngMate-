@@ -3,14 +3,21 @@ rules_version = '2';
 // Paste into Firebase console → Firestore Database → Rules, or deploy with `firebase deploy --only firestore:rules`.
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Shared learning content: any signed-in user can read.
-    // TODO: restrict writes to admins (e.g. `request.auth.token.admin == true` via a custom claim)
-    // once the app has an admin role. Until then every signed-in user can edit content.
+    function isAdmin() {
+      return request.auth != null && request.auth.token.get('admin', false) == true;
+    }
+    // Queries from learner clients must include whereEqualTo("published", true).
     match /grammar_lessons/{id} {
-      allow read, write: if request.auth != null;
+      allow read: if isAdmin() || (request.auth != null && resource.data.published == true);
+      allow write: if isAdmin();
+    }
+    match /grammar_catalog/{id} {
+      allow read: if isAdmin() || (request.auth != null && resource.data.published == true);
+      allow write: if isAdmin();
     }
     match /questions/{id} {
-      allow read, write: if request.auth != null;
+      allow read: if isAdmin() || (request.auth != null && resource.data.published == true);
+      allow write: if isAdmin();
     }
     // Each learner's own data (profile, notebook, flashcards, quiz history, ...): only the owner.
     match /users/{uid}/{document=**} {

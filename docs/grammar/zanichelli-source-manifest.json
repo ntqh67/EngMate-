@@ -1,0 +1,20 @@
+[
+  {
+    "file": "train_exercise_dataset.json",
+    "gitBlobSha": "1e55a8fa8365cd14f0eeff2ced91fa2d8385990e",
+    "sha256": "4b20c6e8c12c8be8d0e0bd03213d0e79aeb8b1d14f0180ba70dc073b9461462c",
+    "bytes": 5949592
+  },
+  {
+    "file": "LICENSE",
+    "gitBlobSha": "9badf7abf51e412ff7bbe1ce7b66c5b05145138c",
+    "sha256": "f7f28b8c7a1af76b9874ca6d040e8b1eb6768fd1043106c9d315090ea96754e7",
+    "bytes": 19126
+  },
+  {
+    "file": "README.md",
+    "gitBlobSha": "6c345e890b44b1210437baaf452b69862a2184e1",
+    "sha256": "419146f242e9dd0c421399dd3a8b7680b18bfd00f473a1d6eb0a7145d77ba3fc",
+    "bytes": 6927
+  }
+]

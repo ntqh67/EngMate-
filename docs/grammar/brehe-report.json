@@ -1,0 +1,123 @@
+{
+  "dataset": "brehe-grammar-anatomy",
+  "downloadedChapterPages": 20,
+  "unavailableChapterPages": [
+    13,
+    16
+  ],
+  "answerKeyPages": 1,
+  "integratedLessonExcerpts": 20,
+  "selectedExampleBlocks": 63,
+  "integratedExercises": 31,
+  "exerciseGroupsInspected": 88,
+  "quarantineEntries": 85,
+  "reasons": {
+    "unsupported_or_unreviewed_exercise_group": 79,
+    "requires_exactly_one_blank": 1,
+    "Duplicate item number": 5
+  },
+  "sourceManifest": [
+    {
+      "file": "01.json",
+      "sha256": "a8e52f6eff1af233edc1d800cf0047a692120290bc68326f97904523b18bde4e",
+      "url": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.01:_Introduction-_Grammar_What_Grammar"
+    },
+    {
+      "file": "02.json",
+      "sha256": "adb2760fadae58f7f89b91fffa63897c872f782639b44fe9be7a1d59bb6ffd9c",
+      "url": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.02:_Together_Forever_Subjects_and_Predicates"
+    },
+    {
+      "file": "03.json",
+      "sha256": "ff2a88fddf9ebf4c89d9ba9da966b6f6bc7e2b800c7c7dc2ce170bca9cffbcab",
+      "url": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.03:_Get_Tense_Verb_Tense_Principal_Parts_and_Irregular_Verbs"
+    },
+    {
+      "file": "04.json",
+      "sha256": "3be558c53af7e16869825312e407cd0bbffa7946b4ad61c3763e277dcab398bd",
+      "url": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.04:_The_Indispensables_Nouns_and_Verbs"
+    },
+    {
+      "file": "05.json",
+      "sha256": "213900607e1a169fcac03ec00b69907c50fe3ab44032b8dca88f55cfa8d42524",
+      "url": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.05:_Tall_Dark_and_Wordsome_--_Adjectives"
+    },
+    {
+      "file": "06.json",
+      "sha256": "03d2401bf8974c794b992a72646a4f63f85a9a23b2169c498499ce86eb7e5d4a",
+      "url": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.06:_Inevitably_Adverbs"
+    },
+    {
+      "file": "07.json",
+      "sha256": "c4414a2fb39325c4a08c1bbd94f818be0c94ebffecfb824c9d877740ea30e5a5",
+      "url": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.07:_Among_the_Prepositions"
+    },
+    {
+      "file": "08.json",
+      "sha256": "14abf673103ccf9340aa2be63a6739af58a1377339c15327f71be82a04fce90c",
+      "url": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.08:_You_and_I_and_the_Personal_Pronouns"
+    },
+    {
+      "file": "09.json",
+      "sha256": "9785de2873dbcc1829b14ffe6dcb9ee601cf8805bb34beabae1d99b47133e117",
+      "url": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.09:_You_Did_What_Verbs_and_Their_Complements"
+    },
+    {
+      "file": "10.json",
+      "sha256": "658a4057cd62226e1c443ffd84492ad05582da2bf0586a92082cb4c5e9bf1722",
+      "url": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.10:_All_Together_Now_Conjunctions_Compounds_and_Subordinate_Clauses"
+    },
+    {
+      "file": "11.json",
+      "sha256": "111cff53de2b13ef7aefa3b455d793b669255464b79901860a24da73c103e523",
+      "url": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.11:_Sentencing_Guidelines_Building_Sentences_with_Clauses"
+    },
+    {
+      "file": "12.json",
+      "sha256": "b76b32d7cac11469252b6914b1720cc3395d1b4fbd17ab605c9efb5f1b09a89f",
+      "url": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.12:_Relative_Clauses_Which_We_Need"
+    },
+    {
+      "file": "14.json",
+      "sha256": "ac9395516cdec06a5dbf00d7ec8fd20ec128af8c282968442b0d52ab7247fbea",
+      "url": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.14:_Theyre_So_Dependent_Distinguishing_Dependent_Clauses"
+    },
+    {
+      "file": "15.json",
+      "sha256": "46ad97825ec6dd200dd491a718f4098940fdb5190d9362d9522c98fbdbefec36",
+      "url": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.15:_What_More_Verbs_and_Voice_Infinitives_and_Passive_Complements"
+    },
+    {
+      "file": "17.json",
+      "sha256": "28e46519a62bedb1f6193f64a9ecfaa0a62309288fb5a0b992dd674c281b70f0",
+      "url": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.17:_Zowie_Interjections_and_the_Eight_Parts_of_Speech"
+    },
+    {
+      "file": "18.json",
+      "sha256": "57b91d06f2c08f68e4c04550ebe3cbcb9fcfed3749e963353ec303e8e25eef28",
+      "url": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.18:_Those_Verbing_Verbals_Gerunds_and_Participles"
+    },
+    {
+      "file": "19.json",
+      "sha256": "bbf628f1b31209f665b83d327a27814a53b896f5af86d0fc694a24e3da543aba",
+      "url": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.19:_To_Boldly_Verb_Infinitives"
+    },
+    {
+      "file": "20.json",
+      "sha256": "f8fbc7bd5e0542c46bf38a9cf8948426ddf13cfc3a90f4e46d4ac0e461aac019",
+      "url": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.20:_Whats_That_More_Pronouns"
+    },
+    {
+      "file": "21.json",
+      "sha256": "ad282f55b18e3dc3f80ed073491b90281ea0de52cab56bab71df0e92bcf23856",
+      "url": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.21:_Many_Things_(But_no_Cabbages_or_Kings)"
+    },
+    {
+      "file": "22.json",
+      "sha256": "d71fcdd478fe2c97b6e04a0feb39aaa5ad5390ccdc2c64e0172734a182e963db",
+      "url": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.22:_Keeping_Those_Little_Puncs_in_A_Brief_Review_of_Punctuation"
+    }
+  ],
+  "answerSourceHash": "6131437474b83f67200d3bd4881fc4bbf551ad504093e8f29e46c4bcce7be3c1",
+  "note": "Counts refer to real captured text. Example blocks may contain multiple sentences. Group exclusions and item exclusions have different units."
+}

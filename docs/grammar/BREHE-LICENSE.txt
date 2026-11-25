@@ -1,0 +1,27 @@
+Brehe's Grammar Anatomy (2019)
+Author: Steven Brehe
+Publisher: University of North Georgia Press / University System of Georgia
+Original publication and license evidence: https://oer.galileo.usg.edu/english-textbooks/20/
+LibreTexts edition: https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)
+
+The Brehe-derived text, examples and exercises in docs/grammar/brehe-firestore.json
+and the source captures in scripts/grammar/sources/brehe are adapted under Creative Commons
+Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):
+https://creativecommons.org/licenses/by-sa/4.0/
+Legal code: https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+Changes by the EngMate integration: selected excerpts and example blocks;
+converted web layout to plain text; removed navigation and printed page
+headers; normalized whitespace when matching exercises to the answer key;
+assigned stable IDs and linked exercises to their source chapters.
+No English translation, CEFR classification, new exercises or new answers
+were generated. The English prose is from the cited source. Each record
+retains its source URL and attribution. This notice applies to the adapted
+Brehe content, not to unrelated application code or existing lesson assets.
+
+ShareAlike: redistributions/adaptations of this content must retain attribution,
+identify modifications and comply with CC BY-SA 4.0. No endorsement by the
+author, publisher or LibreTexts is implied. Supplied without warranties.
+
+Zanichelli data and AbhinavPullat English Practical Grammar are NOT included
+in this asset. They remain excluded from distribution pending rights clarification.

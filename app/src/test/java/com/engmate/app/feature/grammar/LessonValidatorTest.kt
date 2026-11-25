@@ -16,8 +16,8 @@ class LessonValidatorTest {
         assertEquals("Tiêu đề từ 2–100 ký tự.", LessonValidator.errors(valid.copy(title = "a".repeat(101)))[LessonField.TITLE])
     }
 
-    @Test fun levelMustBeA1ToB2() {
-        listOf("A1", "A2", "B1", "B2").forEach { assertNull(LessonValidator.errors(valid.copy(level = it))[LessonField.LEVEL]) }
+    @Test fun levelMustBeKnownCefrOrExplicitlyUnclassified() {
+        (listOf("A1", "A2", "B1", "B2") + LessonValidator.UNKNOWN_LEVEL).forEach { assertNull(LessonValidator.errors(valid.copy(level = it))[LessonField.LEVEL]) }
         listOf("C1", "", "a1").forEach { assertNotNull(LessonValidator.errors(valid.copy(level = it))[LessonField.LEVEL]) }
     }
 
@@ -25,8 +25,9 @@ class LessonValidatorTest {
         assertEquals("Nội dung bài học không được để trống.", LessonValidator.errors(valid.copy(content = "  \n "))[LessonField.CONTENT])
     }
 
-    @Test fun examplesNeedBothSidesButEmptyRowsAreIgnored() {
-        assertNotNull(LessonValidator.errors(valid.copy(examples = listOf(GrammarExample("I go.", ""))))[LessonField.EXAMPLES])
+    @Test fun englishIsRequiredButTranslationsAreOptionalAndEmptyRowsAreIgnored() {
+        assertNull(LessonValidator.errors(valid.copy(examples = listOf(GrammarExample("I go.", ""))))[LessonField.EXAMPLES])
+        assertNotNull(LessonValidator.errors(valid.copy(examples = listOf(GrammarExample("", "Tôi đi."))))[LessonField.EXAMPLES])
         assertTrue(LessonValidator.errors(valid.copy(examples = listOf(GrammarExample(" ", " ")))).isEmpty())
     }
 }

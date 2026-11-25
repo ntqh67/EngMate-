@@ -28,6 +28,7 @@ import com.engmate.app.feature.grammar.presentation.topics.GrammarLessonsViewMod
 fun GrammarLessonScreen(viewModel: GrammarLessonsViewModel, lessonId: Long, onBack: () -> Unit, onPractice: ((Long) -> Unit)? = null) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     val lesson = state.lesson(lessonId)
+    LaunchedEffect(lessonId) { viewModel.loadLesson(lessonId) }
     val questionCount by produceState<Int?>(null, lessonId) { value = viewModel.questionCount(lessonId) }
     Scaffold(
         topBar = { AppTopBar(onBack = onBack) },

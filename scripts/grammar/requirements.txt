@@ -1,0 +1,2 @@
+# Only needed for an explicitly authorized Firestore import; pipeline uses stdlib.
+firebase-admin>=6,<8

@@ -21,3 +21,14 @@ Thumbs.db
 *.keystore
 keystore.properties
 /app/google-services.json
+
+# Grammar dataset: unlicensed source and review artifacts stay local
+/data/grammar/
+/scripts/grammar/__pycache__/
+/scripts/grammar/tests/__pycache__/
+
+# Local Firebase rules test dependencies and emulator logs
+/scripts/grammar/emulator/node_modules/
+/scripts/grammar/emulator/package-lock.json
+**/firebase-debug.log
+**/firestore-debug.log
