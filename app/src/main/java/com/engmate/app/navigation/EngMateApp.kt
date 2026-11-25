@@ -13,7 +13,9 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.engmate.app.feature.auth.presentation.*
 import androidx.compose.ui.res.painterResource
 import com.engmate.app.R
+import com.engmate.app.core.sync.SyncRefreshViewModel
 import com.engmate.app.core.ui.components.BackTopBar
+import com.engmate.app.core.ui.components.MessageEffect
 import com.engmate.app.feature.grammar.presentation.lesson.GrammarLessonScreen
 import com.engmate.app.feature.grammar.presentation.topics.GrammarLessonsScreen
 import com.engmate.app.feature.grammar.presentation.topics.GrammarLessonsViewModel
@@ -83,7 +85,12 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
             if (tab == MainTab.LEARN && lessonId != null) lessonId = null else tab = MainTab.HOME
         }
         val lessons: GrammarLessonsViewModel = viewModel()
-        Scaffold(bottomBar = {
+        val sync: SyncRefreshViewModel = viewModel()
+        val syncing by sync.refreshing.collectAsStateWithLifecycle()
+        val syncMessage by sync.message.collectAsStateWithLifecycle()
+        val snackbar = remember { SnackbarHostState() }
+        MessageEffect(syncMessage, snackbar, sync::messageShown)
+        Scaffold(snackbarHost = { SnackbarHost(snackbar) }, bottomBar = {
             NavigationBar {
                 MainTab.entries.forEach { t ->
                     NavigationBarItem(selected = tab == t, onClick = { if (t == MainTab.LEARN && tab == MainTab.LEARN) lessonId = null; tab = t },
@@ -109,9 +116,11 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
                                     else GrammarLessonsScreen(lessons, onOpenLesson = { lessonId = it })
                                 }
                             }
-                        MainTab.NOTEBOOK -> if (user == null) LoginPrompt("Sổ tay từ vựng", onLogin = { showAuth = true }) else NotebookScreen(viewModel(), onOpenWord = { openWord = it }, onStudy = { studyHandbook = it })
+                        MainTab.NOTEBOOK -> if (user == null) LoginPrompt("Sổ tay từ vựng", onLogin = { showAuth = true }) else NotebookScreen(viewModel(), onOpenWord = { openWord = it }, onStudy = { studyHandbook = it },
+                            refreshing = syncing, onRefresh = sync::refresh)
                         MainTab.PROFILE -> if (user == null) LoginPrompt("Hồ sơ và tiến độ học", onLogin = { showAuth = true }) else ProfileTab(profile, progress, user?.email.orEmpty(), auth::signOut,
-                            onPlacement = { openQuiz(QuizRoute.Placement) }, onReminder = { openQuiz(QuizRoute.Reminder) })
+                            onPlacement = { openQuiz(QuizRoute.Placement) }, onReminder = { openQuiz(QuizRoute.Reminder) },
+                            refreshing = syncing, onRefresh = sync::refresh)
                     }
                 }
             }
@@ -121,7 +130,7 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
 
 /** Hồ sơ holds the profile and Huân's statistics; ⚙ opens settings with sign-out. */
 @Composable private fun ProfileTab(profile: ProfileViewModel, progress: ProgressViewModel, email: String, onSignOut: () -> Unit,
-    onPlacement: () -> Unit = {}, onReminder: () -> Unit = {}) {
+    onPlacement: () -> Unit = {}, onReminder: () -> Unit = {}, refreshing: Boolean = false, onRefresh: () -> Unit = {}) {
     var showProgress by rememberSaveable { mutableStateOf(false) }
     var settings by rememberSaveable { mutableStateOf(false) }
     if (settings) {
@@ -142,7 +151,7 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
             Tab(selected = showProgress, onClick = { showProgress = true }, text = { Text("Tiến độ") })
         }
         Box(Modifier.weight(1f)) {
-            if (showProgress) ProgressScreen(progress) else ProfileScreen(profile, onSettings = { settings = true })
+            if (showProgress) ProgressScreen(progress, refreshing, onRefresh) else ProfileScreen(profile, onSettings = { settings = true })
         }
     }
 }

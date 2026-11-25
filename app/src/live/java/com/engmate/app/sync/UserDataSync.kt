@@ -1,8 +1,13 @@
 package com.engmate.app.sync
 
+import android.os.SystemClock
 import android.util.Log
+import androidx.room.withTransaction
 import com.engmate.app.core.database.ActivityType
+import com.engmate.app.core.database.EngMateDatabase
 import com.engmate.app.core.database.WordLearningStatus
+import com.engmate.app.core.sync.RefreshResult
+import com.engmate.app.core.sync.SyncRefresher
 import com.engmate.app.feature.auth.domain.UserSession
 import com.engmate.app.feature.flashcard.data.local.FlashcardCollectionEntity
 import com.engmate.app.feature.flashcard.data.local.FlashcardDao
@@ -22,7 +27,10 @@ import com.engmate.app.feature.quiz.data.local.QuizAttemptEntity
 import com.engmate.app.feature.vocabulary.data.local.VocabularyDao
 import com.engmate.app.feature.vocabulary.data.local.WordEntity
 import com.google.firebase.firestore.CollectionReference
+import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.FirebaseFirestoreException
+import com.google.firebase.firestore.Source
 import java.util.concurrent.atomic.AtomicBoolean
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -40,6 +48,8 @@ import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 
 private typealias Docs = Map<String, Map<String, Any?>>
 
@@ -57,9 +67,13 @@ private typealias Docs = Map<String, Map<String, Any?>>
  * Words, lessons and questions have device-local row ids, so documents are keyed by the word text or a timestamp.
  * On sign-in the cloud copy is pulled first (items missing on this device are added; for notes and progress the newer one wins),
  * then every later change in Room is mirrored to Firestore. Offline writes queue inside Firestore.
+ *
+ * [refresh] (pull-to-refresh) repeats the pull. Known limits of that pull: it never deletes (a document removed on another
+ * device stays here), and it adds only new notebook entries and collections, so edits to existing ones do not come across.
  */
 @Singleton
 class UserDataSync @Inject constructor(
+    private val database: EngMateDatabase,
     private val content: FirestoreContent,
     private val session: UserSession,
     private val profile: SyncedProfileRepository,
@@ -71,9 +85,12 @@ class UserDataSync @Inject constructor(
     private val attempts: QuizAttemptDao,
     private val questions: QuestionDao,
     private val lessons: GrammarLessonDao,
-) {
+) : SyncRefresher {
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
     private val started = AtomicBoolean(false)
+    // One pull at a time, whether it is the sign-in pull or a refresh.
+    private val pullLock = Mutex()
+    @Volatile private var lastPullAt = 0L
 
     @OptIn(ExperimentalCoroutinesApi::class)
     fun start() {
@@ -94,12 +111,7 @@ class UserDataSync @Inject constructor(
         val root = firestore.collection("users").document(uid)
         fun col(name: String) = root.collection(name)
 
-        safely("notebook") { pullNotebook(uid, col("notebook")) }
-        safely("word_notes") { pullNotes(uid, col("word_notes")) }
-        safely("word_progress") { pullProgress(uid, col("word_progress")) }
-        safely("flashcards") { pullCollections(uid, col("flashcard_collections")) }
-        safely("attempts") { pullAttempts(uid, col("quiz_attempts")) }
-        safely("activity") { pullActivities(uid, col("learning_activity")) }
+        pullAll(uid, root)
 
         launch { mirror(col("notebook"), notebook.observe(uid).map { list -> list.associate { e ->
             key(e.word.word) to mapOf("word" to e.word.snap(), "note" to e.entry.note, "createdAt" to e.entry.createdAt) } }) }
@@ -125,9 +137,44 @@ class UserDataSync @Inject constructor(
                 "quizzesCompleted" to a.quizzesCompleted) } }) }
     }
 
-    private suspend fun safely(what: String, block: suspend () -> Unit) {
-        try { block() } catch (e: CancellationException) { throw e } catch (e: Exception) { Log.w(FirestoreContent.TAG, "Pull $what failed", e) }
+    /** Returns false when [block] failed; the failure is logged, not thrown, so one broken collection does not stop the rest. */
+    private suspend fun safely(what: String, block: suspend () -> Unit): Boolean =
+        try { block(); true } catch (e: CancellationException) { throw e } catch (e: Exception) { Log.w(FirestoreContent.TAG, "Pull $what failed", e); false }
+
+    /** Pulls every personal collection once, in order. Returns how many failed. */
+    private suspend fun pullAll(uid: String, root: DocumentReference): Int = pullLock.withLock {
+        fun col(name: String) = root.collection(name)
+        val results = listOf(
+            safely("notebook") { pullNotebook(uid, col("notebook")) },
+            safely("word_notes") { pullNotes(uid, col("word_notes")) },
+            safely("word_progress") { pullProgress(uid, col("word_progress")) },
+            safely("flashcards") { pullCollections(uid, col("flashcard_collections")) },
+            safely("attempts") { pullAttempts(uid, col("quiz_attempts")) },
+            safely("activity") { pullActivities(uid, col("learning_activity")) },
+        )
+        lastPullAt = SystemClock.elapsedRealtime()
+        results.count { !it }
     }
+
+    override suspend fun refresh(): RefreshResult {
+        val firestore = content.firestore ?: return RefreshResult.FAILED
+        val uid = session.user.first()?.uid ?: return RefreshResult.SIGNED_OUT
+        if (pullLock.isLocked || SystemClock.elapsedRealtime() - lastPullAt < MIN_REFRESH_GAP_MS) return RefreshResult.THROTTLED
+        val root = firestore.collection("users").document(uid)
+        // Offline, get() quietly answers from Firestore's local cache and looks successful; a one-document server read proves we are online.
+        try { root.collection("notebook").limit(1).get(Source.SERVER).await() }
+        catch (e: CancellationException) { throw e }
+        catch (e: Exception) {
+            Log.w(FirestoreContent.TAG, "Refresh probe failed", e)
+            return if ((e as? FirebaseFirestoreException)?.code == FirebaseFirestoreException.Code.UNAVAILABLE) RefreshResult.OFFLINE else RefreshResult.FAILED
+        }
+        if (!safely("profile") { profile.pull(uid) }) return RefreshResult.FAILED
+        // Every row points at the profile; a learner who has not created one yet has nothing to pull into.
+        if (profileDao.observe(uid).first() == null) return RefreshResult.DONE
+        return if (pullAll(uid, root) == 0) RefreshResult.DONE else RefreshResult.FAILED
+    }
+
+    private companion object { const val MIN_REFRESH_GAP_MS = 30_000L }
 
     /** Writes new and changed documents; deletes documents whose local row disappeared while we were watching. */
     private suspend fun mirror(col: CollectionReference, desired: Flow<Docs>) {
@@ -148,34 +195,35 @@ class UserDataSync @Inject constructor(
     // ---- cloud -> Room ----
 
     private suspend fun pullNotebook(uid: String, col: CollectionReference) {
-        for (doc in col.get().await().documents) runCatching {
-            val wordId = ensureWord(doc.get("word")) ?: return@runCatching
+        // Read-then-write inside one transaction, so an edit made on this device while we pull cannot be overwritten in between.
+        for (doc in col.get().await().documents) runCatching { database.withTransaction {
+            val wordId = ensureWord(doc.get("word")) ?: return@withTransaction
             val note = doc.getString("note")
             val mine = notebook.get(uid, wordId)
             if (mine == null) notebook.add(NotebookWordEntity(0, uid, wordId, note, doc.getLong("createdAt")))
             else if (mine.note == null && note != null) notebook.updateNote(uid, wordId, note)
-        }
+        } }
     }
 
     private suspend fun pullNotes(uid: String, col: CollectionReference) {
-        for (doc in col.get().await().documents) runCatching {
-            val wordId = ensureWord(doc.get("word")) ?: return@runCatching
+        for (doc in col.get().await().documents) runCatching { database.withTransaction {
+            val wordId = ensureWord(doc.get("word")) ?: return@withTransaction
             val updated = doc.getLong("updatedAt") ?: 0L
             val mine = notebook.getWordNote(uid, wordId)
             if (mine == null || updated > (mine.updatedAt ?: 0L)) notebook.saveWordNote(WordNoteEntity(0, uid, wordId, doc.getString("customMeaning"),
                 strings(doc.get("customExamples")), strings(doc.get("customCollocations")), strings(doc.get("customIdioms")), doc.getString("personalNote"), doc.getLong("updatedAt")))
-        }
+        } }
     }
 
     private suspend fun pullProgress(uid: String, col: CollectionReference) {
-        for (doc in col.get().await().documents) runCatching {
-            val wordId = ensureWord(doc.get("word")) ?: return@runCatching
+        for (doc in col.get().await().documents) runCatching { database.withTransaction {
+            val wordId = ensureWord(doc.get("word")) ?: return@withTransaction
             val reviewed = doc.getLong("lastReviewedAt")
             val mine = flashcards.getProgress(uid, wordId)
             if (mine == null || (reviewed ?: 0L) > (mine.lastReviewedAt ?: 0L)) flashcards.saveProgress(WordProgressEntity(0, uid, wordId,
                 (doc.getLong("repetition") ?: 0L).toInt(), (doc.getLong("interval") ?: 1L).toInt(), doc.getDouble("easeFactor") ?: 2.5,
                 reviewed, doc.getLong("nextReviewAt") ?: 0L, WordLearningStatus.valueOf(doc.getString("status") ?: "NEW")))
-        }
+        } }
     }
 
     private suspend fun pullCollections(uid: String, col: CollectionReference) {
