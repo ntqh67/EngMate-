@@ -29,7 +29,7 @@ fun levelColors(level: String): Pair<Color, Color> {
     val c = MaterialTheme.colorScheme
     return when (level.uppercase()) {
         "A1" -> c.primaryContainer to c.onPrimaryContainer
-        "A2" -> EngMateTheme.brand.brand to EngMateTheme.brand.onBrand
+        "A2" -> c.primary to c.onPrimary
         "B1" -> c.tertiaryContainer to c.onTertiaryContainer
         "B2" -> c.secondaryContainer to c.onSecondaryContainer
         else -> c.tertiary to c.onTertiary

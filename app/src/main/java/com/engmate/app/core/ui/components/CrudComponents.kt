@@ -59,7 +59,9 @@ fun <T> ChipRow(items: List<T>, selected: T?, label: (T) -> String, onSelect: (T
     Row(modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(Spacing.s)) {
         items.forEach { item ->
             FilterChip(selected = item == selected, onClick = { onSelect(item) }, label = { Text(label(item)) }, enabled = enabled,
-                modifier = Modifier.heightIn(min = 40.dp), shape = MaterialTheme.shapes.extraLarge)
+                modifier = Modifier.heightIn(min = 40.dp), shape = MaterialTheme.shapes.extraLarge,
+                colors = FilterChipDefaults.filterChipColors(selectedContainerColor = MaterialTheme.colorScheme.primaryContainer,
+                    selectedLabelColor = MaterialTheme.colorScheme.onPrimaryContainer))
         }
     }
 }
