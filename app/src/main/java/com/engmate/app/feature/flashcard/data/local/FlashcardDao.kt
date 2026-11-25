@@ -83,6 +83,8 @@ abstract class FlashcardDao {
     @Query("DELETE FROM flashcard_collections WHERE user_id = :uid AND id = :id")
     abstract suspend fun deleteCollection(uid: String, id: Long): Int
 
+    @Query("SELECT * FROM flashcards WHERE collection_id = :collectionId ORDER BY id")
+    abstract suspend fun cardsOf(collectionId: Long): List<FlashcardEntity>
     @Insert protected abstract suspend fun insertCard(card: FlashcardEntity): Long
     @Transaction
     open suspend fun addCard(uid: String, card: FlashcardEntity): Long {

@@ -1,5 +1,6 @@
 package com.engmate.app.di
 import com.engmate.app.core.sync.ContentSync
+import com.engmate.app.core.sync.HandbookGuard
 import com.engmate.app.core.sync.SyncRefresher
 import com.engmate.app.feature.grammar.domain.GrammarRepository
 import com.engmate.app.feature.quiz.domain.QuestionRepository
@@ -20,4 +21,5 @@ abstract class ContentModule {
     @Binds @Singleton abstract fun questions(implementation: SyncedQuestionRepository): QuestionRepository
     @Binds @Singleton abstract fun sync(implementation: FirestoreContentSync): ContentSync
     @Binds @Singleton abstract fun refresher(implementation: UserDataSync): SyncRefresher
+    @Binds @Singleton abstract fun handbookGuard(implementation: UserDataSync): HandbookGuard
 }
