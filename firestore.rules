@@ -6,17 +6,22 @@ service cloud.firestore {
     function isAdmin() {
       return request.auth != null && request.auth.token.get('admin', false) == true;
     }
-    // Queries from learner clients must include whereEqualTo("published", true).
+    // Missing `published` is treated as legacy-published so the old 17 lessons/129 questions
+    // remain readable without mutating existing production documents. New documents must set it.
+    function isPublishedOrLegacy() {
+      return resource.data.get('published', true) == true;
+    }
+    // New learner queries should include whereEqualTo("published", true).
     match /grammar_lessons/{id} {
-      allow read: if isAdmin() || (request.auth != null && resource.data.published == true);
+      allow read: if isAdmin() || (request.auth != null && isPublishedOrLegacy());
       allow write: if isAdmin();
     }
     match /grammar_catalog/{id} {
-      allow read: if isAdmin() || (request.auth != null && resource.data.published == true);
+      allow read: if isAdmin() || (request.auth != null && isPublishedOrLegacy());
       allow write: if isAdmin();
     }
     match /questions/{id} {
-      allow read: if isAdmin() || (request.auth != null && resource.data.published == true);
+      allow read: if isAdmin() || (request.auth != null && isPublishedOrLegacy());
       allow write: if isAdmin();
     }
     // Each learner's own data (profile, notebook, flashcards, quiz history, ...): only the owner.

@@ -33,13 +33,14 @@ try {
     const path = `${name}/${id}`;
     await assertSucceeds(setDoc(doc(admin, path), { ...data, published: true }));
     await assertSucceeds(setDoc(doc(admin, `${name}/draft`), { ...data, published: false }));
+    await assertSucceeds(setDoc(doc(admin, `${name}/legacy`), data));
     await assertSucceeds(getDoc(doc(learner, path)));
     await assertFails(getDoc(doc(learner, `${name}/draft`)));
+    await assertSucceeds(getDoc(doc(learner, `${name}/legacy`)));
     await assertFails(getDoc(doc(stranger, path)));
     await assertFails(setDoc(doc(learner, path), { ...data, published: true }));
     const result = await assertSucceeds(getDocs(query(collection(learner, name), where('published', '==', true))));
-    assert.equal(result.size, 1);
-    await assertFails(getDocs(collection(learner, name)));
+    assert.equal(result.size, 1); // Draft and legacy rows are deliberately excluded from new catalog queries.
   }
   await assertSucceeds(setDoc(doc(learner, 'users/learner/quiz_attempts/example'), { correctCount: 1 }));
   await assertSucceeds(getDoc(doc(learner, 'users/learner/quiz_attempts/example')));

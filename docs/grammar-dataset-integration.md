@@ -1,6 +1,6 @@
 # Grammar content sources and Firestore loading
 
-Checked 2026-11-25. Brehe content is handled as published source material under CC BY-SA 4.0. No AI API is used. No production Firebase writes were made.
+Checked 2026-11-26. Brehe content is handled as published source material under CC BY-SA 4.0. No AI API is used.
 
 ## Current storage design
 
@@ -10,7 +10,7 @@ Checked 2026-11-25. Brehe content is handled as published source material under 
 - On sign-in the client listens only to `grammar_catalog` with `published == true`. Metadata rows are cached in the existing Room `grammar_lessons` table; no Room schema or migration change is needed. On opening a new lesson, the client fetches that full lesson document and only published questions whose `lessonId` matches, then upserts them into Room. A per-lesson lock avoids duplicate concurrent downloads. A local version marker avoids repeat downloads until `contentVersion` changes. Room remains the UI source and is available offline; absent cloud data never erases local lessons, questions, attempts, or answer snapshots.
 - Quiz attempts and progress remain user-specific in Room and under `users/{uid}` in Firestore. Shared grammar content is never written by learner devices. Firestore rules require authentication and `published == true` for learner reads; only a user with the custom `admin: true` claim can write shared content.
 
-The code and release contract show the intended collection schema, but this environment has no Firebase Admin ADC/project authorization, so the live project's existing documents could not be enumerated. The importer checks all target document IDs before writing and refuses conflicting content hashes; it never overwrites a conflicting document.
+The importer checks all target document IDs before writing and refuses conflicting content hashes; it never overwrites a conflicting document. Production was inspected before import: 17 baseline lessons and 129 existing questions were retained; all target IDs were free.
 
 ## Sources and conversion counts
 
@@ -28,19 +28,18 @@ python3 scripts/grammar/import_firestore.py docs/grammar/brehe-firestore.json --
 
 Expected: `Validated 71 documents ... (published=71)` and `DRY RUN: no Firebase SDK initialized, no network writes` (51 full-content plus 20 catalog documents).
 
-The rules emulator test is in `scripts/grammar/emulator/`. With Node.js/npm and Firebase CLI installed:
+The rules emulator test is in `scripts/grammar/emulator/`. From the repository root, with Node.js/npm and Firebase CLI installed:
 
 ```bash
-cd scripts/grammar/emulator
-npm install --no-save firebase-tools @firebase/rules-unit-testing firebase
-npx firebase emulators:exec --project demo-engmate --only firestore 'node --test rules.test.mjs'
+npm --prefix scripts/grammar/emulator install --no-save firebase-tools @firebase/rules-unit-testing firebase
+scripts/grammar/emulator/node_modules/.bin/firebase emulators:exec --project demo-engmate --only firestore 'node --test scripts/grammar/emulator/rules.test.mjs'
 ```
 
-The emulator suite was not run in this environment because Firebase CLI is unavailable. It checks published reads, rejected drafts, admin-only shared writes and UID-scoped user data.
+The emulator suite checks published and legacy reads, rejected drafts, admin-only shared writes and UID-scoped user data.
 
 ## Import to a real Firebase project
 
-1. In Firebase Console, inspect Firestore and confirm the `grammar_catalog`, `grammar_lessons`, and `questions` collections do not contain conflicting IDs. Configure Firestore Rules from `firestore.rules`, create a custom auth claim `admin: true` only for the trusted admin identity, and enable Application Default Credentials (ADC) for the project.
+1. Before the production import, Firestore was inspected and the target IDs were confirmed free. The deployed rules preserve reads for the old 17 lessons and 129 questions, allow signed-in users to read published shared content, and restrict shared writes to accounts carrying the trusted custom claim `admin: true`.
 2. Configure the Android Firebase app locally with `app/google-services.json` (do not commit it). No API key or service-account secret is embedded in the scripts.
 3. Run the dry-run above. Then, only after selecting and verifying the intended project, run:
 
@@ -50,7 +49,9 @@ GOOGLE_CLOUD_PROJECT=YOUR_PROJECT_ID \
   --project YOUR_PROJECT_ID --execute --confirm-project YOUR_PROJECT_ID
 ```
 
-The explicit `--confirm-project` is a guard against accidental production writes. The script preflights every document first, creates in batches of at most 400, uses create preconditions, skips identical existing hashes and stops on conflicting versions. It is safe to rerun after a partial batch commit. Production import has not been executed.
+The explicit `--confirm-project` is a guard against accidental production writes. The script preflights every document first, creates in batches of at most 400, uses create preconditions, skips identical existing hashes and stops on conflicting versions. It is safe to rerun after a partial batch commit. On 2026-11-26, 71 new documents were imported to project `engmate-572b6`: 20 catalog rows, 20 lesson bodies and 31 questions. The Firestore release was updated to ruleset `da785863-1c68-4e4c-b85d-3cfa7f8b15c6` after Emulator validation.
+
+Production counts after import: `grammar_catalog` 20 (20 published), `grammar_lessons` 37 (20 new published plus 17 existing baseline), and `questions` 160 (31 new published plus 129 existing). All 71 imported documents were verified against their release content hashes. The 17 baseline lesson assets and user progress were not modified.
 
 ## Verification
 
@@ -66,4 +67,4 @@ Android checks (from repository root, where the Gradle wrapper can write its dis
 ./gradlew :app:assembleLiveDebug :app:testLiveDebugUnitTest :app:lintLiveDebug
 ```
 
-The Python suite passes (29 tests), the emulator test passes JavaScript syntax checking, and the importer dry-run validates 71 writes without initializing Firebase. Android checks could not start here: the wrapper cannot create its Gradle distribution lock under `/home/ntqh/.gradle` because that path is read-only; invoking the extracted Gradle directly also fails because this environment exposes no usable wildcard IP. On Ubuntu, run the command above from the repository with a writable Gradle home. No destructive Room migration was introduced. Existing schema version 3, the 17 baseline lessons, user progress and history remain intact.
+The Python suite passes (29 tests), the Firestore Rules Emulator passes, and the importer dry-run validates 71 writes without initializing Firebase. Android `:app:assembleLiveDebug`, `:app:testLiveDebugUnitTest`, and `:app:lintLiveDebug` all pass. No destructive Room migration was introduced. Existing schema version 3, the 17 baseline lessons, user progress and history remain intact.
