@@ -12,6 +12,9 @@ import com.engmate.app.feature.profile.data.RoomProfileRepository
 import com.engmate.app.feature.profile.presentation.*
 import java.time.Clock
 import kotlinx.coroutines.flow.MutableStateFlow
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import org.junit.*
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
@@ -30,25 +33,30 @@ class ProfileScreenTest {
             override val user = MutableStateFlow<SessionUser?>(SessionUser("demo", "demo@example.com"))
         }
         val vm = ProfileViewModel(RoomProfileRepository(db.profiles(), session, Clock.systemUTC()), session)
-        compose.setContent { EngMateTheme { ProfileScreen(vm) } }
+        // Sửa hồ sơ and Cài đặt are separate pages now; deleting the device profile lives in Cài đặt.
+        var settings by mutableStateOf(false)
+        compose.setContent { EngMateTheme { if (settings) SettingsScreen(vm, "demo@example.com", {}, {}, {}, {}, {}) else ProfileScreen(vm) } }
         compose.waitUntil(5000) { org.robolectric.shadows.ShadowLooper.idleMainLooper(); !vm.state.value.loading }
         compose.onNodeWithText("Tạo hồ sơ").performClick()
         compose.onNodeWithText("Họ tên").performTextInput("Nguyễn An")
-        compose.onNodeWithText("Lưu hồ sơ").performScrollTo().performClick()
+        compose.onNodeWithText("Lưu hồ sơ").performClick()
         compose.waitUntil(5000) { org.robolectric.shadows.ShadowLooper.idleMainLooper(); vm.state.value.profile != null && !vm.state.value.editing }
         compose.onNodeWithTag("profile_name").assertTextContains("Nguyễn An")
         compose.onNodeWithTag("profile_name").performScrollTo().performTextReplacement("Nguyễn Bình")
-        compose.onNodeWithText("Lưu thay đổi").performScrollTo().performClick()
+        compose.onNodeWithText("Lưu hồ sơ").performClick()
         compose.waitUntil(5000) { org.robolectric.shadows.ShadowLooper.idleMainLooper(); vm.state.value.profile?.displayName == "Nguyễn Bình" && !vm.state.value.editing }
         compose.onNodeWithTag("profile_name").performScrollTo().performTextReplacement("Tên không lưu")
-        compose.onNodeWithText("Hủy").performScrollTo().performClick()
-        compose.onNodeWithTag("profile_name").assertTextContains("Nguyễn Bình")
-        compose.onNodeWithText("Xóa hồ sơ trên thiết bị").performScrollTo().performClick()
         compose.onNodeWithText("Hủy").performClick()
         compose.onNodeWithTag("profile_name").assertTextContains("Nguyễn Bình")
+        settings = true
+        compose.onNodeWithText("Xóa hồ sơ trên thiết bị").performScrollTo().performClick()
+        compose.onNodeWithText("Hủy").performClick()
+        compose.waitUntil(5000) { org.robolectric.shadows.ShadowLooper.idleMainLooper(); !vm.state.value.confirmDelete }
+        assert(vm.state.value.profile?.displayName == "Nguyễn Bình")
         compose.onNodeWithText("Xóa hồ sơ trên thiết bị").performScrollTo().performClick()
         compose.onNodeWithText("Xóa hồ sơ", substring = false).performClick()
         compose.waitUntil(5000) { org.robolectric.shadows.ShadowLooper.idleMainLooper(); vm.state.value.profile == null && !vm.state.value.busy }
+        settings = false
         compose.onNodeWithText("Tạo hồ sơ").assertIsDisplayed()
     }
 }

@@ -3,15 +3,9 @@ package com.engmate.app.feature.profile.presentation
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import com.engmate.app.feature.auth.presentation.LineIcon
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.sp
-import androidx.compose.ui.platform.testTag
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
@@ -20,149 +14,127 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.SubcomposeAsyncImage
+import com.engmate.app.R
+import com.engmate.app.core.ui.components.*
+import com.engmate.app.core.ui.theme.Spacing
+import com.engmate.app.core.ui.theme.screenPadding
 import com.engmate.app.feature.profile.domain.*
 
+/**
+ * Sửa hồ sơ, and Tạo hồ sơ when there is none yet. Typing in any field starts editing; the sticky bar saves or cancels.
+ * [onClose] shows a close arrow; [onLater] / [onSignOut] are offered when a profile is required before going on.
+ */
 @Composable
-fun ProfileScreen(viewModel: ProfileViewModel, onSettings: (() -> Unit)? = null) {
+fun ProfileScreen(
+    viewModel: ProfileViewModel,
+    onSettings: (() -> Unit)? = null,
+    onClose: (() -> Unit)? = null,
+    onPlacement: (() -> Unit)? = null,
+    onLater: (() -> Unit)? = null,
+    onSignOut: (() -> Unit)? = null,
+) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     BackHandler(enabled = state.editing) { if (!state.busy) viewModel.cancelEdit() }
-    Scaffold(containerColor = MaterialTheme.colorScheme.background) { padding ->
-        Column(Modifier.fillMaxSize().padding(padding).imePadding()
-            .verticalScroll(rememberScrollState()).padding(horizontal = 24.dp, vertical = 16.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-            Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.SpaceBetween) {
-                Text("Hồ sơ cá nhân", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
-                if (onSettings != null) IconButton(onClick = onSettings) { Icon(androidx.compose.ui.res.painterResource(com.engmate.app.R.drawable.ic_settings), "Cài đặt", tint = MaterialTheme.colorScheme.primary) }
-            }
-            state.message?.let { Text(it, color = MaterialTheme.colorScheme.primary) }
-            when {
-                state.user == null -> Text("Vui lòng đăng nhập để quản lý hồ sơ cá nhân.")
-                state.loading -> CircularProgressIndicator()
-                state.loadFailed -> Button(onClick = viewModel::retry) { Text("Thử tải lại") }
-                state.editing && state.profile == null -> ProfileEditor(state, viewModel::change, viewModel::save, viewModel::cancelEdit)
-                state.profile == null -> {
-                    Text("Bạn chưa có hồ sơ trên thiết bị này.")
-                    Text("Tạo hồ sơ để thiết lập trình độ và mục tiêu học mỗi ngày.")
-                    Button(onClick = viewModel::edit, enabled = !state.busy) { Text("Tạo hồ sơ") }
+    var menu by remember { mutableStateOf(false) }
+    Scaffold(
+        topBar = {
+            AppTopBar(if (state.profile == null) "Hồ sơ của bạn" else "Sửa hồ sơ", onClose, navigationIcon = R.drawable.ic_close, navigationLabel = "Đóng") {
+                if (onLater != null) TextButton(onClick = onLater) { Text("Để sau") }
+                if (onSettings != null) TopBarAction(R.drawable.ic_settings, "Cài đặt", onSettings)
+                if (onSignOut != null) Box {
+                    TopBarAction(R.drawable.ic_more, "Tuỳ chọn khác", { menu = true })
+                    DropdownMenu(menu, { menu = false }) { DropdownMenuItem(text = { Text("Đăng xuất") }, onClick = { menu = false; onSignOut() }) }
                 }
-                else -> ProfileDetails(state, viewModel)
-
             }
-            if (state.busy) LinearProgressIndicator(Modifier.fillMaxWidth())
+        },
+        bottomBar = {
+            // Always present once there is a form: Lưu stays disabled until something changes; Hủy leaves when nothing did.
+            if (state.editing || (state.profile != null && !state.loading)) StickyBottomBar {
+                ButtonPair("Hủy", { if (state.editing) viewModel.cancelEdit() else onClose?.invoke() },
+                    if (state.busy) "Đang lưu…" else "Lưu hồ sơ", viewModel::save, primaryEnabled = state.editing, loading = state.busy)
+            }
+        },
+    ) { padding ->
+        Column(Modifier.fillMaxSize().padding(padding).imePadding().verticalScroll(rememberScrollState())
+            .padding(horizontal = screenPadding).padding(bottom = Spacing.xl), verticalArrangement = Arrangement.spacedBy(Spacing.m)) {
+            state.message?.let { FeedbackBanner(it, kind = FeedbackKind.SUCCESS) }
+            when {
+                state.user == null -> EmptyState("Bạn chưa đăng nhập", "Đăng nhập để quản lý hồ sơ cá nhân.", icon = R.drawable.ic_lock)
+                state.loading -> LoadingState(rows = 3, hero = false)
+                state.loadFailed -> ErrorState("Không tải được hồ sơ.", onRetry = viewModel::retry)
+                state.profile == null && !state.editing -> EmptyState("Tạo hồ sơ để bắt đầu",
+                    "Đặt tên, trình độ và mục tiêu mỗi ngày để EngMate gợi ý bài phù hợp.", icon = R.drawable.ic_person,
+                    action = { PrimaryButton("Tạo hồ sơ", viewModel::edit, enabled = !state.busy) })
+                else -> ProfileForm(state, viewModel, onPlacement)
+            }
         }
     }
-    if (state.confirmDelete) AlertDialog(
-        onDismissRequest = viewModel::dismissDelete,
-        title = { Text("Xóa hồ sơ trên thiết bị?") },
-        text = { Text("Tên, ảnh, trình độ và mục tiêu trong hồ sơ sẽ bị xóa khỏi thiết bị này. Tài khoản đăng nhập Firebase không bị xóa. Bạn có thể tạo lại hồ sơ. Nếu còn dữ liệu học liên quan, thao tác xóa sẽ bị chặn để giữ lịch sử.") },
-        confirmButton = { TextButton(onClick = viewModel::delete, enabled = !state.busy) { Text("Xóa hồ sơ") } },
-        dismissButton = { TextButton(onClick = viewModel::dismissDelete, enabled = !state.busy) { Text("Hủy") } },
-    )
 }
 
-@Composable private fun ProfileDetails(state: ProfileUiState, vm: ProfileViewModel) {
-    val profile = state.profile ?: return
+@Composable
+private fun ProfileForm(state: ProfileUiState, vm: ProfileViewModel, onPlacement: (() -> Unit)?) {
+    val profile = state.profile
+    val input = if (state.editing || profile == null) state.input
+        else ProfileInput(profile.displayName, profile.photoUrl.orEmpty(), profile.englishLevel, profile.dailyGoalMinutes.toString())
+    fun update(next: ProfileInput) { if (!state.editing) vm.edit(); vm.change(next) }
     var photoDialog by remember { mutableStateOf(false) }
     var photoDraft by remember { mutableStateOf("") }
-    val input = if (state.editing) state.input else ProfileInput(profile.displayName, profile.photoUrl.orEmpty(), profile.englishLevel, profile.dailyGoalMinutes.toString())
-    fun update(next: ProfileInput) { if (!state.editing) vm.edit(); vm.change(next) }
-    Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        Spacer(Modifier.height(8.dp))
-        Box(Modifier.clickable(enabled = !state.busy, onClickLabel = "Đổi ảnh đại diện") { photoDraft = input.photoUrl; photoDialog = true }) { Avatar(profile) }
-        Text(profile.displayName, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
-        Text(state.user?.email.orEmpty(), style = MaterialTheme.typography.bodySmall, color = Color(0xFF565B62))
-        Text("Người học", modifier = Modifier.padding(top = 8.dp).clip(RoundedCornerShape(50)).background(Color(0xFFE6E5FE)).padding(horizontal = 16.dp, vertical = 6.dp), color = Color(0xFF694CCD), style = MaterialTheme.typography.labelMedium)
+
+    Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(Spacing.s)) {
+        Box(Modifier.clip(CircleShape).clickable(enabled = !state.busy, onClickLabel = "Đổi ảnh đại diện") { photoDraft = input.photoUrl; photoDialog = true }) {
+            Avatar(input.photoUrl.ifBlank { null }, 88.dp)
+        }
+        TextButton(onClick = { photoDraft = input.photoUrl; photoDialog = true }, enabled = !state.busy) { Text("Đổi ảnh đại diện") }
+        state.user?.email?.let { Text(it, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant) }
     }
-    if (photoDialog) AlertDialog(onDismissRequest = { photoDialog = false }, title = { Text("Ảnh đại diện") },
-        text = { OutlinedTextField(photoDraft, { photoDraft = it }, label = { Text("Đường dẫn ảnh HTTPS (tùy chọn)") }, singleLine = true) },
-        confirmButton = { TextButton(onClick = { update(input.copy(photoUrl = photoDraft)); photoDialog = false }) { Text("Xong") } },
-        dismissButton = { TextButton(onClick = { photoDialog = false }) { Text("Hủy") } })
-    state.errors[ProfileField.PHOTO]?.let { Text(it, color = MaterialTheme.colorScheme.error) }
-    Spacer(Modifier.height(4.dp))
-    Text("Tên hiển thị", style = MaterialTheme.typography.labelLarge, fontWeight = FontWeight.Bold)
-    OutlinedTextField(value = input.displayName, onValueChange = { update(input.copy(displayName = it)) }, modifier = Modifier.fillMaxWidth().testTag("profile_name"), singleLine = true, enabled = !state.busy,
-        leadingIcon = { LineIcon("user", Color(0xFF3E4349)) }, shape = RoundedCornerShape(12.dp),
-        colors = OutlinedTextFieldDefaults.colors(unfocusedContainerColor = Color.White, focusedContainerColor = Color.White),
-        isError = state.errors[ProfileField.NAME] != null, supportingText = state.errors[ProfileField.NAME]?.let { error -> { Text(error) } })
-    Text("Trình độ tiếng Anh", style = MaterialTheme.typography.labelLarge, fontWeight = FontWeight.Bold)
-    ProfileLevel(input.englishLevel, !state.busy) { update(input.copy(englishLevel = it)) }
-    Text("Mục tiêu mỗi ngày", style = MaterialTheme.typography.labelLarge, fontWeight = FontWeight.Bold)
-    ProfileGoal(input.dailyGoalMinutes, !state.busy, state.errors[ProfileField.GOAL]) { update(input.copy(dailyGoalMinutes = it)) }
-    Button(onClick = vm::save, enabled = state.editing && !state.busy, modifier = Modifier.fillMaxWidth().height(48.dp), shape = RoundedCornerShape(12.dp)) { Text(if (state.busy) "Đang lưu…" else "Lưu thay đổi") }
-    if (state.editing) TextButton(onClick = vm::cancelEdit, enabled = !state.busy, modifier = Modifier.fillMaxWidth()) { Text("Hủy") }
-    TextButton(onClick = vm::askDelete, enabled = !state.busy, modifier = Modifier.fillMaxWidth()) { Text("Xóa hồ sơ trên thiết bị", color = MaterialTheme.colorScheme.error) }
+    state.errors[ProfileField.PHOTO]?.let { FieldError(it) }
+
+    InfoCard {
+        OutlinedTextField(input.displayName, { update(input.copy(displayName = it)) }, Modifier.fillMaxWidth().testTag("profile_name"),
+            label = { Text("Họ tên") }, singleLine = true, enabled = !state.busy, shape = MaterialTheme.shapes.medium,
+            leadingIcon = { Icon(painterResource(R.drawable.ic_person), null) },
+            isError = state.errors[ProfileField.NAME] != null, supportingText = state.errors[ProfileField.NAME]?.let { e -> { Text(e) } })
+        HorizontalDivider(Modifier.padding(vertical = Spacing.s), color = MaterialTheme.colorScheme.outlineVariant)
+        Text("Trình độ tiếng Anh", style = MaterialTheme.typography.titleSmall)
+        ChipRow(ProfileValidator.levels, input.englishLevel, { it }, { update(input.copy(englishLevel = it)) }, enabled = !state.busy)
+        state.errors[ProfileField.LEVEL]?.let { FieldError(it) }
+        if (onPlacement != null) Row(Modifier.fillMaxWidth().clickable(onClick = onPlacement).heightIn(min = Spacing.touch), verticalAlignment = Alignment.CenterVertically) {
+            Icon(painterResource(R.drawable.ic_target), null, tint = MaterialTheme.colorScheme.primary)
+            Spacer(Modifier.width(Spacing.s))
+            Text("Chưa biết trình độ? Làm bài kiểm tra 15 câu", style = MaterialTheme.typography.labelLarge,
+                color = MaterialTheme.colorScheme.primary, modifier = Modifier.weight(1f))
+            RowChevron()
+        }
+        HorizontalDivider(Modifier.padding(vertical = Spacing.s), color = MaterialTheme.colorScheme.outlineVariant)
+        Text("Mục tiêu mỗi ngày", style = MaterialTheme.typography.titleSmall)
+        val goals = (listOf("10", "15", "30", "45", "60") + input.dailyGoalMinutes).filter { it.toIntOrNull() != null }.distinct().sortedBy { it.toInt() }
+        ChipRow(goals, input.dailyGoalMinutes, { "$it phút" }, { update(input.copy(dailyGoalMinutes = it)) }, enabled = !state.busy)
+        state.errors[ProfileField.GOAL]?.let { FieldError(it) }
+    }
+
+    if (photoDialog) AppDialog("Ảnh đại diện", { photoDialog = false }, "Xong", { update(input.copy(photoUrl = photoDraft)); photoDialog = false }) {
+        OutlinedTextField(photoDraft, { photoDraft = it }, label = { Text("Đường dẫn ảnh HTTPS (tuỳ chọn)") }, singleLine = true,
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Uri))
+    }
 }
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable private fun ProfileGoal(value: String, enabled: Boolean, error: String?, onChange: (String) -> Unit) {
-    var expanded by remember { mutableStateOf(false) }
-    val options = (listOf("15", "30", "45", "60", "90") + value).filter { it.isNotBlank() }.distinct().sortedBy { it.toIntOrNull() ?: 0 }
-    ExposedDropdownMenuBox(expanded = expanded, onExpandedChange = { if (enabled) expanded = it }) {
-        OutlinedTextField(value = "$value phút/ngày", onValueChange = {}, readOnly = true, enabled = enabled, isError = error != null,
-            modifier = Modifier.fillMaxWidth().menuAnchor(ExposedDropdownMenuAnchorType.PrimaryNotEditable, enabled),
-            leadingIcon = { LineIcon("target", MaterialTheme.colorScheme.primary) }, trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded) },
-            supportingText = error?.let { e -> { Text(e) } }, shape = RoundedCornerShape(12.dp),
-            colors = OutlinedTextFieldDefaults.colors(unfocusedContainerColor = Color.White, focusedContainerColor = Color.White))
-        ExposedDropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
-            options.forEach { m -> DropdownMenuItem(text = { Text("$m phút/ngày") }, onClick = { onChange(m); expanded = false }) }
+
+/** Round avatar: the photo when there is one, otherwise a person icon on the brand tint. */
+@Composable
+internal fun Avatar(photoUrl: String?, size: Dp) {
+    val modifier = Modifier.size(size).clip(CircleShape)
+    val placeholder: @Composable () -> Unit = {
+        Box(Modifier.fillMaxSize().background(MaterialTheme.colorScheme.primaryContainer), Alignment.Center) {
+            Icon(painterResource(R.drawable.ic_person), null, Modifier.size(size / 2), tint = MaterialTheme.colorScheme.onPrimaryContainer)
         }
     }
-}
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable private fun ProfileLevel(value: String, enabled: Boolean, onChange: (String) -> Unit) {
-    var expanded by remember { mutableStateOf(false) }
-    val labels = mapOf("A1" to "Sơ cấp (A1)", "A2" to "Sơ cấp (A2)", "B1" to "Trung cấp (B1)", "B2" to "Trung cấp (B2)", "C1" to "Cao cấp (C1)", "C2" to "Cao cấp (C2)")
-    ExposedDropdownMenuBox(expanded = expanded, onExpandedChange = { if (enabled) expanded = it }) {
-        OutlinedTextField(value = labels[value] ?: value, onValueChange = {}, readOnly = true, enabled = enabled, modifier = Modifier.fillMaxWidth().menuAnchor(ExposedDropdownMenuAnchorType.PrimaryNotEditable, enabled),
-            leadingIcon = { LineIcon("chart", MaterialTheme.colorScheme.primary) }, trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded) },
-            shape = RoundedCornerShape(12.dp), colors = OutlinedTextFieldDefaults.colors(unfocusedContainerColor = Color.White, focusedContainerColor = Color.White))
-        ExposedDropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
-            ProfileValidator.levels.forEach { level -> DropdownMenuItem(text = { Text(labels[level] ?: level) }, onClick = { onChange(level); expanded = false }) }
-        }
-    }
-}
-@Composable private fun Avatar(profile: UserProfile) {
-    val modifier = Modifier.size(88.dp).clip(CircleShape)
-    if (profile.photoUrl == null) Initials(profile.displayName, modifier)
-    else SubcomposeAsyncImage(model = profile.photoUrl, contentDescription = "Ảnh đại diện", modifier = modifier,
-        contentScale = ContentScale.Crop, loading = { Initials(profile.displayName, Modifier.fillMaxSize()) },
-        error = { Initials(profile.displayName, Modifier.fillMaxSize()) })
-}
-@Composable private fun Initials(name: String, modifier: Modifier) {
-    Box(modifier.background(MaterialTheme.colorScheme.primaryContainer), contentAlignment = Alignment.Center) {
-        LineIcon("user", Color(0xFF2C71B7))
-    }
-}
-@Composable private fun ProfileEditor(state: ProfileUiState, change: (ProfileInput) -> Unit, save: () -> Unit, cancel: () -> Unit) {
-    val input = state.input
-    Text(if (state.profile == null) "Tạo hồ sơ" else "Chỉnh sửa hồ sơ", style = MaterialTheme.typography.titleLarge)
-    Text(state.user!!.email, style = MaterialTheme.typography.bodyMedium)
-    ProfileField("Họ tên", input.displayName, state.errors[ProfileField.NAME], !state.busy) { change(input.copy(displayName = it)) }
-    ProfileField("Đường dẫn ảnh đại diện (HTTPS, tùy chọn)", input.photoUrl, state.errors[ProfileField.PHOTO], !state.busy,
-        KeyboardType.Uri) { change(input.copy(photoUrl = it)) }
-    Text("Trình độ tiếng Anh", style = MaterialTheme.typography.titleSmall)
-    ProfileValidator.levels.chunked(3).forEach { levels ->
-        Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-            levels.forEach { level ->
-                FilterChip(selected = input.englishLevel == level, onClick = { change(input.copy(englishLevel = level)) },
-                    enabled = !state.busy, label = { Text(level) })
-            }
-        }
-    }
-    state.errors[ProfileField.LEVEL]?.let { Text(it, color = MaterialTheme.colorScheme.error) }
-    ProfileField("Mục tiêu học (phút/ngày)", input.dailyGoalMinutes, state.errors[ProfileField.GOAL], !state.busy,
-        KeyboardType.Number) { change(input.copy(dailyGoalMinutes = it)) }
-    Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-        OutlinedButton(onClick = cancel, enabled = !state.busy) { Text("Hủy") }
-        Button(onClick = save, enabled = !state.busy) { Text(if (state.busy) "Đang lưu…" else "Lưu hồ sơ") }
-    }
-}
-@Composable private fun ProfileField(label: String, value: String, error: String?, enabled: Boolean,
-    keyboard: KeyboardType = KeyboardType.Text, onChange: (String) -> Unit) {
-    OutlinedTextField(value = value, onValueChange = onChange, label = { Text(label) }, modifier = Modifier.fillMaxWidth(),
-        singleLine = true, enabled = enabled, isError = error != null,
-        keyboardOptions = KeyboardOptions(keyboardType = keyboard),
-        supportingText = { if (error != null) Text(error) })
+    if (photoUrl == null) Box(modifier) { placeholder() }
+    else SubcomposeAsyncImage(model = photoUrl, contentDescription = "Ảnh đại diện", modifier = modifier, contentScale = ContentScale.Crop,
+        loading = { placeholder() }, error = { placeholder() })
 }

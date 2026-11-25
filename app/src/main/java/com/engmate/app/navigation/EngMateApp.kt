@@ -49,6 +49,9 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
     var studyHandbook by rememberSaveable(user?.uid) { mutableStateOf<Long?>(null) }
     // Tra từ, opened from the home header; a word opened from it returns here.
     var searching by rememberSaveable { mutableStateOf(false) }
+    // Cài đặt and Sửa hồ sơ open as full pages from the Hồ sơ tab.
+    var settingsOpen by rememberSaveable(user?.uid) { mutableStateOf(false) }
+    var editProfile by rememberSaveable(user?.uid) { mutableStateOf(false) }
     // Đông's quiz, result, placement and reminder pages (see QuizRoutes.kt).
     var quizRouteKey by rememberSaveable(user?.uid) { mutableStateOf<String?>(null) }
     val quizRoute = QuizRoute.decode(quizRouteKey)
@@ -69,13 +72,7 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
     } else if (needsProfile && (profileState.user?.uid != user?.uid || profileState.loading)) {
         Box(Modifier.fillMaxSize(), contentAlignment = androidx.compose.ui.Alignment.Center) { CircularProgressIndicator() }
     } else if (needsProfile && profileState.profile == null && !profileState.loadFailed) {
-        Column(Modifier.fillMaxSize().safeDrawingPadding()) {
-            Box(Modifier.weight(1f)) { ProfileScreen(profile) }
-            Row(Modifier.padding(horizontal = 24.dp)) {
-                TextButton(onClick = { tab = MainTab.HOME; quizRouteKey = null; studyHandbook = null }) { Text("Để sau") }
-                TextButton(onClick = auth::signOut) { Text("Đăng xuất") }
-            }
-        }
+        ProfileScreen(profile, onLater = { tab = MainTab.HOME; quizRouteKey = null; studyHandbook = null }, onSignOut = auth::signOut)
     } else if (openWord != null) {
         BackHandler { openWord = null }
         WordDetailScreen(viewModel(), openWord!!, onBack = { openWord = null }, onPronunciationScored = actions::pronunciationScored)
@@ -87,6 +84,20 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
         FlashcardScreen(viewModel(), studyHandbook!!, onClose = { studyHandbook = null })
     } else if (quizRoute != null) {
         QuizRouteHost(quizRoute, navigate = ::openQuiz, onOpenProfile = { openQuiz(null); tab = MainTab.PROFILE })
+    } else if (editProfile) {
+        BackHandler { profile.cancelEdit(); editProfile = false }
+        // Closing after a successful save: the form leaves editing mode once the profile is stored.
+        ProfileScreen(profile, onClose = { profile.cancelEdit(); editProfile = false }, onPlacement = { openQuiz(QuizRoute.Placement) })
+        // Saving or cancelling ends editing; leave the page then, unless the save failed validation.
+        var wasEditing by remember { mutableStateOf(false) }
+        LaunchedEffect(profileState.editing, profileState.busy) {
+            if (wasEditing && !profileState.editing && !profileState.busy) editProfile = false
+            wasEditing = profileState.editing || (wasEditing && profileState.busy)
+        }
+    } else if (settingsOpen) {
+        BackHandler { settingsOpen = false }
+        SettingsScreen(profile, user?.email.orEmpty(), onBack = { settingsOpen = false }, onPlacement = { openQuiz(QuizRoute.Placement) },
+            onReminder = { openQuiz(QuizRoute.Reminder) }, onEditProfile = { editProfile = true }, onSignOut = { settingsOpen = false; auth.signOut() })
     } else if (lessonId != null) {
         // A lesson is a full page: no bottom bar, its own sticky "Làm bài tập" button.
         BackHandler { lessonId = null }
@@ -139,39 +150,11 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
                             }
                         }
                         MainTab.NOTEBOOK -> if (user == null) LoginPrompt("Sổ tay", onLogin = { showAuth = true }) else NotebookScreen(viewModel(), onOpenWord = { openWord = it }, onStudy = { studyHandbook = it })
-                        MainTab.PROFILE -> if (user == null) LoginPrompt("Hồ sơ và tiến độ học", onLogin = { showAuth = true }, icon = R.drawable.ic_chart) else ProfileTab(profile, progress, user?.email.orEmpty(), auth::signOut,
-                            onPlacement = { openQuiz(QuizRoute.Placement) }, onReminder = { openQuiz(QuizRoute.Reminder) })
+                        MainTab.PROFILE -> if (user == null) LoginPrompt("Hồ sơ và tiến độ học", onLogin = { showAuth = true }, icon = R.drawable.ic_chart) else ProfileHomeScreen(profile, progress, onEdit = { editProfile = true }, onSettings = { settingsOpen = true },
+                            onStudy = { learnVocabulary = false; tab = MainTab.LEARN }, onReviewDue = { tab = MainTab.NOTEBOOK })
                     }
                 }
             }
-        }
-    }
-}
-
-/** Hồ sơ holds the profile and Huân's statistics; ⚙ opens settings with sign-out. */
-@Composable private fun ProfileTab(profile: ProfileViewModel, progress: ProgressViewModel, email: String, onSignOut: () -> Unit,
-    onPlacement: () -> Unit = {}, onReminder: () -> Unit = {}) {
-    var showProgress by rememberSaveable { mutableStateOf(false) }
-    var settings by rememberSaveable { mutableStateOf(false) }
-    if (settings) {
-        BackHandler { settings = false }
-        Column {
-            BackTopBar("Cài đặt", onBack = { settings = false })
-            Column(Modifier.padding(24.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
-                LearningShortcuts(onPlacement, onReminder)
-                Text(email)
-                OutlinedButton(onClick = onSignOut, modifier = Modifier.fillMaxWidth()) { Text("Đăng xuất") }
-            }
-        }
-        return
-    }
-    Column(Modifier.fillMaxSize()) {
-        PrimaryTabRow(selectedTabIndex = if (showProgress) 1 else 0, Modifier.statusBarsPadding()) {
-            Tab(selected = !showProgress, onClick = { showProgress = false }, text = { Text("Hồ sơ") })
-            Tab(selected = showProgress, onClick = { showProgress = true }, text = { Text("Tiến độ") })
-        }
-        Box(Modifier.weight(1f)) {
-            if (showProgress) ProgressScreen(progress) else ProfileScreen(profile, onSettings = { settings = true })
         }
     }
 }

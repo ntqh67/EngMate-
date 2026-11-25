@@ -186,7 +186,7 @@ fun AppDialog(
     onDismiss: () -> Unit,
     confirmLabel: String,
     onConfirm: () -> Unit,
-    dismissLabel: String = "Huỷ",
+    dismissLabel: String = "Hủy",
     destructive: Boolean = false,
     busy: Boolean = false,
     content: (@Composable () -> Unit)? = null,

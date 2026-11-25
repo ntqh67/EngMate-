@@ -115,7 +115,7 @@ private fun TimeDialog(hour: Int, minute: Int, onConfirm: (Int, Int) -> Unit, on
         title = { Text("Chọn giờ nhắc") },
         text = { TimePicker(picker) },
         confirmButton = { TextButton(onClick = { onConfirm(picker.hour, picker.minute) }) { Text("Lưu ${formatTime(picker.hour, picker.minute)}") } },
-        dismissButton = { TextButton(onClick = onDismiss) { Text("Huỷ") } },
+        dismissButton = { TextButton(onClick = onDismiss) { Text("Hủy") } },
     )
 }
 
