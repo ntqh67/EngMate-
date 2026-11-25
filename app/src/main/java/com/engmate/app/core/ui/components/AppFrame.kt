@@ -229,3 +229,17 @@ fun AppBottomSheet(title: String, onDismiss: () -> Unit, content: @Composable Co
         }
     }
 }
+
+/**
+ * Quiet action on the primary container (blue). Material's own tonal button uses secondaryContainer,
+ * which is mango in this palette and reserved for streak and energy.
+ */
+@Composable
+fun TonalButton(text: String, onClick: () -> Unit, modifier: Modifier = Modifier, @DrawableRes icon: Int? = null, enabled: Boolean = true) {
+    FilledTonalButton(onClick = onClick, enabled = enabled, modifier = modifier.heightIn(min = Spacing.touch),
+        colors = ButtonDefaults.filledTonalButtonColors(containerColor = MaterialTheme.colorScheme.primaryContainer,
+            contentColor = MaterialTheme.colorScheme.onPrimaryContainer)) {
+        if (icon != null) { Icon(painterResource(icon), null, Modifier.size(18.dp)); Spacer(Modifier.width(Spacing.s)) }
+        Text(text, style = MaterialTheme.typography.labelLarge, maxLines = 1)
+    }
+}
