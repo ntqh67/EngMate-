@@ -1,8 +1,10 @@
 package com.engmate.app.feature.quiz.presentation.placement
 
 import androidx.activity.compose.BackHandler
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -10,15 +12,17 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.engmate.app.R
-import com.engmate.app.core.ui.components.BackTopBar
-import com.engmate.app.core.ui.components.LevelBadge
-import com.engmate.app.core.ui.theme.successText
+import com.engmate.app.core.ui.components.*
+import com.engmate.app.core.ui.theme.EngMateTheme
+import com.engmate.app.core.ui.theme.Spacing
+import com.engmate.app.core.ui.theme.screenPadding
 import com.engmate.app.feature.quiz.domain.QuizScoring
 import com.engmate.app.feature.quiz.domain.QuizSource
 import com.engmate.app.feature.quiz.presentation.quiz.QuizContent
@@ -27,6 +31,14 @@ import com.engmate.app.feature.quiz.presentation.result.QuizResultContent
 import com.engmate.app.feature.quiz.presentation.result.QuizResultViewModel
 
 private enum class Step { INTRO, QUIZ, RESULT, REVIEW }
+
+/** One sentence per estimated level, shown under the level badge. */
+internal fun levelExplanation(level: String): String = when (level) {
+    "A1" -> "Bạn nắm được các cấu trúc cơ bản nhất. Hãy bắt đầu với các thì hiện tại và động từ to be."
+    "A2" -> "Bạn dùng được câu đơn giản về đời sống hằng ngày. Tiếp theo là các thì quá khứ và so sánh."
+    "B1" -> "Bạn xử lý được hầu hết tình huống quen thuộc. Hãy luyện thêm câu điều kiện và thì hoàn thành."
+    else -> "Bạn dùng ngữ pháp khá vững. Hãy ôn các cấu trúc nâng cao để giữ phong độ."
+}
 
 /**
  * Placement test: intro, the 15 questions, then the estimated level.
@@ -67,7 +79,7 @@ fun PlacementScreen(onFinished: (level: String?) -> Unit, onBack: () -> Unit, on
             val state by review.state.collectAsStateWithLifecycle()
             QuizResultContent(state, title = "Chi tiết bài kiểm tra", onBack = { step = Step.RESULT },
                 onFilter = review::filter, onReload = review::retry) {
-                Button(onClick = { onFinished(level) }, modifier = Modifier.fillMaxWidth()) { Text("Xong") }
+                PrimaryButton("Xong", { onFinished(level) }, Modifier.fillMaxWidth())
             }
         }
     }
@@ -75,56 +87,72 @@ fun PlacementScreen(onFinished: (level: String?) -> Unit, onBack: () -> Unit, on
 
 @Composable
 private fun Intro(onStart: () -> Unit, onLater: () -> Unit, onBack: () -> Unit) {
-    Scaffold(topBar = { BackTopBar("Kiểm tra trình độ", onBack) }) { padding ->
-        Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState()).padding(24.dp).widthIn(max = 600.dp),
-            verticalArrangement = Arrangement.spacedBy(16.dp)) {
-            Icon(painterResource(R.drawable.ic_school), null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(48.dp))
-            Text("Xác định trình độ tiếng Anh của bạn", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.SemiBold)
-            Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surfaceContainerLow, modifier = Modifier.fillMaxWidth()) {
-                Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                    Fact("${QuizScoring.PLACEMENT_QUESTION_COUNT} câu hỏi trắc nghiệm và điền từ")
-                    Fact("Khoảng 10 phút")
-                    Fact("Gợi ý trình độ từ A1 đến B2")
-                    Fact("Không trừ điểm khi trả lời sai")
-                }
+    Scaffold(
+        topBar = { AppTopBar("Kiểm tra trình độ", onBack) },
+        bottomBar = {
+            StickyBottomBar {
+                PrimaryButton("Bắt đầu", onStart, Modifier.fillMaxWidth())
+                TextButton(onClick = onLater, modifier = Modifier.fillMaxWidth().heightIn(min = Spacing.touch)) { Text("Để sau") }
             }
-            Text("Kết quả được lưu vào lịch sử và cập nhật trình độ trong hồ sơ của bạn.",
-                style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
-            Spacer(Modifier.height(8.dp))
-            Button(onClick = onStart, modifier = Modifier.fillMaxWidth()) { Text("Bắt đầu") }
-            TextButton(onClick = onLater, modifier = Modifier.fillMaxWidth()) { Text("Để sau") }
+        },
+    ) { padding ->
+        Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState()).padding(horizontal = screenPadding),
+            verticalArrangement = Arrangement.spacedBy(Spacing.l)) {
+            LevelsIllustration()
+            Text("Tìm điểm xuất phát của bạn", style = MaterialTheme.typography.headlineMedium)
+            Text("Trả lời nhanh, đừng đoán quá lâu. EngMate dùng kết quả để gợi ý bài vừa sức và cập nhật trình độ trong hồ sơ.",
+                style = MaterialTheme.typography.bodyLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            SurfaceGroup {
+                Fact(R.drawable.ic_list, "${QuizScoring.PLACEMENT_QUESTION_COUNT} câu hỏi", "Trắc nghiệm và điền từ")
+                GroupDivider(56.dp)
+                Fact(R.drawable.ic_clock, "Khoảng 10 phút", "Làm một lần, không giới hạn thời gian")
+                GroupDivider(56.dp)
+                Fact(R.drawable.ic_target, "Gợi ý trình độ A1–B2", "Không trừ điểm khi trả lời sai")
+            }
         }
     }
 }
 
+/** Brand block with the level badges around the EngMate mark (Figma F04). */
 @Composable
-private fun Fact(text: String) {
-    Row(verticalAlignment = Alignment.CenterVertically) {
-        Icon(painterResource(R.drawable.ic_check_circle), null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(20.dp))
-        Spacer(Modifier.width(10.dp))
-        Text(text, style = MaterialTheme.typography.bodyLarge)
+private fun LevelsIllustration() {
+    val brand = EngMateTheme.brand
+    Box(Modifier.fillMaxWidth().height(168.dp).background(brand.brand, MaterialTheme.shapes.large).semantics { contentDescription = "Các trình độ từ A1 đến B2" }) {
+        Box(Modifier.align(Alignment.Center).size(72.dp).background(MaterialTheme.colorScheme.primary, MaterialTheme.shapes.large), Alignment.Center) {
+            Text("E", style = EngMateTheme.type.stat, color = MaterialTheme.colorScheme.onPrimary)
+        }
+        LevelChip("A1", Modifier.align(Alignment.TopStart).padding(Spacing.xl), large = true)
+        LevelChip("A2", Modifier.align(Alignment.TopEnd).padding(Spacing.xl), large = true)
+        LevelChip("B1", Modifier.align(Alignment.BottomStart).padding(Spacing.xl), large = true)
+        LevelChip("B2", Modifier.align(Alignment.BottomEnd).padding(Spacing.xl), large = true)
     }
 }
 
 @Composable
+private fun Fact(icon: Int, title: String, body: String) {
+    ListRow(title, supporting = body, leading = { Icon(painterResource(icon), null, tint = MaterialTheme.colorScheme.primary) })
+}
+
+@Composable
 private fun LevelResult(level: String, correct: Int, total: Int, levelSaved: Boolean, onDetails: () -> Unit, onDone: () -> Unit) {
-    Scaffold(topBar = { BackTopBar("Kết quả kiểm tra", onDone) }) { padding ->
-        Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState()).padding(24.dp),
-            horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(16.dp)) {
-            Text("Trình độ của bạn", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
-            Text(level, style = MaterialTheme.typography.displayMedium, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
-            LevelBadge("$correct/$total câu đúng")
-            val (icon, color, message) = if (levelSaved)
-                Triple(R.drawable.ic_check_circle, MaterialTheme.colorScheme.successText, "Đã cập nhật trình độ vào hồ sơ")
-            else Triple(R.drawable.ic_cancel, MaterialTheme.colorScheme.error, "Chưa cập nhật được hồ sơ, bạn có thể sửa trình độ trong Hồ sơ")
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                Icon(painterResource(icon), null, tint = color, modifier = Modifier.size(20.dp))
-                Spacer(Modifier.width(8.dp))
-                Text(message, color = color, textAlign = TextAlign.Center)
+    val brand = EngMateTheme.brand
+    Scaffold(
+        topBar = { AppTopBar("Kết quả kiểm tra", onDone, navigationIcon = R.drawable.ic_close, navigationLabel = "Đóng") },
+        bottomBar = { StickyBottomBar { ButtonPair("Xem chi tiết", onDetails, "Xong", onDone) } },
+    ) { padding ->
+        Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState()).padding(horizontal = screenPadding, vertical = Spacing.l),
+            horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(Spacing.l)) {
+            Box(Modifier.size(148.dp).background(brand.brand, CircleShape).semantics { contentDescription = "Trình độ $level" }, Alignment.Center) {
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text(level, style = MaterialTheme.typography.displayMedium, color = brand.onBrand)
+                    Text("Trình độ", style = MaterialTheme.typography.labelMedium, color = brand.onBrand)
+                }
             }
-            Spacer(Modifier.height(8.dp))
-            Button(onClick = onDone, modifier = Modifier.fillMaxWidth()) { Text("Xong") }
-            OutlinedButton(onClick = onDetails, modifier = Modifier.fillMaxWidth()) { Text("Xem chi tiết") }
+            Text("Bạn đúng $correct/$total câu", style = MaterialTheme.typography.headlineSmall, textAlign = TextAlign.Center)
+            Text(levelExplanation(level), style = MaterialTheme.typography.bodyLarge, textAlign = TextAlign.Center,
+                color = MaterialTheme.colorScheme.onSurfaceVariant)
+            if (levelSaved) FeedbackBanner("Đã cập nhật trình độ $level vào hồ sơ", kind = FeedbackKind.SUCCESS)
+            else FeedbackBanner("Chưa cập nhật được hồ sơ. Bạn có thể sửa trình độ trong Hồ sơ.", kind = FeedbackKind.ERROR)
         }
     }
 }

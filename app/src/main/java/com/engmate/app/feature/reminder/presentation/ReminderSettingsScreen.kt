@@ -22,8 +22,11 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.engmate.app.R
-import com.engmate.app.core.ui.components.BackTopBar
-import com.engmate.app.core.ui.components.MessageEffect
+import com.engmate.app.core.ui.components.*
+import com.engmate.app.core.ui.theme.EngMateTheme
+import com.engmate.app.core.ui.theme.Spacing
+import com.engmate.app.core.ui.theme.screenPadding
+import androidx.compose.ui.Alignment
 import com.engmate.app.feature.reminder.domain.formatTime
 import com.engmate.app.feature.reminder.worker.ReminderWorker
 
@@ -48,34 +51,52 @@ fun ReminderSettingsScreen(onBack: () -> Unit) {
         else -> viewModel.setEnabled(true)
     }
 
-    Scaffold(topBar = { BackTopBar("Nhắc học hằng ngày", onBack) }, snackbarHost = { SnackbarHost(snackbar) }) { padding ->
-        Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState()).padding(16.dp).widthIn(max = 680.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp)) {
-            val s = state.settings
-            Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surfaceContainerLow, modifier = Modifier.fillMaxWidth()) {
-                Column {
-                    ListItem(
-                        leadingContent = { Icon(painterResource(R.drawable.ic_notifications), null, tint = MaterialTheme.colorScheme.primary) },
-                        headlineContent = { Text("Nhắc học hằng ngày") },
-                        supportingContent = { Text(if (s.enabled) "Nhắc lúc ${s.timeText} mỗi ngày" else "Đang tắt") },
-                        trailingContent = {
-                            Switch(checked = s.enabled, enabled = !state.loading && !state.busy,
-                                onCheckedChange = { on -> if (on) turnOn() else viewModel.setEnabled(false) })
-                        },
-                        colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow),
-                    )
-                    HorizontalDivider(Modifier.padding(start = 56.dp), color = MaterialTheme.colorScheme.outlineVariant)
-                    ListItem(
-                        leadingContent = { Icon(painterResource(R.drawable.ic_schedule), null, tint = MaterialTheme.colorScheme.primary) },
-                        headlineContent = { Text("Giờ nhắc") },
-                        supportingContent = { Text(s.timeText) },
-                        trailingContent = { Icon(painterResource(R.drawable.ic_chevron_right), null) },
-                        colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow),
-                        modifier = Modifier.clickable(enabled = !state.loading && !state.busy, onClick = viewModel::openTimePicker),
-                    )
+    Scaffold(topBar = { AppTopBar("Nhắc học", onBack) }, snackbarHost = { SnackbarHost(snackbar) },
+        bottomBar = {
+            // While off, the main action of the page is turning it on at the chosen time.
+            if (!state.loading && !state.settings.enabled) StickyBottomBar {
+                PrimaryButton("Bật nhắc học lúc ${state.settings.timeText}", { turnOn() }, Modifier.fillMaxWidth(), enabled = !state.busy, icon = R.drawable.ic_notifications)
+            }
+        }) { padding ->
+        val s = state.settings
+        val editable = !state.loading && !state.busy
+        Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState()).padding(horizontal = screenPadding)
+            .padding(bottom = Spacing.xl).widthIn(max = 680.dp), verticalArrangement = Arrangement.spacedBy(Spacing.l)) {
+            // Hero: the switch itself, on the brand color while the reminder is on.
+            val brand = EngMateTheme.brand
+            Surface(shape = MaterialTheme.shapes.large, modifier = Modifier.fillMaxWidth(),
+                color = if (s.enabled) brand.brand else MaterialTheme.colorScheme.surfaceContainerLow,
+                contentColor = if (s.enabled) brand.onBrand else MaterialTheme.colorScheme.onSurface) {
+                Row(Modifier.padding(Spacing.l), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(Spacing.m)) {
+                    Icon(painterResource(R.drawable.ic_notifications), null)
+                    Column(Modifier.weight(1f)) {
+                        Text("Nhắc học hằng ngày", style = MaterialTheme.typography.titleMedium)
+                        Text(if (s.enabled) "Nhắc lúc ${s.timeText} mỗi ngày" else "Đang tắt", style = MaterialTheme.typography.bodyMedium)
+                    }
+                    Switch(checked = s.enabled, enabled = editable, onCheckedChange = { on -> if (on) turnOn() else viewModel.setEnabled(false) })
                 }
             }
-            if (state.permissionDenied) PermissionCard { openNotificationSettings(context) }
+            if (state.permissionDenied) FeedbackBanner("Bật quyền thông báo cho EngMate trong cài đặt, rồi bật lại công tắc.",
+                kind = FeedbackKind.ERROR, title = "Chưa được phép gửi thông báo",
+                action = { TextButton(onClick = { openNotificationSettings(context) }, contentPadding = PaddingValues(0.dp)) { Text("Mở cài đặt") } })
+            Column(verticalArrangement = Arrangement.spacedBy(Spacing.m)) {
+                SectionHeader("Giờ nhắc")
+                val quick = listOf(7 to 0, 12 to 0, 20 to 0, 21 to 30)
+                val custom = (s.hour to s.minute) !in quick
+                val options: List<Pair<Int, Int>?> = quick + listOf(null)
+                ChipRow(options, if (custom) null else s.hour to s.minute,
+                    { it?.let { (h, m) -> formatTime(h, m) } ?: if (custom) "Khác · ${s.timeText}" else "Khác" },
+                    { pick -> if (pick == null) viewModel.openTimePicker() else viewModel.setTime(pick.first, pick.second) }, enabled = editable)
+                SectionHeader("Xem trước thông báo")
+                InfoCard {
+                    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(Spacing.s)) {
+                        Icon(painterResource(R.drawable.ic_engmate), null, Modifier.size(20.dp), tint = androidx.compose.ui.graphics.Color.Unspecified)
+                        Text("EngMate · ${s.timeText}", style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                    }
+                    Text("Đến giờ học rồi!", style = MaterialTheme.typography.titleSmall)
+                    Text("Dành vài phút ôn ngữ pháp và làm một bài quiz nhé.", style = MaterialTheme.typography.bodyMedium)
+                }
+            }
             Text("Thông báo có thể đến trễ vài phút khi máy đang tiết kiệm pin.",
                 style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
@@ -83,17 +104,6 @@ fun ReminderSettingsScreen(onBack: () -> Unit) {
 
     if (state.showTimePicker) TimeDialog(state.settings.hour, state.settings.minute,
         onConfirm = viewModel::setTime, onDismiss = viewModel::dismissTimePicker)
-}
-
-@Composable
-private fun PermissionCard(onOpenSettings: () -> Unit) {
-    OutlinedCard(Modifier.fillMaxWidth(), border = BorderStroke(1.dp, MaterialTheme.colorScheme.error)) {
-        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            Text("Ứng dụng chưa được phép gửi thông báo nên chưa thể nhắc học.", color = MaterialTheme.colorScheme.error)
-            Text("Bật quyền thông báo cho EngMate trong cài đặt, rồi bật lại công tắc.", style = MaterialTheme.typography.bodyMedium)
-            OutlinedButton(onClick = onOpenSettings) { Text("Mở cài đặt") }
-        }
-    }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
