@@ -40,7 +40,7 @@ class ReminderWorker(context: Context, params: WorkerParameters) : CoroutineWork
         return Notification.Builder(context, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_notifications)
             .setContentTitle("Đến giờ học rồi!")
-            .setContentText("Dành vài phút ôn ngữ pháp và làm một bài quiz nhé.")
+            .setContentText("Dành vài phút ôn ngữ pháp và làm một bài tập nhé.")
             .setContentIntent(open)
             .setAutoCancel(true)
             .build()

@@ -154,9 +154,17 @@ private fun GoalHero(state: HomeUiState, actions: HomeActions) {
                 )
             }
         }
-        Row(horizontalArrangement = Arrangement.spacedBy(Spacing.s)) {
+        Row(horizontalArrangement = Arrangement.spacedBy(Spacing.s), verticalAlignment = Alignment.CenterVertically) {
             if (state.streak > 0) StreakChip(state.streak)
             XpChip(state.totalXp)
+            Spacer(Modifier.weight(1f))
+            // The hero's one action: continue learning (same target as tapping the card).
+            state.continueLesson?.let { lesson ->
+                Button(onClick = { actions.onOpenLesson(lesson.id) }, modifier = Modifier.heightIn(min = Spacing.touch),
+                    colors = ButtonDefaults.buttonColors(containerColor = onBrand, contentColor = EngMateTheme.brand.brand)) {
+                    Text(if (state.goalReached) "Học thêm" else "Học ngay", style = MaterialTheme.typography.labelLarge)
+                }
+            }
         }
     }
 }
@@ -175,6 +183,8 @@ private fun DoNow(state: HomeUiState, actions: HomeActions) {
             } else {
                 Text("Không có từ đến hạn", style = MaterialTheme.typography.titleMedium)
                 Text("Thêm từ vào Sổ tay để ôn theo lịch", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                Spacer(Modifier.weight(1f))
+                Text("Mở Sổ tay", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
             }
         }
         state.continueLesson?.let { lesson -> ContinueCard(lesson, state.bestPercent(lesson.id), actions, Modifier.weight(1f).fillMaxHeight()) }

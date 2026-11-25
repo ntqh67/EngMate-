@@ -47,7 +47,9 @@ fun AppTopBar(
             if (onBack != null) IconButton(onClick = onBack) { Icon(painterResource(navigationIcon), navigationLabel) }
         },
         actions = actions,
-        colors = TopAppBarDefaults.topAppBarColors(containerColor = Color.Transparent, scrolledContainerColor = Color.Transparent),
+        // Opaque so scrolled content never shows through the bar.
+        colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.background,
+            scrolledContainerColor = MaterialTheme.colorScheme.background),
         modifier = modifier,
     )
 }

@@ -115,11 +115,14 @@ private fun TopicTile(topic: Topic, index: Int, onClick: () -> Unit) {
     val c = MaterialTheme.colorScheme
     // Cycle three tints so neighbouring tiles are told apart without inventing per-topic art.
     val tint = listOf(c.primary, c.tertiary, c.secondary)[index % 3]
-    InfoCard(Modifier.heightIn(min = 120.dp), onClick = onClick) {
+    // Fixed height keeps both tiles of a row aligned; the count sits at the bottom.
+    InfoCard(Modifier.height(148.dp), onClick = onClick) {
         Box(Modifier.size(40.dp).background(tint.copy(alpha = 0.14f), MaterialTheme.shapes.medium), Alignment.Center) {
             Icon(painterResource(TOPIC_ICON), null, Modifier.size(22.dp), tint = tint)
         }
         Text(topic.title, style = MaterialTheme.typography.titleMedium, maxLines = 2, overflow = TextOverflow.Ellipsis)
-        Text("${topic.wordCount} từ", style = MaterialTheme.typography.bodySmall, color = c.onSurfaceVariant)
+        Spacer(Modifier.weight(1f))
+        Text("${topic.wordCount} từ" + (topic.description?.let { " · $it" } ?: ""), style = MaterialTheme.typography.bodySmall,
+            color = c.onSurfaceVariant, maxLines = 1, overflow = TextOverflow.Ellipsis)
     }
 }

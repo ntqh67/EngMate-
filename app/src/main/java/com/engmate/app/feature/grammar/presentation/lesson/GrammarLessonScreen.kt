@@ -126,7 +126,10 @@ private fun FormulaBlock(block: LessonBlock.Formula) {
             block.rows.forEach { (label, formula) ->
                 Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
                     if (label != null) Text(label, style = MaterialTheme.typography.labelMedium)
-                    Text(formula, style = MaterialTheme.typography.bodyLarge, fontWeight = FontWeight.SemiBold)
+                    // "S + V(s/es). Với he/she/it, …": the formula in bold, the explanation after it in plain body text.
+                    val cut = formula.indexOf(". ")
+                    Text(if (cut > 0) formula.substring(0, cut + 1) else formula, style = MaterialTheme.typography.bodyLarge, fontWeight = FontWeight.SemiBold)
+                    if (cut > 0) Text(formula.substring(cut + 2), style = MaterialTheme.typography.bodyMedium)
                 }
             }
         }

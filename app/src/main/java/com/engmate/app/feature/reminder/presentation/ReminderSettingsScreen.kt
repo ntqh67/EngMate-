@@ -94,7 +94,7 @@ fun ReminderSettingsScreen(onBack: () -> Unit) {
                         Text("EngMate · ${s.timeText}", style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
                     }
                     Text("Đến giờ học rồi!", style = MaterialTheme.typography.titleSmall)
-                    Text("Dành vài phút ôn ngữ pháp và làm một bài quiz nhé.", style = MaterialTheme.typography.bodyMedium)
+                    Text("Dành vài phút ôn ngữ pháp và làm một bài tập nhé.", style = MaterialTheme.typography.bodyMedium)
                 }
             }
             Text("Thông báo có thể đến trễ vài phút khi máy đang tiết kiệm pin.",

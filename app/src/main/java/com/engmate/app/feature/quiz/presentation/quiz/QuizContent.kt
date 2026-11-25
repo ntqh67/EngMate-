@@ -111,6 +111,9 @@ private fun QuestionStep(state: QuizUiState, question: Question, viewModel: Quiz
                     value = answer.text, onValueChange = viewModel::type, modifier = Modifier.fillMaxWidth(),
                     label = { Text("Câu trả lời của bạn") }, singleLine = true, enabled = !answer.checked && !state.saving,
                     textStyle = MaterialTheme.typography.titleLarge, shape = MaterialTheme.shapes.medium,
+                    // A checked answer is read-only but must stay fully readable.
+                    colors = OutlinedTextFieldDefaults.colors(disabledTextColor = MaterialTheme.colorScheme.onSurface,
+                        disabledLabelColor = MaterialTheme.colorScheme.onSurfaceVariant),
                     keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done),
                     keyboardActions = KeyboardActions(onDone = { viewModel.check() }),
                     trailingIcon = if (!answer.checked) null else {
@@ -157,8 +160,15 @@ private fun OptionCard(index: Int, option: QuestionOption, answer: QuizAnswer, e
             .selectable(selected = selected, enabled = enabled && !answer.checked, role = Role.RadioButton, onClick = onSelect)) {
         Row(Modifier.padding(horizontal = Spacing.m, vertical = Spacing.m), verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(Spacing.m)) {
-            Box(Modifier.size(32.dp).background(if (selected) c.primary else c.surfaceContainerHigh, CircleShape), Alignment.Center) {
-                Text(('A' + index).toString(), style = MaterialTheme.typography.labelLarge, color = if (selected) c.onPrimary else c.onSurfaceVariant)
+            // The letter badge follows the row: blue while choosing, green or red once checked.
+            val (badge, onBadge) = when {
+                answer.checked && option.isCorrect -> c.success to c.surface
+                answer.checked && selected -> c.error to c.onError
+                selected -> c.primary to c.onPrimary
+                else -> c.surfaceContainerHigh to c.onSurfaceVariant
+            }
+            Box(Modifier.size(32.dp).background(badge, CircleShape), Alignment.Center) {
+                Text(('A' + index).toString(), style = MaterialTheme.typography.labelLarge, color = onBadge)
             }
             Text(option.content, Modifier.weight(1f), style = MaterialTheme.typography.bodyLarge)
             mark?.let { (icon, tint) -> Icon(painterResource(icon), null, tint = tint) }

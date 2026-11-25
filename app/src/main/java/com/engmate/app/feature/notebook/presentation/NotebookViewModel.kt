@@ -73,8 +73,9 @@ class NotebookViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 handbooks.create(uid, current.title)
-                _dialog.value = null
+                // Message first: callers treat the dialog closing as "done".
                 _message.value = "Đã tạo sổ tay “${current.title.trim()}”"
+                _dialog.value = null
             } catch (e: InvalidHandbook) {
                 _dialog.value = current.copy(error = e.message, busy = false)
             } catch (e: Exception) {
