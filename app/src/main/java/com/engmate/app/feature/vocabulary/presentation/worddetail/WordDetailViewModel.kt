@@ -3,6 +3,8 @@ package com.engmate.app.feature.vocabulary.presentation.worddetail
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.engmate.app.feature.auth.domain.UserSession
+import com.engmate.app.feature.dictionary.domain.DictionaryRepository
+import com.engmate.app.feature.dictionary.domain.LookupResult
 import com.engmate.app.feature.notebook.domain.*
 import com.engmate.app.feature.vocabulary.domain.Word
 import com.engmate.app.feature.vocabulary.domain.WordKey
@@ -38,10 +40,23 @@ class WordDetailViewModel @Inject constructor(
     words: WordRepository,
     private val notes: WordNoteRepository,
     private val handbooks: HandbookRepository,
+    private val dictionary: DictionaryRepository,
 ) : ViewModel() {
     private val key = MutableStateFlow<String?>(null)
 
-    fun open(word: String) { key.value = WordKey.of(word) }
+    /** Opening a word is when it gets saved on the device (search results are not saved). */
+    fun open(word: String) {
+        val k = WordKey.of(word)
+        if (key.value == k) return
+        key.value = k
+        viewModelScope.launch {
+            when (dictionary.lookup(k, save = true)) {
+                LookupResult.Offline -> _message.value = "Không có kết nối Internet. Không mở được từ này."
+                LookupResult.Failed -> _message.value = "Không tra được từ điển trực tuyến. Hãy thử lại."
+                else -> Unit
+            }
+        }
+    }
 
     val state: StateFlow<WordDetailState> = combine(session.user, key) { user, k -> user to k }.flatMapLatest { (user, k) ->
         when {

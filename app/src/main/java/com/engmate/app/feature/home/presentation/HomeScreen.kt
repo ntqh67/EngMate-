@@ -63,7 +63,8 @@ internal fun HomeContent(
             search.notice?.let { notice ->
                 item { Text(notice, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant) }
             }
-            items(search.results, key = { it.id }) { word -> WordRow(word) { onOpenWord(word) } }
+            // Keyed by text: dictionary hits are not saved yet, so they have no database id.
+            items(search.results, key = { it.word }) { word -> WordRow(word) { onOpenWord(word) } }
         } else {
             item { SectionHeader("Tiếp tục học", action = if (state.lessons.isNotEmpty()) { { TextButton(onClick = onOpenLessons) { Text("Tất cả bài") } } } else null) }
             item {
