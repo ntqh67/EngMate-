@@ -15,8 +15,9 @@ import org.junit.Test
 class SyncRefreshViewModelTest {
     private class FakeRefresher(var result: RefreshResult = RefreshResult.DONE) : SyncRefresher {
         var calls = 0
+        var backgroundCalls = 0
         var gate: CompletableDeferred<Unit>? = null
-        override suspend fun refresh(): RefreshResult { calls++; gate?.await(); return result }
+        override suspend fun refresh(background: Boolean): RefreshResult { calls++; if (background) backgroundCalls++; gate?.await(); return result }
     }
 
     @Before fun setup() = Dispatchers.setMain(UnconfinedTestDispatcher())
@@ -30,6 +31,16 @@ class SyncRefreshViewModelTest {
         assertEquals(1, fake.calls)
         fake.gate!!.complete(Unit)
         assertFalse(vm.refreshing.value)
+        assertNull(vm.message.value)
+    }
+
+    @Test fun backgroundRefreshAsksInBackgroundModeAndShowsNeitherSpinnerNorMessage() {
+        val fake = FakeRefresher(RefreshResult.OFFLINE).apply { gate = CompletableDeferred() }
+        val vm = SyncRefreshViewModel(fake)
+        vm.refreshInBackground()
+        assertEquals(1, fake.backgroundCalls)
+        assertFalse(vm.refreshing.value)
+        fake.gate!!.complete(Unit)
         assertNull(vm.message.value)
     }
 

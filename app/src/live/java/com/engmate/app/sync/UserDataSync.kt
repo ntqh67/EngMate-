@@ -6,6 +6,7 @@ import androidx.room.withTransaction
 import com.engmate.app.core.database.ActivityType
 import com.engmate.app.core.database.EngMateDatabase
 import com.engmate.app.core.database.WordLearningStatus
+import com.engmate.app.core.sync.HandbookGuard
 import com.engmate.app.core.sync.RefreshResult
 import com.engmate.app.core.sync.SyncRefresher
 import com.engmate.app.feature.auth.domain.UserSession
@@ -50,6 +51,7 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
+import kotlinx.coroutines.withTimeoutOrNull
 
 private typealias Docs = Map<String, Map<String, Any?>>
 
@@ -90,7 +92,7 @@ class UserDataSync @Inject constructor(
     private val attempts: QuizAttemptDao,
     private val questions: QuestionDao,
     private val lessons: GrammarLessonDao,
-) : SyncRefresher {
+) : SyncRefresher, HandbookGuard {
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
     private val started = AtomicBoolean(false)
     // One pull at a time, whether it is the sign-in pull or a refresh.
@@ -163,9 +165,11 @@ class UserDataSync @Inject constructor(
         failed
     }
 
-    override suspend fun refresh(): RefreshResult {
+    override suspend fun refresh(background: Boolean): RefreshResult {
         val firestore = content.firestore ?: return RefreshResult.FAILED
         val uid = session.user.first()?.uid ?: return RefreshResult.SIGNED_OUT
+        // Before the sign-in pull has finished there is nothing to catch up on, and that pull is already on its way.
+        if (background && lastPullAt == 0L) return RefreshResult.THROTTLED
         if (pullLock.isLocked || SystemClock.elapsedRealtime() - lastPullAt < MIN_REFRESH_GAP_MS) return RefreshResult.THROTTLED
         val root = firestore.collection("users").document(uid)
         // Offline, get() quietly answers from Firestore's local cache and looks successful; a one-document server read proves we are online.
@@ -181,8 +185,25 @@ class UserDataSync @Inject constructor(
         return if (pullAll(uid, root).isEmpty()) RefreshResult.DONE else RefreshResult.FAILED
     }
 
+    /**
+     * One server read of this handbook's document before it is changed. Anything unclear (offline, slow, no document yet, a change of
+     * ours still waiting to upload) lets the edit through, so editing keeps working offline; only a delete marker stops it.
+     */
+    override suspend fun deletedElsewhere(handbookId: Long): Boolean {
+        val firestore = content.firestore ?: return false
+        val uid = session.user.first()?.uid ?: return false
+        val mine = flashcards.getCollection(uid, handbookId) ?: return false
+        val doc = firestore.collection("users").document(uid).collection("flashcard_collections").document("c${mine.createdAt ?: mine.id}")
+        val snapshot = try { withTimeoutOrNull(GUARD_TIMEOUT_MS) { doc.get(Source.SERVER).await() } }
+            catch (e: CancellationException) { throw e } catch (e: Exception) { null } ?: return false
+        if (snapshot.metadata.hasPendingWrites() || snapshot.getBoolean("deleted") != true) return false
+        flashcards.deleteCollection(uid, handbookId)
+        return true
+    }
+
     private companion object {
         const val MIN_REFRESH_GAP_MS = 30_000L
+        const val GUARD_TIMEOUT_MS = 3_000L
         const val FLASHCARDS = "flashcards"
     }
 

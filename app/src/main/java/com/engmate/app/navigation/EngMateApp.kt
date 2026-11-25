@@ -8,6 +8,9 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import android.os.SystemClock
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.compose.LifecycleEventEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.engmate.app.feature.auth.presentation.*
@@ -52,6 +55,15 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
     // Guests can browse: home, dictionary search and grammar lessons. Personal features ask for a login.
     val actions: ProgressActionsViewModel = viewModel()
     LaunchedEffect(lessonId, user?.uid) { if (user != null) lessonId?.let(actions::lessonOpened) }
+    // Stay current without being asked: when the app comes back after a while, and whenever the notebook opens.
+    // (The first pull after sign-in is done by UserDataSync itself; refreshInBackground waits for it.)
+    val sync: SyncRefreshViewModel = viewModel()
+    var stoppedAt by remember { mutableLongStateOf(0L) }
+    LifecycleEventEffect(Lifecycle.Event.ON_STOP) { stoppedAt = SystemClock.elapsedRealtime() }
+    LifecycleEventEffect(Lifecycle.Event.ON_START) {
+        if (user != null && stoppedAt != 0L && SystemClock.elapsedRealtime() - stoppedAt > 30_000L) sync.refreshInBackground()
+    }
+    LaunchedEffect(tab, user?.uid) { if (user != null && tab == MainTab.NOTEBOOK) sync.refreshInBackground() }
     var learnVocabulary by rememberSaveable { mutableStateOf(false) }
     var showAuth by rememberSaveable { mutableStateOf(false) }
     LaunchedEffect(user) { if (user != null) showAuth = false }
@@ -85,7 +97,6 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
             if (tab == MainTab.LEARN && lessonId != null) lessonId = null else tab = MainTab.HOME
         }
         val lessons: GrammarLessonsViewModel = viewModel()
-        val sync: SyncRefreshViewModel = viewModel()
         val syncing by sync.refreshing.collectAsStateWithLifecycle()
         val syncMessage by sync.message.collectAsStateWithLifecycle()
         val snackbar = remember { SnackbarHostState() }

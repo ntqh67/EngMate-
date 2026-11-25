@@ -11,8 +11,17 @@ import kotlinx.coroutines.launch
 
 enum class RefreshResult { DONE, THROTTLED, SIGNED_OUT, OFFLINE, FAILED }
 
-/** Pulls the signed-in learner's cloud data again (pull-to-refresh). Calls are serialized; extra taps return THROTTLED. */
-interface SyncRefresher { suspend fun refresh(): RefreshResult }
+/**
+ * Pulls the signed-in learner's cloud data again. Calls are serialized; a call too soon after the last pull returns THROTTLED.
+ * A [background] call (the app came back, a screen opened) also waits until the sign-in pull has run, so it never duplicates it.
+ */
+interface SyncRefresher { suspend fun refresh(background: Boolean = false): RefreshResult }
+
+/** Asked before a handbook is changed: did another device already delete it? */
+interface HandbookGuard {
+    /** True when the cloud says the handbook was deleted; its local copy is then removed. False when unsure (offline, slow, never uploaded). */
+    suspend fun deletedElsewhere(handbookId: Long): Boolean
+}
 
 @HiltViewModel
 class SyncRefreshViewModel @Inject constructor(private val refresher: SyncRefresher) : ViewModel() {
@@ -22,6 +31,9 @@ class SyncRefreshViewModel @Inject constructor(private val refresher: SyncRefres
     val message: StateFlow<String?> = _message.asStateFlow()
 
     fun messageShown() { _message.value = null }
+
+    /** No spinner and no message: keeps data current without the learner asking. */
+    fun refreshInBackground() { viewModelScope.launch { refresher.refresh(background = true) } }
 
     fun refresh() {
         if (!_refreshing.compareAndSet(false, true)) return
