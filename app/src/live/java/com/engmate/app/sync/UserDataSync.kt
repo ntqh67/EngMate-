@@ -68,8 +68,13 @@ private typealias Docs = Map<String, Map<String, Any?>>
  * On sign-in the cloud copy is pulled first (items missing on this device are added; for notes and progress the newer one wins),
  * then every later change in Room is mirrored to Firestore. Offline writes queue inside Firestore.
  *
- * [refresh] (pull-to-refresh) repeats the pull. Known limits of that pull: it never deletes (a document removed on another
- * device stays here), and it adds only new notebook entries and collections, so edits to existing ones do not come across.
+ * [refresh] (pull-to-refresh) repeats the pull.
+ *
+ * Flashcard collections follow the cloud: deleting one leaves a marker document ({deleted: true}) instead of removing it, so other
+ * devices delete theirs on the next pull, and a pull makes the cards of an existing collection match the cloud list. A device whose
+ * flashcard pull failed does not upload its collections that session, or a stale copy could overwrite newer cloud data.
+ * Known limits: every other collection still never deletes (a document removed on another device stays here, and comes back when
+ * this device next starts), and notebook entries and notes already present are not updated from the cloud.
  */
 @Singleton
 class UserDataSync @Inject constructor(
@@ -111,7 +116,7 @@ class UserDataSync @Inject constructor(
         val root = firestore.collection("users").document(uid)
         fun col(name: String) = root.collection(name)
 
-        pullAll(uid, root)
+        val pullFailed = pullAll(uid, root)
 
         launch { mirror(col("notebook"), notebook.observe(uid).map { list -> list.associate { e ->
             key(e.word.word) to mapOf("word" to e.word.snap(), "note" to e.entry.note, "createdAt" to e.entry.createdAt) } }) }
@@ -122,9 +127,11 @@ class UserDataSync @Inject constructor(
         launch { mirror(col("word_progress"), flashcards.observeAllProgress(uid).map { list -> list.mapNotNull { p ->
             vocabulary.getWord(p.wordId)?.let { w -> key(w.word) to mapOf("word" to w.snap(), "repetition" to p.repetition, "interval" to p.intervalDays,
                 "easeFactor" to p.easeFactor, "lastReviewedAt" to p.lastReviewedAt, "nextReviewAt" to p.nextReviewAt, "status" to p.status.name) } }.toMap() }) }
-        launch { mirror(col("flashcard_collections"), combine(flashcards.observeCollections(uid), flashcards.observeAllCards(uid)) { cols, cards ->
+        if (FLASHCARDS in pullFailed) Log.w(FirestoreContent.TAG, "Flashcard pull failed: not uploading collections this session")
+        else launch { mirror(col("flashcard_collections"), combine(flashcards.observeCollections(uid), flashcards.observeAllCards(uid)) { cols, cards ->
             cols.associate { c -> "c${c.createdAt ?: c.id}" to mapOf("title" to c.title, "description" to c.description, "createdAt" to c.createdAt,
-                "cards" to cards.filter { it.collectionId == c.id }.map { mapOf("word" to it.word, "meaning" to it.meaning, "example" to it.example, "phonetic" to it.phonetic) }) } }) }
+                "cards" to cards.filter { it.collectionId == c.id }.map { mapOf("word" to it.word, "meaning" to it.meaning, "example" to it.example, "phonetic" to it.phonetic) }) } },
+            tombstones = true) }
         launch { mirror(col("quiz_attempts"), attempts.observeEntities(uid).map { list -> list.associate { a ->
             "a${a.completedAt}" to mapOf("topicId" to a.topicId, "lessonId" to a.lessonId, "isPlacement" to a.isPlacement, "correctCount" to a.correctCount,
                 "totalQuestions" to a.totalQuestions, "xpEarned" to a.xpEarned, "completedAt" to a.completedAt, "updatedAt" to a.updatedAt,
@@ -141,19 +148,19 @@ class UserDataSync @Inject constructor(
     private suspend fun safely(what: String, block: suspend () -> Unit): Boolean =
         try { block(); true } catch (e: CancellationException) { throw e } catch (e: Exception) { Log.w(FirestoreContent.TAG, "Pull $what failed", e); false }
 
-    /** Pulls every personal collection once, in order. Returns how many failed. */
-    private suspend fun pullAll(uid: String, root: DocumentReference): Int = pullLock.withLock {
+    /** Pulls every personal collection once, in order. Returns the names of the ones that failed. */
+    private suspend fun pullAll(uid: String, root: DocumentReference): Set<String> = pullLock.withLock {
         fun col(name: String) = root.collection(name)
-        val results = listOf(
-            safely("notebook") { pullNotebook(uid, col("notebook")) },
-            safely("word_notes") { pullNotes(uid, col("word_notes")) },
-            safely("word_progress") { pullProgress(uid, col("word_progress")) },
-            safely("flashcards") { pullCollections(uid, col("flashcard_collections")) },
-            safely("attempts") { pullAttempts(uid, col("quiz_attempts")) },
-            safely("activity") { pullActivities(uid, col("learning_activity")) },
-        )
+        val failed = LinkedHashSet<String>()
+        suspend fun pull(name: String, block: suspend () -> Unit) { if (!safely(name, block)) failed += name }
+        pull("notebook") { pullNotebook(uid, col("notebook")) }
+        pull("word_notes") { pullNotes(uid, col("word_notes")) }
+        pull("word_progress") { pullProgress(uid, col("word_progress")) }
+        pull(FLASHCARDS) { pullCollections(uid, col("flashcard_collections")) }
+        pull("attempts") { pullAttempts(uid, col("quiz_attempts")) }
+        pull("activity") { pullActivities(uid, col("learning_activity")) }
         lastPullAt = SystemClock.elapsedRealtime()
-        results.count { !it }
+        failed
     }
 
     override suspend fun refresh(): RefreshResult {
@@ -171,13 +178,19 @@ class UserDataSync @Inject constructor(
         if (!safely("profile") { profile.pull(uid) }) return RefreshResult.FAILED
         // Every row points at the profile; a learner who has not created one yet has nothing to pull into.
         if (profileDao.observe(uid).first() == null) return RefreshResult.DONE
-        return if (pullAll(uid, root) == 0) RefreshResult.DONE else RefreshResult.FAILED
+        return if (pullAll(uid, root).isEmpty()) RefreshResult.DONE else RefreshResult.FAILED
     }
 
-    private companion object { const val MIN_REFRESH_GAP_MS = 30_000L }
+    private companion object {
+        const val MIN_REFRESH_GAP_MS = 30_000L
+        const val FLASHCARDS = "flashcards"
+    }
 
-    /** Writes new and changed documents; deletes documents whose local row disappeared while we were watching. */
-    private suspend fun mirror(col: CollectionReference, desired: Flow<Docs>) {
+    /**
+     * Writes new and changed documents; removes documents whose local row disappeared while we were watching.
+     * With [tombstones] the document is replaced by a {deleted: true} marker instead of being deleted, so other devices can see it was removed.
+     */
+    private suspend fun mirror(col: CollectionReference, desired: Flow<Docs>, tombstones: Boolean = false) {
         val pushed = HashMap<String, Map<String, Any?>>()
         val seen = HashSet<String>()
         desired.collect { now ->
@@ -187,7 +200,9 @@ class UserDataSync @Inject constructor(
             }
             (seen - now.keys).forEach { id ->
                 seen.remove(id); pushed.remove(id)
-                col.document(id).delete().addOnFailureListener { FirestoreContent.log("delete ${col.id}/$id", it) }
+                val doc = col.document(id)
+                (if (tombstones) doc.set(mapOf("deleted" to true, "deletedAt" to System.currentTimeMillis())) else doc.delete())
+                    .addOnFailureListener { FirestoreContent.log("delete ${col.id}/$id", it) }
             }
         }
     }
@@ -226,18 +241,35 @@ class UserDataSync @Inject constructor(
         } }
     }
 
+    /** The cloud is the latest copy of a collection: a marker deletes it here, and an existing one is made to match the cloud. */
     private suspend fun pullCollections(uid: String, col: CollectionReference) {
-        val have = flashcards.collectionsOf(uid).map { it.createdAt ?: it.id }.toSet()
-        for (doc in col.get().await().documents) runCatching {
-            val created = doc.getLong("createdAt")
-            if ((created ?: return@runCatching) in have) return@runCatching
-            val id = flashcards.insertCollection(FlashcardCollectionEntity(0, uid, doc.getString("title") ?: return@runCatching, doc.getString("description"), created))
-            (doc.get("cards") as? List<*>).orEmpty().forEach { c ->
-                val m = c as? Map<*, *> ?: return@forEach
-                flashcards.addCard(uid, FlashcardEntity(0, id, m["word"] as? String ?: return@forEach, m["meaning"] as? String ?: return@forEach,
-                    m["example"] as? String, m["phonetic"] as? String))
+        for (doc in col.get().await().documents) runCatching { database.withTransaction {
+            // A change made on this device is still waiting to be sent. The snapshot already contains it, so there is nothing newer to take.
+            if (doc.metadata.hasPendingWrites()) return@withTransaction
+            val key = doc.id.removePrefix("c").toLongOrNull() ?: return@withTransaction
+            val mine = flashcards.collectionsOf(uid).firstOrNull { (it.createdAt ?: it.id) == key }
+            if (doc.getBoolean("deleted") == true) { mine?.let { flashcards.deleteCollection(uid, it.id) }; return@withTransaction }
+            val title = doc.getString("title") ?: return@withTransaction
+            val description = doc.getString("description")
+            val raw = (doc.get("cards") as? List<*>) ?: return@withTransaction
+            val cards = raw.mapNotNull { c -> (c as? Map<*, *>)?.let { m ->
+                CardData(m["word"] as? String ?: return@let null, m["meaning"] as? String ?: return@let null, m["example"] as? String, m["phonetic"] as? String)
+            } }
+            // A malformed card would look like a removed one; leave this collection alone rather than delete cards by mistake.
+            if (cards.size != raw.size) return@withTransaction
+
+            if (mine == null) {
+                val created = doc.getLong("createdAt") ?: return@withTransaction
+                val id = flashcards.insertCollection(FlashcardCollectionEntity(0, uid, title, description, created))
+                cards.forEach { flashcards.addCard(uid, FlashcardEntity(0, id, it.word, it.meaning, it.example, it.phonetic)) }
+                return@withTransaction
             }
-        }
+            if (mine.title != title || mine.description != description) flashcards.updateCollection(uid, mine.id, title, description)
+            val plan = planCardSync(flashcards.cardsOf(mine.id).map { LocalCard(it.id, CardData(it.word, it.meaning, it.example, it.phonetic)) }, cards)
+            plan.delete.forEach { flashcards.deleteCard(uid, it) }
+            plan.update.forEach { (id, c) -> flashcards.updateCard(uid, id, c.word, c.meaning, c.example, c.phonetic) }
+            plan.add.forEach { flashcards.addCard(uid, FlashcardEntity(0, mine.id, it.word, it.meaning, it.example, it.phonetic)) }
+        } }
     }
 
     private suspend fun pullAttempts(uid: String, col: CollectionReference) {
