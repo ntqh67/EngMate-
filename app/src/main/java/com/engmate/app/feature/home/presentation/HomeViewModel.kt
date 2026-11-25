@@ -119,8 +119,10 @@ internal fun searchFlow(q: String, words: WordRepository, dictionary: Dictionary
         emit(SearchState(q, local, notice = if (local.isEmpty()) "Không tìm thấy “$key”." else null)); return@flow
     }
     emit(SearchState(q, local, searching = true))
+
     emit(when (val result = dictionary.preview(key)) {
         is LookupResult.Found -> SearchState(q, listOf(result.word) + local.filter { it.id != result.word.id })
+
         LookupResult.NotFound -> SearchState(q, local, notice = if (local.isEmpty()) "Không tìm thấy “$key”." else null)
         LookupResult.Offline -> SearchState(q, local, notice = "Không có kết nối Internet. Đang hiện từ đã lưu trong máy.")
         LookupResult.Failed -> SearchState(q, local, notice = "Không tra được từ điển trực tuyến. Hãy thử lại.")

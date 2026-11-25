@@ -7,6 +7,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
+import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -58,6 +59,24 @@ fun ProgressSections(s: ProgressState, onRangeChange: (Int) -> Unit, onStudy: ()
                 StatCard("${number(s.learned)} từ", "Đã thuộc", R.drawable.ic_check_circle, Modifier.weight(1f), tint = MaterialTheme.colorScheme.success)
                 StatCard("${number(s.due)} từ", if (s.due > 0) "Cần ôn · bấm để ôn" else "Cần ôn", R.drawable.ic_layers, Modifier.weight(1f),
                     onClick = if (s.due > 0) onReviewDue else null)
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable fun ProgressScreen(vm: ProgressViewModel, refreshing: Boolean = false, onRefresh: () -> Unit = {}) {
+    val s by vm.state.collectAsStateWithLifecycle()
+    PullToRefreshBox(isRefreshing = refreshing, onRefresh = onRefresh, modifier = Modifier.fillMaxSize()) {
+    Column(Modifier.fillMaxSize().background(Color(0xFFF3F9FF)).verticalScroll(rememberScrollState()).statusBarsPadding()
+        .padding(horizontal = 24.dp, vertical = 16.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
+        Text("Thống kê tiến độ", fontSize = 24.sp, fontWeight = FontWeight.Bold, color = ink)
+        if (s.loading) CircularProgressIndicator()
+        else if (s.error) Text("Không tải được dữ liệu tiến độ. Vui lòng mở lại màn hình.")
+        else {
+            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End) {
+                Row(Modifier.background(Color(0xFFEBF1F8), RoundedCornerShape(12.dp)).padding(horizontal = 12.dp, vertical = 8.dp),
+                    verticalAlignment = Alignment.CenterVertically) {
+                    Icon(painterResource(R.drawable.ic_calendar), null, Modifier.size(16.dp), tint = blue)
+                    Spacer(Modifier.width(6.dp))
+                    Text("7 ngày qua", fontSize = 13.sp, fontWeight = FontWeight.SemiBold, color = ink)
+                    Text("  ▾", fontSize = 11.sp, color = muted)
+                }
             }
             Row(Modifier.fillMaxWidth().padding(top = Spacing.l), verticalAlignment = Alignment.CenterVertically) {
                 Text("Thời gian học", style = MaterialTheme.typography.titleMedium, modifier = Modifier.weight(1f))
@@ -133,6 +152,7 @@ private fun MinutesChart(minutes: List<Long>, goal: Int?) {
                     textAlign = androidx.compose.ui.text.style.TextAlign.Center)
             }
         }
+    }
     }
 }
 

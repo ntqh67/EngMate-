@@ -37,7 +37,8 @@ class ApiDictionaryRepository @Inject constructor(
         }
     }
 
-    override suspend fun lookup(raw: String): LookupResult {
+    override suspend fun lookup(raw: String, save: Boolean): LookupResult {
+
         val key = WordKey.of(raw)
         words.observe(key).first()?.let { return LookupResult.Found(it) }
         return when (val fetched = fetch(key)) {
@@ -61,15 +62,17 @@ class ApiDictionaryRepository @Inject constructor(
                 response.code() == 404 -> Fetched.Miss(LookupResult.NotFound)
                 !response.isSuccessful -> Fetched.Miss(LookupResult.Failed)
                 else -> {
-                    val entry = response.body().orEmpty().toCachedWord() ?: return Fetched.Miss(LookupResult.NotFound)
-                    synchronized(recent) { recent[key] = entry }
-                    Fetched.Entry(entry)
+                    val entry = response.body().orEmpty().toCachedWord() ?: return LookupResult.NotFound
+                    if (!save) return LookupResult.Found(entry.unsaved())
+                    words.cache(entry)
+                    words.observe(entry.word).first()?.let { LookupResult.Found(it) } ?: LookupResult.Failed
                 }
             }
         } catch (e: CancellationException) { throw e
         } catch (_: IOException) { Fetched.Miss(LookupResult.Offline)
         } catch (_: Exception) { Fetched.Miss(LookupResult.Failed) }
     }
+
 
     private fun CachedWord.toUnsavedWord() = Word(
         id = DictionaryRepository.UNSAVED_ID, topicId = null, word = WordKey.of(word), phonetic = phonetic,
@@ -78,4 +81,4 @@ class ApiDictionaryRepository @Inject constructor(
     )
 
     private companion object { const val MAX_RECENT = 50 }
-}
+

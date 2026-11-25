@@ -99,6 +99,7 @@ private fun Header(state: HomeUiState, actions: HomeActions) {
             Text("${greeting()},", style = MaterialTheme.typography.bodyLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
             Text(state.profile?.displayName ?: "bạn", style = MaterialTheme.typography.headlineMedium, maxLines = 1, overflow = TextOverflow.Ellipsis)
         }
+
         FilledTonalIconButton(onClick = actions.onOpenSearch, modifier = Modifier.size(Spacing.touch).testTag("home_search"),
             colors = IconButtonDefaults.filledTonalIconButtonColors(containerColor = MaterialTheme.colorScheme.primaryContainer, contentColor = MaterialTheme.colorScheme.onPrimaryContainer)) {
             Icon(painterResource(R.drawable.ic_search), "Tra từ")
@@ -123,6 +124,7 @@ private fun Hero(state: HomeUiState, actions: HomeActions) {
                 OutlinedButton(onClick = { actions.onOpenLesson(lesson.id) }, Modifier.fillMaxWidth().heightIn(min = Spacing.button),
                     shape = MaterialTheme.shapes.extraLarge, colors = ButtonDefaults.outlinedButtonColors(contentColor = EngMateTheme.brand.onBrand)) {
                     Text("Bắt đầu bài đầu tiên")
+
                 }
             }
         }

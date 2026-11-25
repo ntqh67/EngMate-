@@ -3,6 +3,7 @@ package com.engmate.app.feature.dictionary.domain
 import com.engmate.app.feature.vocabulary.domain.Word
 
 sealed interface LookupResult {
+    /** [word] has id 0 when it came from the API and was not saved. */
     data class Found(val word: Word) : LookupResult
     data object NotFound : LookupResult
     data object Offline : LookupResult
@@ -26,6 +27,7 @@ interface DictionaryRepository {
 
         /** Only plausible English entries go online: letters plus space, hyphen or apostrophe, max 50 chars. */
         private val lookupable = Regex("^[a-z][a-z' -]{0,49}$")
+
         fun canLookup(key: String) = lookupable.matches(key)
     }
 }

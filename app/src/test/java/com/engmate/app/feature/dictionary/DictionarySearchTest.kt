@@ -52,10 +52,10 @@ class DictionarySearchTest {
     }
     @After fun close() = db.close()
 
-    @Test fun foundWordIsCachedAndNextLookupStaysOffline() = runBlocking<Unit> {
+    @Test fun savedWordIsCachedAndNextLookupStaysOffline() = runBlocking<Unit> {
         val api = FakeApi()
         val dictionary = ApiDictionaryRepository(api, words)
-        val first = dictionary.lookup("  Hello ") as LookupResult.Found
+        val first = dictionary.lookup("  Hello ", save = true) as LookupResult.Found
         assertEquals("hello", first.word.word)
         assertTrue(first.word.isCached)
         assertEquals(listOf("hello"), api.calls)
@@ -64,6 +64,25 @@ class DictionarySearchTest {
         val second = dictionary.lookup("HELLO") as LookupResult.Found
         assertEquals(first.word.id, second.word.id)
         assertEquals("cached word needs no network", 1, api.calls.size)
+    }
+
+    @Test fun lookupWithoutSavingShowsTheWordButStoresNothing() = runBlocking<Unit> {
+        val api = FakeApi()
+        val dictionary = ApiDictionaryRepository(api, words)
+        val hit = dictionary.lookup("hello") as LookupResult.Found
+        assertEquals("hello", hit.word.word)
+        assertEquals("not saved, so no database id", 0L, hit.word.id)
+        assertFalse(hit.word.isCached)
+        assertTrue("nothing written to the device", words.search("hello").isEmpty())
+
+        dictionary.lookup("hello")
+        assertEquals("an unsaved word is fetched again", 2, api.calls.size)
+    }
+
+    @Test fun singleLetterNeverGoesOnline() = runBlocking<Unit> {
+        val api = FakeApi()
+        assertEquals(LookupResult.NotFound, ApiDictionaryRepository(api, words).lookup("a"))
+        assertTrue(api.calls.isEmpty())
     }
 
     @Test fun notFoundOfflineAndServerErrorsAreReported() = runBlocking<Unit> {
@@ -119,6 +138,12 @@ class DictionarySearchTest {
         val last = searchFlow("helo", words, ApiDictionaryRepository(api, words)).toList().last()
         assertTrue(last.results.isEmpty())
         assertNull(db.vocabulary().findWord("helo"))
+        assertTrue("the search shows the hit but does not save it", words.search("hello").none { it.word == "hello" })
+
+        dictionary.lookup("hello", save = true)   // what opening the word does
+        val again = searchFlow("hello", words, dictionary).toList()
+        assertEquals("saved word is an exact local match: no further call", 2, api.calls.size)
+        assertEquals(1, again.size)
     }
 
     @Test fun searchExplainsNotFoundAndOffline() = runBlocking<Unit> {

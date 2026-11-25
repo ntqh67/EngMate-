@@ -8,6 +8,9 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import android.os.SystemClock
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.compose.LifecycleEventEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.engmate.app.feature.auth.presentation.*
@@ -16,6 +19,9 @@ import com.engmate.app.R
 import com.engmate.app.core.ui.components.*
 import com.engmate.app.core.ui.theme.Spacing
 import com.engmate.app.core.ui.theme.screenPadding
+import com.engmate.app.core.sync.SyncRefreshViewModel
+import com.engmate.app.core.ui.components.BackTopBar
+import com.engmate.app.core.ui.components.MessageEffect
 import com.engmate.app.feature.grammar.presentation.lesson.GrammarLessonScreen
 import com.engmate.app.feature.grammar.presentation.topics.GrammarLessonsScreen
 import com.engmate.app.feature.grammar.presentation.topics.GrammarLessonsViewModel
@@ -62,6 +68,15 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
     // Guests can browse: home, dictionary search and grammar lessons. Personal features ask for a login.
     val actions: ProgressActionsViewModel = viewModel()
     LaunchedEffect(lessonId, user?.uid) { if (user != null) lessonId?.let(actions::lessonOpened) }
+    // Stay current without being asked: when the app comes back after a while, and whenever the notebook opens.
+    // (The first pull after sign-in is done by UserDataSync itself; refreshInBackground waits for it.)
+    val sync: SyncRefreshViewModel = viewModel()
+    var stoppedAt by remember { mutableLongStateOf(0L) }
+    LifecycleEventEffect(Lifecycle.Event.ON_STOP) { stoppedAt = SystemClock.elapsedRealtime() }
+    LifecycleEventEffect(Lifecycle.Event.ON_START) {
+        if (user != null && stoppedAt != 0L && SystemClock.elapsedRealtime() - stoppedAt > 30_000L) sync.refreshInBackground()
+    }
+    LaunchedEffect(tab, user?.uid) { if (user != null && tab == MainTab.NOTEBOOK) sync.refreshInBackground() }
     var learnVocabulary by rememberSaveable { mutableStateOf(false) }
     var showAuth by rememberSaveable { mutableStateOf(false) }
     LaunchedEffect(user) { if (user != null) showAuth = false }
@@ -115,6 +130,12 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
         val lessons: GrammarLessonsViewModel = viewModel()
         Scaffold(bottomBar = {
             NavigationBar(containerColor = MaterialTheme.colorScheme.surface) {
+        val syncing by sync.refreshing.collectAsStateWithLifecycle()
+        val syncMessage by sync.message.collectAsStateWithLifecycle()
+        val snackbar = remember { SnackbarHostState() }
+        MessageEffect(syncMessage, snackbar, sync::messageShown)
+        Scaffold(snackbarHost = { SnackbarHost(snackbar) }, bottomBar = {
+            NavigationBar {
                 MainTab.entries.forEach { t ->
                     // Selected icon and label share one color.
                     NavigationBarItem(selected = tab == t, onClick = { tab = t },
@@ -162,6 +183,46 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
                     }
                 }
             }
+        }
+    }
+}
+
+                        MainTab.NOTEBOOK -> if (user == null) LoginPrompt("Sổ tay từ vựng", onLogin = { showAuth = true }) else NotebookScreen(viewModel(), onOpenWord = { openWord = it }, onStudy = { studyHandbook = it },
+                            refreshing = syncing, onRefresh = sync::refresh)
+                        MainTab.PROFILE -> if (user == null) LoginPrompt("Hồ sơ và tiến độ học", onLogin = { showAuth = true }) else ProfileTab(profile, progress, user?.email.orEmpty(), auth::signOut,
+                            onPlacement = { openQuiz(QuizRoute.Placement) }, onReminder = { openQuiz(QuizRoute.Reminder) },
+                            refreshing = syncing, onRefresh = sync::refresh)
+                    }
+                }
+            }
+        }
+    }
+}
+
+/** Hồ sơ holds the profile and Huân's statistics; ⚙ opens settings with sign-out. */
+@Composable private fun ProfileTab(profile: ProfileViewModel, progress: ProgressViewModel, email: String, onSignOut: () -> Unit,
+    onPlacement: () -> Unit = {}, onReminder: () -> Unit = {}, refreshing: Boolean = false, onRefresh: () -> Unit = {}) {
+    var showProgress by rememberSaveable { mutableStateOf(false) }
+    var settings by rememberSaveable { mutableStateOf(false) }
+    if (settings) {
+        BackHandler { settings = false }
+        Column {
+            BackTopBar("Cài đặt", onBack = { settings = false })
+            Column(Modifier.padding(24.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
+                LearningShortcuts(onPlacement, onReminder)
+                Text(email)
+                OutlinedButton(onClick = onSignOut, modifier = Modifier.fillMaxWidth()) { Text("Đăng xuất") }
+            }
+        }
+        return
+    }
+    Column(Modifier.fillMaxSize()) {
+        PrimaryTabRow(selectedTabIndex = if (showProgress) 1 else 0, Modifier.statusBarsPadding()) {
+            Tab(selected = !showProgress, onClick = { showProgress = false }, text = { Text("Hồ sơ") })
+            Tab(selected = showProgress, onClick = { showProgress = true }, text = { Text("Tiến độ") })
+        }
+        Box(Modifier.weight(1f)) {
+            if (showProgress) ProgressScreen(progress, refreshing, onRefresh) else ProfileScreen(profile, onSettings = { settings = true })
         }
     }
 }
