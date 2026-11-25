@@ -15,6 +15,7 @@ interface VocabularyDao {
     @Query("DELETE FROM topics WHERE id = :id") suspend fun deleteTopic(id: Long): Int
     @Query("SELECT t.*, (SELECT COUNT(*) FROM words w WHERE w.topic_id = t.id) AS total_words FROM topics t ORDER BY t.title, t.id")
     fun observeTopics(): Flow<List<TopicWithWordCount>>
+    @Query("SELECT * FROM topics WHERE title = :title LIMIT 1") suspend fun findTopic(title: String): TopicEntity?
     @Query("SELECT * FROM topics WHERE id = :id") suspend fun getTopic(id: Long): TopicEntity?
 
     @Insert suspend fun insertWord(word: WordEntity): Long

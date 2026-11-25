@@ -5,10 +5,16 @@ ngữ pháp, quiz và thói quen học mỗi ngày.
 
 ## Trạng thái
 
-Ứng dụng có đăng ký/đăng nhập bằng email, xác minh email, đặt lại mật khẩu và
-đăng xuất ở bản live dùng Firebase Auth. Hồ sơ cá nhân lưu bằng Room; màn hình
-tiến độ hiển thị dữ liệu học cục bộ. Database v3 có 15 bảng cùng DAO và migration;
-các chức năng học tập còn lại đang triển khai.
+- **Dùng thử không cần đăng nhập:** mở app là vào Trang chủ; tìm từ vựng và học
+  ngữ pháp dùng được ngay. Sổ tay, Hồ sơ/Tiến độ và luyện quiz yêu cầu đăng nhập.
+- **Tài khoản:** đăng ký/đăng nhập bằng email, xác minh email, đặt lại mật khẩu
+  (Firebase Auth).
+- **Offline-first:** Room là nguồn dữ liệu mà giao diện đọc; mọi dữ liệu của người
+  dùng (hồ sơ, sổ tay, flashcard, tiến độ ôn từ, quiz, hoạt động học) được đồng
+  bộ lên Cloud Firestore tại `users/{uid}/...`, nên đổi máy vẫn lấy lại được.
+  Chi tiết: [docs/cloud-sync.md](docs/cloud-sync.md).
+- **Nội dung học có sẵn:** ~446 từ vựng theo 15 chủ đề, 17 bài ngữ pháp (có 14 bài về các thì và động từ);
+  từ ngoài bộ này tra bằng API và dịch sang tiếng Việt bằng ML Kit. Xem [docs/vocabulary-grammar-seed.md](docs/vocabulary-grammar-seed.md).
 
 Ứng dụng chỉ còn biến thể **live**: UID lấy từ phiên Firebase Auth, cần
 `app/google-services.json` (không commit) để build.
@@ -24,7 +30,7 @@ Các file `.gitkeep` còn lại giữ những thư mục chưa có mã nguồn t
 - MVVM + Repository; Hilt cung cấp dependency, Navigation Compose điều hướng.
 - Room lưu dữ liệu học; DataStore lưu cài đặt; Firebase Authentication xác thực.
 - Retrofit/OkHttp gọi từ điển; TTS phát âm; WorkManager phục vụ nhắc học.
-- Firestore và các tính năng mở rộng được triển khai sau phần cốt lõi.
+- Cloud Firestore đồng bộ dữ liệu người dùng và nội dung học (bài ngữ pháp, câu hỏi).
 
 Lý do, ranh giới phụ thuộc và đánh đổi: [ADR-0001](docs/adr/0001-android-architecture.md).
 
@@ -120,9 +126,16 @@ Chọn build variant `liveDebug`, rồi Run trên Android 8.0 trở lên.
 APK: `app/build/outputs/apk/live/debug/app-live-debug.apk`.
 Hướng dẫn chi tiết và giới hạn: [CRUD hồ sơ](docs/profile-crud.md).
 
+## Cấu hình Firebase
+
+1. Tạo project Firebase, thêm app Android `com.engmate.app`, đặt `google-services.json` vào `app/`.
+2. Bật **Authentication** (Email/Password) và tạo **Firestore Database** (Standard, production mode).
+3. Dán [firestore.rules](firestore.rules) vào tab Rules rồi **Publish**
+   (hoặc `firebase deploy --only firestore:rules`). Thiếu bước này app sẽ báo `PERMISSION_DENIED`.
+
 ## Bước triển khai tiếp theo
 
-1. Cấu hình Firebase và kiểm tra đăng ký/đăng nhập trên thiết bị thật.
+1. Đồng bộ thời gian thực giữa nhiều thiết bị và đồng bộ cài đặt nhắc học.
 2. Tích hợp các chức năng học với DAO v3 để ghi hoạt động và kết quả quiz.
 3. Hoàn thiện điều hướng và các màn hình còn lại theo Figma.
 

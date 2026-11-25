@@ -1,0 +1,1228 @@
+{
+"version": 1,
+"lessons": [
+{
+"id": 101,
+"title": "Quá khứ đơn (Past Simple)",
+"level": "A2",
+"summary": "Diễn tả hành động đã xảy ra và kết thúc hoàn toàn trong quá khứ.",
+"content": "Cấu trúc:\n• Khẳng định: S + V2/V-ed (went, played).\n• Phủ định: S + did not (didn't) + V nguyên mẫu.\n• Nghi vấn: Did + S + V nguyên mẫu?\nDấu hiệu: yesterday, last week/year, ago, in 2020, when I was young.\nQuy tắc thêm -ed: thêm -ed (work → worked); tận cùng e chỉ thêm -d (live → lived); phụ âm + y → -ied (study → studied); gấp đôi phụ âm cuối với từ một âm tiết CVC (stop → stopped).\nLưu ý: động từ bất quy tắc có dạng V2 riêng (go → went, see → saw).",
+"examples": [
+{
+"en": "I visited my grandmother last Sunday.",
+"vi": "Chủ nhật tuần trước tôi đã thăm bà."
+},
+{
+"en": "She didn't call me yesterday.",
+"vi": "Hôm qua cô ấy không gọi cho tôi."
+},
+{
+"en": "Did you watch the match?",
+"vi": "Bạn có xem trận đấu không?"
+}
+],
+"questions": [
+{
+"type": "MC",
+"q": "Yesterday I ___ to the market.",
+"opts": [
+"go",
+"goes",
+"went",
+"gone"
+],
+"correct": 2,
+"exp": "yesterday → quá khứ đơn; go có V2 là went."
+},
+{
+"type": "FB",
+"q": "She ___ (study) hard last night.",
+"accept": [
+"studied"
+],
+"exp": "Phụ âm + y → đổi y thành i rồi thêm -ed: studied."
+},
+{
+"type": "MC",
+"q": "They ___ the film last week.",
+"opts": [
+"don't like",
+"didn't liked",
+"didn't like",
+"not liked"
+],
+"correct": 2,
+"exp": "Phủ định quá khứ: didn't + động từ nguyên mẫu."
+},
+{
+"type": "FB",
+"q": "___ you see him yesterday? (điền trợ động từ)",
+"accept": [
+"did"
+],
+"exp": "Câu hỏi quá khứ đơn dùng trợ động từ Did."
+},
+{
+"type": "MC",
+"q": "Which is the past form of \"stop\"?",
+"opts": [
+"stoped",
+"stopped",
+"stoping",
+"stopt"
+],
+"correct": 1,
+"exp": "Từ một âm tiết CVC gấp đôi phụ âm cuối: stopped."
+},
+{
+"type": "FB",
+"q": "We ___ (not / go) out last Friday.",
+"accept": [
+"didn't go",
+"did not go"
+],
+"exp": "Phủ định: didn't/did not + V nguyên mẫu."
+}
+]
+},
+{
+"id": 102,
+"title": "Quá khứ tiếp diễn (Past Continuous)",
+"level": "A2",
+"summary": "Diễn tả hành động đang diễn ra tại một thời điểm hoặc bị cắt ngang trong quá khứ.",
+"content": "Cấu trúc:\n• Khẳng định: S + was/were + V-ing.\n• Phủ định: S + was/were + not + V-ing.\n• Nghi vấn: Was/Were + S + V-ing?\nDùng với I/he/she/it → was; you/we/they → were.\nCách dùng:\n• Hành động đang diễn ra lúc một thời điểm: At 8 p.m. yesterday, I was studying.\n• Hành động đang diễn ra thì bị cắt ngang (when + quá khứ đơn): I was cooking when he called.\n• Hai hành động xảy ra song song (while): She was reading while he was cooking.",
+"examples": [
+{
+"en": "I was watching TV at nine last night.",
+"vi": "Tối qua lúc chín giờ tôi đang xem tivi."
+},
+{
+"en": "They were playing football when it started to rain.",
+"vi": "Họ đang đá bóng thì trời bắt đầu mưa."
+},
+{
+"en": "What were you doing at that time?",
+"vi": "Lúc đó bạn đang làm gì?"
+}
+],
+"questions": [
+{
+"type": "MC",
+"q": "At 7 p.m. yesterday, she ___ dinner.",
+"opts": [
+"cooks",
+"was cooking",
+"cooked",
+"is cooking"
+],
+"correct": 1,
+"exp": "Hành động đang diễn ra tại một thời điểm trong quá khứ → was cooking."
+},
+{
+"type": "FB",
+"q": "We ___ (walk) home when it began to rain.",
+"accept": [
+"were walking"
+],
+"exp": "we đi với were; hành động bị cắt ngang dùng quá khứ tiếp diễn."
+},
+{
+"type": "MC",
+"q": "I ___ TV when the phone rang.",
+"opts": [
+"watch",
+"watched",
+"was watching",
+"am watching"
+],
+"correct": 2,
+"exp": "Hành động đang diễn ra bị cắt ngang bởi hành động ngắn (rang)."
+},
+{
+"type": "FB",
+"q": "They ___ (not / sleep) at midnight.",
+"accept": [
+"weren't sleeping",
+"were not sleeping"
+],
+"exp": "Phủ định: were not + V-ing."
+},
+{
+"type": "MC",
+"q": "___ he working at 5 o'clock yesterday?",
+"opts": [
+"Did",
+"Was",
+"Were",
+"Is"
+],
+"correct": 1,
+"exp": "Câu hỏi với he dùng Was + V-ing."
+},
+{
+"type": "MC",
+"q": "While I ___ , my brother was playing games.",
+"opts": [
+"study",
+"studied",
+"was studying",
+"am studying"
+],
+"correct": 2,
+"exp": "Hai hành động song song cùng dùng quá khứ tiếp diễn."
+}
+]
+},
+{
+"id": 103,
+"title": "Hiện tại hoàn thành (Present Perfect)",
+"level": "B1",
+"summary": "Nối quá khứ với hiện tại: trải nghiệm, kết quả còn thấy được hoặc hành động kéo dài đến nay.",
+"content": "Cấu trúc:\n• Khẳng định: S + have/has + V3 (past participle).\n• Phủ định: S + have/has + not + V3.\n• Nghi vấn: Have/Has + S + V3?\nDùng has với he/she/it; have với I/you/we/they.\nCách dùng:\n• Trải nghiệm: I have visited Japan twice.\n• Kết quả ở hiện tại: She has lost her keys (nên bây giờ cô ấy không vào nhà được).\n• Kéo dài đến nay với for/since: I have lived here for five years / since 2020.\nDấu hiệu: already, yet, just, ever, never, so far, recently, for, since.\nKhông dùng với mốc thời gian xác định trong quá khứ (yesterday, last year) → dùng quá khứ đơn.",
+"examples": [
+{
+"en": "I have already finished my homework.",
+"vi": "Tôi đã làm xong bài tập rồi."
+},
+{
+"en": "She has lived in Hanoi since 2019.",
+"vi": "Cô ấy sống ở Hà Nội từ năm 2019."
+},
+{
+"en": "Have you ever eaten sushi?",
+"vi": "Bạn đã bao giờ ăn sushi chưa?"
+}
+],
+"questions": [
+{
+"type": "MC",
+"q": "She ___ in this city for ten years.",
+"opts": [
+"lives",
+"lived",
+"has lived",
+"is living"
+],
+"correct": 2,
+"exp": "for + khoảng thời gian kéo dài đến nay → hiện tại hoàn thành."
+},
+{
+"type": "FB",
+"q": "I ___ (never / be) to London.",
+"accept": [
+"have never been"
+],
+"exp": "never + have + V3: have never been."
+},
+{
+"type": "MC",
+"q": "Which sentence is correct?",
+"opts": [
+"I have seen him yesterday.",
+"I saw him yesterday.",
+"I have saw him yesterday.",
+"I see him yesterday."
+],
+"correct": 1,
+"exp": "yesterday là mốc xác định → quá khứ đơn."
+},
+{
+"type": "FB",
+"q": "He ___ (not / finish) his work yet.",
+"accept": [
+"hasn't finished",
+"has not finished"
+],
+"exp": "he → has; yet dùng trong câu phủ định/nghi vấn."
+},
+{
+"type": "MC",
+"q": "They have lived here ___ 2018.",
+"opts": [
+"for",
+"since",
+"ago",
+"during"
+],
+"correct": 1,
+"exp": "since + mốc thời gian; for + khoảng thời gian."
+},
+{
+"type": "MC",
+"q": "___ you ever tried Vietnamese coffee?",
+"opts": [
+"Did",
+"Do",
+"Have",
+"Has"
+],
+"correct": 2,
+"exp": "ever → Have you ever + V3?"
+}
+]
+},
+{
+"id": 104,
+"title": "Hiện tại hoàn thành tiếp diễn (Present Perfect Continuous)",
+"level": "B1",
+"summary": "Nhấn mạnh hành động bắt đầu trong quá khứ và vẫn đang tiếp diễn hoặc vừa mới kết thúc.",
+"content": "Cấu trúc:\n• Khẳng định: S + have/has + been + V-ing.\n• Phủ định: S + have/has + not + been + V-ing.\n• Nghi vấn: Have/Has + S + been + V-ing?\nCách dùng:\n• Hành động kéo dài đến hiện tại, nhấn mạnh quá trình: I have been learning English for two years.\n• Hành động vừa kết thúc và còn để lại kết quả: She is tired because she has been running.\nDấu hiệu: for, since, all day, recently, lately, how long.\nSo sánh: Present Perfect nhấn mạnh kết quả (I have written 3 emails); Present Perfect Continuous nhấn mạnh quá trình (I have been writing emails all morning).",
+"examples": [
+{
+"en": "I have been waiting for you for an hour.",
+"vi": "Tôi đã đợi bạn suốt một tiếng rồi."
+},
+{
+"en": "It has been raining since morning.",
+"vi": "Trời mưa từ sáng đến giờ."
+},
+{
+"en": "How long have you been studying here?",
+"vi": "Bạn học ở đây được bao lâu rồi?"
+}
+],
+"questions": [
+{
+"type": "MC",
+"q": "She ___ English since 8 o'clock.",
+"opts": [
+"studies",
+"has studied",
+"has been studying",
+"was studying"
+],
+"correct": 2,
+"exp": "since + nhấn mạnh quá trình kéo dài → has been studying."
+},
+{
+"type": "FB",
+"q": "They ___ (play) football for two hours.",
+"accept": [
+"have been playing"
+],
+"exp": "they → have been + V-ing."
+},
+{
+"type": "MC",
+"q": "How long ___ you ___ here?",
+"opts": [
+"are / working",
+"have / been working",
+"did / work",
+"do / work"
+],
+"correct": 1,
+"exp": "How long + have you been + V-ing?"
+},
+{
+"type": "FB",
+"q": "He ___ (not / sleep) well lately.",
+"accept": [
+"hasn't been sleeping",
+"has not been sleeping"
+],
+"exp": "Phủ định: has not been + V-ing."
+},
+{
+"type": "MC",
+"q": "Her eyes are red. She ___ .",
+"opts": [
+"cries",
+"cried",
+"has been crying",
+"is cry"
+],
+"correct": 2,
+"exp": "Vừa mới kết thúc, còn kết quả nhìn thấy → has been crying."
+},
+{
+"type": "MC",
+"q": "Which sentence puts the emphasis on the process?",
+"opts": [
+"I have read the book.",
+"I have been reading the book all day.",
+"I read the book.",
+"I will read the book."
+],
+"correct": 1,
+"exp": "Have been + V-ing nhấn mạnh quá trình."
+}
+]
+},
+{
+"id": 105,
+"title": "Quá khứ hoàn thành (Past Perfect)",
+"level": "B1",
+"summary": "Diễn tả hành động xảy ra trước một hành động hoặc mốc thời gian khác trong quá khứ.",
+"content": "Cấu trúc:\n• Khẳng định: S + had + V3.\n• Phủ định: S + had not (hadn't) + V3.\n• Nghi vấn: Had + S + V3?\nCách dùng: khi có hai hành động trong quá khứ, hành động xảy ra trước dùng quá khứ hoàn thành, hành động sau dùng quá khứ đơn.\nVí dụ: When I arrived, the film had already started.\nDấu hiệu: before, after, by the time, already, when, until.",
+"examples": [
+{
+"en": "She had left before I arrived.",
+"vi": "Cô ấy đã đi trước khi tôi đến."
+},
+{
+"en": "By the time we got there, the shop had closed.",
+"vi": "Lúc chúng tôi tới thì cửa hàng đã đóng."
+},
+{
+"en": "Had you eaten before you came?",
+"vi": "Bạn đã ăn trước khi đến chưa?"
+}
+],
+"questions": [
+{
+"type": "MC",
+"q": "When I got to the station, the train ___ .",
+"opts": [
+"left",
+"has left",
+"had left",
+"leaves"
+],
+"correct": 2,
+"exp": "Tàu rời đi trước khi tôi tới → had left."
+},
+{
+"type": "FB",
+"q": "She ___ (already / finish) her homework before dinner.",
+"accept": [
+"had already finished"
+],
+"exp": "Hành động xảy ra trước → had already finished."
+},
+{
+"type": "MC",
+"q": "After he ___ breakfast, he went to work.",
+"opts": [
+"has had",
+"had had",
+"have had",
+"having"
+],
+"correct": 1,
+"exp": "After + quá khứ hoàn thành, mệnh đề sau dùng quá khứ đơn."
+},
+{
+"type": "FB",
+"q": "They ___ (not / see) the film before.",
+"accept": [
+"hadn't seen",
+"had not seen"
+],
+"exp": "Phủ định: hadn't + V3."
+},
+{
+"type": "MC",
+"q": "By the time I called, she ___ .",
+"opts": [
+"has gone",
+"had gone",
+"goes",
+"was go"
+],
+"correct": 1,
+"exp": "by the time + quá khứ đơn, mệnh đề kia dùng quá khứ hoàn thành."
+},
+{
+"type": "MC",
+"q": "Which action happened first? \"I had eaten before she arrived.\"",
+"opts": [
+"She arrived",
+"I ate",
+"Both together",
+"Not clear"
+],
+"correct": 1,
+"exp": "Had eaten xảy ra trước, arrived xảy ra sau."
+}
+]
+},
+{
+"id": 106,
+"title": "Tương lai đơn (Will)",
+"level": "A2",
+"summary": "Diễn tả quyết định tức thời, dự đoán, lời hứa và đề nghị.",
+"content": "Cấu trúc:\n• Khẳng định: S + will + V nguyên mẫu (I'll go).\n• Phủ định: S + will not (won't) + V.\n• Nghi vấn: Will + S + V?\nCách dùng:\n• Quyết định ngay tại lúc nói: It's cold. I'll close the window.\n• Dự đoán không chắc chắn: I think it will rain tomorrow.\n• Lời hứa, lời đề nghị: I'll help you.\nDấu hiệu: tomorrow, next week, soon, in the future, I think, probably.",
+"examples": [
+{
+"en": "I will call you tomorrow.",
+"vi": "Ngày mai tôi sẽ gọi cho bạn."
+},
+{
+"en": "It won't rain this evening.",
+"vi": "Tối nay trời sẽ không mưa."
+},
+{
+"en": "Will you help me?",
+"vi": "Bạn sẽ giúp tôi chứ?"
+}
+],
+"questions": [
+{
+"type": "MC",
+"q": "I think it ___ tomorrow.",
+"opts": [
+"rains",
+"will rain",
+"rained",
+"is rain"
+],
+"correct": 1,
+"exp": "Dự đoán về tương lai với I think → will + V."
+},
+{
+"type": "FB",
+"q": "I ___ (help) you with your bag.",
+"accept": [
+"will help",
+"'ll help"
+],
+"exp": "Lời đề nghị/quyết định tức thời dùng will."
+},
+{
+"type": "MC",
+"q": "She ___ come to the party. She is ill.",
+"opts": [
+"will",
+"won't",
+"does",
+"isn't"
+],
+"correct": 1,
+"exp": "Phủ định tương lai: won't + V."
+},
+{
+"type": "FB",
+"q": "___ you open the door, please? (điền một từ)",
+"accept": [
+"will",
+"would"
+],
+"exp": "Nhờ vả lịch sự: Will/Would you + V?"
+},
+{
+"type": "MC",
+"q": "The phone is ringing. I ___ it.",
+"opts": [
+"answer",
+"am answering",
+"will answer",
+"answered"
+],
+"correct": 2,
+"exp": "Quyết định ngay lúc nói → will answer."
+},
+{
+"type": "MC",
+"q": "Which sentence is correct?",
+"opts": [
+"He will goes home.",
+"He will go home.",
+"He wills go home.",
+"He will going home."
+],
+"correct": 1,
+"exp": "Sau will là động từ nguyên mẫu không chia."
+}
+]
+},
+{
+"id": 107,
+"title": "Be going to",
+"level": "A2",
+"summary": "Diễn tả dự định đã có kế hoạch hoặc dự đoán dựa trên dấu hiệu hiện tại.",
+"content": "Cấu trúc:\n• Khẳng định: S + am/is/are + going to + V.\n• Phủ định: S + am/is/are + not + going to + V.\n• Nghi vấn: Am/Is/Are + S + going to + V?\nCách dùng:\n• Dự định đã quyết định từ trước: We are going to visit Da Lat next month.\n• Dự đoán có căn cứ ở hiện tại: Look at the clouds! It is going to rain.\nSo sánh với will: will cho quyết định tức thời; be going to cho kế hoạch đã có.",
+"examples": [
+{
+"en": "I am going to study abroad next year.",
+"vi": "Năm sau tôi định đi du học."
+},
+{
+"en": "She is not going to join us.",
+"vi": "Cô ấy sẽ không tham gia cùng chúng tôi."
+},
+{
+"en": "Are you going to buy that bike?",
+"vi": "Bạn định mua chiếc xe đạp đó à?"
+}
+],
+"questions": [
+{
+"type": "MC",
+"q": "Look at those black clouds! It ___ rain.",
+"opts": [
+"will",
+"is going to",
+"goes to",
+"going to"
+],
+"correct": 1,
+"exp": "Dự đoán có dấu hiệu rõ ràng ở hiện tại → is going to."
+},
+{
+"type": "FB",
+"q": "We ___ (go) to the beach this weekend. We've booked a hotel.",
+"accept": [
+"are going to go"
+],
+"exp": "Kế hoạch đã có → are going to go."
+},
+{
+"type": "MC",
+"q": "___ you going to watch the match?",
+"opts": [
+"Do",
+"Will",
+"Are",
+"Is"
+],
+"correct": 2,
+"exp": "Câu hỏi với you: Are you going to + V?"
+},
+{
+"type": "FB",
+"q": "He ___ (not / be) late. He left early.",
+"accept": [
+"isn't going to be",
+"is not going to be"
+],
+"exp": "Phủ định: is not going to + V."
+},
+{
+"type": "MC",
+"q": "I ___ be a doctor when I grow up.",
+"opts": [
+"am going to",
+"going to",
+"will to",
+"am go to"
+],
+"correct": 0,
+"exp": "Dự định: am going to + V."
+},
+{
+"type": "MC",
+"q": "Which sentence shows a plan?",
+"opts": [
+"I'll answer the door.",
+"I'm going to start a diet on Monday.",
+"It will be sunny.",
+"Maybe I'll go."
+],
+"correct": 1,
+"exp": "Be going to dùng cho kế hoạch đã quyết định."
+}
+]
+},
+{
+"id": 108,
+"title": "Tương lai tiếp diễn (Future Continuous)",
+"level": "B1",
+"summary": "Diễn tả hành động sẽ đang diễn ra tại một thời điểm xác định trong tương lai.",
+"content": "Cấu trúc:\n• Khẳng định: S + will + be + V-ing.\n• Phủ định: S + will not (won't) + be + V-ing.\n• Nghi vấn: Will + S + be + V-ing?\nCách dùng:\n• Hành động đang diễn ra tại thời điểm cụ thể: This time tomorrow, I will be flying to Paris.\n• Hỏi lịch trình lịch sự: Will you be using the car tonight?\nDấu hiệu: at this time tomorrow, at 8 p.m. next Monday, in two hours.",
+"examples": [
+{
+"en": "At 9 a.m. tomorrow, I will be working.",
+"vi": "Chín giờ sáng mai tôi sẽ đang làm việc."
+},
+{
+"en": "She will be sleeping at midnight.",
+"vi": "Nửa đêm cô ấy sẽ đang ngủ."
+},
+{
+"en": "Will you be using your laptop later?",
+"vi": "Lát nữa bạn có dùng laptop không?"
+}
+],
+"questions": [
+{
+"type": "MC",
+"q": "This time next week, we ___ on the beach.",
+"opts": [
+"lie",
+"will be lying",
+"lay",
+"will lie"
+],
+"correct": 1,
+"exp": "Tại thời điểm cụ thể trong tương lai, hành động đang diễn ra → will be lying."
+},
+{
+"type": "FB",
+"q": "At 8 tonight, I ___ (watch) a film.",
+"accept": [
+"will be watching"
+],
+"exp": "will be + V-ing."
+},
+{
+"type": "MC",
+"q": "They ___ at the airport at noon tomorrow.",
+"opts": [
+"will wait",
+"will be waiting",
+"are wait",
+"waited"
+],
+"correct": 1,
+"exp": "Tương lai tiếp diễn: will be waiting."
+},
+{
+"type": "FB",
+"q": "She ___ (not / work) tomorrow morning.",
+"accept": [
+"won't be working",
+"will not be working"
+],
+"exp": "Phủ định: won't be + V-ing."
+},
+{
+"type": "MC",
+"q": "Which is the correct form?",
+"opts": [
+"I will be study.",
+"I will studying.",
+"I will be studying.",
+"I be studying."
+],
+"correct": 2,
+"exp": "will + be + V-ing."
+},
+{
+"type": "MC",
+"q": "___ you be using the car this evening?",
+"opts": [
+"Do",
+"Are",
+"Will",
+"Have"
+],
+"correct": 2,
+"exp": "Câu hỏi: Will + S + be + V-ing?"
+}
+]
+},
+{
+"id": 109,
+"title": "Động từ to be (am, is, are, was, were)",
+"level": "A1",
+"summary": "Động từ to be dùng để nói về danh tính, tuổi, trạng thái, nơi chốn.",
+"content": "Hiện tại: I am; he/she/it is; you/we/they are.\nQuá khứ: I/he/she/it was; you/we/they were.\nCấu trúc:\n• Khẳng định: She is a teacher.\n• Phủ định: be + not (isn't, aren't, wasn't, weren't).\n• Nghi vấn: đảo be lên trước chủ ngữ: Is she a teacher?\nCách dùng: nghề nghiệp (I am a student), tuổi (He is ten), cảm giác (We are hungry), vị trí (The book is on the table).\nLưu ý: there is + danh từ số ít; there are + danh từ số nhiều.",
+"examples": [
+{
+"en": "I am a student.",
+"vi": "Tôi là học sinh."
+},
+{
+"en": "They were at home yesterday.",
+"vi": "Hôm qua họ ở nhà."
+},
+{
+"en": "Is your brother tall?",
+"vi": "Anh trai bạn có cao không?"
+}
+],
+"questions": [
+{
+"type": "MC",
+"q": "She ___ my best friend.",
+"opts": [
+"am",
+"is",
+"are",
+"be"
+],
+"correct": 1,
+"exp": "she → is."
+},
+{
+"type": "FB",
+"q": "They ___ at school yesterday.",
+"accept": [
+"were"
+],
+"exp": "they + quá khứ → were."
+},
+{
+"type": "MC",
+"q": "___ you hungry?",
+"opts": [
+"Is",
+"Are",
+"Am",
+"Be"
+],
+"correct": 1,
+"exp": "you → Are."
+},
+{
+"type": "FB",
+"q": "I ___ not tired now. (điền am/is/are)",
+"accept": [
+"am"
+],
+"exp": "I → am."
+},
+{
+"type": "MC",
+"q": "There ___ three books on the desk.",
+"opts": [
+"is",
+"are",
+"am",
+"be"
+],
+"correct": 1,
+"exp": "There are + danh từ số nhiều."
+},
+{
+"type": "MC",
+"q": "He ___ at the party last night.",
+"opts": [
+"is",
+"are",
+"was",
+"were"
+],
+"correct": 2,
+"exp": "he + quá khứ → was."
+}
+]
+},
+{
+"id": 110,
+"title": "Động từ khuyết thiếu (Modal verbs)",
+"level": "A2",
+"summary": "can, could, may, might, must, should, have to… dùng để nói về khả năng, sự cho phép, nghĩa vụ và lời khuyên.",
+"content": "Đặc điểm: theo sau là động từ nguyên mẫu không to; không thêm -s với he/she/it; phủ định thêm not (cannot, mustn't, shouldn't).\n• can / could: khả năng, xin phép (She can swim. Could I sit here?)\n• may / might: khả năng xảy ra, xin phép lịch sự (It might rain.)\n• must: bắt buộc mạnh, suy đoán chắc chắn (You must wear a helmet.)\n• mustn't: cấm đoán; don't have to: không cần thiết, không bắt buộc.\n• should / ought to: lời khuyên (You should rest.)\n• have to: bắt buộc do quy định bên ngoài (I have to get up early.)",
+"examples": [
+{
+"en": "You should drink more water.",
+"vi": "Bạn nên uống nhiều nước hơn."
+},
+{
+"en": "You mustn't park here.",
+"vi": "Bạn không được đỗ xe ở đây."
+},
+{
+"en": "She can speak three languages.",
+"vi": "Cô ấy nói được ba thứ tiếng."
+}
+],
+"questions": [
+{
+"type": "MC",
+"q": "You ___ smoke here. It's forbidden.",
+"opts": [
+"don't have to",
+"mustn't",
+"shouldn't to",
+"can to"
+],
+"correct": 1,
+"exp": "mustn't = cấm đoán."
+},
+{
+"type": "FB",
+"q": "She ___ (can) swim very well. (điền dạng đúng của can cho she)",
+"accept": [
+"can"
+],
+"exp": "Modal verb không thêm -s."
+},
+{
+"type": "MC",
+"q": "You ___ come tomorrow. It's a holiday.",
+"opts": [
+"must",
+"mustn't",
+"don't have to",
+"can't to"
+],
+"correct": 2,
+"exp": "don't have to = không cần thiết."
+},
+{
+"type": "FB",
+"q": "You look ill. You ___ see a doctor. (should)",
+"accept": [
+"should"
+],
+"exp": "should dùng cho lời khuyên."
+},
+{
+"type": "MC",
+"q": "Which sentence is correct?",
+"opts": [
+"He cans swim.",
+"He can to swim.",
+"He can swim.",
+"He can swims."
+],
+"correct": 2,
+"exp": "can + V nguyên mẫu không to, không thêm -s."
+},
+{
+"type": "MC",
+"q": "___ I borrow your pen?",
+"opts": [
+"May",
+"Must",
+"Should",
+"Will to"
+],
+"correct": 0,
+"exp": "May I...? dùng để xin phép lịch sự."
+}
+]
+},
+{
+"id": 111,
+"title": "Động từ bất quy tắc (Irregular verbs)",
+"level": "A2",
+"summary": "Những động từ không thêm -ed ở quá khứ mà đổi dạng riêng (V2, V3).",
+"content": "Bảng thường gặp (V1 – V2 – V3):\n• be – was/were – been\n• go – went – gone\n• do – did – done\n• have – had – had\n• see – saw – seen\n• eat – ate – eaten\n• take – took – taken\n• give – gave – given\n• write – wrote – written\n• buy – bought – bought\n• make – made – made\n• come – came – come\n• know – knew – known\n• drink – drank – drunk\nMẹo: một số động từ giữ nguyên dạng ở cả ba cột (put – put – put, cut – cut – cut). V2 dùng ở quá khứ đơn; V3 dùng ở hiện tại hoàn thành và câu bị động.",
+"examples": [
+{
+"en": "She wrote a letter yesterday.",
+"vi": "Hôm qua cô ấy viết một lá thư."
+},
+{
+"en": "I have never eaten durian.",
+"vi": "Tôi chưa bao giờ ăn sầu riêng."
+},
+{
+"en": "They bought a new car last month.",
+"vi": "Tháng trước họ mua một chiếc xe mới."
+}
+],
+"questions": [
+{
+"type": "MC",
+"q": "The past simple of \"buy\" is ___ .",
+"opts": [
+"buyed",
+"bought",
+"boughten",
+"buys"
+],
+"correct": 1,
+"exp": "buy – bought – bought."
+},
+{
+"type": "FB",
+"q": "I have ___ (see) that film twice.",
+"accept": [
+"seen"
+],
+"exp": "have + V3 của see là seen."
+},
+{
+"type": "MC",
+"q": "Which is the past participle of \"write\"?",
+"opts": [
+"wrote",
+"written",
+"writed",
+"writen"
+],
+"correct": 1,
+"exp": "write – wrote – written."
+},
+{
+"type": "FB",
+"q": "He ___ (drink) all the milk yesterday.",
+"accept": [
+"drank"
+],
+"exp": "drink – drank – drunk; quá khứ đơn dùng drank."
+},
+{
+"type": "MC",
+"q": "She has ___ to Japan three times.",
+"opts": [
+"went",
+"go",
+"gone",
+"been"
+],
+"correct": 3,
+"exp": "has been to = đã từng đến (và đã về)."
+},
+{
+"type": "MC",
+"q": "Choose the correct sentence.",
+"opts": [
+"He taked a photo.",
+"He took a photo.",
+"He tooked a photo.",
+"He taken a photo."
+],
+"correct": 1,
+"exp": "take – took – taken."
+}
+]
+},
+{
+"id": 112,
+"title": "Động từ + V-ing hay to V",
+"level": "B1",
+"summary": "Sau một số động từ ta dùng V-ing, sau số khác dùng to + V, và một số dùng được cả hai.",
+"content": "Theo sau là V-ing: enjoy, avoid, finish, mind, practice, suggest, keep, consider (I enjoy reading.)\nTheo sau là to + V: want, hope, decide, plan, need, promise, refuse, learn, agree (I want to go.)\nDùng được cả hai, nghĩa gần như giống: like, love, hate, start, begin (I like swimming / I like to swim.)\nNghĩa khác nhau:\n• stop + V-ing: dừng hẳn việc đang làm (He stopped smoking.)\n• stop + to V: dừng lại để làm việc khác (He stopped to buy water.)\n• remember/forget + V-ing: nhớ/quên việc đã làm; remember/forget + to V: nhớ/quên việc cần làm.\nSau giới từ luôn dùng V-ing: She is good at drawing.",
+"examples": [
+{
+"en": "I enjoy listening to music.",
+"vi": "Tôi thích nghe nhạc."
+},
+{
+"en": "We decided to leave early.",
+"vi": "Chúng tôi quyết định đi sớm."
+},
+{
+"en": "He stopped to answer the phone.",
+"vi": "Anh ấy dừng lại để nghe điện thoại."
+}
+],
+"questions": [
+{
+"type": "MC",
+"q": "I enjoy ___ English.",
+"opts": [
+"to study",
+"studying",
+"study",
+"studied"
+],
+"correct": 1,
+"exp": "enjoy + V-ing."
+},
+{
+"type": "FB",
+"q": "She wants ___ (visit) Da Nang.",
+"accept": [
+"to visit"
+],
+"exp": "want + to V."
+},
+{
+"type": "MC",
+"q": "He is interested ___ music.",
+"opts": [
+"to learn",
+"in learning",
+"in learn",
+"for learning"
+],
+"correct": 1,
+"exp": "Sau giới từ in dùng V-ing."
+},
+{
+"type": "FB",
+"q": "They decided ___ (buy) a new house.",
+"accept": [
+"to buy"
+],
+"exp": "decide + to V."
+},
+{
+"type": "MC",
+"q": "He stopped ___ because he was tired.",
+"opts": [
+"to run",
+"running",
+"run",
+"ran"
+],
+"correct": 1,
+"exp": "stop + V-ing = dừng hẳn việc đang làm."
+},
+{
+"type": "MC",
+"q": "Which sentence is correct?",
+"opts": [
+"I avoid to go there.",
+"I avoid going there.",
+"I avoid go there.",
+"I avoid gone there."
+],
+"correct": 1,
+"exp": "avoid + V-ing."
+}
+]
+},
+{
+"id": 113,
+"title": "Cụm động từ thông dụng (Phrasal verbs)",
+"level": "B1",
+"summary": "Động từ kết hợp với giới từ/trạng từ tạo nghĩa mới.",
+"content": "Một số cụm thông dụng:\n• get up: thức dậy; wake up: tỉnh giấc\n• turn on / turn off: bật / tắt\n• look for: tìm kiếm; look after: chăm sóc; look up: tra cứu\n• give up: từ bỏ; put on: mặc vào; take off: cởi ra / cất cánh\n• find out: tìm ra; come back: quay lại; set up: thiết lập\n• run out of: hết (I ran out of money.)\n• get on with: hòa thuận với\nLưu ý: với cụm có tân ngữ là đại từ, đại từ đứng giữa: turn it off (không nói turn off it).",
+"examples": [
+{
+"en": "Please turn off the lights.",
+"vi": "Làm ơn tắt đèn đi."
+},
+{
+"en": "I'm looking for my keys.",
+"vi": "Tôi đang tìm chìa khóa."
+},
+{
+"en": "Don't give up!",
+"vi": "Đừng bỏ cuộc!"
+}
+],
+"questions": [
+{
+"type": "MC",
+"q": "I ___ my glasses everywhere, but I can't find them.",
+"opts": [
+"looked after",
+"looked for",
+"looked up",
+"looked at"
+],
+"correct": 1,
+"exp": "look for = tìm kiếm."
+},
+{
+"type": "FB",
+"q": "Please ___ the TV. (tắt: turn ...)",
+"accept": [
+"turn off"
+],
+"exp": "turn off = tắt."
+},
+{
+"type": "MC",
+"q": "It's cold. ___ your coat.",
+"opts": [
+"Put on",
+"Take off",
+"Give up",
+"Look for"
+],
+"correct": 0,
+"exp": "put on = mặc vào."
+},
+{
+"type": "FB",
+"q": "She looks ___ her little brother after school. (điền giới từ)",
+"accept": [
+"after"
+],
+"exp": "look after = chăm sóc."
+},
+{
+"type": "MC",
+"q": "We've ___ of milk. Let's buy some.",
+"opts": [
+"run out",
+"given up",
+"turned on",
+"looked up"
+],
+"correct": 0,
+"exp": "run out of = hết."
+},
+{
+"type": "MC",
+"q": "Which is correct?",
+"opts": [
+"Turn off it.",
+"Turn it off.",
+"Turn off to it.",
+"Off turn it."
+],
+"correct": 1,
+"exp": "Đại từ đứng giữa cụm động từ: turn it off."
+}
+]
+},
+{
+"id": 114,
+"title": "Câu bị động (Passive voice)",
+"level": "B1",
+"summary": "Nhấn mạnh hành động hoặc đối tượng chịu tác động thay vì người thực hiện.",
+"content": "Cấu trúc chung: S + be + V3 (+ by + người thực hiện).\n• Hiện tại đơn: am/is/are + V3 (English is spoken here.)\n• Quá khứ đơn: was/were + V3 (The window was broken.)\n• Hiện tại hoàn thành: have/has been + V3 (The work has been finished.)\n• Tương lai đơn: will be + V3 (The meeting will be held tomorrow.)\nCách đổi từ chủ động sang bị động: tân ngữ của câu chủ động → chủ ngữ của câu bị động; động từ → be + V3; chủ ngữ cũ → by + tân ngữ (có thể bỏ nếu không quan trọng).\nVí dụ: Tom wrote this letter. → This letter was written by Tom.",
+"examples": [
+{
+"en": "The cake was made by my mother.",
+"vi": "Chiếc bánh được mẹ tôi làm."
+},
+{
+"en": "English is spoken all over the world.",
+"vi": "Tiếng Anh được nói trên khắp thế giới."
+},
+{
+"en": "The report will be finished tomorrow.",
+"vi": "Báo cáo sẽ được hoàn thành vào ngày mai."
+}
+],
+"questions": [
+{
+"type": "MC",
+"q": "This book ___ by a famous author.",
+"opts": [
+"wrote",
+"was written",
+"is wrote",
+"has write"
+],
+"correct": 1,
+"exp": "Bị động quá khứ: was + V3."
+},
+{
+"type": "FB",
+"q": "English ___ (speak) in many countries.",
+"accept": [
+"is spoken"
+],
+"exp": "Bị động hiện tại đơn: is/are + V3."
+},
+{
+"type": "MC",
+"q": "The room ___ every day.",
+"opts": [
+"cleans",
+"is cleaned",
+"cleaned",
+"cleaning"
+],
+"correct": 1,
+"exp": "is + V3 của clean: is cleaned."
+},
+{
+"type": "FB",
+"q": "The homework ___ (finish) by tomorrow. (will)",
+"accept": [
+"will be finished"
+],
+"exp": "Bị động tương lai: will be + V3."
+},
+{
+"type": "MC",
+"q": "Change to passive: \"They built this bridge in 1990.\"",
+"opts": [
+"This bridge built in 1990.",
+"This bridge was built in 1990.",
+"This bridge is built in 1990.",
+"This bridge has built in 1990."
+],
+"correct": 1,
+"exp": "Quá khứ đơn bị động: was built."
+},
+{
+"type": "MC",
+"q": "The windows ___ yet.",
+"opts": [
+"haven't cleaned",
+"haven't been cleaned",
+"weren't clean",
+"aren't cleaning"
+],
+"correct": 1,
+"exp": "Hiện tại hoàn thành bị động: haven't been + V3."
+}
+]
+}
+]
+}

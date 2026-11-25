@@ -16,6 +16,12 @@ interface QuizAttemptDao {
               WHERE a.id = :id AND a.user_id = :uid""")
     fun observeWithAnswers(uid: String, id: Long): Flow<AttemptDetailWithAnswers?>
 
+    @Query("SELECT * FROM quiz_attempts WHERE user_id = :uid ORDER BY completed_at")
+    fun observeEntities(uid: String): Flow<List<QuizAttemptEntity>>
+
+    @Query("SELECT * FROM attempt_answers WHERE attempt_id = :attemptId ORDER BY id")
+    suspend fun answersFor(attemptId: Long): List<AttemptAnswerEntity>
+
     @Insert suspend fun insertAttempt(attempt: QuizAttemptEntity): Long
     @Insert suspend fun insertAnswers(answers: List<AttemptAnswerEntity>)
 
