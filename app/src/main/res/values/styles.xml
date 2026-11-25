@@ -1,4 +1,11 @@
-<resources><style name="Theme.EngMate" parent="android:style/Theme.Material.Light.NoActionBar">
-    <item name="android:fontFamily">sans</item><item name="android:windowLightStatusBar">true</item>
-    <item name="android:windowBackground">#FFF8F9FF</item>
-</style></resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Launch window matches the Compose background so the first frame does not flash. -->
+    <style name="Theme.EngMate" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">#FFF3F9FF</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:colorAccent">#FF2C71B7</item>
+    </style>
+</resources>
