@@ -20,7 +20,9 @@ import com.engmate.app.feature.grammar.presentation.lesson.GrammarLessonScreen
 import com.engmate.app.feature.grammar.presentation.topics.GrammarLessonsScreen
 import com.engmate.app.feature.grammar.presentation.topics.GrammarLessonsViewModel
 import com.engmate.app.feature.flashcard.presentation.review.FlashcardScreen
+import com.engmate.app.feature.home.presentation.HomeActions
 import com.engmate.app.feature.home.presentation.HomeScreen
+import com.engmate.app.feature.home.presentation.SearchScreen
 import com.engmate.app.feature.vocabulary.presentation.worddetail.WordDetailScreen
 import com.engmate.app.feature.vocabulary.presentation.topics.VocabularyTopicsScreen
 import com.engmate.app.feature.notebook.presentation.NotebookScreen
@@ -32,7 +34,7 @@ import com.engmate.app.feature.quiz.domain.QuizSource
 enum class MainTab(val label: String, @DrawableRes val icon: Int) {
     HOME("Trang chủ", R.drawable.ic_home),
     LEARN("Học", R.drawable.ic_school),
-    NOTEBOOK("Sổ tay", R.drawable.ic_book),
+    NOTEBOOK("Sổ tay", R.drawable.ic_notebook),
     PROFILE("Hồ sơ", R.drawable.ic_person),
 }
 
@@ -45,6 +47,8 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
     // Full-screen pages over the tabs: Chi tiết từ vựng, and a flashcard round for a handbook.
     var openWord by rememberSaveable(user?.uid) { mutableStateOf<String?>(null) }
     var studyHandbook by rememberSaveable(user?.uid) { mutableStateOf<Long?>(null) }
+    // Tra từ, opened from the home header; a word opened from it returns here.
+    var searching by rememberSaveable { mutableStateOf(false) }
     // Đông's quiz, result, placement and reminder pages (see QuizRoutes.kt).
     var quizRouteKey by rememberSaveable(user?.uid) { mutableStateOf<String?>(null) }
     val quizRoute = QuizRoute.decode(quizRouteKey)
@@ -75,6 +79,9 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
     } else if (openWord != null) {
         BackHandler { openWord = null }
         WordDetailScreen(viewModel(), openWord!!, onBack = { openWord = null }, onPronunciationScored = actions::pronunciationScored)
+    } else if (searching) {
+        BackHandler { searching = false }
+        SearchScreen(viewModel(), onBack = { searching = false }, onOpenWord = { openWord = it.word })
     } else if (studyHandbook != null) {
         BackHandler { studyHandbook = null }
         FlashcardScreen(viewModel(), studyHandbook!!, onClose = { studyHandbook = null })
@@ -108,8 +115,18 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
             Box(Modifier.fillMaxSize().padding(padding).consumeWindowInsets(padding), contentAlignment = androidx.compose.ui.Alignment.TopCenter) {
                 Box(Modifier.fillMaxHeight().widthIn(max = 480.dp).fillMaxWidth()) {
                     when (tab) {
-                        MainTab.HOME -> HomeScreen(viewModel(), onOpenLessons = { lessonId = null; tab = MainTab.LEARN },
-                            onOpenLesson = { lessonId = it; tab = MainTab.LEARN }, onOpenWord = { openWord = it.word })
+                        MainTab.HOME -> HomeScreen(viewModel(), HomeActions(
+                            onOpenLessons = { learnVocabulary = false; tab = MainTab.LEARN },
+                            onOpenLesson = { lessonId = it },
+                            onOpenSearch = { searching = true },
+                            onOpenVocabulary = { learnVocabulary = true; tab = MainTab.LEARN },
+                            onReviewDue = { tab = MainTab.NOTEBOOK },
+                            onOpenNotebook = { tab = MainTab.NOTEBOOK },
+                            onPlacement = { openQuiz(QuizRoute.Placement) },
+                            onOpenAttempt = { openQuiz(QuizRoute.Result(it)) },
+                            onOpenProfile = { tab = MainTab.PROFILE },
+                            onLogin = { showAuth = true },
+                        ))
                         // One level of choice: the Học heading and a segmented switch, no second tab row.
                         MainTab.LEARN -> Column(Modifier.fillMaxSize().statusBarsPadding()) {
                             Text("Học", style = MaterialTheme.typography.headlineMedium,
