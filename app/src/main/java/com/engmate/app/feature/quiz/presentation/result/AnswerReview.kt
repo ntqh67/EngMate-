@@ -9,6 +9,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.engmate.app.R
 import com.engmate.app.core.ui.components.ChipRow
+import com.engmate.app.core.ui.components.InfoCard
 import com.engmate.app.core.ui.theme.successText
 import com.engmate.app.feature.quiz.domain.AnswerType
 import com.engmate.app.feature.quiz.domain.AnsweredQuestion
@@ -27,8 +28,8 @@ internal fun AnswerFilterRow(total: Int, wrong: Int, selected: AnswerFilter, onS
 @Composable
 internal fun AnswerReviewCard(number: Int, answer: AnsweredQuestion) {
     val color = if (answer.isCorrect) MaterialTheme.colorScheme.successText else MaterialTheme.colorScheme.error
-    OutlinedCard(Modifier.fillMaxWidth()) {
-        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+    InfoCard {
+        Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Icon(painterResource(if (answer.isCorrect) R.drawable.ic_check_circle else R.drawable.ic_cancel), null,
                     tint = color, modifier = Modifier.size(18.dp))

@@ -1,11 +1,13 @@
 package com.engmate.app.feature.pronunciation.domain
 
 data class WordMatch(val word: String, val matched: Boolean)
-data class PronunciationResult(val score: Int, val words: List<WordMatch>)
+/** [extra] are heard words that match nothing in the target, e.g. a repeated word. */
+data class PronunciationResult(val score: Int, val words: List<WordMatch>, val extra: List<String> = emptyList())
 
 /**
- * Compares what the speech recognizer heard with the target sentence, word by word: the score is the share of target words found
- * in order (longest common subsequence), so extra or repeated words do not help and a missed word lowers the score.
+ * Compares what the speech recognizer heard with the target sentence, word by word. Target words are matched in order
+ * (longest common subsequence); the score is matched / (target words + extra heard words), so a missing word and an
+ * extra or repeated word both cost points: "boy boy" for "boy" scores 50, not 100.
  * A one-letter difference in a long word still counts, because recognizers often drop or add a letter.
  */
 object PronunciationScorer {
@@ -32,13 +34,16 @@ object PronunciationScorer {
         for (i in 1..want.size) for (j in 1..heard.size)
             lcs[i][j] = if (same(want[i - 1], heard[j - 1])) lcs[i - 1][j - 1] + 1 else maxOf(lcs[i - 1][j], lcs[i][j - 1])
         val matched = BooleanArray(want.size)
+        val used = BooleanArray(heard.size)
         var i = want.size; var j = heard.size
         while (i > 0 && j > 0) when {
-            same(want[i - 1], heard[j - 1]) && lcs[i][j] == lcs[i - 1][j - 1] + 1 -> { matched[i - 1] = true; i--; j-- }
+            same(want[i - 1], heard[j - 1]) && lcs[i][j] == lcs[i - 1][j - 1] + 1 -> { matched[i - 1] = true; used[j - 1] = true; i--; j-- }
             lcs[i - 1][j] >= lcs[i][j - 1] -> i--
             else -> j--
         }
-        return PronunciationResult(Math.round(100f * lcs[want.size][heard.size] / want.size), want.mapIndexed { n, w -> WordMatch(w, matched[n]) })
+        val hits = lcs[want.size][heard.size]
+        val extra = heard.filterIndexed { n, _ -> !used[n] }
+        return PronunciationResult(Math.round(100f * hits / (want.size + extra.size)), want.mapIndexed { n, w -> WordMatch(w, matched[n]) }, extra)
     }
 
     /** Picks the best of the recognizer's alternatives. */

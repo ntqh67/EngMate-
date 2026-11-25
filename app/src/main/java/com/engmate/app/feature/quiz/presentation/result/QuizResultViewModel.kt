@@ -10,6 +10,19 @@ import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
+import com.engmate.app.feature.progress.data.local.DailyStudyStatEntity
+import com.engmate.app.feature.progress.data.local.StudyDao
+import com.engmate.app.feature.progress.presentation.calculateProgress
+import java.time.Clock
+import java.time.LocalDate
+import java.time.ZoneId
+
+/** Encouragement under the score ring. */
+internal fun resultMessage(percent: Int): String = when {
+    percent >= 80 -> "Tuyệt vời!"
+    percent >= 50 -> "Khá lắm!"
+    else -> "Cố thêm chút nữa nhé"
+}
 
 data class QuizResultUiState(
     val attemptId: Long? = null,
@@ -33,7 +46,16 @@ data class QuizResultUiState(
 class QuizResultViewModel @Inject constructor(
     private val attempts: QuizAttemptRepository,
     private val session: UserSession,
+    study: StudyDao,
+    clock: Clock,
 ) : ViewModel() {
+    /** Current Chuỗi ngày học for the result tiles; null hides the tile (guest or unreadable stats). */
+    val streak: StateFlow<Int?> = (session.user.value?.uid?.let { uid ->
+        study.observeAllStats(uid).map<List<DailyStudyStatEntity>, Int?> { stats ->
+            calculateProgress(stats, 0, emptyList(), LocalDate.now(clock.withZone(ZoneId.systemDefault()))).streak
+        }.catch { emit(null) }
+    } ?: flowOf(null)).stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
+
     private val mutable = MutableStateFlow(QuizResultUiState())
     val state = mutable.asStateFlow()
     private var job: Job? = null

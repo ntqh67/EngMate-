@@ -16,6 +16,9 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.engmate.app.feature.auth.presentation.*
 import androidx.compose.ui.res.painterResource
 import com.engmate.app.R
+import com.engmate.app.core.ui.components.*
+import com.engmate.app.core.ui.theme.Spacing
+import com.engmate.app.core.ui.theme.screenPadding
 import com.engmate.app.core.sync.SyncRefreshViewModel
 import com.engmate.app.core.ui.components.BackTopBar
 import com.engmate.app.core.ui.components.MessageEffect
@@ -23,7 +26,10 @@ import com.engmate.app.feature.grammar.presentation.lesson.GrammarLessonScreen
 import com.engmate.app.feature.grammar.presentation.topics.GrammarLessonsScreen
 import com.engmate.app.feature.grammar.presentation.topics.GrammarLessonsViewModel
 import com.engmate.app.feature.flashcard.presentation.review.FlashcardScreen
+import com.engmate.app.feature.flashcard.presentation.review.FlashcardViewModel
+import com.engmate.app.feature.home.presentation.HomeActions
 import com.engmate.app.feature.home.presentation.HomeScreen
+import com.engmate.app.feature.home.presentation.SearchScreen
 import com.engmate.app.feature.vocabulary.presentation.worddetail.WordDetailScreen
 import com.engmate.app.feature.vocabulary.presentation.topics.VocabularyTopicsScreen
 import com.engmate.app.feature.notebook.presentation.NotebookScreen
@@ -35,7 +41,7 @@ import com.engmate.app.feature.quiz.domain.QuizSource
 enum class MainTab(val label: String, @DrawableRes val icon: Int) {
     HOME("Trang chủ", R.drawable.ic_home),
     LEARN("Học", R.drawable.ic_school),
-    NOTEBOOK("Sổ tay", R.drawable.ic_book),
+    NOTEBOOK("Sổ tay", R.drawable.ic_notebook),
     PROFILE("Hồ sơ", R.drawable.ic_person),
 }
 
@@ -48,6 +54,13 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
     // Full-screen pages over the tabs: Chi tiết từ vựng, and a flashcard round for a handbook.
     var openWord by rememberSaveable(user?.uid) { mutableStateOf<String?>(null) }
     var studyHandbook by rememberSaveable(user?.uid) { mutableStateOf<Long?>(null) }
+    // Ôn tập hôm nay: a flashcard round over every word due for review.
+    var studyDue by rememberSaveable(user?.uid) { mutableStateOf(false) }
+    // Tra từ, opened from the home header; a word opened from it returns here.
+    var searching by rememberSaveable { mutableStateOf(false) }
+    // Cài đặt and Sửa hồ sơ open as full pages from the Hồ sơ tab.
+    var settingsOpen by rememberSaveable(user?.uid) { mutableStateOf(false) }
+    var editProfile by rememberSaveable(user?.uid) { mutableStateOf(false) }
     // Đông's quiz, result, placement and reminder pages (see QuizRoutes.kt).
     var quizRouteKey by rememberSaveable(user?.uid) { mutableStateOf<String?>(null) }
     val quizRoute = QuizRoute.decode(quizRouteKey)
@@ -67,7 +80,7 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
     var learnVocabulary by rememberSaveable { mutableStateOf(false) }
     var showAuth by rememberSaveable { mutableStateOf(false) }
     LaunchedEffect(user) { if (user != null) showAuth = false }
-    val needsProfile = user != null && (tab == MainTab.NOTEBOOK || tab == MainTab.PROFILE || quizRoute != null || studyHandbook != null)
+    val needsProfile = user != null && (tab == MainTab.NOTEBOOK || tab == MainTab.PROFILE || quizRoute != null || studyHandbook != null || studyDue)
     if (showAuth && user == null) {
         BackHandler { showAuth = false }
         Box(Modifier.fillMaxSize()) {
@@ -77,60 +90,95 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
     } else if (needsProfile && (profileState.user?.uid != user?.uid || profileState.loading)) {
         Box(Modifier.fillMaxSize(), contentAlignment = androidx.compose.ui.Alignment.Center) { CircularProgressIndicator() }
     } else if (needsProfile && profileState.profile == null && !profileState.loadFailed) {
-        Column(Modifier.fillMaxSize().safeDrawingPadding()) {
-            Box(Modifier.weight(1f)) { ProfileScreen(profile) }
-            Row(Modifier.padding(horizontal = 24.dp)) {
-                TextButton(onClick = { tab = MainTab.HOME; quizRouteKey = null; studyHandbook = null }) { Text("Để sau") }
-                TextButton(onClick = auth::signOut) { Text("Đăng xuất") }
-            }
-        }
+        ProfileScreen(profile, onLater = { tab = MainTab.HOME; quizRouteKey = null; studyHandbook = null; studyDue = false }, onSignOut = auth::signOut)
     } else if (openWord != null) {
         BackHandler { openWord = null }
         WordDetailScreen(viewModel(), openWord!!, onBack = { openWord = null }, onPronunciationScored = actions::pronunciationScored)
+    } else if (searching) {
+        BackHandler { searching = false }
+        SearchScreen(viewModel(), onBack = { searching = false }, onOpenWord = { openWord = it.word })
     } else if (studyHandbook != null) {
         BackHandler { studyHandbook = null }
-        FlashcardScreen(viewModel(), studyHandbook!!, onClose = { studyHandbook = null })
+        FlashcardScreen(viewModel(), studyHandbook!!, onClose = { studyHandbook = null }, onFindWords = { studyHandbook = null; searching = true })
+    } else if (studyDue) {
+        BackHandler { studyDue = false }
+        FlashcardScreen(viewModel(key = "flashcard-due"), FlashcardViewModel.DUE, onClose = { studyDue = false })
     } else if (quizRoute != null) {
         QuizRouteHost(quizRoute, navigate = ::openQuiz, onOpenProfile = { openQuiz(null); tab = MainTab.PROFILE })
-    } else {
-        BackHandler(enabled = tab != MainTab.HOME || lessonId != null) {
-            if (tab == MainTab.LEARN && lessonId != null) lessonId = null else tab = MainTab.HOME
+    } else if (editProfile) {
+        BackHandler { profile.cancelEdit(); editProfile = false }
+        // Closing after a successful save: the form leaves editing mode once the profile is stored.
+        ProfileScreen(profile, onClose = { profile.cancelEdit(); editProfile = false }, onPlacement = { openQuiz(QuizRoute.Placement) })
+        // Saving or cancelling ends editing; leave the page then, unless the save failed validation.
+        var wasEditing by remember { mutableStateOf(false) }
+        LaunchedEffect(profileState.editing, profileState.busy) {
+            if (wasEditing && !profileState.editing && !profileState.busy) editProfile = false
+            wasEditing = profileState.editing || (wasEditing && profileState.busy)
         }
+    } else if (settingsOpen) {
+        BackHandler { settingsOpen = false }
+        SettingsScreen(profile, user?.email.orEmpty(), onBack = { settingsOpen = false }, onPlacement = { openQuiz(QuizRoute.Placement) },
+            onReminder = { openQuiz(QuizRoute.Reminder) }, onEditProfile = { editProfile = true }, onSignOut = { settingsOpen = false; auth.signOut() })
+    } else if (lessonId != null) {
+        // A lesson is a full page: no bottom bar, its own sticky "Làm bài tập" button.
+        BackHandler { lessonId = null }
+        val lessons: GrammarLessonsViewModel = viewModel()
+        GrammarLessonScreen(lessons, lessonId!!, onBack = { lessonId = null },
+            onPractice = { id -> if (user == null) showAuth = true else openQuiz(QuizRoute.Quiz(QuizSource.Lesson(id))) })
+    } else {
+        BackHandler(enabled = tab != MainTab.HOME) { tab = MainTab.HOME }
         val lessons: GrammarLessonsViewModel = viewModel()
         val syncing by sync.refreshing.collectAsStateWithLifecycle()
         val syncMessage by sync.message.collectAsStateWithLifecycle()
         val snackbar = remember { SnackbarHostState() }
         MessageEffect(syncMessage, snackbar, sync::messageShown)
         Scaffold(snackbarHost = { SnackbarHost(snackbar) }, bottomBar = {
-            NavigationBar {
+            NavigationBar(containerColor = MaterialTheme.colorScheme.surface) {
                 MainTab.entries.forEach { t ->
-                    NavigationBarItem(selected = tab == t, onClick = { if (t == MainTab.LEARN && tab == MainTab.LEARN) lessonId = null; tab = t },
-                        icon = { Icon(painterResource(t.icon), null) }, label = { Text(t.label, maxLines = 1) })
+                    // Selected icon and label share one color.
+                    NavigationBarItem(selected = tab == t, onClick = { tab = t },
+                        icon = { Icon(painterResource(t.icon), null) }, label = { Text(t.label, maxLines = 1) },
+                        colors = NavigationBarItemDefaults.colors(
+                            selectedIconColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                            selectedTextColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                            indicatorColor = MaterialTheme.colorScheme.primaryContainer,
+                            unselectedIconColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                            unselectedTextColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                        ))
                 }
             }
         }) { padding ->
             Box(Modifier.fillMaxSize().padding(padding).consumeWindowInsets(padding), contentAlignment = androidx.compose.ui.Alignment.TopCenter) {
                 Box(Modifier.fillMaxHeight().widthIn(max = 480.dp).fillMaxWidth()) {
                     when (tab) {
-                        MainTab.HOME -> HomeScreen(viewModel(), onOpenLessons = { lessonId = null; tab = MainTab.LEARN },
-                            onOpenLesson = { lessonId = it; tab = MainTab.LEARN }, onOpenWord = { openWord = it.word })
-                        // Đông's grammar screens (restored from before 2d5cb51).
-                        MainTab.LEARN -> lessonId?.let { GrammarLessonScreen(lessons, it, onBack = { lessonId = null },
-                            onPractice = { id -> if (user == null) showAuth = true else openQuiz(QuizRoute.Quiz(QuizSource.Lesson(id))) }) }
-                            ?: Column(Modifier.fillMaxSize()) {
-                                PrimaryTabRow(selectedTabIndex = if (learnVocabulary) 1 else 0, Modifier.statusBarsPadding()) {
-                                    Tab(selected = !learnVocabulary, onClick = { learnVocabulary = false }, text = { Text("Ngữ pháp") })
-                                    Tab(selected = learnVocabulary, onClick = { learnVocabulary = true }, text = { Text("Từ vựng") })
-                                }
-                                Box(Modifier.weight(1f).consumeWindowInsets(WindowInsets.statusBars)) {
-                                    if (learnVocabulary) VocabularyTopicsScreen(viewModel(), onOpenWord = { openWord = it })
-                                    else GrammarLessonsScreen(lessons, onOpenLesson = { lessonId = it })
-                                }
+                        MainTab.HOME -> HomeScreen(viewModel(), HomeActions(
+                            onOpenLessons = { learnVocabulary = false; tab = MainTab.LEARN },
+                            onOpenLesson = { lessonId = it },
+                            onOpenSearch = { searching = true },
+                            onOpenVocabulary = { learnVocabulary = true; tab = MainTab.LEARN },
+                            onReviewDue = { studyDue = true },
+                            onOpenNotebook = { tab = MainTab.NOTEBOOK },
+                            onPlacement = { openQuiz(QuizRoute.Placement) },
+                            onOpenAttempt = { openQuiz(QuizRoute.Result(it)) },
+                            onOpenProfile = { tab = MainTab.PROFILE },
+                            onLogin = { showAuth = true },
+                        ))
+                        // One level of choice: the Học heading and a segmented switch, no second tab row.
+                        MainTab.LEARN -> Column(Modifier.fillMaxSize().statusBarsPadding()) {
+                            Text("Học", style = MaterialTheme.typography.headlineMedium,
+                                modifier = Modifier.padding(horizontal = screenPadding).padding(top = Spacing.l, bottom = Spacing.m))
+                            AppSegmentedTabs(listOf("Ngữ pháp", "Từ vựng"), if (learnVocabulary) 1 else 0, { learnVocabulary = it == 1 },
+                                Modifier.padding(horizontal = screenPadding))
+                            Box(Modifier.weight(1f).consumeWindowInsets(WindowInsets.statusBars)) {
+                                if (learnVocabulary) VocabularyTopicsScreen(viewModel(), onOpenWord = { openWord = it })
+                                else GrammarLessonsScreen(lessons, onOpenLesson = { lessonId = it })
                             }
-                        MainTab.NOTEBOOK -> if (user == null) LoginPrompt("Sổ tay từ vựng", onLogin = { showAuth = true }) else NotebookScreen(viewModel(), onOpenWord = { openWord = it }, onStudy = { studyHandbook = it },
+                        }
+                        MainTab.NOTEBOOK -> if (user == null) LoginPrompt("Sổ tay", onLogin = { showAuth = true }) else NotebookScreen(viewModel(), onOpenWord = { openWord = it }, onStudy = { studyHandbook = it },
+                            onFindWords = { searching = true }, onBrowseTopics = { learnVocabulary = true; tab = MainTab.LEARN },
                             refreshing = syncing, onRefresh = sync::refresh)
-                        MainTab.PROFILE -> if (user == null) LoginPrompt("Hồ sơ và tiến độ học", onLogin = { showAuth = true }) else ProfileTab(profile, progress, user?.email.orEmpty(), auth::signOut,
-                            onPlacement = { openQuiz(QuizRoute.Placement) }, onReminder = { openQuiz(QuizRoute.Reminder) },
+                        MainTab.PROFILE -> if (user == null) LoginPrompt("Hồ sơ và tiến độ học", onLogin = { showAuth = true }, icon = R.drawable.ic_chart) else ProfileHomeScreen(profile, progress, onEdit = { editProfile = true }, onSettings = { settingsOpen = true },
+                            onStudy = { learnVocabulary = false; tab = MainTab.LEARN }, onReviewDue = { studyDue = true },
                             refreshing = syncing, onRefresh = sync::refresh)
                     }
                 }
@@ -139,42 +187,10 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
     }
 }
 
-/** Hồ sơ holds the profile and Huân's statistics; ⚙ opens settings with sign-out. */
-@Composable private fun ProfileTab(profile: ProfileViewModel, progress: ProgressViewModel, email: String, onSignOut: () -> Unit,
-    onPlacement: () -> Unit = {}, onReminder: () -> Unit = {}, refreshing: Boolean = false, onRefresh: () -> Unit = {}) {
-    var showProgress by rememberSaveable { mutableStateOf(false) }
-    var settings by rememberSaveable { mutableStateOf(false) }
-    if (settings) {
-        BackHandler { settings = false }
-        Column {
-            BackTopBar("Cài đặt", onBack = { settings = false })
-            Column(Modifier.padding(24.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
-                LearningShortcuts(onPlacement, onReminder)
-                Text(email)
-                OutlinedButton(onClick = onSignOut, modifier = Modifier.fillMaxWidth()) { Text("Đăng xuất") }
-            }
-        }
-        return
-    }
-    Column(Modifier.fillMaxSize()) {
-        PrimaryTabRow(selectedTabIndex = if (showProgress) 1 else 0, Modifier.statusBarsPadding()) {
-            Tab(selected = !showProgress, onClick = { showProgress = false }, text = { Text("Hồ sơ") })
-            Tab(selected = showProgress, onClick = { showProgress = true }, text = { Text("Tiến độ") })
-        }
-        Box(Modifier.weight(1f)) {
-            if (showProgress) ProgressScreen(progress, refreshing, onRefresh) else ProfileScreen(profile, onSettings = { settings = true })
-        }
-    }
-}
-
 /** Shown in place of a personal tab while browsing as a guest. */
-@Composable private fun LoginPrompt(feature: String, onLogin: () -> Unit) {
-    Column(Modifier.fillMaxSize().padding(32.dp), verticalArrangement = Arrangement.Center, horizontalAlignment = androidx.compose.ui.Alignment.CenterHorizontally) {
-        Text(feature, style = MaterialTheme.typography.headlineSmall)
-        Spacer(Modifier.height(8.dp))
-        Text("Đăng nhập để lưu dữ liệu học của bạn và đồng bộ giữa các thiết bị.", style = MaterialTheme.typography.bodyLarge,
-            textAlign = androidx.compose.ui.text.style.TextAlign.Center)
-        Spacer(Modifier.height(24.dp))
-        Button(onClick = onLogin) { Text("Đăng nhập / Đăng ký") }
+@Composable private fun LoginPrompt(feature: String, onLogin: () -> Unit, @DrawableRes icon: Int = R.drawable.ic_notebook) {
+    Box(Modifier.fillMaxSize().statusBarsPadding(), contentAlignment = androidx.compose.ui.Alignment.Center) {
+        EmptyState(feature, "Đăng nhập để lưu từ, tiến độ và chuỗi ngày học, đồng bộ giữa các thiết bị.", icon = icon,
+            action = { PrimaryButton("Đăng nhập hoặc đăng ký", onLogin) })
     }
 }

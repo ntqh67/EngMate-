@@ -58,31 +58,3 @@ internal fun QuizRouteHost(route: QuizRoute, navigate: (QuizRoute?) -> Unit, onO
         QuizRoute.Reminder -> ReminderSettingsScreen(onBack = { navigate(null) })
     }
 }
-
-/** "Học tập" group shown in Cài đặt: placement test and daily reminder. */
-@Composable
-internal fun LearningShortcuts(onPlacement: () -> Unit, onReminder: () -> Unit) {
-    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        SectionHeader("Học tập")
-        Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surfaceContainerLow,
-            modifier = Modifier.fillMaxWidth()) {
-            Column {
-                ShortcutRow(R.drawable.ic_school, "Kiểm tra trình độ", "15 câu hỏi để xác định trình độ A1–B2", onPlacement)
-                HorizontalDivider(Modifier.padding(start = 56.dp), color = MaterialTheme.colorScheme.outlineVariant)
-                ShortcutRow(R.drawable.ic_notifications, "Nhắc học hằng ngày", "Chọn giờ nhận thông báo nhắc học", onReminder)
-            }
-        }
-    }
-}
-
-@Composable
-private fun ShortcutRow(@DrawableRes icon: Int, title: String, body: String, onClick: () -> Unit) {
-    ListItem(
-        leadingContent = { Icon(painterResource(icon), null, tint = MaterialTheme.colorScheme.primary) },
-        headlineContent = { Text(title) },
-        supportingContent = { Text(body) },
-        trailingContent = { Icon(painterResource(R.drawable.ic_chevron_right), null) },
-        colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow),
-        modifier = Modifier.clickable(onClick = onClick),
-    )
-}
