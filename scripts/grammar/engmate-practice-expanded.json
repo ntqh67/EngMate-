@@ -1,0 +1,1645 @@
+{
+  "version": 1,
+  "author": "EngMate (AI-assisted authoring)",
+  "origin": "Original supplementary exercises, not extracted from the textbook answer key.",
+  "questions": [
+    {
+      "key": "chapter-01-extra-01",
+      "chapter": 1,
+      "prompt": "Chọn câu đúng: “___ knows the answer.”",
+      "choices": [
+        "He",
+        "Him",
+        "His",
+        "Them"
+      ],
+      "answer": "He",
+      "explanation": "He là đại từ chủ ngữ số ít, đi với knows."
+    },
+    {
+      "key": "chapter-01-extra-02",
+      "chapter": 1,
+      "prompt": "Chọn câu đúng: “I can see ___.”",
+      "choices": [
+        "her",
+        "she",
+        "hers",
+        "we"
+      ],
+      "answer": "her",
+      "explanation": "Sau see cần đại từ tân ngữ her."
+    },
+    {
+      "key": "chapter-01-extra-03",
+      "chapter": 1,
+      "prompt": "Câu nào diễn đạt “Nam giúp Lan”?",
+      "choices": [
+        "Nam helps Lan.",
+        "Lan helps Nam.",
+        "Nam and Lan help.",
+        "Lan is Nam."
+      ],
+      "answer": "Nam helps Lan.",
+      "explanation": "Nam là người giúp nên đứng làm chủ ngữ; Lan là người nhận hành động."
+    },
+    {
+      "key": "chapter-01-extra-04",
+      "chapter": 1,
+      "prompt": "Chọn câu có trật tự từ đúng trong câu kể thông thường.",
+      "choices": [
+        "They watch films.",
+        "Watch they films.",
+        "Films they watch do.",
+        "They films watch."
+      ],
+      "answer": "They watch films.",
+      "explanation": "Câu kể thông thường có thứ tự chủ ngữ They, động từ watch, tân ngữ films."
+    },
+    {
+      "key": "chapter-01-extra-05",
+      "chapter": 1,
+      "prompt": "Hai câu “Mai and An sing” và “An and Mai sing” có khác nhau về người hát không?",
+      "choices": [
+        "Không, cả hai đều nói Mai và An hát",
+        "Có, chỉ Mai hát trong câu đầu",
+        "Có, chỉ An hát trong câu sau",
+        "Có, câu sau không có người hát"
+      ],
+      "answer": "Không, cả hai đều nói Mai và An hát",
+      "explanation": "Đổi thứ tự hai tên nối bằng and không thay đổi những người thực hiện hành động."
+    },
+    {
+      "key": "chapter-01-extra-06",
+      "chapter": 1,
+      "prompt": "Chọn từ phù hợp: “They invited ___ to dinner.”",
+      "choices": [
+        "us",
+        "we",
+        "our",
+        "ours"
+      ],
+      "answer": "us",
+      "explanation": "Us là đại từ tân ngữ, dùng sau invited."
+    },
+    {
+      "key": "chapter-01-extra-07",
+      "chapter": 1,
+      "prompt": "Trong “The girl pushes the cart”, đối tượng nhận hành động là gì?",
+      "choices": [
+        "the cart",
+        "The girl",
+        "pushes",
+        "Không có đối tượng"
+      ],
+      "answer": "the cart",
+      "explanation": "The cart là tân ngữ của pushes, chỉ vật được đẩy."
+    },
+    {
+      "key": "chapter-02-extra-01",
+      "chapter": 2,
+      "prompt": "Chủ ngữ đầy đủ của “Two young children are playing outside” là gì?",
+      "choices": [
+        "Two young children",
+        "young children are",
+        "are playing outside",
+        "outside"
+      ],
+      "answer": "Two young children",
+      "explanation": "Two young children là cả cụm danh từ làm chủ ngữ; are playing outside là vị ngữ."
+    },
+    {
+      "key": "chapter-02-extra-02",
+      "chapter": 2,
+      "prompt": "Chủ ngữ đơn của “My best friend lives nearby” là từ nào?",
+      "choices": [
+        "friend",
+        "My",
+        "best",
+        "lives"
+      ],
+      "answer": "friend",
+      "explanation": "Friend là danh từ trung tâm; My và best bổ nghĩa cho danh từ này."
+    },
+    {
+      "key": "chapter-02-extra-03",
+      "chapter": 2,
+      "prompt": "Vị ngữ đầy đủ của “The bus stopped near our school” là gì?",
+      "choices": [
+        "stopped near our school",
+        "The bus",
+        "our school",
+        "near our school"
+      ],
+      "answer": "stopped near our school",
+      "explanation": "Vị ngữ gồm động từ stopped cùng cụm bổ nghĩa near our school."
+    },
+    {
+      "key": "chapter-02-extra-04",
+      "chapter": 2,
+      "prompt": "Trong “Lan and Minh are laughing”, chủ ngữ là gì?",
+      "choices": [
+        "Lan and Minh",
+        "Lan",
+        "Minh",
+        "are laughing"
+      ],
+      "answer": "Lan and Minh",
+      "explanation": "Hai tên được nối bằng and cùng tạo thành chủ ngữ ghép."
+    },
+    {
+      "key": "chapter-02-extra-05",
+      "chapter": 2,
+      "prompt": "Chủ ngữ của “The book on the shelf belongs to me” là gì?",
+      "choices": [
+        "The book on the shelf",
+        "the shelf",
+        "belongs to me",
+        "me"
+      ],
+      "answer": "The book on the shelf",
+      "explanation": "Cụm on the shelf bổ nghĩa cho book và nằm trong chủ ngữ đầy đủ."
+    },
+    {
+      "key": "chapter-02-extra-06",
+      "chapter": 2,
+      "prompt": "Trong “Our cat sleeps on the sofa”, từ nào là động từ chính của vị ngữ?",
+      "choices": [
+        "sleeps",
+        "cat",
+        "sofa",
+        "Our"
+      ],
+      "answer": "sleeps",
+      "explanation": "Sleeps diễn tả hoạt động của chủ ngữ Our cat."
+    },
+    {
+      "key": "chapter-02-extra-07",
+      "chapter": 2,
+      "prompt": "Câu nào có chủ ngữ ghép?",
+      "choices": [
+        "Hoa and her brother cook dinner.",
+        "Hoa cooks dinner slowly.",
+        "Her brother cooks dinner.",
+        "Dinner is ready."
+      ],
+      "answer": "Hoa and her brother cook dinner.",
+      "explanation": "Hoa and her brother gồm hai thành phần được nối bằng and, cùng làm chủ ngữ."
+    },
+    {
+      "key": "chapter-04-extra-01",
+      "chapter": 4,
+      "prompt": "Từ nào gọi tên một địa điểm?",
+      "choices": [
+        "library",
+        "quickly",
+        "write",
+        "happy"
+      ],
+      "answer": "library",
+      "explanation": "Library nghĩa là thư viện, một danh từ chỉ địa điểm."
+    },
+    {
+      "key": "chapter-04-extra-02",
+      "chapter": 4,
+      "prompt": "Chọn động từ: “The baby ___ loudly.”",
+      "choices": [
+        "cries",
+        "crying",
+        "cry are",
+        "to cry"
+      ],
+      "answer": "cries",
+      "explanation": "Với chủ ngữ số ít the baby, động từ hiện tại đơn là cries."
+    },
+    {
+      "key": "chapter-04-extra-03",
+      "chapter": 4,
+      "prompt": "Dạng số nhiều của “box” là gì?",
+      "choices": [
+        "boxes",
+        "boxs",
+        "boxies",
+        "boxen"
+      ],
+      "answer": "boxes",
+      "explanation": "Danh từ kết thúc bằng x thường thêm -es: boxes."
+    },
+    {
+      "key": "chapter-04-extra-04",
+      "chapter": 4,
+      "prompt": "Dạng số nhiều của “woman” là gì?",
+      "choices": [
+        "women",
+        "womans",
+        "womanes",
+        "womens"
+      ],
+      "answer": "women",
+      "explanation": "Woman có dạng số nhiều bất quy tắc là women."
+    },
+    {
+      "key": "chapter-04-extra-05",
+      "chapter": 4,
+      "prompt": "Trong “Happiness matters”, từ nào là danh từ chỉ khái niệm?",
+      "choices": [
+        "Happiness",
+        "matters",
+        "Cả hai đều là động từ",
+        "Không có danh từ"
+      ],
+      "answer": "Happiness",
+      "explanation": "Happiness gọi tên trạng thái hạnh phúc, nên là danh từ trừu tượng."
+    },
+    {
+      "key": "chapter-04-extra-06",
+      "chapter": 4,
+      "prompt": "Chọn câu dùng “work” làm động từ.",
+      "choices": [
+        "I work at a school.",
+        "My work is difficult.",
+        "The work takes time.",
+        "This work is useful."
+      ],
+      "answer": "I work at a school.",
+      "explanation": "Trong I work at a school, work đứng sau chủ ngữ I và diễn tả hoạt động làm việc."
+    },
+    {
+      "key": "chapter-04-extra-07",
+      "chapter": 4,
+      "prompt": "Trong “The children built a house”, có bao nhiêu danh từ?",
+      "choices": [
+        "Hai: children và house",
+        "Một: built",
+        "Ba: The, children và built",
+        "Không có danh từ"
+      ],
+      "answer": "Hai: children và house",
+      "explanation": "Children chỉ người và house chỉ sự vật; built là động từ."
+    },
+    {
+      "key": "chapter-05-extra-01",
+      "chapter": 5,
+      "prompt": "Chọn tính từ: “It is a ___ day.”",
+      "choices": [
+        "sunny",
+        "sun",
+        "sunshine",
+        "sunnily"
+      ],
+      "answer": "sunny",
+      "explanation": "Sunny bổ nghĩa cho danh từ day, diễn tả một ngày có nắng."
+    },
+    {
+      "key": "chapter-05-extra-02",
+      "chapter": 5,
+      "prompt": "Chọn dạng so sánh nhất: “This is the ___ room in the hotel.”",
+      "choices": [
+        "largest",
+        "larger",
+        "large",
+        "more large"
+      ],
+      "answer": "largest",
+      "explanation": "So sánh một phòng với toàn bộ các phòng trong khách sạn dùng so sánh nhất largest."
+    },
+    {
+      "key": "chapter-05-extra-03",
+      "chapter": 5,
+      "prompt": "Chọn dạng đúng: “This task is ___ than the last one.”",
+      "choices": [
+        "more difficult",
+        "most difficult",
+        "difficultest",
+        "difficulter"
+      ],
+      "answer": "more difficult",
+      "explanation": "Difficult là tính từ dài, tạo so sánh hơn bằng more difficult."
+    },
+    {
+      "key": "chapter-05-extra-04",
+      "chapter": 5,
+      "prompt": "Tính từ trong “The tired workers went home” bổ nghĩa cho từ nào?",
+      "choices": [
+        "workers",
+        "went",
+        "home",
+        "The"
+      ],
+      "answer": "workers",
+      "explanation": "Tired mô tả trạng thái của những người lao động, tức workers."
+    },
+    {
+      "key": "chapter-05-extra-05",
+      "chapter": 5,
+      "prompt": "Chọn dạng so sánh hơn của “good”.",
+      "choices": [
+        "better",
+        "gooder",
+        "best",
+        "more good"
+      ],
+      "answer": "better",
+      "explanation": "Good có dạng so sánh hơn bất quy tắc là better; best là so sánh nhất."
+    },
+    {
+      "key": "chapter-05-extra-06",
+      "chapter": 5,
+      "prompt": "Chọn tính từ sau động từ nối: “The flowers smell ___.”",
+      "choices": [
+        "lovely",
+        "lovelily",
+        "loveliness",
+        "love"
+      ],
+      "answer": "lovely",
+      "explanation": "Smell ở đây là động từ nối, theo sau là tính từ lovely mô tả flowers."
+    },
+    {
+      "key": "chapter-05-extra-07",
+      "chapter": 5,
+      "prompt": "Chọn dạng đúng: “My bag is as ___ as yours.”",
+      "choices": [
+        "heavy",
+        "heavier",
+        "heaviest",
+        "more heavy"
+      ],
+      "answer": "heavy",
+      "explanation": "Cấu trúc so sánh bằng as ... as dùng tính từ ở dạng nguyên heavy."
+    },
+    {
+      "key": "chapter-06-extra-01",
+      "chapter": 6,
+      "prompt": "Chọn trạng từ: “He answered the question ___.”",
+      "choices": [
+        "carefully",
+        "careful",
+        "care",
+        "carefulness"
+      ],
+      "answer": "carefully",
+      "explanation": "Carefully bổ nghĩa cho động từ answered, chỉ cách trả lời."
+    },
+    {
+      "key": "chapter-06-extra-02",
+      "chapter": 6,
+      "prompt": "Trong “She almost finished”, almost bổ nghĩa cho từ nào?",
+      "choices": [
+        "finished",
+        "She",
+        "Không từ nào",
+        "Một danh từ bị lược bỏ"
+      ],
+      "answer": "finished",
+      "explanation": "Almost cho biết mức độ hoàn thành của hành động finished."
+    },
+    {
+      "key": "chapter-06-extra-03",
+      "chapter": 6,
+      "prompt": "Trong “He runs extremely quickly”, extremely bổ nghĩa cho từ nào?",
+      "choices": [
+        "quickly",
+        "He",
+        "runs trực tiếp",
+        "Không từ nào"
+      ],
+      "answer": "quickly",
+      "explanation": "Extremely chỉ mức độ của trạng từ quickly."
+    },
+    {
+      "key": "chapter-06-extra-04",
+      "chapter": 6,
+      "prompt": "Từ nào là trạng từ chỉ nơi chốn trong “Please wait outside”?",
+      "choices": [
+        "outside",
+        "Please wait",
+        "wait",
+        "Không có"
+      ],
+      "answer": "outside",
+      "explanation": "Outside cho biết nơi thực hiện hành động wait."
+    },
+    {
+      "key": "chapter-06-extra-05",
+      "chapter": 6,
+      "prompt": "Chọn từ phù hợp: “She plays the piano ___.”",
+      "choices": [
+        "well",
+        "good",
+        "goodness",
+        "betterest"
+      ],
+      "answer": "well",
+      "explanation": "Well là trạng từ chỉ cách chơi đàn; good là tính từ."
+    },
+    {
+      "key": "chapter-06-extra-06",
+      "chapter": 6,
+      "prompt": "Trong “They often visit us”, often diễn tả điều gì?",
+      "choices": [
+        "Tần suất",
+        "Màu sắc",
+        "Sự sở hữu",
+        "Số người"
+      ],
+      "answer": "Tần suất",
+      "explanation": "Often nghĩa là thường xuyên, một trạng từ chỉ tần suất."
+    },
+    {
+      "key": "chapter-06-extra-07",
+      "chapter": 6,
+      "prompt": "Chọn vị trí tự nhiên của trạng từ tần suất.",
+      "choices": [
+        "She usually walks to school.",
+        "She walks usually to school every.",
+        "Usually she to school walks.",
+        "She to usually walks school."
+      ],
+      "answer": "She usually walks to school.",
+      "explanation": "Usually thường đứng trước động từ thường walks trong câu khẳng định."
+    },
+    {
+      "key": "chapter-07-extra-01",
+      "chapter": 7,
+      "prompt": "Giới từ trong “She sat beside her friend” là từ nào?",
+      "choices": [
+        "beside",
+        "sat",
+        "friend",
+        "She"
+      ],
+      "answer": "beside",
+      "explanation": "Beside chỉ vị trí bên cạnh và đứng đầu cụm beside her friend."
+    },
+    {
+      "key": "chapter-07-extra-02",
+      "chapter": 7,
+      "prompt": "Chọn giới từ: “We walked ___ the bridge to reach the other side.”",
+      "choices": [
+        "across",
+        "through",
+        "between",
+        "among"
+      ],
+      "answer": "across",
+      "explanation": "Across diễn tả chuyển động từ phía này sang phía kia của cây cầu."
+    },
+    {
+      "key": "chapter-07-extra-03",
+      "chapter": 7,
+      "prompt": "Tân ngữ của giới từ trong “He arrived after lunch” là gì?",
+      "choices": [
+        "lunch",
+        "He",
+        "arrived",
+        "after"
+      ],
+      "answer": "lunch",
+      "explanation": "After là giới từ; lunch là danh từ làm tân ngữ của giới từ đó."
+    },
+    {
+      "key": "chapter-07-extra-04",
+      "chapter": 7,
+      "prompt": "Cụm nào là cụm giới từ?",
+      "choices": [
+        "with a smile",
+        "is smiling",
+        "she smiled",
+        "smiles warmly"
+      ],
+      "answer": "with a smile",
+      "explanation": "With mở đầu cụm giới từ, theo sau là tân ngữ a smile."
+    },
+    {
+      "key": "chapter-07-extra-05",
+      "chapter": 7,
+      "prompt": "Trong “The woman in the blue coat waved”, in the blue coat bổ nghĩa cho từ nào?",
+      "choices": [
+        "woman",
+        "waved",
+        "blue",
+        "The"
+      ],
+      "answer": "woman",
+      "explanation": "Cụm giới từ xác định người phụ nữ nào nên bổ nghĩa cho woman."
+    },
+    {
+      "key": "chapter-07-extra-06",
+      "chapter": 7,
+      "prompt": "Câu “A letter from my cousin arrived today” có cụm giới từ nào?",
+      "choices": [
+        "from my cousin",
+        "A letter",
+        "arrived today",
+        "my cousin arrived"
+      ],
+      "answer": "from my cousin",
+      "explanation": "From là giới từ và my cousin là tân ngữ của nó."
+    },
+    {
+      "key": "chapter-07-extra-07",
+      "chapter": 7,
+      "prompt": "Chọn đại từ sau giới từ: “This gift is for ___.”",
+      "choices": [
+        "him",
+        "he",
+        "his own he",
+        "they"
+      ],
+      "answer": "him",
+      "explanation": "Giới từ for cần dạng tân ngữ him, không dùng dạng chủ ngữ he."
+    },
+    {
+      "key": "chapter-08-extra-01",
+      "chapter": 8,
+      "prompt": "Chọn đại từ thay cho “Tom and I” ở vị trí chủ ngữ.",
+      "choices": [
+        "We",
+        "Us",
+        "They",
+        "Our"
+      ],
+      "answer": "We",
+      "explanation": "Tom and I bao gồm người nói và một người khác nên dùng we."
+    },
+    {
+      "key": "chapter-08-extra-02",
+      "chapter": 8,
+      "prompt": "Chọn từ: “These books belong to Sara. They are ___.”",
+      "choices": [
+        "hers",
+        "her",
+        "she",
+        "herself"
+      ],
+      "answer": "hers",
+      "explanation": "Hers là đại từ sở hữu đứng độc lập, thay cho her books."
+    },
+    {
+      "key": "chapter-08-extra-03",
+      "chapter": 8,
+      "prompt": "Chọn từ: “This is ___ umbrella.”",
+      "choices": [
+        "my",
+        "mine",
+        "I",
+        "me"
+      ],
+      "answer": "my",
+      "explanation": "Trước danh từ umbrella cần dạng sở hữu my; mine không đứng trực tiếp trước danh từ."
+    },
+    {
+      "key": "chapter-08-extra-04",
+      "chapter": 8,
+      "prompt": "Chọn từ: “I met Anna and gave ___ a note.”",
+      "choices": [
+        "her",
+        "she",
+        "hers",
+        "they"
+      ],
+      "answer": "her",
+      "explanation": "Her là đại từ tân ngữ thay cho Anna sau gave."
+    },
+    {
+      "key": "chapter-08-extra-05",
+      "chapter": 8,
+      "prompt": "“You” khi nói trực tiếp với một người thuộc ngôi nào?",
+      "choices": [
+        "Ngôi thứ hai",
+        "Ngôi thứ nhất",
+        "Ngôi thứ ba",
+        "Không có ngôi"
+      ],
+      "answer": "Ngôi thứ hai",
+      "explanation": "Ngôi thứ hai chỉ người nghe, người đang được nói trực tiếp tới."
+    },
+    {
+      "key": "chapter-08-extra-06",
+      "chapter": 8,
+      "prompt": "Chọn đại từ cho “the dogs”: “___ are sleeping.”",
+      "choices": [
+        "They",
+        "It",
+        "Them",
+        "Its"
+      ],
+      "answer": "They",
+      "explanation": "The dogs là số nhiều nên dùng đại từ chủ ngữ they."
+    },
+    {
+      "key": "chapter-08-extra-07",
+      "chapter": 8,
+      "prompt": "Trong “Linh lost her pen, but she found it later”, it thay cho từ nào?",
+      "choices": [
+        "pen",
+        "Linh",
+        "she",
+        "later"
+      ],
+      "answer": "pen",
+      "explanation": "It thay cho chiếc bút đã nhắc đến trước đó."
+    },
+    {
+      "key": "chapter-10-extra-01",
+      "chapter": 10,
+      "prompt": "Chọn liên từ thể hiện lựa chọn: “Would you like tea ___ coffee?”",
+      "choices": [
+        "or",
+        "but",
+        "because",
+        "although"
+      ],
+      "answer": "or",
+      "explanation": "Or nối hai lựa chọn tea và coffee."
+    },
+    {
+      "key": "chapter-10-extra-02",
+      "chapter": 10,
+      "prompt": "Trong “The room is clean and bright”, and nối gì?",
+      "choices": [
+        "Hai tính từ",
+        "Hai chủ ngữ",
+        "Hai câu độc lập",
+        "Hai giới từ"
+      ],
+      "answer": "Hai tính từ",
+      "explanation": "Clean và bright đều là tính từ mô tả room, được nối bằng and."
+    },
+    {
+      "key": "chapter-10-extra-03",
+      "chapter": 10,
+      "prompt": "Chọn liên từ bổ sung ý: “She sings ___ dances.”",
+      "choices": [
+        "and",
+        "although",
+        "because",
+        "unless"
+      ],
+      "answer": "and",
+      "explanation": "And nối hai hoạt động ngang hàng cùng có chủ ngữ she."
+    },
+    {
+      "key": "chapter-10-extra-04",
+      "chapter": 10,
+      "prompt": "Câu nào có hai động từ cùng chung chủ ngữ?",
+      "choices": [
+        "Mai smiled and waved.",
+        "Mai smiled, and Nam waved.",
+        "Mai and Nam are friends.",
+        "Mai is friendly."
+      ],
+      "answer": "Mai smiled and waved.",
+      "explanation": "Smiled và waved cùng có chủ ngữ Mai."
+    },
+    {
+      "key": "chapter-10-extra-05",
+      "chapter": 10,
+      "prompt": "Trong “He sat on the chair or on the sofa”, or nối hai thành phần nào?",
+      "choices": [
+        "Hai cụm giới từ",
+        "Hai danh từ riêng",
+        "Hai chủ ngữ",
+        "Hai thán từ"
+      ],
+      "answer": "Hai cụm giới từ",
+      "explanation": "On the chair và on the sofa đều là cụm giới từ, nối với nhau bằng or."
+    },
+    {
+      "key": "chapter-10-extra-06",
+      "chapter": 10,
+      "prompt": "Chọn câu dùng liên từ nối hai danh từ.",
+      "choices": [
+        "We bought apples and oranges.",
+        "We bought ripe apples.",
+        "We quickly bought fruit.",
+        "The apples were ripe."
+      ],
+      "answer": "We bought apples and oranges.",
+      "explanation": "And nối hai danh từ apples và oranges."
+    },
+    {
+      "key": "chapter-10-extra-07",
+      "chapter": 10,
+      "prompt": "Chọn liên từ thể hiện sự tương phản: “I wanted to go out, ___ I was too tired.”",
+      "choices": [
+        "but",
+        "or",
+        "and also",
+        "because of"
+      ],
+      "answer": "but",
+      "explanation": "But diễn tả sự tương phản giữa mong muốn ra ngoài và tình trạng quá mệt."
+    },
+    {
+      "key": "chapter-11-extra-01",
+      "chapter": 11,
+      "prompt": "“The sun rose” là kiểu câu nào?",
+      "choices": [
+        "Câu đơn",
+        "Câu ghép",
+        "Câu phức",
+        "Câu ghép phức"
+      ],
+      "answer": "Câu đơn",
+      "explanation": "Câu chỉ có một mệnh đề độc lập với chủ ngữ The sun và vị ngữ rose."
+    },
+    {
+      "key": "chapter-11-extra-02",
+      "chapter": 11,
+      "prompt": "Đâu là mệnh đề phụ thuộc?",
+      "choices": [
+        "Although she was busy",
+        "She was busy",
+        "She called me",
+        "We spoke briefly"
+      ],
+      "answer": "Although she was busy",
+      "explanation": "Although khiến mệnh đề phải gắn với một mệnh đề chính để hoàn chỉnh ý."
+    },
+    {
+      "key": "chapter-11-extra-03",
+      "chapter": 11,
+      "prompt": "Chọn mệnh đề chính trong “When the bell rang, the students left”.",
+      "choices": [
+        "the students left",
+        "When the bell rang",
+        "When the bell",
+        "the students"
+      ],
+      "answer": "the students left",
+      "explanation": "The students left có thể đứng độc lập thành câu."
+    },
+    {
+      "key": "chapter-11-extra-04",
+      "chapter": 11,
+      "prompt": "“Although it was cold, we went swimming” có bao nhiêu mệnh đề?",
+      "choices": [
+        "Hai",
+        "Một",
+        "Ba",
+        "Bốn"
+      ],
+      "answer": "Hai",
+      "explanation": "Although it was cold là mệnh đề phụ thuộc; we went swimming là mệnh đề độc lập."
+    },
+    {
+      "key": "chapter-11-extra-05",
+      "chapter": 11,
+      "prompt": "Câu nào là câu ghép?",
+      "choices": [
+        "I called, but nobody answered.",
+        "I called because I needed help.",
+        "When I called, she answered.",
+        "Calling takes time."
+      ],
+      "answer": "I called, but nobody answered.",
+      "explanation": "I called và nobody answered là hai mệnh đề độc lập nối bằng but."
+    },
+    {
+      "key": "chapter-11-extra-06",
+      "chapter": 11,
+      "prompt": "Câu nào là câu phức?",
+      "choices": [
+        "She smiled when she saw us.",
+        "She smiled and waved.",
+        "She smiled, and we waved.",
+        "She smiled happily."
+      ],
+      "answer": "She smiled when she saw us.",
+      "explanation": "When she saw us là mệnh đề phụ thuộc đi cùng mệnh đề chính She smiled."
+    },
+    {
+      "key": "chapter-11-extra-07",
+      "chapter": 11,
+      "prompt": "Vì sao “Because I missed the bus” chưa là câu hoàn chỉnh trong bài này?",
+      "choices": [
+        "Vì because làm mệnh đề phụ thuộc",
+        "Vì không có chủ ngữ",
+        "Vì không có động từ",
+        "Vì bus là danh từ"
+      ],
+      "answer": "Vì because làm mệnh đề phụ thuộc",
+      "explanation": "Cụm này có chủ ngữ I và động từ missed, nhưng because khiến nó cần một mệnh đề chính."
+    },
+    {
+      "key": "chapter-12-extra-01",
+      "chapter": 12,
+      "prompt": "Chọn từ: “The car ___ is parked outside belongs to me.”",
+      "choices": [
+        "which",
+        "who",
+        "where",
+        "when"
+      ],
+      "answer": "which",
+      "explanation": "Which thay cho vật là the car và làm chủ ngữ trong mệnh đề quan hệ."
+    },
+    {
+      "key": "chapter-12-extra-02",
+      "chapter": 12,
+      "prompt": "Trong “The man who teaches maths is kind”, mệnh đề quan hệ là gì?",
+      "choices": [
+        "who teaches maths",
+        "The man",
+        "is kind",
+        "maths is kind"
+      ],
+      "answer": "who teaches maths",
+      "explanation": "Who teaches maths bổ nghĩa cho danh từ man."
+    },
+    {
+      "key": "chapter-12-extra-03",
+      "chapter": 12,
+      "prompt": "Chọn từ: “This is the house ___ I grew up.”",
+      "choices": [
+        "where",
+        "who",
+        "whose",
+        "when"
+      ],
+      "answer": "where",
+      "explanation": "Where mở đầu mệnh đề quan hệ chỉ nơi chốn, tương đương in which trong ngữ cảnh này."
+    },
+    {
+      "key": "chapter-12-extra-04",
+      "chapter": 12,
+      "prompt": "Chọn từ: “I remember the day ___ we first met.”",
+      "choices": [
+        "when",
+        "whose",
+        "who",
+        "where"
+      ],
+      "answer": "when",
+      "explanation": "When mở đầu mệnh đề quan hệ chỉ thời gian, bổ nghĩa cho day."
+    },
+    {
+      "key": "chapter-12-extra-05",
+      "chapter": 12,
+      "prompt": "Trong “The teacher whose class I attend is friendly”, whose chỉ điều gì?",
+      "choices": [
+        "Quan hệ giữa giáo viên và lớp của họ",
+        "Thời điểm học",
+        "Nơi giáo viên sinh ra",
+        "Hành động tham dự"
+      ],
+      "answer": "Quan hệ giữa giáo viên và lớp của họ",
+      "explanation": "Whose class nghĩa là lớp của giáo viên đó, thể hiện quan hệ sở hữu."
+    },
+    {
+      "key": "chapter-12-extra-06",
+      "chapter": 12,
+      "prompt": "Chọn câu có thể bỏ đại từ quan hệ trong mệnh đề xác định.",
+      "choices": [
+        "The film that we watched was funny.",
+        "The girl who called is here.",
+        "The dog that barked is mine.",
+        "The bus which stopped was full."
+      ],
+      "answer": "The film that we watched was funny.",
+      "explanation": "Trong câu đầu, that làm tân ngữ của watched nên có thể lược bỏ; các câu còn lại dùng đại từ quan hệ làm chủ ngữ."
+    },
+    {
+      "key": "chapter-12-extra-07",
+      "chapter": 12,
+      "prompt": "Chọn đại từ quan hệ: “The student ___ won the prize thanked her teacher.”",
+      "choices": [
+        "who",
+        "whose",
+        "where",
+        "when"
+      ],
+      "answer": "who",
+      "explanation": "Who thay cho student và làm chủ ngữ của won."
+    },
+    {
+      "key": "chapter-14-extra-01",
+      "chapter": 14,
+      "prompt": "Trong “I know that he is honest”, that he is honest làm gì?",
+      "choices": [
+        "Làm tân ngữ của know",
+        "Bổ nghĩa cho danh từ I",
+        "Làm trạng ngữ nơi chốn",
+        "Làm mệnh đề độc lập"
+      ],
+      "answer": "Làm tân ngữ của know",
+      "explanation": "Mệnh đề danh từ that he is honest nêu điều mà I know."
+    },
+    {
+      "key": "chapter-14-extra-02",
+      "chapter": 14,
+      "prompt": "Trong “We will leave when the rain stops”, mệnh đề phụ chỉ điều gì?",
+      "choices": [
+        "Thời gian",
+        "Sự sở hữu",
+        "Đặc điểm của danh từ rain",
+        "Tân ngữ của leave"
+      ],
+      "answer": "Thời gian",
+      "explanation": "When the rain stops bổ nghĩa cho hành động leave về thời gian."
+    },
+    {
+      "key": "chapter-14-extra-03",
+      "chapter": 14,
+      "prompt": "Trong “The house where she lives is old”, where she lives là gì?",
+      "choices": [
+        "Mệnh đề quan hệ bổ nghĩa cho house",
+        "Mệnh đề danh từ làm chủ ngữ",
+        "Mệnh đề độc lập",
+        "Mệnh đề trạng ngữ của is"
+      ],
+      "answer": "Mệnh đề quan hệ bổ nghĩa cho house",
+      "explanation": "Mệnh đề này theo sau danh từ house và giúp xác định ngôi nhà."
+    },
+    {
+      "key": "chapter-14-extra-04",
+      "chapter": 14,
+      "prompt": "Trong “Where she lives is a mystery”, Where she lives làm gì?",
+      "choices": [
+        "Làm chủ ngữ",
+        "Bổ nghĩa cho house bị lược bỏ",
+        "Làm trạng ngữ của lives",
+        "Làm tân ngữ của is"
+      ],
+      "answer": "Làm chủ ngữ",
+      "explanation": "Cả mệnh đề danh từ Where she lives làm chủ ngữ của is a mystery."
+    },
+    {
+      "key": "chapter-14-extra-05",
+      "chapter": 14,
+      "prompt": "Trong “She studies hard so that she can pass”, so that she can pass chỉ điều gì?",
+      "choices": [
+        "Mục đích",
+        "Sự sở hữu",
+        "Đặc điểm của she",
+        "Mệnh đề độc lập thứ hai"
+      ],
+      "answer": "Mục đích",
+      "explanation": "So that giới thiệu mục đích của việc học chăm chỉ."
+    },
+    {
+      "key": "chapter-14-extra-06",
+      "chapter": 14,
+      "prompt": "Trong “The news that you shared surprised us”, that you shared bổ nghĩa cho gì?",
+      "choices": [
+        "news",
+        "us",
+        "surprised",
+        "you"
+      ],
+      "answer": "news",
+      "explanation": "That you shared xác định thông tin nào, nên là mệnh đề quan hệ bổ nghĩa cho news."
+    },
+    {
+      "key": "chapter-14-extra-07",
+      "chapter": 14,
+      "prompt": "Trong “I wonder whether he will come”, whether he will come là gì?",
+      "choices": [
+        "Mệnh đề danh từ",
+        "Mệnh đề quan hệ bổ nghĩa cho I",
+        "Mệnh đề trạng ngữ chỉ nơi chốn",
+        "Câu độc lập"
+      ],
+      "answer": "Mệnh đề danh từ",
+      "explanation": "Mệnh đề whether he will come nêu nội dung băn khoăn sau wonder, giữ chức năng danh từ."
+    },
+    {
+      "key": "chapter-15-extra-01",
+      "chapter": 15,
+      "prompt": "Chọn từ: “The rooms are ___ every morning.”",
+      "choices": [
+        "cleaned",
+        "clean",
+        "cleaning",
+        "cleans"
+      ],
+      "answer": "cleaned",
+      "explanation": "Bị động hiện tại đơn dùng are + quá khứ phân từ cleaned."
+    },
+    {
+      "key": "chapter-15-extra-02",
+      "chapter": 15,
+      "prompt": "Chọn câu bị động cùng thì với “They built this bridge in 1990”.",
+      "choices": [
+        "This bridge was built in 1990.",
+        "This bridge is built in 1990.",
+        "This bridge builds in 1990.",
+        "This bridge has build in 1990."
+      ],
+      "answer": "This bridge was built in 1990.",
+      "explanation": "Built ở quá khứ đơn chuyển thành was built; this bridge là chủ ngữ số ít."
+    },
+    {
+      "key": "chapter-15-extra-03",
+      "chapter": 15,
+      "prompt": "Trong “The letter was written by Mai”, ai thực hiện hành động?",
+      "choices": [
+        "Mai",
+        "The letter",
+        "was",
+        "Không thể biết dù có by Mai"
+      ],
+      "answer": "Mai",
+      "explanation": "Cụm by Mai nêu tác nhân thực hiện hành động viết."
+    },
+    {
+      "key": "chapter-15-extra-04",
+      "chapter": 15,
+      "prompt": "Chọn câu chủ động tương ứng với “The ball was kicked by Nam”.",
+      "choices": [
+        "Nam kicked the ball.",
+        "The ball kicked Nam.",
+        "Nam is kicking the ball.",
+        "Nam kicks the ball."
+      ],
+      "answer": "Nam kicked the ball.",
+      "explanation": "Was kicked ở quá khứ đơn tương ứng với động từ chủ động kicked."
+    },
+    {
+      "key": "chapter-15-extra-05",
+      "chapter": 15,
+      "prompt": "Câu nào có thể chuyển sang bị động theo cấu trúc cơ bản của bài?",
+      "choices": [
+        "They repaired the bike.",
+        "The baby slept.",
+        "The sun rose.",
+        "He arrived late."
+      ],
+      "answer": "They repaired the bike.",
+      "explanation": "Repaired có tân ngữ trực tiếp the bike để chuyển lên làm chủ ngữ bị động."
+    },
+    {
+      "key": "chapter-15-extra-06",
+      "chapter": 15,
+      "prompt": "Chọn từ: “The documents were ___ yesterday.”",
+      "choices": [
+        "sent",
+        "send",
+        "sending",
+        "sends"
+      ],
+      "answer": "sent",
+      "explanation": "Quá khứ phân từ của send là sent, dùng sau were trong cấu trúc bị động."
+    },
+    {
+      "key": "chapter-15-extra-07",
+      "chapter": 15,
+      "prompt": "Chủ ngữ nhận hành động trong “The meal was cooked by my father” là gì?",
+      "choices": [
+        "The meal",
+        "my father",
+        "cooked",
+        "by"
+      ],
+      "answer": "The meal",
+      "explanation": "The meal là chủ ngữ ngữ pháp và là đối tượng được nấu."
+    },
+    {
+      "key": "chapter-17-extra-01",
+      "chapter": 17,
+      "prompt": "Thán từ trong “Hooray! We won the game” biểu đạt gì?",
+      "choices": [
+        "Vui mừng",
+        "Vị trí",
+        "Sự sở hữu",
+        "So sánh"
+      ],
+      "answer": "Vui mừng",
+      "explanation": "Hooray thường thể hiện sự vui mừng hoặc ăn mừng."
+    },
+    {
+      "key": "chapter-17-extra-02",
+      "chapter": 17,
+      "prompt": "Chọn từ đóng vai trò thán từ trong “Oops! I dropped the cup”.",
+      "choices": [
+        "Oops",
+        "I",
+        "dropped",
+        "cup"
+      ],
+      "answer": "Oops",
+      "explanation": "Oops thể hiện phản ứng khi mắc lỗi hoặc gặp sự cố nhỏ."
+    },
+    {
+      "key": "chapter-17-extra-03",
+      "chapter": 17,
+      "prompt": "Bỏ thán từ trong “Wow, your painting is amazing” thì còn câu nào?",
+      "choices": [
+        "Your painting is amazing.",
+        "Wow is amazing.",
+        "Your is amazing.",
+        "Painting your amazing."
+      ],
+      "answer": "Your painting is amazing.",
+      "explanation": "Wow không làm chủ ngữ hay vị ngữ; bỏ nó vẫn còn cấu trúc câu đầy đủ."
+    },
+    {
+      "key": "chapter-17-extra-04",
+      "chapter": 17,
+      "prompt": "Trong “Oh no! We missed the train”, Oh no biểu đạt gì?",
+      "choices": [
+        "Thất vọng hoặc lo lắng",
+        "Thời gian khởi hành chính xác",
+        "Số lượng tàu",
+        "Nơi đến"
+      ],
+      "answer": "Thất vọng hoặc lo lắng",
+      "explanation": "Oh no là cụm thán từ thể hiện phản ứng tiêu cực trước việc lỡ tàu."
+    },
+    {
+      "key": "chapter-17-extra-05",
+      "chapter": 17,
+      "prompt": "Nhận định nào đúng về thán từ?",
+      "choices": [
+        "Có thể là một từ hoặc một cụm từ",
+        "Luôn là chủ ngữ",
+        "Luôn là tân ngữ",
+        "Luôn phải chia thì"
+      ],
+      "answer": "Có thể là một từ hoặc một cụm từ",
+      "explanation": "Thán từ có thể ngắn như Wow hoặc là cụm như Oh no, dùng để biểu đạt phản ứng."
+    },
+    {
+      "key": "chapter-17-extra-06",
+      "chapter": 17,
+      "prompt": "Chọn câu dùng thán từ để bộc lộ đau đớn.",
+      "choices": [
+        "Ouch! My foot hurts.",
+        "My foot is small.",
+        "I walked slowly.",
+        "The shoe is blue."
+      ],
+      "answer": "Ouch! My foot hurts.",
+      "explanation": "Ouch thể hiện cảm giác đau, phù hợp với My foot hurts."
+    },
+    {
+      "key": "chapter-17-extra-07",
+      "chapter": 17,
+      "prompt": "Dấu nào phù hợp để tách thán từ mạnh trong “Wow___ That was fantastic”?",
+      "choices": [
+        "Dấu chấm than (!)",
+        "Dấu gạch chéo (/)",
+        "Dấu bằng (=)",
+        "Dấu gạch dưới (_)"
+      ],
+      "answer": "Dấu chấm than (!)",
+      "explanation": "Thán từ biểu đạt cảm xúc mạnh có thể đứng riêng và kết thúc bằng dấu chấm than."
+    },
+    {
+      "key": "chapter-18-extra-01",
+      "chapter": 18,
+      "prompt": "Danh động từ trong “Cooking relaxes me” là gì?",
+      "choices": [
+        "Cooking",
+        "relaxes",
+        "me",
+        "Không có"
+      ],
+      "answer": "Cooking",
+      "explanation": "Cooking là dạng -ing dùng như danh từ và làm chủ ngữ."
+    },
+    {
+      "key": "chapter-18-extra-02",
+      "chapter": 18,
+      "prompt": "Trong “He enjoys collecting stamps”, tân ngữ của collecting là gì?",
+      "choices": [
+        "stamps",
+        "He",
+        "enjoys",
+        "collecting"
+      ],
+      "answer": "stamps",
+      "explanation": "Collecting vẫn giữ khả năng nhận tân ngữ stamps, dù cả cụm làm chức năng danh từ."
+    },
+    {
+      "key": "chapter-18-extra-03",
+      "chapter": 18,
+      "prompt": "Chọn dạng đúng: “She enjoys ___ stories.”",
+      "choices": [
+        "writing",
+        "write",
+        "wrote",
+        "written"
+      ],
+      "answer": "writing",
+      "explanation": "Sau enjoy dùng danh động từ writing."
+    },
+    {
+      "key": "chapter-18-extra-04",
+      "chapter": 18,
+      "prompt": "Trong “Reading books improves vocabulary”, chủ ngữ đầy đủ là gì?",
+      "choices": [
+        "Reading books",
+        "books",
+        "improves vocabulary",
+        "vocabulary"
+      ],
+      "answer": "Reading books",
+      "explanation": "Cả cụm danh động từ Reading books làm chủ ngữ của improves."
+    },
+    {
+      "key": "chapter-18-extra-05",
+      "chapter": 18,
+      "prompt": "Trong “They discussed moving abroad”, moving abroad có chức năng gì?",
+      "choices": [
+        "Tân ngữ của discussed",
+        "Chủ ngữ",
+        "Động từ chính chia thì",
+        "Tính từ bổ nghĩa cho They"
+      ],
+      "answer": "Tân ngữ của discussed",
+      "explanation": "Cụm danh động từ nêu điều được thảo luận, nên làm tân ngữ của discussed."
+    },
+    {
+      "key": "chapter-18-extra-06",
+      "chapter": 18,
+      "prompt": "Trong “Learning English takes practice”, động từ chính chia thì là gì?",
+      "choices": [
+        "takes",
+        "Learning",
+        "English",
+        "practice"
+      ],
+      "answer": "takes",
+      "explanation": "Learning English là cụm danh động từ làm chủ ngữ; takes là động từ chính chia theo chủ ngữ số ít."
+    },
+    {
+      "key": "chapter-18-extra-07",
+      "chapter": 18,
+      "prompt": "Trong “She enjoys quietly reading novels”, quietly bổ nghĩa cho gì?",
+      "choices": [
+        "reading",
+        "novels",
+        "She",
+        "Không từ nào"
+      ],
+      "answer": "reading",
+      "explanation": "Danh động từ reading vẫn có thể được trạng từ quietly bổ nghĩa về cách thực hiện."
+    },
+    {
+      "key": "chapter-19-extra-01",
+      "chapter": 19,
+      "prompt": "Chọn dạng nguyên mẫu có to: “I hope ___ soon.”",
+      "choices": [
+        "to return",
+        "to returned",
+        "to returning",
+        "to returns"
+      ],
+      "answer": "to return",
+      "explanation": "Sau to của động từ nguyên mẫu dùng dạng cơ bản return."
+    },
+    {
+      "key": "chapter-19-extra-02",
+      "chapter": 19,
+      "prompt": "Trong “To swim here is dangerous”, chủ ngữ đầy đủ là gì?",
+      "choices": [
+        "To swim here",
+        "is dangerous",
+        "here",
+        "dangerous"
+      ],
+      "answer": "To swim here",
+      "explanation": "To swim here là cụm nguyên mẫu giữ chức năng danh từ và làm chủ ngữ."
+    },
+    {
+      "key": "chapter-19-extra-03",
+      "chapter": 19,
+      "prompt": "Trong “She wants to buy a bike”, a bike có chức năng gì?",
+      "choices": [
+        "Tân ngữ của buy",
+        "Chủ ngữ của wants",
+        "Trạng ngữ của She",
+        "Tính từ"
+      ],
+      "answer": "Tân ngữ của buy",
+      "explanation": "Động từ nguyên mẫu buy vẫn nhận tân ngữ a bike."
+    },
+    {
+      "key": "chapter-19-extra-04",
+      "chapter": 19,
+      "prompt": "Cụm nguyên mẫu trong “We found a quiet place to study” là gì?",
+      "choices": [
+        "to study",
+        "a quiet place",
+        "We found",
+        "quiet place"
+      ],
+      "answer": "to study",
+      "explanation": "To study gồm to và dạng cơ bản study, bổ nghĩa cho place."
+    },
+    {
+      "key": "chapter-19-extra-05",
+      "chapter": 19,
+      "prompt": "Trong “His dream is to travel abroad”, to travel abroad nêu điều gì?",
+      "choices": [
+        "Nội dung của ước mơ",
+        "Người sở hữu ước mơ",
+        "Một hành động đã chia ở quá khứ",
+        "Một giới từ chỉ vị trí"
+      ],
+      "answer": "Nội dung của ước mơ",
+      "explanation": "Cụm nguyên mẫu đứng sau is, bổ sung nội dung cho His dream."
+    },
+    {
+      "key": "chapter-19-extra-06",
+      "chapter": 19,
+      "prompt": "Trong “To speak clearly takes practice”, clearly bổ nghĩa cho từ nào?",
+      "choices": [
+        "speak",
+        "takes",
+        "practice",
+        "To"
+      ],
+      "answer": "speak",
+      "explanation": "Clearly là trạng từ bổ nghĩa cho động từ nguyên mẫu speak."
+    },
+    {
+      "key": "chapter-19-extra-07",
+      "chapter": 19,
+      "prompt": "Chọn cụm nguyên mẫu bổ nghĩa cho danh từ trong “She has several tasks to finish”.",
+      "choices": [
+        "to finish",
+        "has several",
+        "She has",
+        "several tasks"
+      ],
+      "answer": "to finish",
+      "explanation": "To finish theo sau và bổ nghĩa cho tasks: những nhiệm vụ cần hoàn thành."
+    },
+    {
+      "key": "chapter-20-extra-01",
+      "chapter": 20,
+      "prompt": "Chọn từ: “He cut ___ while cooking.”",
+      "choices": [
+        "himself",
+        "herself",
+        "myself",
+        "ourselves"
+      ],
+      "answer": "himself",
+      "explanation": "Đại từ phản thân tương ứng với he là himself."
+    },
+    {
+      "key": "chapter-20-extra-02",
+      "chapter": 20,
+      "prompt": "Chọn từ: “I taught ___ to play the guitar.”",
+      "choices": [
+        "myself",
+        "yourself",
+        "herself",
+        "themselves"
+      ],
+      "answer": "myself",
+      "explanation": "Chủ ngữ I tự dạy chính mình nên dùng myself."
+    },
+    {
+      "key": "chapter-20-extra-03",
+      "chapter": 20,
+      "prompt": "Chọn từ: “The children dressed ___.”",
+      "choices": [
+        "themselves",
+        "himself",
+        "itself",
+        "myself"
+      ],
+      "answer": "themselves",
+      "explanation": "The children là số nhiều, đại từ phản thân tương ứng là themselves."
+    },
+    {
+      "key": "chapter-20-extra-04",
+      "chapter": 20,
+      "prompt": "Trong “I made the cake myself”, myself có chức năng gì?",
+      "choices": [
+        "Nhấn mạnh chính tôi làm bánh",
+        "Thay thế danh từ cake",
+        "Chỉ người được tặng bánh",
+        "Chỉ thời gian"
+      ],
+      "answer": "Nhấn mạnh chính tôi làm bánh",
+      "explanation": "Myself được dùng để nhấn mạnh chủ thể I; bỏ nó câu vẫn hoàn chỉnh."
+    },
+    {
+      "key": "chapter-20-extra-05",
+      "chapter": 20,
+      "prompt": "Chọn đại từ chỉ định số ít chỉ vật ở gần: “___ is my seat.”",
+      "choices": [
+        "This",
+        "These",
+        "Those",
+        "They"
+      ],
+      "answer": "This",
+      "explanation": "This chỉ một người hoặc vật ở gần; these và those là số nhiều."
+    },
+    {
+      "key": "chapter-20-extra-06",
+      "chapter": 20,
+      "prompt": "Chọn đại từ chỉ định số nhiều chỉ vật ở gần: “___ are fresh apples.”",
+      "choices": [
+        "These",
+        "This",
+        "That",
+        "It"
+      ],
+      "answer": "These",
+      "explanation": "These chỉ nhiều vật ở gần, phù hợp với are và apples."
+    },
+    {
+      "key": "chapter-20-extra-07",
+      "chapter": 20,
+      "prompt": "Trong “That is mine”, That đang đóng vai trò gì?",
+      "choices": [
+        "Đại từ chỉ định đứng độc lập",
+        "Đại từ phản thân",
+        "Động từ",
+        "Liên từ nối hai mệnh đề"
+      ],
+      "answer": "Đại từ chỉ định đứng độc lập",
+      "explanation": "That đứng một mình làm chủ ngữ, dùng để chỉ một vật hoặc điều đã biết trong ngữ cảnh."
+    },
+    {
+      "key": "chapter-21-extra-01",
+      "chapter": 21,
+      "prompt": "Chọn từ: “___ is easy to make mistakes.”",
+      "choices": [
+        "It",
+        "They",
+        "There",
+        "Those"
+      ],
+      "answer": "It",
+      "explanation": "Cấu trúc It is + tính từ + cụm nguyên mẫu dùng it ở đầu câu."
+    },
+    {
+      "key": "chapter-21-extra-02",
+      "chapter": 21,
+      "prompt": "Chọn câu cùng nghĩa với “To finish on time is possible”.",
+      "choices": [
+        "It is possible to finish on time.",
+        "It is impossible to finish on time.",
+        "It finishes on time.",
+        "To finish on time was impossible."
+      ],
+      "answer": "It is possible to finish on time.",
+      "explanation": "Cấu trúc với it chuyển cụm nguyên mẫu về cuối mà giữ nguyên ý có thể hoàn thành đúng giờ."
+    },
+    {
+      "key": "chapter-21-extra-03",
+      "chapter": 21,
+      "prompt": "Trong “It is surprising that he agreed”, nội dung gây ngạc nhiên là gì?",
+      "choices": [
+        "that he agreed",
+        "It",
+        "is",
+        "surprising"
+      ],
+      "answer": "that he agreed",
+      "explanation": "Mệnh đề that he agreed chứa thông tin được đánh giá là gây ngạc nhiên."
+    },
+    {
+      "key": "chapter-21-extra-04",
+      "chapter": 21,
+      "prompt": "Chọn câu dùng đúng cấu trúc chủ ngữ giả.",
+      "choices": [
+        "It is helpful to ask questions.",
+        "It helpful to ask questions.",
+        "It is helpful ask questions.",
+        "Is helpful to asking questions."
+      ],
+      "answer": "It is helpful to ask questions.",
+      "explanation": "Cấu trúc cần it, động từ is, tính từ helpful và cụm nguyên mẫu to ask questions."
+    },
+    {
+      "key": "chapter-21-extra-05",
+      "chapter": 21,
+      "prompt": "Đổi “That she remembered my name was nice” sang cấu trúc mở đầu bằng It.",
+      "choices": [
+        "It was nice that she remembered my name.",
+        "It is nice she remember my name yesterday.",
+        "It was my name that nice.",
+        "It remembered that she was nice."
+      ],
+      "answer": "It was nice that she remembered my name.",
+      "explanation": "It was nice đưa phần đánh giá lên trước, giữ mệnh đề that she remembered my name ở cuối."
+    },
+    {
+      "key": "chapter-21-extra-06",
+      "chapter": 21,
+      "prompt": "Trong “It is important to listen carefully”, carefully bổ nghĩa cho gì?",
+      "choices": [
+        "listen",
+        "important",
+        "It",
+        "is"
+      ],
+      "answer": "listen",
+      "explanation": "Carefully chỉ cách lắng nghe, bổ nghĩa cho listen trong cụm nguyên mẫu."
+    },
+    {
+      "key": "chapter-21-extra-07",
+      "chapter": 21,
+      "prompt": "Chọn câu giữ ý của “To carry this box alone is hard”.",
+      "choices": [
+        "It is hard to carry this box alone.",
+        "It is hard to leave this box alone.",
+        "This box is alone.",
+        "It is easy to carry this box alone."
+      ],
+      "answer": "It is hard to carry this box alone.",
+      "explanation": "Câu với it giữ nguyên tính từ hard và hoạt động to carry this box alone."
+    },
+    {
+      "key": "chapter-22-extra-01",
+      "chapter": 22,
+      "prompt": "Chọn câu đặt đúng cặp dấu phẩy quanh “our captain”.",
+      "choices": [
+        "Nam, our captain, scored twice.",
+        "Nam, our captain scored twice.",
+        "Nam our captain, scored twice.",
+        "Nam our, captain scored twice."
+      ],
+      "answer": "Nam, our captain, scored twice.",
+      "explanation": "Our captain là phần giải thích chen vào nên có dấu phẩy ở hai đầu."
+    },
+    {
+      "key": "chapter-22-extra-02",
+      "chapter": 22,
+      "prompt": "Trong “The answer, surprisingly, was correct”, phần chen vào là gì?",
+      "choices": [
+        "surprisingly",
+        "The answer",
+        "was correct",
+        "correct"
+      ],
+      "answer": "surprisingly",
+      "explanation": "Surprisingly được tách bằng hai dấu phẩy, thể hiện nhận xét chen vào của người viết."
+    },
+    {
+      "key": "chapter-22-extra-03",
+      "chapter": 22,
+      "prompt": "Câu “My bike, an old model is still reliable” thiếu dấu phẩy ở đâu?",
+      "choices": [
+        "Sau model",
+        "Sau My",
+        "Sau still",
+        "Sau reliable trước dấu chấm"
+      ],
+      "answer": "Sau model",
+      "explanation": "An old model là phần chen vào, cần dấu phẩy đóng sau model."
+    },
+    {
+      "key": "chapter-22-extra-04",
+      "chapter": 22,
+      "prompt": "Bỏ phần chen vào trong “This plan, I believe, will work” thì còn gì?",
+      "choices": [
+        "This plan will work.",
+        "I believe will work.",
+        "This I plan work.",
+        "Plan believe work."
+      ],
+      "answer": "This plan will work.",
+      "explanation": "I believe là phần chen vào; cấu trúc chính còn lại là This plan will work."
+    },
+    {
+      "key": "chapter-22-extra-05",
+      "chapter": 22,
+      "prompt": "Chọn câu dùng đúng dấu phẩy cho cụm chen vào “of course”.",
+      "choices": [
+        "You can, of course, join us.",
+        "You can, of course join us.",
+        "You can of course, join us.",
+        "You, can of course join us."
+      ],
+      "answer": "You can, of course, join us.",
+      "explanation": "Nếu tách of course như phần chen vào giữa câu thì cần dấu phẩy ở cả hai đầu."
+    },
+    {
+      "key": "chapter-22-extra-06",
+      "chapter": 22,
+      "prompt": "Trong “My aunt, a nurse, lives nearby”, hai dấu phẩy làm gì?",
+      "choices": [
+        "Tách phần giải thích a nurse",
+        "Tách động từ lives khỏi nearby",
+        "Nối hai câu độc lập",
+        "Đánh dấu câu hỏi"
+      ],
+      "answer": "Tách phần giải thích a nurse",
+      "explanation": "A nurse là thông tin giải thích thêm về My aunt, được đặt giữa hai dấu phẩy."
+    },
+    {
+      "key": "chapter-22-extra-07",
+      "chapter": 22,
+      "prompt": "Chọn cách sửa “The garden, despite the rain looked beautiful”.",
+      "choices": [
+        "The garden, despite the rain, looked beautiful.",
+        "The, garden despite the rain looked beautiful.",
+        "The garden, despite, the rain looked beautiful.",
+        "The garden despite the rain looked, beautiful."
+      ],
+      "answer": "The garden, despite the rain, looked beautiful.",
+      "explanation": "Despite the rain là phần chen vào đã có dấu phẩy mở; thêm dấu phẩy sau rain để đóng phần đó."
+    }
+  ]
+}

@@ -1,0 +1,1671 @@
+[
+  {
+    "collection": "grammar_lessons",
+    "id": "-698730031035804",
+    "data": {
+      "title": "Làm quen với ngữ pháp tiếng Anh",
+      "level": "A1",
+      "summary": "Hiểu vai trò của trật tự từ và dạng đại từ trong câu.",
+      "content": "When we speak or write, or listen or read, we create sentences with words and phrases. Grammar is the system of rules that guide us as we make and comprehend the sentences of others. All languages have some kind of grammar.\nWhen we use the word grammar in the sense discussed here, that “system of rules” does not necessarily include rules like “Never end a sentence with a preposition,” or “Don’t dangle your participle around here, bub.” That kind of rule may often be helpful, but it’s not what this book is generally about.\n\nSo what rules are we talking about here? To begin with an example, we might say this:\n\nBut the point is this: Those two sentences contain exactly the same words. The only difference is the placement of Devlin and Alicia, and that difference alters the meaning of the sentence considerably.\n\nSometimes we can move words around without changing the meaning at all:\nAlicia and Devlin are characters in Hitchcock’s film Notorious. Devlin and Alicia are characters in Hitchcock’s film Notorious.\n\nIf we put some words in a certain order, it makes one meaning, and we change the meaning when we rearrange certain words. Other changes don’t alter the meaning at all. Those are some of the things we mean by the rules of grammar: Certain word orders and changes are meaningful in certain ways and others aren’t.\n\nWe know, as speakers of English, that he and him both refer to Devlin, and she and her refer to Alicia. So why do we have to use different words? Why not use he and she in both sentences, and forget about him and her?\n\nWe can’t, because the rules of English say so: We have to use one form—one inflection—of he and she if they appear before caught, and another inflection (him and her) if they appear after caught.\nIf you’ve spoken English all your life, you already know that rule, even if no one ever taught it to you. You learned it intuitively when you were very young—that is, you learned it simply by listening to other English speakers—and now you seldom have to stop and think about when to use he and when to use him.\n\nSource: Steven Brehe, Brehe’s Grammar Anatomy (2019), University of North Georgia Press, via LibreTexts.\nhttps://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.01:_Introduction-_Grammar_What_Grammar\nCC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/\nAdaptation: selected excerpts; layout converted to plain text. No translation. CEFR not supplied by the source.",
+      "examples": [
+        {
+          "en": "On Tuesday, Alicia caught Devlin in the wine cellar.",
+          "vi": ""
+        },
+        {
+          "en": "Alicia and Devlin are characters in Hitchcock’s film Notorious. Devlin and Alicia are characters in Hitchcock’s film Notorious.",
+          "vi": ""
+        },
+        {
+          "en": "He caught her in the wine cellar. She caught him in the wine cellar.",
+          "vi": ""
+        }
+      ],
+      "orderIndex": 101,
+      "updatedAt": null,
+      "provenance": {
+        "sourceId": "brehe:libretexts:1.01",
+        "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.01:_Introduction-_Grammar_What_Grammar",
+        "author": "Steven Brehe",
+        "license": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "licenseEvidence": "https://oer.galileo.usg.edu/english-textbooks/20/",
+        "changes": "Selected theory paragraphs and example blocks; removed navigation/page headers; retained English",
+        "sourceHash": "a8e52f6eff1af233edc1d800cf0047a692120290bc68326f97904523b18bde4e",
+        "contentVersion": 1
+      },
+      "dataset": "brehe-grammar-anatomy",
+      "contentVersion": 3,
+      "published": true,
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Hiểu vai trò của trật tự từ và dạng đại từ trong câu.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "Introduction- Grammar? What Grammar?",
+      "contentHash": "94828b763819d8a30816cd898c981f16dbf86bc34cf12b75cb4ed1ed351f79ba"
+    }
+  },
+  {
+    "collection": "grammar_lessons",
+    "id": "-1389976289153513",
+    "data": {
+      "title": "Chủ ngữ và vị ngữ",
+      "level": "A1",
+      "summary": "Nhận biết chủ ngữ, vị ngữ và các thành phần chính của câu.",
+      "content": "We’ll begin with declarative sentences, sentences that make a statement instead of asking questions or giving orders. All of the examples you’ll see in the next several chapters are declarative sentences.\n\nAs we begin, it’s helpful to know that declarative sentences in English usually follow this basic pattern:\n\nSubject + Predicate\n\nThe subject comes first, and the predicate follows—usually.\n\nIT’S ALL ABOUT THE SUBJECT\nThe subject is the star, the prima donna, of the sentence. It’s the part of the sentence that names who or what the sentence is about.\n\nThe predicate always tells us something about the subject. Usually, the predicate tells us what the subject is doing (or has done), or it describes the subject.\n\nTHE SIMPLE AND THE COMPLETE\nEvery simple declarative sentence that we’ve seen contains a subject and a predicate, and the subject usually appears to the left of the predicate, at the beginning of the sentence or near it.\n\nIn these cases, the complete subject and the complete predicate are each just one-word long. There’s one exception: The cat.\n\nWe can add more words to those subjects and predicates. We can add modifiers, words that describe the subject and the predicate:\n\nIn this longer sentence, we call birds the simple subject and fly the simple predicate.\n\nSource: Steven Brehe, Brehe’s Grammar Anatomy (2019), University of North Georgia Press, via LibreTexts.\nhttps://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.02:_Together_Forever_Subjects_and_Predicates\nCC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/\nAdaptation: selected excerpts; layout converted to plain text. No translation. CEFR not supplied by the source.",
+      "examples": [
+        {
+          "en": "Birds fly.",
+          "vi": ""
+        },
+        {
+          "en": "Most birds in the United States fly well.",
+          "vi": ""
+        }
+      ],
+      "orderIndex": 102,
+      "updatedAt": null,
+      "provenance": {
+        "sourceId": "brehe:libretexts:1.02",
+        "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.02:_Together_Forever_Subjects_and_Predicates",
+        "author": "Steven Brehe",
+        "license": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "licenseEvidence": "https://oer.galileo.usg.edu/english-textbooks/20/",
+        "changes": "Selected theory paragraphs and example blocks; removed navigation/page headers; retained English",
+        "sourceHash": "adb2760fadae58f7f89b91fffa63897c872f782639b44fe9be7a1d59bb6ffd9c",
+        "contentVersion": 1
+      },
+      "dataset": "brehe-grammar-anatomy",
+      "contentVersion": 3,
+      "published": true,
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Nhận biết chủ ngữ, vị ngữ và các thành phần chính của câu.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "Together Forever, Subjects and Predicates",
+      "contentHash": "4c8accda3db6edb718fd044465c827d7f5dd659eb21d37a4cdc97326054cdc1f"
+    }
+  },
+  {
+    "collection": "grammar_lessons",
+    "id": "-4175336615649289",
+    "data": {
+      "title": "Thì và các dạng của động từ",
+      "level": "A2",
+      "summary": "Ôn các dạng động từ, động từ bất quy tắc và cách diễn đạt thời gian.",
+      "content": "THE TENSES\n\nTense? We don’t mean over-caffeinated verbs. We mean that, in the right context, verbs communicate that an action took place in the present, past, or future.\nEnglish has four sets of tenses, and each set contains a present, a past, and a future tense, each with its own distinctions in refer- ence to time. Here we’ll examine briefly all four sets:\n\nThe simple tenses: present, past, and future. The perfect tenses: present, past, and future.\n\nAs these examples show, we create the simple present tense by using the simplest possible form of a verb. The simple present ends with -s in cases like these: he phones, he talks, he builds.\n\nFor the great majority of English verbs, we create the simple past tense by adding -d (as in phoned) or -ed (as in talked, walked, or hunted) to the present form. In a few cases, we make the past by adding -t (as in built).\nWith all verbs, we create the simple future tense by adding the auxiliary verb will to the simple present form.\n\nTHE PERFECT TENSES\n\nThe perfect tenses are not called perfect because they’re flawless. (Only your grammar teacher is flawless.) They are called perfect because the perfect tenses describe actions that have already been completed (i.e., perfected) at some point in the past, present, or future.\nAll the perfect tenses are based on a form of the main verb called the past participle, which in most verbs is identical to the form in the simple past tense. (We’ll see more of the past participle a bit later.)\n\nVerbs in the present perfect tense always add the auxiliary verb have (or has) to the past participle form. They refer to actions that were recently completed:\n\nVerbs in the past perfect tense always add the auxiliary had to the past participle form. They refer to actions completed at some point in the past:\n\nI had called my mother by noon yesterday.\nThe future perfect tense, like the simple future tense, always begins with the auxiliary will, followed by have:\n\nTHE SIMPLE PROGRESSIVE AND PERFECT PROGRESSIVE TENSES\nThe simple progressive tenses refer to actions that have been in progress at a particular point in time. The main verbs in the progressive tenses always end in -ing, and they always take an auxiliary verb that is a form of the verb be.\n\nThe future progressive tense always begins with the auxiliaries will be. Here are some examples:\n\nSource: Steven Brehe, Brehe’s Grammar Anatomy (2019), University of North Georgia Press, via LibreTexts.\nhttps://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.03:_Get_Tense_Verb_Tense_Principal_Parts_and_Irregular_Verbs\nCC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/\nAdaptation: selected excerpts; layout converted to plain text. No translation. CEFR not supplied by the source.",
+      "examples": [
+        {
+          "en": "Today I will phone my mother.",
+          "vi": ""
+        },
+        {
+          "en": "I’m phoning my mother right now.",
+          "vi": ""
+        },
+        {
+          "en": "I have called my mother today. She has called her mother today.",
+          "vi": ""
+        },
+        {
+          "en": "I had called my mother by noon yesterday.",
+          "vi": ""
+        }
+      ],
+      "orderIndex": 103,
+      "updatedAt": null,
+      "provenance": {
+        "sourceId": "brehe:libretexts:1.03",
+        "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.03:_Get_Tense_Verb_Tense_Principal_Parts_and_Irregular_Verbs",
+        "author": "Steven Brehe",
+        "license": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "licenseEvidence": "https://oer.galileo.usg.edu/english-textbooks/20/",
+        "changes": "Selected theory paragraphs and example blocks; removed navigation/page headers; retained English",
+        "sourceHash": "ff2a88fddf9ebf4c89d9ba9da966b6f6bc7e2b800c7c7dc2ce170bca9cffbcab",
+        "contentVersion": 1
+      },
+      "dataset": "brehe-grammar-anatomy",
+      "contentVersion": 3,
+      "published": true,
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Ôn các dạng động từ, động từ bất quy tắc và cách diễn đạt thời gian.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "Get Tense Verb Tense, Principal Parts, and Irregular Verbs",
+      "contentHash": "4bc3d406116698f7b080a27659383f7ff9c617af14e91bfefbce42795aef6cad"
+    }
+  },
+  {
+    "collection": "grammar_lessons",
+    "id": "-2052679124253647",
+    "data": {
+      "title": "Danh từ và động từ",
+      "level": "A1",
+      "summary": "Phân biệt danh từ, động từ và vai trò của chúng trong câu.",
+      "content": "SUBJECTS AND NOUNS\n\nIn the sentences we’ve seen, the simple subjects are all nouns. This traditional definition of nouns will serve our purpose:\n\nA noun is a word that names a person, place, thing, or idea.\n\nNouns name persons: man, woman, child, children, student, teacher, Mr. Morton, Oscar Hammerstein.\nThey name places: kitchen, home, Main Street, St. Louis, Missouri, U.S.A., North America, Earth, solar system, the Milky Way.\n\nThey name things: pen, ink, paper, printing press, telegraph, linotype, typewriter, computer, smart phone, internet.\n\nNouns also name ideas—that, is, abstractions: science, mathematics, truth, beauty, democracy, Platonism, Catholicism, Calvinism.\n\nMost simple subjects are nouns.\n\nPREDICATES AND VERBS\nIn any sentence, the simple predicate is a verb—an indispensable part of English sentences. For our purposes, this definition will do:\n\nA verb is a word or group of words that names an action or indicates a state of being.\n\nThere are two general classes of verb. One kind of verb—an action verb—names actions:\n\nAnother kind of verb names “states of being”—that is, they appear in predicates that describe the subject. These verbs are called linking verbs.\n\nThere are thousands of verbs in English, and the great majority of them are action verbs: sit, stand, hit, run, hide, seek, say, sing, create, declare, denounce, pontificate, shout, cry, laugh, and all the rest.\nSome action verbs name activities that are not actions in the usual sense: have, pause, think, consider, wait.\n\nThere are relatively few linking verbs in English. The most common are the eight forms of the verb be:\n\nSource: Steven Brehe, Brehe’s Grammar Anatomy (2019), University of North Georgia Press, via LibreTexts.\nhttps://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.04:_The_Indispensables_Nouns_and_Verbs\nCC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/\nAdaptation: selected excerpts; layout converted to plain text. No translation. CEFR not supplied by the source.",
+      "examples": [
+        {
+          "en": "Hammerstein composed.",
+          "vi": ""
+        },
+        {
+          "en": "George loves Ethel.",
+          "vi": ""
+        },
+        {
+          "en": "Pearl painted Mr. Morton’s porch.",
+          "vi": ""
+        }
+      ],
+      "orderIndex": 104,
+      "updatedAt": null,
+      "provenance": {
+        "sourceId": "brehe:libretexts:1.04",
+        "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.04:_The_Indispensables_Nouns_and_Verbs",
+        "author": "Steven Brehe",
+        "license": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "licenseEvidence": "https://oer.galileo.usg.edu/english-textbooks/20/",
+        "changes": "Selected theory paragraphs and example blocks; removed navigation/page headers; retained English",
+        "sourceHash": "3be558c53af7e16869825312e407cd0bbffa7946b4ad61c3763e277dcab398bd",
+        "contentVersion": 1
+      },
+      "dataset": "brehe-grammar-anatomy",
+      "contentVersion": 3,
+      "published": true,
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Phân biệt danh từ, động từ và vai trò của chúng trong câu.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "The Indispensables Nouns and Verbs",
+      "contentHash": "450e6ca46160c3b6df4b36225081e0f76b96b001d2dd9469fa1d45d86a673728"
+    }
+  },
+  {
+    "collection": "grammar_lessons",
+    "id": "-1958826981997677",
+    "data": {
+      "title": "Tính từ và các dạng so sánh",
+      "level": "A1",
+      "summary": "Dùng tính từ để mô tả và so sánh người, sự vật.",
+      "content": "MODIFIERS AND PHRASES\n\nAs we saw in Chapter 1, nouns and verbs often have modifiers, words that describe the noun or the verb.\n\nThe following examples are not sentences but only parts of sentences. Here man is the noun; all the other words before and after man are modifiers that restrict the meaning of man in some way:\n\nThe man\nThe man in our neighborhood\nThe irritable, unfriendly man in our neighborhood\nAs we’ve seen before, many modifiers appear immediately before the noun they modify: The, irritable, unfriendly. Some appear after: in our neighborhood.\n\nThis brings us to a common term that we use throughout these chapters: phrase. A phrase is a word or group of words used as a single grammatical unit.\n\nThe three examples above are noun phrases. They contain the noun man and other words and phrases that modify man.\nEach of those noun phrases could be used as a single grammatical unit—for example, as the subject of a sentence. That is, the noun by itself would be the simple subject, and the noun and its modifiers would be the complete subject.\n\nADJECTIVES\n\nWords like irritable and unfriendly are adjectives. Adjectives modify nouns and sometimes pronouns. They describe the noun or place limits on the word’s range of reference. In the following noun phrases, all the underlined words are adjectives:\n\nIn most cases, adjectives simply describe nouns: tall, short, ripe, rotten, round, perfect, clean, dirty, blank, full, empty, old, new, ancient, medieval, modern, and thousands more.\n\nTHE THREE ARTICLES\n\nThere are only three articles in English: a, an, and the. Articles are always used to modify nouns. Some grammar books treat articles as if they are a separate class of words, but in this book we’ll consider them a small, special subset of adjectives.\nThere is some confusion about when to use a and an. We use the article a before a word that begins with a consonant, and use an before a word that begins with a vowel, as in these phrases:\n\nSo let’s clarify the rules: Use a before a word beginning with a consonant sound (as in a union or a child):\nA unicorn An uninvited guest\n\nUse an before a word beginning with a vowel sound (as in an honor or an only child):\n\nA man An honest man\n\nThe important consideration is the first sound (not the first letter) in the word following the article. This includes the first sound in abbreviations: An M.D., a U. S. territory.\nFinally, a and an are called the indefinite articles. The is the only definite article in English, indicating a specific object that we can distinguish from all other objects of the same kind: the last straw.\n\nSource: Steven Brehe, Brehe’s Grammar Anatomy (2019), University of North Georgia Press, via LibreTexts.\nhttps://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.05:_Tall_Dark_and_Wordsome_--_Adjectives\nCC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/\nAdaptation: selected excerpts; layout converted to plain text. No translation. CEFR not supplied by the source.",
+      "examples": [
+        {
+          "en": "The man",
+          "vi": ""
+        },
+        {
+          "en": "The man in our neighborhood",
+          "vi": ""
+        },
+        {
+          "en": "The irritable, unfriendly man in our neighborhood",
+          "vi": ""
+        }
+      ],
+      "orderIndex": 105,
+      "updatedAt": null,
+      "provenance": {
+        "sourceId": "brehe:libretexts:1.05",
+        "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.05:_Tall_Dark_and_Wordsome_--_Adjectives",
+        "author": "Steven Brehe",
+        "license": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "licenseEvidence": "https://oer.galileo.usg.edu/english-textbooks/20/",
+        "changes": "Selected theory paragraphs and example blocks; removed navigation/page headers; retained English",
+        "sourceHash": "213900607e1a169fcac03ec00b69907c50fe3ab44032b8dca88f55cfa8d42524",
+        "contentVersion": 1
+      },
+      "dataset": "brehe-grammar-anatomy",
+      "contentVersion": 3,
+      "published": true,
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Dùng tính từ để mô tả và so sánh người, sự vật.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "Tall, Dark, and Wordsome -- Adjectives",
+      "contentHash": "e35f48a410d99126d52bf5734610a99ddaef984050c36e7f8a9f0b49a8715829"
+    }
+  },
+  {
+    "collection": "grammar_lessons",
+    "id": "-2608063713321280",
+    "data": {
+      "title": "Trạng từ và cách bổ nghĩa",
+      "level": "A2",
+      "summary": "Nhận biết trạng từ chỉ cách thức, thời gian, nơi chốn và mức độ.",
+      "content": "Adverbs are another important kind of modifier. Here’s a definition that we’ll refer to time and again:\n\nAdverbs are words that modify verbs, adjectives, and other adverbs.\n\nWhen adverbs modify verbs, they indicate when, where, why, or how the action was performed.\n\nRemember this point we saw in Chapter 3: When a word appears between an auxiliary verb and the main verb, it’s an adverb that modifies the main verb:\n\nWhen adverbs modify adjectives, they appear before the adjective and modify the quality expressed by the adjective:\n\nWhen adverbs modify other adverbs, adverbs modify the quality expressed by the other adverb:\n\nNotice that, when adverbs modify adjectives or other adverbs, they nearly always appear just before the word they modify.\n\nClearly adverbs are a diverse class of words; they have a great many uses and forms.\n\nSource: Steven Brehe, Brehe’s Grammar Anatomy (2019), University of North Georgia Press, via LibreTexts.\nhttps://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.06:_Inevitably_Adverbs\nCC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/\nAdaptation: selected excerpts; layout converted to plain text. No translation. CEFR not supplied by the source.",
+      "examples": [
+        {
+          "en": "He ran quickly.",
+          "vi": ""
+        },
+        {
+          "en": "He had finally stopped the noise.",
+          "vi": ""
+        },
+        {
+          "en": "The bright red car sped away.",
+          "vi": ""
+        },
+        {
+          "en": "Mr. Morton ran quite quickly.",
+          "vi": ""
+        }
+      ],
+      "orderIndex": 106,
+      "updatedAt": null,
+      "provenance": {
+        "sourceId": "brehe:libretexts:1.06",
+        "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.06:_Inevitably_Adverbs",
+        "author": "Steven Brehe",
+        "license": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "licenseEvidence": "https://oer.galileo.usg.edu/english-textbooks/20/",
+        "changes": "Selected theory paragraphs and example blocks; removed navigation/page headers; retained English",
+        "sourceHash": "03d2401bf8974c794b992a72646a4f63f85a9a23b2169c498499ce86eb7e5d4a",
+        "contentVersion": 1
+      },
+      "dataset": "brehe-grammar-anatomy",
+      "contentVersion": 3,
+      "published": true,
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Nhận biết trạng từ chỉ cách thức, thời gian, nơi chốn và mức độ.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "Inevitably, Adverbs",
+      "contentHash": "6e133be1186524b912fe0821b14eda3de2efaa57f5be49a76d2ea28865615b96"
+    }
+  },
+  {
+    "collection": "grammar_lessons",
+    "id": "-3337517789121797",
+    "data": {
+      "title": "Giới từ và cụm giới từ",
+      "level": "A2",
+      "summary": "Xác định giới từ, tân ngữ của giới từ và chức năng của cụm giới từ.",
+      "content": "Prepositions are short, simple, and remarkably useful words. We use prepositions to create modifying phrases called prepositional phrases.\n\nWith prepositions we can connect a noun phrase—called the object of the preposition—to another word in a sentence. The preposition and its object together make the prepositional phrase. A prepositional phrase usually modifies a noun or verb, but it can also modify an adjective or adverb.\nHere are some examples of prepositional phrases. The prepositions are underlined, and the remaining words are the objects of the prepositions (with modifiers, in some cases):\n\nAs you see, prepositions usually precede their objects—that is, they are pre-positioned before the objects.\nIn English, there are hundreds of thousands of nouns, verbs, adjectives, and adverbs, but there are relatively few prepositions—\n\nperhaps one hundred or so. The list below contains most of the frequently used prepositions.\n\nSource: Steven Brehe, Brehe’s Grammar Anatomy (2019), University of North Georgia Press, via LibreTexts.\nhttps://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.07:_Among_the_Prepositions\nCC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/\nAdaptation: selected excerpts; layout converted to plain text. No translation. CEFR not supplied by the source.",
+      "examples": [
+        {
+          "en": "in the room",
+          "vi": ""
+        },
+        {
+          "en": "to our house",
+          "vi": ""
+        },
+        {
+          "en": "for your birthday",
+          "vi": ""
+        }
+      ],
+      "orderIndex": 107,
+      "updatedAt": null,
+      "provenance": {
+        "sourceId": "brehe:libretexts:1.07",
+        "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.07:_Among_the_Prepositions",
+        "author": "Steven Brehe",
+        "license": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "licenseEvidence": "https://oer.galileo.usg.edu/english-textbooks/20/",
+        "changes": "Selected theory paragraphs and example blocks; removed navigation/page headers; retained English",
+        "sourceHash": "c4414a2fb39325c4a08c1bbd94f818be0c94ebffecfb824c9d877740ea30e5a5",
+        "contentVersion": 1
+      },
+      "dataset": "brehe-grammar-anatomy",
+      "contentVersion": 3,
+      "published": true,
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Xác định giới từ, tân ngữ của giới từ và chức năng của cụm giới từ.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "Among the Prepositions",
+      "contentHash": "9eae42e5a0450fb92c1afc20f463e810dc2f4834ef05bd86f3e0d92f9f96d7dd"
+    }
+  },
+  {
+    "collection": "grammar_lessons",
+    "id": "-3433874493463316",
+    "data": {
+      "title": "Đại từ nhân xưng",
+      "level": "A1",
+      "summary": "Phân biệt ngôi, số và các dạng chủ ngữ, tân ngữ, sở hữu của đại từ.",
+      "content": "Have we got a chapter for you. We’ve seen that nouns can be the simple subjects in sentences. There is another kind of word that can be a simple subject (and can play other roles in a sentence). It’s the pronoun: a word that takes the place of a noun that appeared earlier in the context.\n\nCommon English pronouns include I, me, mine, you, yours, he, she, it, him, her, his, hers, and others.\nWhen a pronoun takes the place of a noun, the noun replaced is called the antecedent of the pronoun. The antecedent usually appears before (ante-) its pronoun.\n\nPRONOUNS AND PERSON\n\nAll personal pronouns are also classified by person. If you’re referring to yourself with pronouns, you use first-person pronouns: I, me, my, and mine, or the plural forms we, us, our(s).\nIf you’re referring to the person you’re speaking with, you use second-person pronouns: you and your(s). The plural forms are the same.\n\nIf you’re referring to another person outside the conversation, you use third-person pronouns:\n\nhe, she, it;\nhim, her, it; and\nhis, her, its (or the plurals they, them, their, and theirs)\n\nThe third-person singular pronouns are also classified by gender: masculine (he, him, his), feminine (she, her, hers), and neuter (it, its).\n\nPRONOUNS AND CASE\nFinally, we classify personal pronouns by cases: the nominative case, the possessive case, and the objective case. These terms are used all the time in discussions of language, so it’s helpful to understand them. They refer to the forms of the pronouns that we use in certain positions in a sentence.\n\nSource: Steven Brehe, Brehe’s Grammar Anatomy (2019), University of North Georgia Press, via LibreTexts.\nhttps://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.08:_You_and_I_and_the_Personal_Pronouns\nCC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/\nAdaptation: selected excerpts; layout converted to plain text. No translation. CEFR not supplied by the source.",
+      "examples": [
+        {
+          "en": "Gershwin composed. He composed.",
+          "vi": ""
+        },
+        {
+          "en": "George loves Ethel. He loves her.",
+          "vi": ""
+        },
+        {
+          "en": "Pearl painted Mr. Morton’s porch. She painted his porch.",
+          "vi": ""
+        }
+      ],
+      "orderIndex": 108,
+      "updatedAt": null,
+      "provenance": {
+        "sourceId": "brehe:libretexts:1.08",
+        "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.08:_You_and_I_and_the_Personal_Pronouns",
+        "author": "Steven Brehe",
+        "license": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "licenseEvidence": "https://oer.galileo.usg.edu/english-textbooks/20/",
+        "changes": "Selected theory paragraphs and example blocks; removed navigation/page headers; retained English",
+        "sourceHash": "14abf673103ccf9340aa2be63a6739af58a1377339c15327f71be82a04fce90c",
+        "contentVersion": 1
+      },
+      "dataset": "brehe-grammar-anatomy",
+      "contentVersion": 3,
+      "published": true,
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Phân biệt ngôi, số và các dạng chủ ngữ, tân ngữ, sở hữu của đại từ.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "You and I and the Personal Pronouns",
+      "contentHash": "92db5d3d9b87814202c6a838576b8294c2459bbfee01ad0c7095b20b616a2edb"
+    }
+  },
+  {
+    "collection": "grammar_lessons",
+    "id": "-1807651504540543",
+    "data": {
+      "title": "Động từ, tân ngữ và bổ ngữ",
+      "level": "B1",
+      "summary": "Phân tích tân ngữ và các thành phần bổ sung ý nghĩa cho động từ.",
+      "content": "In many sentences, complements are an important part of the predicate: They’re called complements because they complete the verb.\n\nFor example, all these sentences are obviously incomplete:\n\nThe verbs here (seemed, gave, and is) each need another word (or more) to complete their meanings. They need complements. For example:\n\nIn this chapter, we’ll examine five kinds of complements.\n\nPREDICATE ADJECTIVES\n\nEarlier we discussed two kinds of verbs: linking verbs and action verbs. We said that the relatively small number of linking verbs in English include seem, become, appear, looked, felt, and forms of the verb to be.\nLinking verbs typically have complements. In these sentences, the complements are underlined:\n\nEach of these underlined words is an adjective that follows the verb, and each describes the subject of the sentence. Such complements are called predicate adjectives. Here are some more examples:\n\nPREDICATE NOMINATIVES\nPredicate nominatives are nouns or pronouns that follow linking verbs and describe the subject. In these examples, the predicate nominatives are underlined:\n\nSource: Steven Brehe, Brehe’s Grammar Anatomy (2019), University of North Georgia Press, via LibreTexts.\nhttps://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.09:_You_Did_What_Verbs_and_Their_Complements\nCC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/\nAdaptation: selected excerpts; layout converted to plain text. No translation. CEFR not supplied by the source.",
+      "examples": [
+        {
+          "en": "This chapter looks easy.",
+          "vi": ""
+        },
+        {
+          "en": "He seems friendly.",
+          "vi": ""
+        },
+        {
+          "en": "They became calm and quiet.",
+          "vi": ""
+        },
+        {
+          "en": "We are also teachers.",
+          "vi": ""
+        }
+      ],
+      "orderIndex": 109,
+      "updatedAt": null,
+      "provenance": {
+        "sourceId": "brehe:libretexts:1.09",
+        "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.09:_You_Did_What_Verbs_and_Their_Complements",
+        "author": "Steven Brehe",
+        "license": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "licenseEvidence": "https://oer.galileo.usg.edu/english-textbooks/20/",
+        "changes": "Selected theory paragraphs and example blocks; removed navigation/page headers; retained English",
+        "sourceHash": "9785de2873dbcc1829b14ffe6dcb9ee601cf8805bb34beabae1d99b47133e117",
+        "contentVersion": 1
+      },
+      "dataset": "brehe-grammar-anatomy",
+      "contentVersion": 3,
+      "published": true,
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Phân tích tân ngữ và các thành phần bổ sung ý nghĩa cho động từ.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "You Did What? Verbs and Their Complements",
+      "contentHash": "0c9cb0a4583430f8d3785186acc7973c96887e0bd6f073f4f53953934c4d4059"
+    }
+  },
+  {
+    "collection": "grammar_lessons",
+    "id": "-956171213480874",
+    "data": {
+      "title": "Liên từ và cách nối thành phần câu",
+      "level": "A2",
+      "summary": "Dùng liên từ để nối từ, cụm từ và các phần vị ngữ.",
+      "content": "Like prepositions, conjunctions are connecting words. Broadly defined, conjunctions join one word or group of words with a similar word or group of words. There are two kinds.\n\nCOORDINATING CONJUNCTIONS\n\nCoordinating conjunctions create compound struc- tures: They connect two or more grammatically equivalent units of language: a word with a word, a phrase with a phrase, or one sentence with another sentence. In the below sentences, and is the coordinating conjunction:\n\nHere are a few sentences with compound subjects. The conjunctions (and and or) are in bold, and one of the sentences contains a three-part compound subject:\n\nThese sentences contain compound verbs:\n\nSource: Steven Brehe, Brehe’s Grammar Anatomy (2019), University of North Georgia Press, via LibreTexts.\nhttps://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.10:_All_Together_Now_Conjunctions_Compounds_and_Subordinate_Clauses\nCC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/\nAdaptation: selected excerpts; layout converted to plain text. No translation. CEFR not supplied by the source.",
+      "examples": [
+        {
+          "en": "You or I have to clean up this mess.",
+          "vi": ""
+        },
+        {
+          "en": "We hiked, swam and sailed until dark.",
+          "vi": ""
+        },
+        {
+          "en": "You can behave or leave.",
+          "vi": ""
+        }
+      ],
+      "orderIndex": 110,
+      "updatedAt": null,
+      "provenance": {
+        "sourceId": "brehe:libretexts:1.10",
+        "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.10:_All_Together_Now_Conjunctions_Compounds_and_Subordinate_Clauses",
+        "author": "Steven Brehe",
+        "license": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "licenseEvidence": "https://oer.galileo.usg.edu/english-textbooks/20/",
+        "changes": "Selected theory paragraphs and example blocks; removed navigation/page headers; retained English",
+        "sourceHash": "658a4057cd62226e1c443ffd84492ad05582da2bf0586a92082cb4c5e9bf1722",
+        "contentVersion": 1
+      },
+      "dataset": "brehe-grammar-anatomy",
+      "contentVersion": 3,
+      "published": true,
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Dùng liên từ để nối từ, cụm từ và các phần vị ngữ.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "All Together Now Conjunctions, Compounds, and Subordinate Clauses",
+      "contentHash": "069b110be5a4df4579150d9181771d7ab3206c6078047d02c2664f938fe7193f"
+    }
+  },
+  {
+    "collection": "grammar_lessons",
+    "id": "-206959870549364",
+    "data": {
+      "title": "Câu đơn, câu ghép và câu phức",
+      "level": "B1",
+      "summary": "Phân biệt mệnh đề độc lập, mệnh đề phụ thuộc và các kiểu câu.",
+      "content": "As we’ve learned before, a clause is a unit of language that contains one subject and one predicate. That definition overlaps with our working definition of a sentence because every sentence contains at least one clause.\nWe’ve said that are two general kinds of clauses in English:\n\nAn independent clause contains one subject and one predicate, and it contains no word that makes the clause dependent on another clause to be complete. That is, it contains no word like a subordinating conjunction or others that we will learn about. An independent clause is grammatically complete by itself, so it can stand by itself as a complete sentence.\nA dependent clause contains one subject and one predicate, and it is not grammatically complete by itself. It functions as part of an independent clause. Dependent clauses include the subordinate clause (which we create with a subordinating conjunction), and other kinds of dependent clauses that we’ll learn about soon.\n\nA subordinate clause is one kind of dependent clause. A subordinate clause contains one subject and one predicate, and it must be connected to an independent clause by a subordinating conjunction. The clause above (Before we fixed dinner . . .) is a subordinate clause.\nAgain, notice the difference between dependent clauses and subordinate clauses: A subordinate clause is one kind of dependent clause. (We’ll study two other kinds of dependent clauses in later chapters: the relative clause and the nominal clause.)\n\nFinally, here is a new definition of a sentence, that important unit of language that we’ve talked about all along:\n\nA sentence is a unit of language that contains at least one independent clause. It may also contain one or more dependent clauses.\n\nSimple Sentence: A simple sentence contains only one independent clause:\n\nCompound Sentence: A compound sentence contains at least two clauses: two or more independent clauses joined by one or more coordinating conjunctions. There are no dependent clauses in a compound sentence:\n\nComplex Sentence: A complex sentence contains at least two clauses: only one independent clause and one or more dependent clauses. In the examples in this chapter, the dependent clauses will be joined to the independent clauses by one or more subordinating conjunctions (shown in bold):\n\nSource: Steven Brehe, Brehe’s Grammar Anatomy (2019), University of North Georgia Press, via LibreTexts.\nhttps://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.11:_Sentencing_Guidelines_Building_Sentences_with_Clauses\nCC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/\nAdaptation: selected excerpts; layout converted to plain text. No translation. CEFR not supplied by the source.",
+      "examples": [
+        {
+          "en": "I went to the garage.",
+          "vi": ""
+        },
+        {
+          "en": "Alphonse and I went to the garage, found his car, and drove it home.",
+          "vi": ""
+        },
+        {
+          "en": "I went to the garage, and I found my bike.",
+          "vi": ""
+        },
+        {
+          "en": "I went to the garage because I needed my bike.",
+          "vi": ""
+        }
+      ],
+      "orderIndex": 111,
+      "updatedAt": null,
+      "provenance": {
+        "sourceId": "brehe:libretexts:1.11",
+        "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.11:_Sentencing_Guidelines_Building_Sentences_with_Clauses",
+        "author": "Steven Brehe",
+        "license": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "licenseEvidence": "https://oer.galileo.usg.edu/english-textbooks/20/",
+        "changes": "Selected theory paragraphs and example blocks; removed navigation/page headers; retained English",
+        "sourceHash": "111cff53de2b13ef7aefa3b455d793b669255464b79901860a24da73c103e523",
+        "contentVersion": 1
+      },
+      "dataset": "brehe-grammar-anatomy",
+      "contentVersion": 3,
+      "published": true,
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Phân biệt mệnh đề độc lập, mệnh đề phụ thuộc và các kiểu câu.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "Sentencing Guidelines Building Sentences with Clauses",
+      "contentHash": "4fd68a27002ce0c7c7fd7979e748c4930a7866114c15bcfeebd3794659cdc8fe"
+    }
+  },
+  {
+    "collection": "grammar_lessons",
+    "id": "-4001687141874830",
+    "data": {
+      "title": "Mệnh đề quan hệ",
+      "level": "B1",
+      "summary": "Nhận biết mệnh đề bổ nghĩa cho danh từ và cách dùng đại từ quan hệ.",
+      "content": "In this chapter we learn about another kind of dependent clause, the relative clause. There are two kinds of relative clauses. The first that we’ll examine is based on the relative pronouns; the second is based on the relative adverbs.\n\nTHEY’RE ALL RELATIVE The relative pronouns are\n\nwho whom whose which that\n\n(Whom is the objective form of who; whose is the possessive.) Committing these five relative pronouns to memory will help\nyou recognize relative clauses.\nAs you’ll see in the examples below, relative pronouns begin\n\nrelative clauses. The relative clauses are underlined:\n\nThe man who spoke to you is my uncle. My uncle is the man whom you saw.\n\nThe woman whose car you hit is my neighbor. The car, which is a total wreck, is a Chevrolet. The car that you hit is a Chevrolet.\n\nRelative clauses modify nouns in a sentence. They cannot be moved around like subordinate clauses, but always appear after the nouns they modify.\nRelative pronouns play two roles in a sentence. First, relative pronouns connect their own clause to another clause, which is usually independent. Second, as pronouns, they stand in for nouns. The relative pronoun appears in the relative clause, and the antecedent of the pronoun is in the independent clause.\n\nHere’s an important point: The antecedent of the relative pronoun is always the noun modified by the relative clause.\n\nAs you’ve just seen, with relative pronouns we can combine two independent clauses into one complex sentence. The resulting sentence has one independent clause and one relative clause embedded inside the independent clause. And, of course, the sentence may contain more than two clauses.\nAs the example above shows, the relative clause is adjectival: the relative clause modifies job. Relative clauses are always adjectival and always follow the nouns they modify.\n\nSource: Steven Brehe, Brehe’s Grammar Anatomy (2019), University of North Georgia Press, via LibreTexts.\nhttps://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.12:_Relative_Clauses_Which_We_Need\nCC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/\nAdaptation: selected excerpts; layout converted to plain text. No translation. CEFR not supplied by the source.",
+      "examples": [
+        {
+          "en": "I got the job, which is part-time.",
+          "vi": ""
+        },
+        {
+          "en": "I borrowed the broom from the woman whose house I rent.",
+          "vi": ""
+        }
+      ],
+      "orderIndex": 112,
+      "updatedAt": null,
+      "provenance": {
+        "sourceId": "brehe:libretexts:1.12",
+        "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.12:_Relative_Clauses_Which_We_Need",
+        "author": "Steven Brehe",
+        "license": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "licenseEvidence": "https://oer.galileo.usg.edu/english-textbooks/20/",
+        "changes": "Selected theory paragraphs and example blocks; removed navigation/page headers; retained English",
+        "sourceHash": "b76b32d7cac11469252b6914b1720cc3395d1b4fbd17ab605c9efb5f1b09a89f",
+        "contentVersion": 1
+      },
+      "dataset": "brehe-grammar-anatomy",
+      "contentVersion": 3,
+      "published": true,
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Nhận biết mệnh đề bổ nghĩa cho danh từ và cách dùng đại từ quan hệ.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "Relative Clauses, Which We Need",
+      "contentHash": "389f6e578b8880cbd8ac20bfb55a71767e2e6351cd173346305e81e1b412e87b"
+    }
+  },
+  {
+    "collection": "grammar_lessons",
+    "id": "-1866751447738440",
+    "data": {
+      "title": "Phân biệt các loại mệnh đề phụ thuộc",
+      "level": "B2",
+      "summary": "Phân tích chức năng của mệnh đề trạng ngữ, quan hệ và danh từ.",
+      "content": "We’ve learned that there are three kinds of dependent clauses: subordinate clauses, relative clauses, and nominal clauses.\n\nSometimes nominal clauses superficially resemble subordinate or relative clauses. This chapter will help you get better at recognizing each kind.\n\nFirst, let’s review.\n\nSubordinate clauses are adverbial. They can modify verbs, adjectives, and other adverbs. When modifying verbs, they are usually moveable. They always begin with a subordinating conjunction:\n\nRelative clauses are adjectival, following nouns and occasionally pronouns. They begin with relative pronouns or relative adverbs and follow the nouns they modify.\n\nNominal clauses can fill noun positions just about anywhere in a sentence. Nominalizers or question words appear at the beginning of nominal clauses:\n\nSource: Steven Brehe, Brehe’s Grammar Anatomy (2019), University of North Georgia Press, via LibreTexts.\nhttps://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.14:_Theyre_So_Dependent_Distinguishing_Dependent_Clauses\nCC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/\nAdaptation: selected excerpts; layout converted to plain text. No translation. CEFR not supplied by the source.",
+      "examples": [
+        {
+          "en": "Ed is the man who told me that story.",
+          "vi": ""
+        },
+        {
+          "en": "We ate at the restaurant in Portland where we first met.",
+          "vi": ""
+        },
+        {
+          "en": "I wonder if he will come to the party.",
+          "vi": ""
+        },
+        {
+          "en": "I think that he will come.",
+          "vi": ""
+        }
+      ],
+      "orderIndex": 114,
+      "updatedAt": null,
+      "provenance": {
+        "sourceId": "brehe:libretexts:1.14",
+        "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.14:_Theyre_So_Dependent_Distinguishing_Dependent_Clauses",
+        "author": "Steven Brehe",
+        "license": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "licenseEvidence": "https://oer.galileo.usg.edu/english-textbooks/20/",
+        "changes": "Selected theory paragraphs and example blocks; removed navigation/page headers; retained English",
+        "sourceHash": "ac9395516cdec06a5dbf00d7ec8fd20ec128af8c282968442b0d52ab7247fbea",
+        "contentVersion": 1
+      },
+      "dataset": "brehe-grammar-anatomy",
+      "contentVersion": 3,
+      "published": true,
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Phân tích chức năng của mệnh đề trạng ngữ, quan hệ và danh từ.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "They’re So Dependent Distinguishing Dependent Clauses",
+      "contentHash": "e3aa05b221c78ac5f5a45d80690f5042b228578ac2ea88674fe6a00009793404"
+    }
+  },
+  {
+    "collection": "grammar_lessons",
+    "id": "-902698471538092",
+    "data": {
+      "title": "Câu chủ động và câu bị động",
+      "level": "B1",
+      "summary": "Nhận biết thể bị động và cấu trúc trợ động từ đi cùng quá khứ phân từ.",
+      "content": "VERBS HAVE VOICE: ACTIVE AND PASSIVE\n\nIn Chapter 8 on complements, we discussed two classes of action verbs called transitive and intransitive:\n\nINTRANSITIVE: He sang. TRANSITIVE: He sang a song.\nINTRANSITIVE: She wrote. TRANSITIVE: She wrote a novel.\n\nWe said that verbs are transitive when they have direct objects, as in the examples above. Linking verbs are never transitive.\n\nNow we learn another thing: Transitive verbs—and only transitives—are capable of two voices: active and passive.\n\nIn passive voice verbs, the subject is the receiver of the action. The performer is deleted from the sentence, or it is shifted to the end of the sentence in a prepositional phrase:\n\nIn passive verbs, the main verb is always a past participle and the auxiliary just before the main verb is a form of be:\n\nSource: Steven Brehe, Brehe’s Grammar Anatomy (2019), University of North Georgia Press, via LibreTexts.\nhttps://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.15:_What_More_Verbs_and_Voice_Infinitives_and_Passive_Complements\nCC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/\nAdaptation: selected excerpts; layout converted to plain text. No translation. CEFR not supplied by the source.",
+      "examples": [
+        {
+          "en": "The batter hit the ball.",
+          "vi": ""
+        },
+        {
+          "en": "The ball was hit.",
+          "vi": ""
+        },
+        {
+          "en": "The ball was hit by the batter.",
+          "vi": ""
+        }
+      ],
+      "orderIndex": 115,
+      "updatedAt": null,
+      "provenance": {
+        "sourceId": "brehe:libretexts:1.15",
+        "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.15:_What_More_Verbs_and_Voice_Infinitives_and_Passive_Complements",
+        "author": "Steven Brehe",
+        "license": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "licenseEvidence": "https://oer.galileo.usg.edu/english-textbooks/20/",
+        "changes": "Selected theory paragraphs and example blocks; removed navigation/page headers; retained English",
+        "sourceHash": "46ad97825ec6dd200dd491a718f4098940fdb5190d9362d9522c98fbdbefec36",
+        "contentVersion": 1
+      },
+      "dataset": "brehe-grammar-anatomy",
+      "contentVersion": 3,
+      "published": true,
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Nhận biết thể bị động và cấu trúc trợ động từ đi cùng quá khứ phân từ.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "What, More? Verbs and Voice, Infinitives, and Passive Complements",
+      "contentHash": "3f823113dcfe6320ae866390145fb67855a71b86b49f02c89bbaa28bbca0eb42"
+    }
+  },
+  {
+    "collection": "grammar_lessons",
+    "id": "-1770053837860890",
+    "data": {
+      "title": "Thán từ và cách bộc lộ cảm xúc",
+      "level": "A1",
+      "summary": "Nhận biết thán từ diễn tả ngạc nhiên, đau đớn và các phản ứng khác.",
+      "content": "The interjection is a common grammatical category, and a simple one, for any word or group of words that we use to express shock, surprise, pain, joy, admiration, and a wide range of other feelings and responses.\n\nINTERJECTIONS\n\nInterjections are used by themselves or as part of a sentence:\n\nInterjections have no distinctive form. They can be single words or longer phrases; they can be joined to sentences by commas or dashes, or they can stand independently, ending with periods, question marks, or exclamation marks:\n\nThe most important thing to know about interjections is that, although they are useful for self-expression and social interaction, they play no grammatical role in the sentence. In analyzing the grammar of a sentence, you can disregard the interjections.\nSome grammar books classify some of these words as adverbs, though they clearly do not modify verbs, adjectives, or other adverbs. (Some could arguably be sentence modifiers, which we’ll examine in Chapter 20.) For our purposes, calling them interjections is sufficient.\n\nSource: Steven Brehe, Brehe’s Grammar Anatomy (2019), University of North Georgia Press, via LibreTexts.\nhttps://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.17:_Zowie_Interjections_and_the_Eight_Parts_of_Speech\nCC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/\nAdaptation: selected excerpts; layout converted to plain text. No translation. CEFR not supplied by the source.",
+      "examples": [
+        {
+          "en": "Good grief! Cool!",
+          "vi": ""
+        },
+        {
+          "en": "What now?",
+          "vi": ""
+        },
+        {
+          "en": "Wow!",
+          "vi": ""
+        },
+        {
+          "en": "Oy!",
+          "vi": ""
+        }
+      ],
+      "orderIndex": 117,
+      "updatedAt": null,
+      "provenance": {
+        "sourceId": "brehe:libretexts:1.17",
+        "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.17:_Zowie_Interjections_and_the_Eight_Parts_of_Speech",
+        "author": "Steven Brehe",
+        "license": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "licenseEvidence": "https://oer.galileo.usg.edu/english-textbooks/20/",
+        "changes": "Selected theory paragraphs and example blocks; removed navigation/page headers; retained English",
+        "sourceHash": "28e46519a62bedb1f6193f64a9ecfaa0a62309288fb5a0b992dd674c281b70f0",
+        "contentVersion": 1
+      },
+      "dataset": "brehe-grammar-anatomy",
+      "contentVersion": 3,
+      "published": true,
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Nhận biết thán từ diễn tả ngạc nhiên, đau đớn và các phản ứng khác.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "Zowie! Interjections and the Eight Parts of Speech",
+      "contentHash": "8c429320d1e5199d569d4c36d321b62f570914ffa5e0f298d3ed264cf311c343"
+    }
+  },
+  {
+    "collection": "grammar_lessons",
+    "id": "-634339497262230",
+    "data": {
+      "title": "Danh động từ và chức năng trong câu",
+      "level": "A2",
+      "summary": "Nhận biết dạng động từ thêm đuôi -ing được dùng như danh từ.",
+      "content": "A verbal is a verb that doesn’t mind its own business. It is a verb in form with a different function—it’s a verb behaving like another part of speech. (The nerve of some verbs.) A verbal can function as a noun, an adjective, or an adverb.\nWhile verbals are used as other parts of speech, they retain some of the important qualities of verbs. For example, they can take direct objects and indirect objects and other complements, and they can be modified by adverbs. Because they’re versatile, verbals are enormously useful to writers who understand the power of verbs and want to work as much action into their sentences as possible.\nThere are only three kinds of verbals, and in this chapter we’ll discuss the two simplest kinds: gerunds and participles. The infinitives will come next.\n\nGERUNDS: VERBS AS NOUNS\n\nA gerund appears only in the present participle form (the – ing form) and it’s always used as a noun:\n\nIn all the sentences above, the gerund phrase (underlined) functions as a direct object. Some gerunds, created from transitive verbs, can also take their own direct objects.\n\nIn both of the following sentences, the underlined portion includes the gerund, which is the direct object of the sentences, and another noun phrase, which is the direct object of the verbal:\n\nSource: Steven Brehe, Brehe’s Grammar Anatomy (2019), University of North Georgia Press, via LibreTexts.\nhttps://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.18:_Those_Verbing_Verbals_Gerunds_and_Participles\nCC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/\nAdaptation: selected excerpts; layout converted to plain text. No translation. CEFR not supplied by the source.",
+      "examples": [
+        {
+          "en": "I enjoy baking. And I enjoy hiking.",
+          "vi": ""
+        },
+        {
+          "en": "And I also enjoy reading.",
+          "vi": ""
+        },
+        {
+          "en": "I enjoy baking cakes. I enjoy reading books.",
+          "vi": ""
+        }
+      ],
+      "orderIndex": 118,
+      "updatedAt": null,
+      "provenance": {
+        "sourceId": "brehe:libretexts:1.18",
+        "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.18:_Those_Verbing_Verbals_Gerunds_and_Participles",
+        "author": "Steven Brehe",
+        "license": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "licenseEvidence": "https://oer.galileo.usg.edu/english-textbooks/20/",
+        "changes": "Selected theory paragraphs and example blocks; removed navigation/page headers; retained English",
+        "sourceHash": "57b91d06f2c08f68e4c04550ebe3cbcb9fcfed3749e963353ec303e8e25eef28",
+        "contentVersion": 1
+      },
+      "dataset": "brehe-grammar-anatomy",
+      "contentVersion": 3,
+      "published": true,
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Nhận biết dạng động từ thêm đuôi -ing được dùng như danh từ.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "Those Verbing Verbals Gerunds and Participles",
+      "contentHash": "65ec1091dcc5f572290dd54c78d856b7f58cd8569bf29747fd0cabd25f76cbec"
+    }
+  },
+  {
+    "collection": "grammar_lessons",
+    "id": "-1959161190146212",
+    "data": {
+      "title": "Động từ nguyên mẫu và chức năng trong câu",
+      "level": "B1",
+      "summary": "Phân tích cụm động từ nguyên mẫu khi làm chủ ngữ hoặc bổ nghĩa cho danh từ.",
+      "content": "The third kind of verbal is easy to recognize, but a bit tricky when you analyze its function in a sentence.\n\nINFINITIVES\n\nAs we said in Chapter 14, an infinitive verb is usually the present form of the verb preceded by the particle to: to laugh, to be, to seem, to break, to pontificate, to discombobulate. There’s an infinitive for every verb in English, except the modal auxiliaries.\nBut infinitive verbs are never used as a main verb or as an auxiliary verb. Like the other verbals, infinitives perform the functions of other parts of speech, and infinitives are particularly versatile. Infinitives can be used nominally, adjectivally, and adverbially; but, like ordinary verbs, they can still take complements and be modified by adverbs.\n\nFirst, infinitives can be used nominally, in any way that you’d use a noun:\n\nNotice that sometimes you can recognize nominal infinitives with this simple test: You can often replace them with gerunds without changing the meaning of the sentence:\n\nSecond, infinitives can be used as adjectives, following a noun or certain linking verbs:\n\nSource: Steven Brehe, Brehe’s Grammar Anatomy (2019), University of North Georgia Press, via LibreTexts.\nhttps://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.19:_To_Boldly_Verb_Infinitives\nCC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/\nAdaptation: selected excerpts; layout converted to plain text. No translation. CEFR not supplied by the source.",
+      "examples": [
+        {
+          "en": "To quit now would be a mistake. [a subject]",
+          "vi": ""
+        },
+        {
+          "en": "He likes to run. [a direct object]",
+          "vi": ""
+        },
+        {
+          "en": "I need a book to read. [a modifier of book]",
+          "vi": ""
+        }
+      ],
+      "orderIndex": 119,
+      "updatedAt": null,
+      "provenance": {
+        "sourceId": "brehe:libretexts:1.19",
+        "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.19:_To_Boldly_Verb_Infinitives",
+        "author": "Steven Brehe",
+        "license": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "licenseEvidence": "https://oer.galileo.usg.edu/english-textbooks/20/",
+        "changes": "Selected theory paragraphs and example blocks; removed navigation/page headers; retained English",
+        "sourceHash": "bbf628f1b31209f665b83d327a27814a53b896f5af86d0fc694a24e3da543aba",
+        "contentVersion": 1
+      },
+      "dataset": "brehe-grammar-anatomy",
+      "contentVersion": 3,
+      "published": true,
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Phân tích cụm động từ nguyên mẫu khi làm chủ ngữ hoặc bổ nghĩa cho danh từ.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "To Boldly Verb Infinitives",
+      "contentHash": "fb29ca89dc624b2ec3ed03e085d06049e1c83ebcec2d159ce7ed570638fe4d20"
+    }
+  },
+  {
+    "collection": "grammar_lessons",
+    "id": "-2425877179468242",
+    "data": {
+      "title": "Đại từ phản thân và đại từ chỉ định",
+      "level": "A2",
+      "summary": "Dùng đại từ để nói về chính chủ thể và chỉ người, sự vật.",
+      "content": "We have already learned about two important groups of pronouns: the personal pronouns and the relative pronouns. In this chapter, we’ll examine the four other groups, which, though perhaps not as prominent in some grammars, are words that we need every day.\nThese pronouns are tricky to discuss in an orderly way because grammarians have different ways of sorting them out, and some pronouns fit into two or more categories, depending on the way we use them. (There’s that form and function idea again.) The relative pronoun who can also be an interrogative pronoun. The relative pronoun that can also be a demonstrative pronoun. So it goes.\n\nTHE REFLEXIVE PRONOUNS\nThe reflexive pronouns are compound words. In each one, the first part is a personal pronoun and the second part is always –self. They are often used for emphasis:\n\nNotice that in all the examples above, the reflexive pronouns are redundant—without them, the sentences would communicate the same meanings, but less emphatically. When used this way, the –self pronouns are often called intensifying pronouns. (In the last example above, by the way, herself is an appositive for she.)\n\nJust as often, reflexive pronouns communicate something about the subjects of the sentence performing actions upon themselves—making the action reflexive:\n\nOne should take care of oneself.\nAs you see, the reflexive pronouns can be in the first, second, or third person. When the first part is plural, the second part is, too. That is, there is no ourself or themself, although you may sometimes hear people say those words. (There is also no hisself, but you’ll hear that, too.)\n\nDemonstrative pronouns are four common and easy pronouns (usually used nominally, but sometimes adjectivally) that call attention to the antecedents. They are typically present in the immediate verbal or physical context:\n\nSource: Steven Brehe, Brehe’s Grammar Anatomy (2019), University of North Georgia Press, via LibreTexts.\nhttps://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.20:_Whats_That_More_Pronouns\nCC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/\nAdaptation: selected excerpts; layout converted to plain text. No translation. CEFR not supplied by the source.",
+      "examples": [
+        {
+          "en": "I’ll do the job myself!",
+          "vi": ""
+        },
+        {
+          "en": "All right, do it yourself.",
+          "vi": ""
+        },
+        {
+          "en": "Jim hurt himself.",
+          "vi": ""
+        },
+        {
+          "en": "June found herself in an enviable situation.",
+          "vi": ""
+        }
+      ],
+      "orderIndex": 120,
+      "updatedAt": null,
+      "provenance": {
+        "sourceId": "brehe:libretexts:1.20",
+        "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.20:_Whats_That_More_Pronouns",
+        "author": "Steven Brehe",
+        "license": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "licenseEvidence": "https://oer.galileo.usg.edu/english-textbooks/20/",
+        "changes": "Selected theory paragraphs and example blocks; removed navigation/page headers; retained English",
+        "sourceHash": "f8fbc7bd5e0542c46bf38a9cf8948426ddf13cfc3a90f4e46d4ac0e461aac019",
+        "contentVersion": 1
+      },
+      "dataset": "brehe-grammar-anatomy",
+      "contentVersion": 3,
+      "published": true,
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Dùng đại từ để nói về chính chủ thể và chỉ người, sự vật.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "What’s That? More Pronouns",
+      "contentHash": "eb28e3b9a715367e4da1755fb9e518df949946c449008e397faf53fb43f76f9c"
+    }
+  },
+  {
+    "collection": "grammar_lessons",
+    "id": "-1126557612826906",
+    "data": {
+      "title": "Chủ ngữ giả và cách sắp xếp câu",
+      "level": "B1",
+      "summary": "Nhận biết cấu trúc dùng chủ ngữ giả để đưa nội dung dài về cuối câu.",
+      "content": "In this book, we don’t try to cover every possible topic in English grammar, but here are a few that we still need to discuss briefly.\n\nTHE EXPLETIVE IT\n\nThe personal pronoun it can be used as an expletive (as there is used), to postpone the subject until later in the sentence. The subject will then appear later in the sentence, usually to the right of the verb.\n\nThe expletive it can only work with a subject that is a nominal infinitive phrase or a nominal clause.\nThe expletive it is used less frequently than there, appearing in sentences similar to the following pairs, where the first sentence in each pair contains no expletive. All the subjects are underlined.\n\nAs we’ve seen, the phrase to admit my mistakes is called a verbal (more specifically, a nominal infinitive phrase). And that I made mistakes is a nominal clause.\n\nLike the expletive there, expletive it has no grammatical function in these sentences, only a stylistic function: to postpone the appearance of the subject. In the following pairs of sentences, the grammatical structure is exactly the same in both sentences, and the underlined portions are the subjects.\n\nWhen we write sentences like these, we typically write the versions with the expletive it; the versions without it sometimes seem awkward.\nIn English, we also use the pronoun it as a subject in conventional expressions regarding weather or time. In these sentences, it is an indefinite pronoun, not an expletive:\n\nSource: Steven Brehe, Brehe’s Grammar Anatomy (2019), University of North Georgia Press, via LibreTexts.\nhttps://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.21:_Many_Things_(But_no_Cabbages_or_Kings)\nCC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/\nAdaptation: selected excerpts; layout converted to plain text. No translation. CEFR not supplied by the source.",
+      "examples": [
+        {
+          "en": "To admit my mistakes is difficult. It is difficult to admit my mistakes.",
+          "vi": ""
+        },
+        {
+          "en": "That I made mistakes is true. It is true that I made mistakes.",
+          "vi": ""
+        },
+        {
+          "en": "To trust him is difficult. It is difficult to trust him.",
+          "vi": ""
+        },
+        {
+          "en": "To understand the theory requires patience. It requires patience to understand the theory.",
+          "vi": ""
+        }
+      ],
+      "orderIndex": 121,
+      "updatedAt": null,
+      "provenance": {
+        "sourceId": "brehe:libretexts:1.21",
+        "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.21:_Many_Things_(But_no_Cabbages_or_Kings)",
+        "author": "Steven Brehe",
+        "license": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "licenseEvidence": "https://oer.galileo.usg.edu/english-textbooks/20/",
+        "changes": "Selected theory paragraphs and example blocks; removed navigation/page headers; retained English",
+        "sourceHash": "ad282f55b18e3dc3f80ed073491b90281ea0de52cab56bab71df0e92bcf23856",
+        "contentVersion": 1
+      },
+      "dataset": "brehe-grammar-anatomy",
+      "contentVersion": 3,
+      "published": true,
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Nhận biết cấu trúc dùng chủ ngữ giả để đưa nội dung dài về cuối câu.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "Many Things (But no Cabbages or Kings)",
+      "contentHash": "9e5d6638f3a7de34115c994a7d73cb634b6f7e3c2d2450edbea44b033716d728"
+    }
+  },
+  {
+    "collection": "grammar_lessons",
+    "id": "-3126738140425883",
+    "data": {
+      "title": "Dấu phẩy trong thành phần chen vào",
+      "level": "A2",
+      "summary": "Đặt đủ cặp dấu phẩy để tách phần giải thích chen giữa câu.",
+      "content": "COMMAS\n\nThe Parenthetical Commas\n\nCommas often come in pairs, like parentheses, and these pairs have a good many uses. In general, we can use them where we might use a pair of parentheses (or a pair of dashes).\nWith parenthetical commas, the most common and serious error is forgetting the second comma. Don’t do that.\n\nSource: Steven Brehe, Brehe’s Grammar Anatomy (2019), University of North Georgia Press, via LibreTexts.\nhttps://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.22:_Keeping_Those_Little_Puncs_in_A_Brief_Review_of_Punctuation\nCC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/\nAdaptation: selected excerpts; layout converted to plain text. No translation. CEFR not supplied by the source.",
+      "examples": [],
+      "orderIndex": 122,
+      "updatedAt": null,
+      "provenance": {
+        "sourceId": "brehe:libretexts:1.22",
+        "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.22:_Keeping_Those_Little_Puncs_in_A_Brief_Review_of_Punctuation",
+        "author": "Steven Brehe",
+        "license": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "licenseEvidence": "https://oer.galileo.usg.edu/english-textbooks/20/",
+        "changes": "Selected theory paragraphs and example blocks; removed navigation/page headers; retained English",
+        "sourceHash": "d71fcdd478fe2c97b6e04a0feb39aaa5ad5390ccdc2c64e0172734a182e963db",
+        "contentVersion": 1
+      },
+      "dataset": "brehe-grammar-anatomy",
+      "contentVersion": 3,
+      "published": true,
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Đặt đủ cặp dấu phẩy để tách phần giải thích chen giữa câu.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "Keeping Those Little Puncs in A Brief Review of Punctuation",
+      "contentHash": "6e9a25821b77b85f39107735d7fe4494e93a2d34250c231cd85b4781ba6384de"
+    }
+  },
+  {
+    "collection": "grammar_catalog",
+    "id": "-698730031035804",
+    "data": {
+      "title": "Làm quen với ngữ pháp tiếng Anh",
+      "level": "A1",
+      "summary": "Hiểu vai trò của trật tự từ và dạng đại từ trong câu.",
+      "orderIndex": 101,
+      "contentVersion": 3,
+      "dataset": "brehe-grammar-anatomy",
+      "sourceId": "brehe:libretexts:1.01",
+      "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.01:_Introduction-_Grammar_What_Grammar",
+      "author": "Steven Brehe",
+      "license": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "published": true,
+      "practiceDataset": "engmate-brehe-practice-v1",
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Hiểu vai trò của trật tự từ và dạng đại từ trong câu.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "Introduction- Grammar? What Grammar?",
+      "contentHash": "f5a426f7d41ec9d14fe1c4d2b9e174cc0cf476d6f2fd3676643e5ef7e0b45028"
+    }
+  },
+  {
+    "collection": "grammar_catalog",
+    "id": "-1389976289153513",
+    "data": {
+      "title": "Chủ ngữ và vị ngữ",
+      "level": "A1",
+      "summary": "Nhận biết chủ ngữ, vị ngữ và các thành phần chính của câu.",
+      "orderIndex": 102,
+      "contentVersion": 3,
+      "dataset": "brehe-grammar-anatomy",
+      "sourceId": "brehe:libretexts:1.02",
+      "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.02:_Together_Forever_Subjects_and_Predicates",
+      "author": "Steven Brehe",
+      "license": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "published": true,
+      "practiceDataset": "engmate-brehe-practice-v1",
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Nhận biết chủ ngữ, vị ngữ và các thành phần chính của câu.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "Together Forever, Subjects and Predicates",
+      "contentHash": "15771b4ccd55b288f4d6b1d0785ac5599abaa7201711f4549d1b5cd49ce0250a"
+    }
+  },
+  {
+    "collection": "grammar_catalog",
+    "id": "-4175336615649289",
+    "data": {
+      "title": "Thì và các dạng của động từ",
+      "level": "A2",
+      "summary": "Ôn các dạng động từ, động từ bất quy tắc và cách diễn đạt thời gian.",
+      "orderIndex": 103,
+      "contentVersion": 3,
+      "dataset": "brehe-grammar-anatomy",
+      "sourceId": "brehe:libretexts:1.03",
+      "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.03:_Get_Tense_Verb_Tense_Principal_Parts_and_Irregular_Verbs",
+      "author": "Steven Brehe",
+      "license": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "published": true,
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Ôn các dạng động từ, động từ bất quy tắc và cách diễn đạt thời gian.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "Get Tense Verb Tense, Principal Parts, and Irregular Verbs",
+      "contentHash": "2a4f814f2fdc2788a1c1cedca2ff16a05c54f1c6f81c74bb00a6660cf0f0e928"
+    }
+  },
+  {
+    "collection": "grammar_catalog",
+    "id": "-2052679124253647",
+    "data": {
+      "title": "Danh từ và động từ",
+      "level": "A1",
+      "summary": "Phân biệt danh từ, động từ và vai trò của chúng trong câu.",
+      "orderIndex": 104,
+      "contentVersion": 3,
+      "dataset": "brehe-grammar-anatomy",
+      "sourceId": "brehe:libretexts:1.04",
+      "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.04:_The_Indispensables_Nouns_and_Verbs",
+      "author": "Steven Brehe",
+      "license": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "published": true,
+      "practiceDataset": "engmate-brehe-practice-v1",
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Phân biệt danh từ, động từ và vai trò của chúng trong câu.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "The Indispensables Nouns and Verbs",
+      "contentHash": "380adb64e70bb1ef6948cd2092745918a6a4e64106fe430fa54998eb9a7e7d42"
+    }
+  },
+  {
+    "collection": "grammar_catalog",
+    "id": "-1958826981997677",
+    "data": {
+      "title": "Tính từ và các dạng so sánh",
+      "level": "A1",
+      "summary": "Dùng tính từ để mô tả và so sánh người, sự vật.",
+      "orderIndex": 105,
+      "contentVersion": 3,
+      "dataset": "brehe-grammar-anatomy",
+      "sourceId": "brehe:libretexts:1.05",
+      "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.05:_Tall_Dark_and_Wordsome_--_Adjectives",
+      "author": "Steven Brehe",
+      "license": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "published": true,
+      "practiceDataset": "engmate-brehe-practice-v1",
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Dùng tính từ để mô tả và so sánh người, sự vật.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "Tall, Dark, and Wordsome -- Adjectives",
+      "contentHash": "6859e5056239e9e3855e57f53f2162690eca7425821443926dc01be48c5a8377"
+    }
+  },
+  {
+    "collection": "grammar_catalog",
+    "id": "-2608063713321280",
+    "data": {
+      "title": "Trạng từ và cách bổ nghĩa",
+      "level": "A2",
+      "summary": "Nhận biết trạng từ chỉ cách thức, thời gian, nơi chốn và mức độ.",
+      "orderIndex": 106,
+      "contentVersion": 3,
+      "dataset": "brehe-grammar-anatomy",
+      "sourceId": "brehe:libretexts:1.06",
+      "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.06:_Inevitably_Adverbs",
+      "author": "Steven Brehe",
+      "license": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "published": true,
+      "practiceDataset": "engmate-brehe-practice-v1",
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Nhận biết trạng từ chỉ cách thức, thời gian, nơi chốn và mức độ.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "Inevitably, Adverbs",
+      "contentHash": "b08d229cd6e04c3bc27feb488659eb6fcabef54e9178aee4bfadaf1c57c2d8d7"
+    }
+  },
+  {
+    "collection": "grammar_catalog",
+    "id": "-3337517789121797",
+    "data": {
+      "title": "Giới từ và cụm giới từ",
+      "level": "A2",
+      "summary": "Xác định giới từ, tân ngữ của giới từ và chức năng của cụm giới từ.",
+      "orderIndex": 107,
+      "contentVersion": 3,
+      "dataset": "brehe-grammar-anatomy",
+      "sourceId": "brehe:libretexts:1.07",
+      "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.07:_Among_the_Prepositions",
+      "author": "Steven Brehe",
+      "license": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "published": true,
+      "practiceDataset": "engmate-brehe-practice-v1",
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Xác định giới từ, tân ngữ của giới từ và chức năng của cụm giới từ.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "Among the Prepositions",
+      "contentHash": "cc295510933d7d163c7ee0219602a2a0261b5d452410514a79549ca5eb6528d3"
+    }
+  },
+  {
+    "collection": "grammar_catalog",
+    "id": "-3433874493463316",
+    "data": {
+      "title": "Đại từ nhân xưng",
+      "level": "A1",
+      "summary": "Phân biệt ngôi, số và các dạng chủ ngữ, tân ngữ, sở hữu của đại từ.",
+      "orderIndex": 108,
+      "contentVersion": 3,
+      "dataset": "brehe-grammar-anatomy",
+      "sourceId": "brehe:libretexts:1.08",
+      "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.08:_You_and_I_and_the_Personal_Pronouns",
+      "author": "Steven Brehe",
+      "license": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "published": true,
+      "practiceDataset": "engmate-brehe-practice-v1",
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Phân biệt ngôi, số và các dạng chủ ngữ, tân ngữ, sở hữu của đại từ.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "You and I and the Personal Pronouns",
+      "contentHash": "798479d311714f1565449db45574353efd109c423ed022fe9cb712cd77fd5111"
+    }
+  },
+  {
+    "collection": "grammar_catalog",
+    "id": "-1807651504540543",
+    "data": {
+      "title": "Động từ, tân ngữ và bổ ngữ",
+      "level": "B1",
+      "summary": "Phân tích tân ngữ và các thành phần bổ sung ý nghĩa cho động từ.",
+      "orderIndex": 109,
+      "contentVersion": 3,
+      "dataset": "brehe-grammar-anatomy",
+      "sourceId": "brehe:libretexts:1.09",
+      "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.09:_You_Did_What_Verbs_and_Their_Complements",
+      "author": "Steven Brehe",
+      "license": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "published": true,
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Phân tích tân ngữ và các thành phần bổ sung ý nghĩa cho động từ.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "You Did What? Verbs and Their Complements",
+      "contentHash": "a2657174bf2daa62ab4c9b02b48ad004c2b1ea28bcdea952d8f2cf8ee05442b3"
+    }
+  },
+  {
+    "collection": "grammar_catalog",
+    "id": "-956171213480874",
+    "data": {
+      "title": "Liên từ và cách nối thành phần câu",
+      "level": "A2",
+      "summary": "Dùng liên từ để nối từ, cụm từ và các phần vị ngữ.",
+      "orderIndex": 110,
+      "contentVersion": 3,
+      "dataset": "brehe-grammar-anatomy",
+      "sourceId": "brehe:libretexts:1.10",
+      "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.10:_All_Together_Now_Conjunctions_Compounds_and_Subordinate_Clauses",
+      "author": "Steven Brehe",
+      "license": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "published": true,
+      "practiceDataset": "engmate-brehe-practice-v1",
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Dùng liên từ để nối từ, cụm từ và các phần vị ngữ.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "All Together Now Conjunctions, Compounds, and Subordinate Clauses",
+      "contentHash": "9bf3ac6961555bd86963a6937a413e90ec3405cf5fbbd3babdce4f9b5af88641"
+    }
+  },
+  {
+    "collection": "grammar_catalog",
+    "id": "-206959870549364",
+    "data": {
+      "title": "Câu đơn, câu ghép và câu phức",
+      "level": "B1",
+      "summary": "Phân biệt mệnh đề độc lập, mệnh đề phụ thuộc và các kiểu câu.",
+      "orderIndex": 111,
+      "contentVersion": 3,
+      "dataset": "brehe-grammar-anatomy",
+      "sourceId": "brehe:libretexts:1.11",
+      "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.11:_Sentencing_Guidelines_Building_Sentences_with_Clauses",
+      "author": "Steven Brehe",
+      "license": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "published": true,
+      "practiceDataset": "engmate-brehe-practice-v1",
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Phân biệt mệnh đề độc lập, mệnh đề phụ thuộc và các kiểu câu.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "Sentencing Guidelines Building Sentences with Clauses",
+      "contentHash": "a82aae7f94cb7a3c354e7de87580c4e174b6591f845601de2cedde9304d7850d"
+    }
+  },
+  {
+    "collection": "grammar_catalog",
+    "id": "-4001687141874830",
+    "data": {
+      "title": "Mệnh đề quan hệ",
+      "level": "B1",
+      "summary": "Nhận biết mệnh đề bổ nghĩa cho danh từ và cách dùng đại từ quan hệ.",
+      "orderIndex": 112,
+      "contentVersion": 3,
+      "dataset": "brehe-grammar-anatomy",
+      "sourceId": "brehe:libretexts:1.12",
+      "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.12:_Relative_Clauses_Which_We_Need",
+      "author": "Steven Brehe",
+      "license": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "published": true,
+      "practiceDataset": "engmate-brehe-practice-v1",
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Nhận biết mệnh đề bổ nghĩa cho danh từ và cách dùng đại từ quan hệ.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "Relative Clauses, Which We Need",
+      "contentHash": "bada589f7f14cf7d0fef77f787c2fadcd0dbe1d3962ce4528e4d741c13909c93"
+    }
+  },
+  {
+    "collection": "grammar_catalog",
+    "id": "-1866751447738440",
+    "data": {
+      "title": "Phân biệt các loại mệnh đề phụ thuộc",
+      "level": "B2",
+      "summary": "Phân tích chức năng của mệnh đề trạng ngữ, quan hệ và danh từ.",
+      "orderIndex": 114,
+      "contentVersion": 3,
+      "dataset": "brehe-grammar-anatomy",
+      "sourceId": "brehe:libretexts:1.14",
+      "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.14:_Theyre_So_Dependent_Distinguishing_Dependent_Clauses",
+      "author": "Steven Brehe",
+      "license": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "published": true,
+      "practiceDataset": "engmate-brehe-practice-v1",
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Phân tích chức năng của mệnh đề trạng ngữ, quan hệ và danh từ.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "They’re So Dependent Distinguishing Dependent Clauses",
+      "contentHash": "34ef02f689aa69884a21c08c20d6e7cdcf444fb2a25f73be5dfde325ca575378"
+    }
+  },
+  {
+    "collection": "grammar_catalog",
+    "id": "-902698471538092",
+    "data": {
+      "title": "Câu chủ động và câu bị động",
+      "level": "B1",
+      "summary": "Nhận biết thể bị động và cấu trúc trợ động từ đi cùng quá khứ phân từ.",
+      "orderIndex": 115,
+      "contentVersion": 3,
+      "dataset": "brehe-grammar-anatomy",
+      "sourceId": "brehe:libretexts:1.15",
+      "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.15:_What_More_Verbs_and_Voice_Infinitives_and_Passive_Complements",
+      "author": "Steven Brehe",
+      "license": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "published": true,
+      "practiceDataset": "engmate-brehe-practice-v1",
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Nhận biết thể bị động và cấu trúc trợ động từ đi cùng quá khứ phân từ.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "What, More? Verbs and Voice, Infinitives, and Passive Complements",
+      "contentHash": "ccee26c2b1db34f128389481e5ac4837c97388172d90297ebb5eb2f81b43ebb1"
+    }
+  },
+  {
+    "collection": "grammar_catalog",
+    "id": "-1770053837860890",
+    "data": {
+      "title": "Thán từ và cách bộc lộ cảm xúc",
+      "level": "A1",
+      "summary": "Nhận biết thán từ diễn tả ngạc nhiên, đau đớn và các phản ứng khác.",
+      "orderIndex": 117,
+      "contentVersion": 3,
+      "dataset": "brehe-grammar-anatomy",
+      "sourceId": "brehe:libretexts:1.17",
+      "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.17:_Zowie_Interjections_and_the_Eight_Parts_of_Speech",
+      "author": "Steven Brehe",
+      "license": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "published": true,
+      "practiceDataset": "engmate-brehe-practice-v1",
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Nhận biết thán từ diễn tả ngạc nhiên, đau đớn và các phản ứng khác.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "Zowie! Interjections and the Eight Parts of Speech",
+      "contentHash": "9407b5196e6aa053c23c18dd5e203ac51141126f3039cb01e00e54a7fae313ad"
+    }
+  },
+  {
+    "collection": "grammar_catalog",
+    "id": "-634339497262230",
+    "data": {
+      "title": "Danh động từ và chức năng trong câu",
+      "level": "A2",
+      "summary": "Nhận biết dạng động từ thêm đuôi -ing được dùng như danh từ.",
+      "orderIndex": 118,
+      "contentVersion": 3,
+      "dataset": "brehe-grammar-anatomy",
+      "sourceId": "brehe:libretexts:1.18",
+      "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.18:_Those_Verbing_Verbals_Gerunds_and_Participles",
+      "author": "Steven Brehe",
+      "license": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "published": true,
+      "practiceDataset": "engmate-brehe-practice-v1",
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Nhận biết dạng động từ thêm đuôi -ing được dùng như danh từ.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "Those Verbing Verbals Gerunds and Participles",
+      "contentHash": "a9f59898372ebfffdb06fdabffdf8334902bc4b4832e9c0175f74b7e3663716e"
+    }
+  },
+  {
+    "collection": "grammar_catalog",
+    "id": "-1959161190146212",
+    "data": {
+      "title": "Động từ nguyên mẫu và chức năng trong câu",
+      "level": "B1",
+      "summary": "Phân tích cụm động từ nguyên mẫu khi làm chủ ngữ hoặc bổ nghĩa cho danh từ.",
+      "orderIndex": 119,
+      "contentVersion": 3,
+      "dataset": "brehe-grammar-anatomy",
+      "sourceId": "brehe:libretexts:1.19",
+      "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.19:_To_Boldly_Verb_Infinitives",
+      "author": "Steven Brehe",
+      "license": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "published": true,
+      "practiceDataset": "engmate-brehe-practice-v1",
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Phân tích cụm động từ nguyên mẫu khi làm chủ ngữ hoặc bổ nghĩa cho danh từ.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "To Boldly Verb Infinitives",
+      "contentHash": "103b6a1a5b37919c51d0f456a845df5d4a36f592532fd066b63bd337793bc198"
+    }
+  },
+  {
+    "collection": "grammar_catalog",
+    "id": "-2425877179468242",
+    "data": {
+      "title": "Đại từ phản thân và đại từ chỉ định",
+      "level": "A2",
+      "summary": "Dùng đại từ để nói về chính chủ thể và chỉ người, sự vật.",
+      "orderIndex": 120,
+      "contentVersion": 3,
+      "dataset": "brehe-grammar-anatomy",
+      "sourceId": "brehe:libretexts:1.20",
+      "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.20:_Whats_That_More_Pronouns",
+      "author": "Steven Brehe",
+      "license": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "published": true,
+      "practiceDataset": "engmate-brehe-practice-v1",
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Dùng đại từ để nói về chính chủ thể và chỉ người, sự vật.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "What’s That? More Pronouns",
+      "contentHash": "d78ccbe21d1853dd51f94bc55020091b4b943c8a961c30be3aabbb157724a672"
+    }
+  },
+  {
+    "collection": "grammar_catalog",
+    "id": "-1126557612826906",
+    "data": {
+      "title": "Chủ ngữ giả và cách sắp xếp câu",
+      "level": "B1",
+      "summary": "Nhận biết cấu trúc dùng chủ ngữ giả để đưa nội dung dài về cuối câu.",
+      "orderIndex": 121,
+      "contentVersion": 3,
+      "dataset": "brehe-grammar-anatomy",
+      "sourceId": "brehe:libretexts:1.21",
+      "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.21:_Many_Things_(But_no_Cabbages_or_Kings)",
+      "author": "Steven Brehe",
+      "license": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "published": true,
+      "practiceDataset": "engmate-brehe-practice-v1",
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Nhận biết cấu trúc dùng chủ ngữ giả để đưa nội dung dài về cuối câu.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "Many Things (But no Cabbages or Kings)",
+      "contentHash": "b0efea8831fa1e12aed178bf3f3c2a19e34dd5b694758c3bde8312056e534437"
+    }
+  },
+  {
+    "collection": "grammar_catalog",
+    "id": "-3126738140425883",
+    "data": {
+      "title": "Dấu phẩy trong thành phần chen vào",
+      "level": "A2",
+      "summary": "Đặt đủ cặp dấu phẩy để tách phần giải thích chen giữa câu.",
+      "orderIndex": 122,
+      "contentVersion": 3,
+      "dataset": "brehe-grammar-anatomy",
+      "sourceId": "brehe:libretexts:1.22",
+      "source": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.22:_Keeping_Those_Little_Puncs_in_A_Brief_Review_of_Punctuation",
+      "author": "Steven Brehe",
+      "license": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "published": true,
+      "practiceDataset": "engmate-brehe-practice-v1",
+      "levelAssignment": {
+        "kind": "EngMate editorial estimate",
+        "basis": "Đặt đủ cặp dấu phẩy để tách phần giải thích chen giữa câu.",
+        "references": [
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2",
+          "https://www.teachingenglish.org.uk/sites/teacheng/files/pub-british-council-eaquals-core-inventoryv2.pdf"
+        ],
+        "note": "Estimated from the selected lesson content and prerequisite complexity; not a CEFR label supplied by Brehe or an external certification."
+      },
+      "originalTitle": "Keeping Those Little Puncs in A Brief Review of Punctuation",
+      "contentHash": "533f5ae7bfc74f2d6e8315017ccf38ab99dd4432272fc017b7ab55f6fd5ca3d3"
+    }
+  }
+]

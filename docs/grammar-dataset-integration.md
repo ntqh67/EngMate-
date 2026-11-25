@@ -68,3 +68,71 @@ Android checks (from repository root, where the Gradle wrapper can write its dis
 ```
 
 The Python suite passes (29 tests), the Firestore Rules Emulator passes, and the importer dry-run validates 71 writes without initializing Firebase. Android `:app:assembleLiveDebug`, `:app:testLiveDebugUnitTest`, and `:app:lintLiveDebug` all pass. No destructive Room migration was introduced. Existing schema version 3, the 17 baseline lessons, user progress and history remain intact.
+
+## Supplementary practice published 2026-11-26
+
+The original 31 source exercises cover only two of the 20 Brehe lessons. A separate
+EngMate-authored supplement now adds 54 multiple-choice questions (three for each
+of the other 18 lessons), each with four options, one correct answer and a Vietnamese
+explanation. These are AI-assisted original exercises, not excerpts from Brehe or
+answers from the textbook key. Authorship is recorded separately in provenance.
+The original source-backed release remains reproducible and unchanged.
+
+- Editable questions: `scripts/grammar/engmate-practice.json`.
+- Reproducible export: `docs/grammar/engmate-practice-firestore.json`.
+- Build/dry-run: `python3 scripts/grammar/supplement_practice.py`.
+- Publish: `python3 scripts/grammar/supplement_practice.py --execute --project engmate-572b6 --confirm-project engmate-572b6`.
+
+Publication used one atomic batch: 54 new `questions` documents and 18
+`grammar_catalog` updates to `contentVersion: 2`. Existing question IDs, lesson
+bodies and learner history were preserved. The catalog version change makes the
+Android client fetch the new questions when a cached lesson is reopened online.
+The importer checks baseline documents, rejects collisions, uses update-time
+preconditions, and verifies every changed document after commit. Identical reruns
+perform no writes.
+
+Verified on Firebase project `engmate-572b6`: 214 total question documents,
+85 published questions across all 20 Brehe lessons (18 × 3, plus 12 and 19).
+All 34 Python tests pass, including missing-parent rejection, immutable-question
+collision checks, cache-version updates and repeat publication planning.
+
+## Vietnamese lesson metadata published 2026-11-26
+
+`localize_lessons.py` updates all 20 lesson titles and summaries to Vietnamese in
+both `grammar_catalog` and `grammar_lessons`, with `contentVersion: 3` to refresh
+existing device caches. Learning levels are EngMate editorial estimates for the
+selected excerpts: A1 (6), A2 (7), B1 (6), B2 (1). The `levelAssignment` field records
+the estimate, rationale and British Council reference links; these are not official
+CEFR classifications of Brehe's book. Original titles and source provenance remain
+available. Lesson bodies and all 85 questions are unchanged.
+
+Rebuild/dry-run: `python3 scripts/grammar/localize_lessons.py`.
+Export: `docs/grammar/vietnamese-lesson-metadata.json`.
+Publish with `--execute --project engmate-572b6 --confirm-project engmate-572b6`.
+All 40 documents were published atomically with update-time preconditions and
+read back for exact verification. The original source and practice importers are
+historical releases: they intentionally reject the newer metadata rather than
+reverting it. Rerunning the localization publisher against the same version is a no-op.
+
+## Full practice rounds published 2026-11-26
+
+The app selects up to ten questions per grammar quiz. The initial three-question
+supplement was expanded with 126 additional original multiple-choice exercises,
+with Vietnamese prompts and explanations. All 20 imported lessons now support a
+full round: 18 lessons have 10 questions each; the two source-exercise lessons
+retain their 12 and 19 questions. Total: 211 questions for these lessons.
+
+- Editable authoring: `scripts/grammar/engmate-practice-expanded.json`.
+- Publisher: `scripts/grammar/expand_practice.py` (default: offline dry-run).
+- Export: `docs/grammar/expanded-practice-firestore.json`.
+- Publish: `python3 scripts/grammar/expand_practice.py --execute --project engmate-572b6 --confirm-project engmate-572b6`.
+
+The atomic publication created 126 questions and advanced all 20 catalog and
+20 lesson documents to contentVersion 4 (166 writes). Vietnamese titles, levels,
+lesson text, existing questions and learner history were preserved. All target
+and original question documents were read back and verified. A live collection
+scan confirmed 340 total Firebase questions and published per-lesson counts of
+18 × 10, 12 and 19 for the imported lessons. All 39 Python tests pass, including
+full-round coverage, answer shape, balanced option positions, existing-question
+preservation, conflict rejection and idempotent publishing. Earlier importers
+remain historical releases and refuse to overwrite newer versions.

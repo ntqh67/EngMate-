@@ -1,0 +1,2058 @@
+{
+  "dataset": "engmate-brehe-practice-v1",
+  "version": 1,
+  "questions": [
+    {
+      "id": -2740881245902338,
+      "lessonId": -698730031035804,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Chọn câu đúng ngữ pháp.",
+      "explanation": "She là đại từ chủ ngữ; him là đại từ tân ngữ. Với she ở hiện tại đơn, help thêm -s.",
+      "options": [
+        {
+          "content": "She helps him.",
+          "isCorrect": true
+        },
+        {
+          "content": "Her helps he.",
+          "isCorrect": false
+        },
+        {
+          "content": "She help him.",
+          "isCorrect": false
+        },
+        {
+          "content": "Him helps she.",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-01-q1",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "132569683a013c05dc5866b8c824ab13d9f41de7c09879925b0475c3dbda312d",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.01:_Introduction-_Grammar_What_Grammar"
+      }
+    },
+    {
+      "id": -2817588028097581,
+      "lessonId": -698730031035804,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Trong câu “Lan calls Minh”, ai thực hiện hành động gọi?",
+      "explanation": "Lan đứng ở vị trí chủ ngữ và thực hiện hành động calls; Minh là người nhận cuộc gọi.",
+      "options": [
+        {
+          "content": "Minh",
+          "isCorrect": false
+        },
+        {
+          "content": "Cả Lan và Minh",
+          "isCorrect": false
+        },
+        {
+          "content": "Không xác định được",
+          "isCorrect": false
+        },
+        {
+          "content": "Lan",
+          "isCorrect": true
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-01-q2",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "81247004695a6cef979a7aacbe4cad911f256790cc3236b70d800ae8f89bc2d4",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.01:_Introduction-_Grammar_What_Grammar"
+      }
+    },
+    {
+      "id": -1886992509235929,
+      "lessonId": -698730031035804,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Đổi “The dog follows the boy” thành “The boy follows the dog” làm thay đổi điều gì?",
+      "explanation": "Đổi vị trí chủ ngữ và tân ngữ làm đảo vai trò: câu đầu chó đi theo cậu bé, câu sau cậu bé đi theo chó.",
+      "options": [
+        {
+          "content": "Số lượng từ trong câu",
+          "isCorrect": false
+        },
+        {
+          "content": "Động từ chính",
+          "isCorrect": false
+        },
+        {
+          "content": "Người hoặc vật thực hiện và nhận hành động",
+          "isCorrect": true
+        },
+        {
+          "content": "Thì của động từ",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-01-q3",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "fc72a8cf66e0dadc7c39c955bb06a6564ad4ca3c820be12048bb55e7c749102e",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.01:_Introduction-_Grammar_What_Grammar"
+      }
+    },
+    {
+      "id": -717287544220312,
+      "lessonId": -1389976289153513,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Chủ ngữ đầy đủ trong “The small bird sings every morning” là gì?",
+      "explanation": "Chủ ngữ đầy đủ gồm danh từ bird và các từ bổ nghĩa The small.",
+      "options": [
+        {
+          "content": "every morning",
+          "isCorrect": false
+        },
+        {
+          "content": "The small bird",
+          "isCorrect": true
+        },
+        {
+          "content": "bird sings",
+          "isCorrect": false
+        },
+        {
+          "content": "sings every morning",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-02-q1",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "05294d8e744e389cda1b5a9e3450fc21e06259a0f5fbbb9f4072675ede44e344",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.02:_Together_Forever_Subjects_and_Predicates"
+      }
+    },
+    {
+      "id": -3438076902626858,
+      "lessonId": -1389976289153513,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Vị ngữ đầy đủ trong “My sister reads books after dinner” là gì?",
+      "explanation": "Vị ngữ cho biết chủ ngữ làm gì, gồm động từ reads cùng tân ngữ và phần bổ nghĩa thời gian.",
+      "options": [
+        {
+          "content": "reads books after dinner",
+          "isCorrect": true
+        },
+        {
+          "content": "My sister",
+          "isCorrect": false
+        },
+        {
+          "content": "books",
+          "isCorrect": false
+        },
+        {
+          "content": "after dinner",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-02-q2",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "7040f845f0017e0d2022eb25305d53939c56616d6c0ecc34be27f4b4a7120e83",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.02:_Together_Forever_Subjects_and_Predicates"
+      }
+    },
+    {
+      "id": -2154505254567306,
+      "lessonId": -1389976289153513,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Chủ ngữ đơn trong “The students in this class work hard” là từ nào?",
+      "explanation": "Students là danh từ trung tâm của chủ ngữ. In this class chỉ bổ nghĩa cho students.",
+      "options": [
+        {
+          "content": "class",
+          "isCorrect": false
+        },
+        {
+          "content": "work",
+          "isCorrect": false
+        },
+        {
+          "content": "hard",
+          "isCorrect": false
+        },
+        {
+          "content": "students",
+          "isCorrect": true
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-02-q3",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "4bae0c277bd9bba966d7dcdb44181b3578bf3cf5796f3d4574c320c6d549de27",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.02:_Together_Forever_Subjects_and_Predicates"
+      }
+    },
+    {
+      "id": -93696887231761,
+      "lessonId": -2052679124253647,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Từ nào là danh từ trong “The teacher smiled”?",
+      "explanation": "Teacher gọi tên một người nên là danh từ; smiled là động từ.",
+      "options": [
+        {
+          "content": "smiled",
+          "isCorrect": false
+        },
+        {
+          "content": "Không có danh từ",
+          "isCorrect": false
+        },
+        {
+          "content": "teacher",
+          "isCorrect": true
+        },
+        {
+          "content": "The",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-04-q1",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "85557d9176f09946a5638495e8fee635ac8b52a64e5bce9ce60a094f2ea14d70",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.04:_The_Indispensables_Nouns_and_Verbs"
+      }
+    },
+    {
+      "id": -399802732166475,
+      "lessonId": -2052679124253647,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Động từ trong “Birds fly over the lake” là từ nào?",
+      "explanation": "Fly diễn tả hành động bay. Birds và lake là danh từ; over là giới từ.",
+      "options": [
+        {
+          "content": "lake",
+          "isCorrect": false
+        },
+        {
+          "content": "fly",
+          "isCorrect": true
+        },
+        {
+          "content": "Birds",
+          "isCorrect": false
+        },
+        {
+          "content": "over",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-04-q2",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "8371623b143c2b7c1545dc2ce106875bba33fbdc10a30f01542003004b3033d6",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.04:_The_Indispensables_Nouns_and_Verbs"
+      }
+    },
+    {
+      "id": -649504579802031,
+      "lessonId": -2052679124253647,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Chọn dạng số nhiều đúng của “child”.",
+      "explanation": "Child có dạng số nhiều bất quy tắc là children; không thêm -s vào children.",
+      "options": [
+        {
+          "content": "children",
+          "isCorrect": true
+        },
+        {
+          "content": "childs",
+          "isCorrect": false
+        },
+        {
+          "content": "childes",
+          "isCorrect": false
+        },
+        {
+          "content": "childrens",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-04-q3",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "601c100fc6b7bf375afbc09b31f854a76d30dd67e9e9ff4d8e50204097502625",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.04:_The_Indispensables_Nouns_and_Verbs"
+      }
+    },
+    {
+      "id": -1632219645412916,
+      "lessonId": -1958826981997677,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Tính từ trong “We bought a red bicycle” là từ nào?",
+      "explanation": "Red mô tả màu sắc của danh từ bicycle nên là tính từ.",
+      "options": [
+        {
+          "content": "bought",
+          "isCorrect": false
+        },
+        {
+          "content": "We",
+          "isCorrect": false
+        },
+        {
+          "content": "bicycle",
+          "isCorrect": false
+        },
+        {
+          "content": "red",
+          "isCorrect": true
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-05-q1",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "8e86b6c521edbf5ae2d3e15522f53e5944089b27b19ce40276838426dd81ae23",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.05:_Tall_Dark_and_Wordsome_--_Adjectives"
+      }
+    },
+    {
+      "id": -963302597957917,
+      "lessonId": -1958826981997677,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Trong “The soup is hot”, hot bổ nghĩa cho từ nào?",
+      "explanation": "Hot là tính từ vị ngữ đứng sau động từ nối is, mô tả soup.",
+      "options": [
+        {
+          "content": "The",
+          "isCorrect": false
+        },
+        {
+          "content": "Không từ nào",
+          "isCorrect": false
+        },
+        {
+          "content": "soup",
+          "isCorrect": true
+        },
+        {
+          "content": "is",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-05-q2",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "9806231fa3e1f234d2838326b4868c06b32532c25487176ffb515bc8abbcfbda",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.05:_Tall_Dark_and_Wordsome_--_Adjectives"
+      }
+    },
+    {
+      "id": -2966123999183977,
+      "lessonId": -1958826981997677,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Chọn dạng so sánh hơn: “This box is ___ than that one.”",
+      "explanation": "Than báo hiệu so sánh hơn. Tính từ ngắn small thêm -er thành smaller.",
+      "options": [
+        {
+          "content": "most small",
+          "isCorrect": false
+        },
+        {
+          "content": "smaller",
+          "isCorrect": true
+        },
+        {
+          "content": "smallest",
+          "isCorrect": false
+        },
+        {
+          "content": "small",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-05-q3",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "1f802048b9ef2c9b99a35afdb3d54b9addffd5e8996d1557135800e51d454d93",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.05:_Tall_Dark_and_Wordsome_--_Adjectives"
+      }
+    },
+    {
+      "id": -1411300056767928,
+      "lessonId": -2608063713321280,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Trong “Mai speaks softly”, trạng từ là từ nào?",
+      "explanation": "Softly bổ nghĩa cho speaks, cho biết Mai nói như thế nào.",
+      "options": [
+        {
+          "content": "softly",
+          "isCorrect": true
+        },
+        {
+          "content": "Mai",
+          "isCorrect": false
+        },
+        {
+          "content": "speaks",
+          "isCorrect": false
+        },
+        {
+          "content": "Không có trạng từ",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-06-q1",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "5f8831828be53fd5733f3e65c2d8709dc168e2cdd0006c780aa6061b265821dc",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.06:_Inevitably_Adverbs"
+      }
+    },
+    {
+      "id": -4169277463644116,
+      "lessonId": -2608063713321280,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Trong “The room is very quiet”, very bổ nghĩa cho từ nào?",
+      "explanation": "Very là trạng từ chỉ mức độ, bổ nghĩa cho tính từ quiet.",
+      "options": [
+        {
+          "content": "room",
+          "isCorrect": false
+        },
+        {
+          "content": "is",
+          "isCorrect": false
+        },
+        {
+          "content": "The",
+          "isCorrect": false
+        },
+        {
+          "content": "quiet",
+          "isCorrect": true
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-06-q2",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "0a119a71244e22a57ccc0ce3105aeff62a5aa8cb5f51217f422597a29535adfc",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.06:_Inevitably_Adverbs"
+      }
+    },
+    {
+      "id": -4178664078926435,
+      "lessonId": -2608063713321280,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Trong “The train arrived yesterday”, từ nào cho biết thời gian?",
+      "explanation": "Yesterday là trạng từ thời gian, cho biết khi nào tàu đến.",
+      "options": [
+        {
+          "content": "arrived",
+          "isCorrect": false
+        },
+        {
+          "content": "The",
+          "isCorrect": false
+        },
+        {
+          "content": "yesterday",
+          "isCorrect": true
+        },
+        {
+          "content": "train",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-06-q3",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "75b4c2ff391fb97a213c92c1a80cb043e98b395103caa3b514c24dbb9ac14a8b",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.06:_Inevitably_Adverbs"
+      }
+    },
+    {
+      "id": -1251999317315862,
+      "lessonId": -3337517789121797,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Cụm giới từ trong “The keys are under the table” là gì?",
+      "explanation": "Cụm giới từ bắt đầu bằng under và có tân ngữ the table.",
+      "options": [
+        {
+          "content": "the table",
+          "isCorrect": false
+        },
+        {
+          "content": "under the table",
+          "isCorrect": true
+        },
+        {
+          "content": "The keys",
+          "isCorrect": false
+        },
+        {
+          "content": "are under",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-07-q1",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "02fb3f26b204a73b3fefd858d6dfab8509576ef9b8ea93a2054c01580c1710a8",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.07:_Among_the_Prepositions"
+      }
+    },
+    {
+      "id": -1440156635625551,
+      "lessonId": -3337517789121797,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Trong “We walked through the park”, tân ngữ của giới từ through là gì?",
+      "explanation": "The park là cụm danh từ đứng sau through và làm tân ngữ của giới từ này.",
+      "options": [
+        {
+          "content": "the park",
+          "isCorrect": true
+        },
+        {
+          "content": "We",
+          "isCorrect": false
+        },
+        {
+          "content": "walked",
+          "isCorrect": false
+        },
+        {
+          "content": "through",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-07-q2",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "f19c60c11da3d4d4ac16a71bfb4fe5dd9c10e20651f6d0e409df5191794cdf78",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.07:_Among_the_Prepositions"
+      }
+    },
+    {
+      "id": -2708623560815760,
+      "lessonId": -3337517789121797,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Từ nào là giới từ trong “A picture hangs above the desk”?",
+      "explanation": "Above chỉ quan hệ vị trí giữa bức tranh và chiếc bàn nên là giới từ.",
+      "options": [
+        {
+          "content": "picture",
+          "isCorrect": false
+        },
+        {
+          "content": "hangs",
+          "isCorrect": false
+        },
+        {
+          "content": "desk",
+          "isCorrect": false
+        },
+        {
+          "content": "above",
+          "isCorrect": true
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-07-q3",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "cef18a16c6340b46dcf9bf999f45bab7c750a5a9734fd358424b1e07d4d7c657",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.07:_Among_the_Prepositions"
+      }
+    },
+    {
+      "id": -927207329217988,
+      "lessonId": -3433874493463316,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Chọn đại từ chủ ngữ: “___ are ready.”",
+      "explanation": "We là dạng chủ ngữ ngôi thứ nhất số nhiều, phù hợp với are.",
+      "options": [
+        {
+          "content": "Our",
+          "isCorrect": false
+        },
+        {
+          "content": "Ours",
+          "isCorrect": false
+        },
+        {
+          "content": "We",
+          "isCorrect": true
+        },
+        {
+          "content": "Us",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-08-q1",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "53c7f2f577ad74ee1eb741c2051a4dd7eb8e5d835a5a3a3fd25da18eeb0dbd43",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.08:_You_and_I_and_the_Personal_Pronouns"
+      }
+    },
+    {
+      "id": -281457643422236,
+      "lessonId": -3433874493463316,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Chọn đại từ tân ngữ: “The teacher called ___.”",
+      "explanation": "Sau called cần tân ngữ. Dạng tân ngữ của I là me.",
+      "options": [
+        {
+          "content": "mine",
+          "isCorrect": false
+        },
+        {
+          "content": "me",
+          "isCorrect": true
+        },
+        {
+          "content": "I",
+          "isCorrect": false
+        },
+        {
+          "content": "my",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-08-q2",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "fe273c02e8fa3bd073f936cfd92d0181f020de2080406a5f0569277b975a5045",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.08:_You_and_I_and_the_Personal_Pronouns"
+      }
+    },
+    {
+      "id": -1744215787504123,
+      "lessonId": -3433874493463316,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Trong “Nam has a bike. He rides it daily”, He thay thế cho từ nào?",
+      "explanation": "Nam là từ được đại từ He thay thế; it mới thay cho bike.",
+      "options": [
+        {
+          "content": "Nam",
+          "isCorrect": true
+        },
+        {
+          "content": "bike",
+          "isCorrect": false
+        },
+        {
+          "content": "daily",
+          "isCorrect": false
+        },
+        {
+          "content": "rides",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-08-q3",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "6b82c1e8bd52083723841283153a5a92c55195be8b8da36238944fe55d8c5146",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.08:_You_and_I_and_the_Personal_Pronouns"
+      }
+    },
+    {
+      "id": -2362950990541757,
+      "lessonId": -956171213480874,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Liên từ trong “Lan and Hoa study together” là từ nào?",
+      "explanation": "And nối hai thành phần ngang hàng Lan và Hoa để tạo chủ ngữ ghép.",
+      "options": [
+        {
+          "content": "Lan",
+          "isCorrect": false
+        },
+        {
+          "content": "study",
+          "isCorrect": false
+        },
+        {
+          "content": "together",
+          "isCorrect": false
+        },
+        {
+          "content": "and",
+          "isCorrect": true
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-10-q1",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "dd1c89e4cde643368123444543467de6b1a4a95359dafffab823052c476a6370",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.10:_All_Together_Now_Conjunctions_Compounds_and_Subordinate_Clauses"
+      }
+    },
+    {
+      "id": -3008183862583767,
+      "lessonId": -956171213480874,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Chọn liên từ diễn tả sự tương phản: “The bag is small, ___ it is heavy.”",
+      "explanation": "But nối hai ý tương phản: chiếc túi nhỏ nhưng nặng.",
+      "options": [
+        {
+          "content": "or",
+          "isCorrect": false
+        },
+        {
+          "content": "because",
+          "isCorrect": false
+        },
+        {
+          "content": "but",
+          "isCorrect": true
+        },
+        {
+          "content": "and",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-10-q2",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "1009c809956c3e68aafd5152360b39b28eb5251f4f17ac3aca5acba39f3c667a",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.10:_All_Together_Now_Conjunctions_Compounds_and_Subordinate_Clauses"
+      }
+    },
+    {
+      "id": -1233999551864048,
+      "lessonId": -956171213480874,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Trong “He opened the door and waved”, and nối hai thành phần nào?",
+      "explanation": "And nối hai phần vị ngữ có cùng chủ ngữ He: opened the door và waved.",
+      "options": [
+        {
+          "content": "door và and",
+          "isCorrect": false
+        },
+        {
+          "content": "opened the door và waved",
+          "isCorrect": true
+        },
+        {
+          "content": "He và door",
+          "isCorrect": false
+        },
+        {
+          "content": "the và door",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-10-q3",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "941c2d668f202d03185c4f185dae778959a535990c6662f6d106078543c6b04f",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.10:_All_Together_Now_Conjunctions_Compounds_and_Subordinate_Clauses"
+      }
+    },
+    {
+      "id": -1674609387085639,
+      "lessonId": -206959870549364,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Nhóm từ nào có thể đứng độc lập thành một câu hoàn chỉnh?",
+      "explanation": "The rain stopped có chủ ngữ và vị ngữ, không bị liên từ phụ thuộc chi phối nên là mệnh đề độc lập.",
+      "options": [
+        {
+          "content": "The rain stopped.",
+          "isCorrect": true
+        },
+        {
+          "content": "Because the rain stopped",
+          "isCorrect": false
+        },
+        {
+          "content": "When the rain stopped",
+          "isCorrect": false
+        },
+        {
+          "content": "Although the rain stopped",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-11-q1",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "3f04ba77585315a01ad97bfe0837cac045d923855a4e3434e1c5dc87cec3c390",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.11:_Sentencing_Guidelines_Building_Sentences_with_Clauses"
+      }
+    },
+    {
+      "id": -2866523884086225,
+      "lessonId": -206959870549364,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "“I stayed home because I was tired” là kiểu câu nào?",
+      "explanation": "Câu có một mệnh đề độc lập I stayed home và một mệnh đề phụ thuộc because I was tired.",
+      "options": [
+        {
+          "content": "Câu đơn",
+          "isCorrect": false
+        },
+        {
+          "content": "Câu ghép chỉ có hai mệnh đề độc lập",
+          "isCorrect": false
+        },
+        {
+          "content": "Cụm danh từ",
+          "isCorrect": false
+        },
+        {
+          "content": "Câu phức",
+          "isCorrect": true
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-11-q2",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "27efc8b062e998e14f2e383af2422b01bba12c26b1a38771fccfce1f56013616",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.11:_Sentencing_Guidelines_Building_Sentences_with_Clauses"
+      }
+    },
+    {
+      "id": -465323063440437,
+      "lessonId": -206959870549364,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "“Lan cooked, and Minh washed the dishes” có bao nhiêu mệnh đề độc lập?",
+      "explanation": "Lan cooked và Minh washed the dishes đều có thể đứng độc lập; and nối chúng thành câu ghép.",
+      "options": [
+        {
+          "content": "Ba",
+          "isCorrect": false
+        },
+        {
+          "content": "Không có",
+          "isCorrect": false
+        },
+        {
+          "content": "Hai",
+          "isCorrect": true
+        },
+        {
+          "content": "Một",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-11-q3",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "c8f16e6d253c3f6f26cc6fad64b85893a3e0f6f3bbc4a5b6024f3aa131d38693",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.11:_Sentencing_Guidelines_Building_Sentences_with_Clauses"
+      }
+    },
+    {
+      "id": -920450404368303,
+      "lessonId": -4001687141874830,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Chọn đại từ quan hệ chỉ người: “The woman ___ lives next door is a doctor.”",
+      "explanation": "Who thay cho the woman và làm chủ ngữ của mệnh đề quan hệ lives next door.",
+      "options": [
+        {
+          "content": "when",
+          "isCorrect": false
+        },
+        {
+          "content": "who",
+          "isCorrect": true
+        },
+        {
+          "content": "which",
+          "isCorrect": false
+        },
+        {
+          "content": "where",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-12-q1",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "5a4c20bf9c3c82efcc8a2d61a84abb13f564ee73f0ec4b3e5ef832f4009e583a",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.12:_Relative_Clauses_Which_We_Need"
+      }
+    },
+    {
+      "id": -817679503702727,
+      "lessonId": -4001687141874830,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Mệnh đề quan hệ trong “The book that you lent me is useful” bổ nghĩa cho từ nào?",
+      "explanation": "That you lent me giúp xác định cuốn sách nào, nên bổ nghĩa cho book.",
+      "options": [
+        {
+          "content": "book",
+          "isCorrect": true
+        },
+        {
+          "content": "you",
+          "isCorrect": false
+        },
+        {
+          "content": "me",
+          "isCorrect": false
+        },
+        {
+          "content": "useful",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-12-q2",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "453688eb3017550e879164ca6362190c91ea64f67ca5d8aefa31ddcc1e527eef",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.12:_Relative_Clauses_Which_We_Need"
+      }
+    },
+    {
+      "id": -2966411372191430,
+      "lessonId": -4001687141874830,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Chọn đại từ quan hệ chỉ sự sở hữu: “The boy ___ bicycle was stolen called the police.”",
+      "explanation": "Whose bicycle nghĩa là chiếc xe đạp của cậu bé; whose thể hiện quan hệ sở hữu.",
+      "options": [
+        {
+          "content": "who",
+          "isCorrect": false
+        },
+        {
+          "content": "which",
+          "isCorrect": false
+        },
+        {
+          "content": "where",
+          "isCorrect": false
+        },
+        {
+          "content": "whose",
+          "isCorrect": true
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-12-q3",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "211ce10a1ea8c9023d39b0780311272f348dff09128161f039ae6eba1eecfd0f",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.12:_Relative_Clauses_Which_We_Need"
+      }
+    },
+    {
+      "id": -2969054612632914,
+      "lessonId": -1866751447738440,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "“Because it was raining” trong “We stayed inside because it was raining” có chức năng gì?",
+      "explanation": "Mệnh đề bắt đầu bằng because giải thích nguyên nhân của hành động stayed inside.",
+      "options": [
+        {
+          "content": "Tân ngữ trực tiếp của stayed",
+          "isCorrect": false
+        },
+        {
+          "content": "Chủ ngữ của câu",
+          "isCorrect": false
+        },
+        {
+          "content": "Trạng ngữ chỉ nguyên nhân",
+          "isCorrect": true
+        },
+        {
+          "content": "Bổ nghĩa cho danh từ inside",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-14-q1",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "a0fff0d503e78d9928956435a03ec9775a80dd3932277bc5189ed243d8c98462",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.14:_Theyre_So_Dependent_Distinguishing_Dependent_Clauses"
+      }
+    },
+    {
+      "id": -1445425195771299,
+      "lessonId": -1866751447738440,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "“Who won the race” trong “The runner who won the race smiled” là loại mệnh đề nào?",
+      "explanation": "Who won the race đứng sau và bổ nghĩa cho runner nên là mệnh đề quan hệ.",
+      "options": [
+        {
+          "content": "Mệnh đề độc lập",
+          "isCorrect": false
+        },
+        {
+          "content": "Mệnh đề quan hệ",
+          "isCorrect": true
+        },
+        {
+          "content": "Mệnh đề danh từ làm chủ ngữ",
+          "isCorrect": false
+        },
+        {
+          "content": "Mệnh đề trạng ngữ chỉ thời gian",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-14-q2",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "03cccceda86302cc9e3060b198237d19281357d3159fd5e2cb2d072ae3d60920",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.14:_Theyre_So_Dependent_Distinguishing_Dependent_Clauses"
+      }
+    },
+    {
+      "id": -3982729185378101,
+      "lessonId": -1866751447738440,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "“What she said” trong “What she said surprised me” có chức năng gì?",
+      "explanation": "Toàn bộ mệnh đề danh từ What she said làm chủ ngữ của động từ surprised.",
+      "options": [
+        {
+          "content": "Chủ ngữ",
+          "isCorrect": true
+        },
+        {
+          "content": "Trạng ngữ chỉ nguyên nhân",
+          "isCorrect": false
+        },
+        {
+          "content": "Bổ nghĩa cho danh từ me",
+          "isCorrect": false
+        },
+        {
+          "content": "Mệnh đề độc lập thứ hai",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-14-q3",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "64adee3113fb1c034a2713545b750bf7e826fed05e83aca59dcb52752e89dfa4",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.14:_Theyre_So_Dependent_Distinguishing_Dependent_Clauses"
+      }
+    },
+    {
+      "id": -3850430174308510,
+      "lessonId": -902698471538092,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Chọn dạng bị động: “The window was ___ by Tom.”",
+      "explanation": "Cấu trúc bị động là be + quá khứ phân từ. Quá khứ phân từ của break là broken.",
+      "options": [
+        {
+          "content": "broke",
+          "isCorrect": false
+        },
+        {
+          "content": "breaking",
+          "isCorrect": false
+        },
+        {
+          "content": "break",
+          "isCorrect": false
+        },
+        {
+          "content": "broken",
+          "isCorrect": true
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-15-q1",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "7d6adebfbd8b884f43b35f657f73782fec6d0666baf9430a3482e348238a7fd4",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.15:_What_More_Verbs_and_Voice_Infinitives_and_Passive_Complements"
+      }
+    },
+    {
+      "id": -34727257356901,
+      "lessonId": -902698471538092,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Câu nào ở thể bị động?",
+      "explanation": "Was made gồm be ở quá khứ và quá khứ phân từ made; chủ ngữ the cake nhận hành động.",
+      "options": [
+        {
+          "content": "Anna is making the cake.",
+          "isCorrect": false
+        },
+        {
+          "content": "Anna makes cakes.",
+          "isCorrect": false
+        },
+        {
+          "content": "The cake was made by Anna.",
+          "isCorrect": true
+        },
+        {
+          "content": "Anna made the cake.",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-15-q2",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "519a0a22ee20301a2f16474537bd7068ae3ae5b0af5a08b1f54560887ee8cb84",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.15:_What_More_Verbs_and_Voice_Infinitives_and_Passive_Complements"
+      }
+    },
+    {
+      "id": -1746266800633704,
+      "lessonId": -902698471538092,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Chuyển “The chef prepares the meal” sang bị động.",
+      "explanation": "Câu gốc ở hiện tại đơn nên dùng is prepared; the meal trở thành chủ ngữ nhận hành động.",
+      "options": [
+        {
+          "content": "The meal is prepare by the chef.",
+          "isCorrect": false
+        },
+        {
+          "content": "The meal is prepared by the chef.",
+          "isCorrect": true
+        },
+        {
+          "content": "The meal was prepared by the chef.",
+          "isCorrect": false
+        },
+        {
+          "content": "The meal prepares the chef.",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-15-q3",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "d5c89ebfd5f7cb2331c4d7b823bcec6073ab634cb8304ff7c7fec8a4a18423d8",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.15:_What_More_Verbs_and_Voice_Infinitives_and_Passive_Complements"
+      }
+    },
+    {
+      "id": -1552576127831490,
+      "lessonId": -1770053837860890,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Thán từ trong “Wow! That view is beautiful” là từ nào?",
+      "explanation": "Wow bộc lộ cảm xúc ngạc nhiên hoặc thán phục nên là thán từ.",
+      "options": [
+        {
+          "content": "Wow",
+          "isCorrect": true
+        },
+        {
+          "content": "view",
+          "isCorrect": false
+        },
+        {
+          "content": "is",
+          "isCorrect": false
+        },
+        {
+          "content": "beautiful",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-17-q1",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "43e970618970e1a15becd10e74ac648162b80588ad4a48474e70c5cff96050e4",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.17:_Zowie_Interjections_and_the_Eight_Parts_of_Speech"
+      }
+    },
+    {
+      "id": -398797513356516,
+      "lessonId": -1770053837860890,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "“Ouch!” thường biểu đạt điều gì?",
+      "explanation": "Ouch là thán từ thường được dùng khi người nói cảm thấy đau.",
+      "options": [
+        {
+          "content": "Quan hệ sở hữu",
+          "isCorrect": false
+        },
+        {
+          "content": "Thời gian quá khứ",
+          "isCorrect": false
+        },
+        {
+          "content": "Vị trí của đồ vật",
+          "isCorrect": false
+        },
+        {
+          "content": "Cảm giác đau",
+          "isCorrect": true
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-17-q2",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "7cb352549e5df6f8b2c2875ffe28285eda145165d7ad9244b68c04456c38aaf1",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.17:_Zowie_Interjections_and_the_Eight_Parts_of_Speech"
+      }
+    },
+    {
+      "id": -3914807414464978,
+      "lessonId": -1770053837860890,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Trong “Oh, I forgot my keys”, Oh có vai trò gì?",
+      "explanation": "Oh là thán từ; cấu trúc chủ ngữ và vị ngữ của phần câu còn lại là I forgot my keys.",
+      "options": [
+        {
+          "content": "Làm tân ngữ của forgot",
+          "isCorrect": false
+        },
+        {
+          "content": "Bổ nghĩa cho danh từ keys",
+          "isCorrect": false
+        },
+        {
+          "content": "Bộc lộ phản ứng của người nói",
+          "isCorrect": true
+        },
+        {
+          "content": "Làm chủ ngữ của forgot",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-17-q3",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "48c68ab8450ed945af70308a56ce9b96a3fc9c0b6f348134de603c9edf2e58cd",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.17:_Zowie_Interjections_and_the_Eight_Parts_of_Speech"
+      }
+    },
+    {
+      "id": -2336168475115567,
+      "lessonId": -634339497262230,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Trong “Swimming keeps me fit”, Swimming có chức năng gì?",
+      "explanation": "Swimming có dạng -ing nhưng hoạt động như danh từ và làm chủ ngữ; keeps là động từ chính.",
+      "options": [
+        {
+          "content": "Giới từ",
+          "isCorrect": false
+        },
+        {
+          "content": "Danh động từ làm chủ ngữ",
+          "isCorrect": true
+        },
+        {
+          "content": "Động từ chính chia thì",
+          "isCorrect": false
+        },
+        {
+          "content": "Tính từ bổ nghĩa cho me",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-18-q1",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "8b3374269434dca61de35f607420838e46d56afc2ae6ce6e08f2d9d4274d23cb",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.18:_Those_Verbing_Verbals_Gerunds_and_Participles"
+      }
+    },
+    {
+      "id": -519509965955513,
+      "lessonId": -634339497262230,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Trong “I enjoy reading novels”, reading novels có chức năng gì?",
+      "explanation": "Reading novels là cụm danh động từ, làm tân ngữ của enjoy.",
+      "options": [
+        {
+          "content": "Cụm danh động từ làm tân ngữ",
+          "isCorrect": true
+        },
+        {
+          "content": "Chủ ngữ của enjoy",
+          "isCorrect": false
+        },
+        {
+          "content": "Mệnh đề độc lập",
+          "isCorrect": false
+        },
+        {
+          "content": "Cụm giới từ",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-18-q2",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "0b990301d9087f99abdf77c58380ba0e08ed18597868c31827becb67cf8ac8cd",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.18:_Those_Verbing_Verbals_Gerunds_and_Participles"
+      }
+    },
+    {
+      "id": -3975859332090127,
+      "lessonId": -634339497262230,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Trong “She enjoys painting landscapes”, landscapes là gì?",
+      "explanation": "Danh động từ vẫn có thể nhận tân ngữ: painting tác động đến landscapes; cả cụm painting landscapes là tân ngữ của enjoys.",
+      "options": [
+        {
+          "content": "Chủ ngữ của enjoys",
+          "isCorrect": false
+        },
+        {
+          "content": "Động từ chính",
+          "isCorrect": false
+        },
+        {
+          "content": "Trạng từ chỉ cách thức",
+          "isCorrect": false
+        },
+        {
+          "content": "Tân ngữ của danh động từ painting",
+          "isCorrect": true
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-18-q3",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "015d270091f2058c013a6454805acfb654c921dffb831049362f674a58ecb569",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.18:_Those_Verbing_Verbals_Gerunds_and_Participles"
+      }
+    },
+    {
+      "id": -1074365010793241,
+      "lessonId": -1959161190146212,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Cụm nào là động từ nguyên mẫu có to?",
+      "explanation": "To travel gồm to và dạng cơ bản của động từ travel, tạo thành động từ nguyên mẫu có to.",
+      "options": [
+        {
+          "content": "travelling",
+          "isCorrect": false
+        },
+        {
+          "content": "travels",
+          "isCorrect": false
+        },
+        {
+          "content": "to travel",
+          "isCorrect": true
+        },
+        {
+          "content": "travelled",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-19-q1",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "f1b4eafa1ae267ec67b09e5219c3c13bb11a988048496f5fb8f23edfa93335e5",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.19:_To_Boldly_Verb_Infinitives"
+      }
+    },
+    {
+      "id": -4482726226939941,
+      "lessonId": -1959161190146212,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Trong “To learn a language takes time”, To learn a language làm gì?",
+      "explanation": "Cụm nguyên mẫu To learn a language giữ chức năng danh từ và làm chủ ngữ của takes.",
+      "options": [
+        {
+          "content": "Làm giới từ",
+          "isCorrect": false
+        },
+        {
+          "content": "Làm chủ ngữ",
+          "isCorrect": true
+        },
+        {
+          "content": "Làm động từ chính",
+          "isCorrect": false
+        },
+        {
+          "content": "Bổ nghĩa cho time",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-19-q2",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "62287a71c719c7e63d1100f276ed990a26d4b87f20118bf8a1c8ac606739e20f",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.19:_To_Boldly_Verb_Infinitives"
+      }
+    },
+    {
+      "id": -3700415201674501,
+      "lessonId": -1959161190146212,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Trong “I need a book to read”, to read bổ nghĩa cho từ nào?",
+      "explanation": "To read đứng sau book và mô tả mục đích sử dụng của cuốn sách, giữ chức năng bổ nghĩa cho danh từ.",
+      "options": [
+        {
+          "content": "book",
+          "isCorrect": true
+        },
+        {
+          "content": "I",
+          "isCorrect": false
+        },
+        {
+          "content": "need",
+          "isCorrect": false
+        },
+        {
+          "content": "a",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-19-q3",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "efd1ef43e93308cdfc720679dda60e9011ee280df5056a1e27ac509d13ff012b",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.19:_To_Boldly_Verb_Infinitives"
+      }
+    },
+    {
+      "id": -278502284039110,
+      "lessonId": -2425877179468242,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Chọn đại từ phản thân: “She looked at ___ in the mirror.”",
+      "explanation": "Chủ ngữ she nhìn chính mình nên dùng đại từ phản thân tương ứng herself.",
+      "options": [
+        {
+          "content": "himself",
+          "isCorrect": false
+        },
+        {
+          "content": "myself",
+          "isCorrect": false
+        },
+        {
+          "content": "ourselves",
+          "isCorrect": false
+        },
+        {
+          "content": "herself",
+          "isCorrect": true
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-20-q1",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "f216cc3707d36047224d5d8d5434c7e6b5569f52b7d118419ea20fb34e833ae0",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.20:_Whats_That_More_Pronouns"
+      }
+    },
+    {
+      "id": -1167201225919736,
+      "lessonId": -2425877179468242,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Chọn đại từ phản thân phù hợp: “We introduced ___.”",
+      "explanation": "Đại từ phản thân tương ứng với we là ourselves.",
+      "options": [
+        {
+          "content": "herself",
+          "isCorrect": false
+        },
+        {
+          "content": "themselves",
+          "isCorrect": false
+        },
+        {
+          "content": "ourselves",
+          "isCorrect": true
+        },
+        {
+          "content": "myself",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-20-q2",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "6e6d72d2ec8c64906c74a5ed0b74c00854c056b4010273ec99d9c95198b3e6fc",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.20:_Whats_That_More_Pronouns"
+      }
+    },
+    {
+      "id": -2566244023959152,
+      "lessonId": -2425877179468242,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Trong “Those are my shoes”, Those thuộc nhóm nào?",
+      "explanation": "Those đứng độc lập để chỉ các vật ở số nhiều, nên là đại từ chỉ định.",
+      "options": [
+        {
+          "content": "Đại từ nghi vấn",
+          "isCorrect": false
+        },
+        {
+          "content": "Đại từ chỉ định",
+          "isCorrect": true
+        },
+        {
+          "content": "Đại từ phản thân",
+          "isCorrect": false
+        },
+        {
+          "content": "Đại từ quan hệ",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-20-q3",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "23490da3ed8810ab87438e252e8017206ae5fcb5d9c07a9889a3ce1778dcee5a",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.20:_Whats_That_More_Pronouns"
+      }
+    },
+    {
+      "id": -1159200700993396,
+      "lessonId": -1126557612826906,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Chọn từ mở đầu: “___ is important to practise regularly.”",
+      "explanation": "It mở đầu cấu trúc It is + tính từ + to-infinitive; nội dung được đánh giá là to practise regularly.",
+      "options": [
+        {
+          "content": "It",
+          "isCorrect": true
+        },
+        {
+          "content": "There",
+          "isCorrect": false
+        },
+        {
+          "content": "They",
+          "isCorrect": false
+        },
+        {
+          "content": "These",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-21-q1",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "aee30b5736cc2100ed41278897161f3047d5d5ff9dfcf94f4e5c60b85bb31e09",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.21:_Many_Things_(But_no_Cabbages_or_Kings)"
+      }
+    },
+    {
+      "id": -2883002386468364,
+      "lessonId": -1126557612826906,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Câu nào diễn đạt cùng ý với “To solve this puzzle is difficult”?",
+      "explanation": "Cấu trúc với it đưa cụm to solve this puzzle ra sau, vẫn giữ ý việc giải câu đố này là khó.",
+      "options": [
+        {
+          "content": "It is easy to solve this puzzle.",
+          "isCorrect": false
+        },
+        {
+          "content": "This puzzle solves the difficulty.",
+          "isCorrect": false
+        },
+        {
+          "content": "It is difficult to make this puzzle.",
+          "isCorrect": false
+        },
+        {
+          "content": "It is difficult to solve this puzzle.",
+          "isCorrect": true
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-21-q2",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "3749fd3f6c0d87637bcfd4dabe605704ba8e7870af5faaf5bfd70b090a6abb39",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.21:_Many_Things_(But_no_Cabbages_or_Kings)"
+      }
+    },
+    {
+      "id": -407266705738974,
+      "lessonId": -1126557612826906,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Trong “It is useful to take notes”, hoạt động nào được đánh giá là hữu ích?",
+      "explanation": "To take notes nêu hoạt động được đánh giá; it cho phép đặt hoạt động đó sau tính từ useful.",
+      "options": [
+        {
+          "content": "It",
+          "isCorrect": false
+        },
+        {
+          "content": "useful",
+          "isCorrect": false
+        },
+        {
+          "content": "to take notes",
+          "isCorrect": true
+        },
+        {
+          "content": "is",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-21-q3",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "938fa3dc0a1a18444ade1552db88603c0d69bec9b90a7cec801cd8ed737bc3f0",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.21:_Many_Things_(But_no_Cabbages_or_Kings)"
+      }
+    },
+    {
+      "id": -1187184949448238,
+      "lessonId": -3126738140425883,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Chọn câu đặt đủ cặp dấu phẩy quanh phần chen vào “my neighbour”.",
+      "explanation": "My neighbour là thông tin chen vào giải thích Linh, nên cần dấu phẩy ở cả hai đầu.",
+      "options": [
+        {
+          "content": "Linh my, neighbour grows roses.",
+          "isCorrect": false
+        },
+        {
+          "content": "Linh, my neighbour, grows roses.",
+          "isCorrect": true
+        },
+        {
+          "content": "Linh, my neighbour grows roses.",
+          "isCorrect": false
+        },
+        {
+          "content": "Linh my neighbour, grows roses.",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-22-q1",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "fb7b5c948aefbd59caf926b2da47fdd2eaaec2d5ecdc34e90089577fd1e495a7",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.22:_Keeping_Those_Little_Puncs_in_A_Brief_Review_of_Punctuation"
+      }
+    },
+    {
+      "id": -2254795365942086,
+      "lessonId": -3126738140425883,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Câu “The trip, in my opinion was too short” thiếu dấu phẩy ở đâu?",
+      "explanation": "In my opinion là phần chen vào đã có dấu phẩy mở; cần dấu phẩy sau opinion để đóng phần này.",
+      "options": [
+        {
+          "content": "Ngay sau opinion",
+          "isCorrect": true
+        },
+        {
+          "content": "Ngay sau trip lần nữa",
+          "isCorrect": false
+        },
+        {
+          "content": "Ngay sau too",
+          "isCorrect": false
+        },
+        {
+          "content": "Ngay sau The",
+          "isCorrect": false
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-22-q2",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "e2a00dfea380036182644ffe25c108245706db23695bbee19f0947a00baade7e",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.22:_Keeping_Those_Little_Puncs_in_A_Brief_Review_of_Punctuation"
+      }
+    },
+    {
+      "id": -3647055777737405,
+      "lessonId": -3126738140425883,
+      "topicId": null,
+      "isPlacement": false,
+      "answerType": "MULTIPLE_CHOICE",
+      "content": "Bỏ phần chen vào trong “Our coach, a former player, arrived early” thì còn câu nào?",
+      "explanation": "A former player là phần giải thích chen giữa hai dấu phẩy; bỏ phần đó vẫn còn chủ ngữ Our coach và vị ngữ arrived early.",
+      "options": [
+        {
+          "content": "A former player arrived.",
+          "isCorrect": false
+        },
+        {
+          "content": "Our coach a former arrived early.",
+          "isCorrect": false
+        },
+        {
+          "content": "Our arrived early.",
+          "isCorrect": false
+        },
+        {
+          "content": "Our coach arrived early.",
+          "isCorrect": true
+        }
+      ],
+      "createdAt": null,
+      "dataset": "engmate-brehe-practice-v1",
+      "contentVersion": 1,
+      "published": true,
+      "provenance": {
+        "sourceId": "chapter-22-q3",
+        "author": "EngMate (AI-assisted authoring)",
+        "origin": "Original supplementary exercises; not extracted from the Brehe textbook or its answer key.",
+        "sourceHash": "3d23c5ab65e484d32520306a4ca26bba1f41e3bfe70c8b6865278d44bda3d9af",
+        "relatedLessonSource": "https://human.libretexts.org/Bookshelves/Composition/Grammar/Grammar_Anatomy_(Brehe)/01:_Chapters/1.22:_Keeping_Those_Little_Puncs_in_A_Brief_Review_of_Punctuation"
+      }
+    }
+  ]
+}
