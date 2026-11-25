@@ -20,6 +20,7 @@ import com.engmate.app.feature.grammar.presentation.lesson.GrammarLessonScreen
 import com.engmate.app.feature.grammar.presentation.topics.GrammarLessonsScreen
 import com.engmate.app.feature.grammar.presentation.topics.GrammarLessonsViewModel
 import com.engmate.app.feature.flashcard.presentation.review.FlashcardScreen
+import com.engmate.app.feature.flashcard.presentation.review.FlashcardViewModel
 import com.engmate.app.feature.home.presentation.HomeActions
 import com.engmate.app.feature.home.presentation.HomeScreen
 import com.engmate.app.feature.home.presentation.SearchScreen
@@ -47,6 +48,8 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
     // Full-screen pages over the tabs: Chi tiết từ vựng, and a flashcard round for a handbook.
     var openWord by rememberSaveable(user?.uid) { mutableStateOf<String?>(null) }
     var studyHandbook by rememberSaveable(user?.uid) { mutableStateOf<Long?>(null) }
+    // Ôn tập hôm nay: a flashcard round over every word due for review.
+    var studyDue by rememberSaveable(user?.uid) { mutableStateOf(false) }
     // Tra từ, opened from the home header; a word opened from it returns here.
     var searching by rememberSaveable { mutableStateOf(false) }
     // Cài đặt and Sửa hồ sơ open as full pages from the Hồ sơ tab.
@@ -62,7 +65,7 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
     var learnVocabulary by rememberSaveable { mutableStateOf(false) }
     var showAuth by rememberSaveable { mutableStateOf(false) }
     LaunchedEffect(user) { if (user != null) showAuth = false }
-    val needsProfile = user != null && (tab == MainTab.NOTEBOOK || tab == MainTab.PROFILE || quizRoute != null || studyHandbook != null)
+    val needsProfile = user != null && (tab == MainTab.NOTEBOOK || tab == MainTab.PROFILE || quizRoute != null || studyHandbook != null || studyDue)
     if (showAuth && user == null) {
         BackHandler { showAuth = false }
         Box(Modifier.fillMaxSize()) {
@@ -72,7 +75,7 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
     } else if (needsProfile && (profileState.user?.uid != user?.uid || profileState.loading)) {
         Box(Modifier.fillMaxSize(), contentAlignment = androidx.compose.ui.Alignment.Center) { CircularProgressIndicator() }
     } else if (needsProfile && profileState.profile == null && !profileState.loadFailed) {
-        ProfileScreen(profile, onLater = { tab = MainTab.HOME; quizRouteKey = null; studyHandbook = null }, onSignOut = auth::signOut)
+        ProfileScreen(profile, onLater = { tab = MainTab.HOME; quizRouteKey = null; studyHandbook = null; studyDue = false }, onSignOut = auth::signOut)
     } else if (openWord != null) {
         BackHandler { openWord = null }
         WordDetailScreen(viewModel(), openWord!!, onBack = { openWord = null }, onPronunciationScored = actions::pronunciationScored)
@@ -81,7 +84,10 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
         SearchScreen(viewModel(), onBack = { searching = false }, onOpenWord = { openWord = it.word })
     } else if (studyHandbook != null) {
         BackHandler { studyHandbook = null }
-        FlashcardScreen(viewModel(), studyHandbook!!, onClose = { studyHandbook = null })
+        FlashcardScreen(viewModel(), studyHandbook!!, onClose = { studyHandbook = null }, onFindWords = { studyHandbook = null; searching = true })
+    } else if (studyDue) {
+        BackHandler { studyDue = false }
+        FlashcardScreen(viewModel(key = "flashcard-due"), FlashcardViewModel.DUE, onClose = { studyDue = false })
     } else if (quizRoute != null) {
         QuizRouteHost(quizRoute, navigate = ::openQuiz, onOpenProfile = { openQuiz(null); tab = MainTab.PROFILE })
     } else if (editProfile) {
@@ -131,7 +137,7 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
                             onOpenLesson = { lessonId = it },
                             onOpenSearch = { searching = true },
                             onOpenVocabulary = { learnVocabulary = true; tab = MainTab.LEARN },
-                            onReviewDue = { tab = MainTab.NOTEBOOK },
+                            onReviewDue = { studyDue = true },
                             onOpenNotebook = { tab = MainTab.NOTEBOOK },
                             onPlacement = { openQuiz(QuizRoute.Placement) },
                             onOpenAttempt = { openQuiz(QuizRoute.Result(it)) },
@@ -149,9 +155,10 @@ enum class MainTab(val label: String, @DrawableRes val icon: Int) {
                                 else GrammarLessonsScreen(lessons, onOpenLesson = { lessonId = it })
                             }
                         }
-                        MainTab.NOTEBOOK -> if (user == null) LoginPrompt("Sổ tay", onLogin = { showAuth = true }) else NotebookScreen(viewModel(), onOpenWord = { openWord = it }, onStudy = { studyHandbook = it })
+                        MainTab.NOTEBOOK -> if (user == null) LoginPrompt("Sổ tay", onLogin = { showAuth = true }) else NotebookScreen(viewModel(), onOpenWord = { openWord = it }, onStudy = { studyHandbook = it },
+                            onFindWords = { searching = true }, onBrowseTopics = { learnVocabulary = true; tab = MainTab.LEARN })
                         MainTab.PROFILE -> if (user == null) LoginPrompt("Hồ sơ và tiến độ học", onLogin = { showAuth = true }, icon = R.drawable.ic_chart) else ProfileHomeScreen(profile, progress, onEdit = { editProfile = true }, onSettings = { settingsOpen = true },
-                            onStudy = { learnVocabulary = false; tab = MainTab.LEARN }, onReviewDue = { tab = MainTab.NOTEBOOK })
+                            onStudy = { learnVocabulary = false; tab = MainTab.LEARN }, onReviewDue = { studyDue = true })
                     }
                 }
             }

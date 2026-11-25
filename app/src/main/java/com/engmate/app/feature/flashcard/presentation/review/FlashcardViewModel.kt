@@ -65,12 +65,25 @@ class FlashcardViewModel @Inject constructor(
     /** Starts a round over the handbook; [only] limits it to some words ("Học lại thẻ chưa thuộc"). */
     fun start(handbookId: Long, only: List<String>? = null) {
         val uid = session.user.value?.uid ?: return
+        if (handbookId == DUE && only == null) { startDue(); return }
         if (only == null && round.value.handbookId == handbookId && !round.value.loading) return // keep progress on recomposition
         round.value = Session(handbookId, loading = true)
         viewModelScope.launch {
-            val title = handbooks.observeHandbooks(uid).first().firstOrNull { it.id == handbookId }?.title.orEmpty()
+            val title = if (handbookId == DUE) DUE_TITLE else handbooks.observeHandbooks(uid).first().firstOrNull { it.id == handbookId }?.title.orEmpty()
             val cards = only ?: handbooks.observeEntries(uid, handbookId).first().map { it.word }
             round.value = Session(handbookId, title, cards, loading = false, finished = cards.isEmpty())
+        }
+    }
+
+    /** Ôn tập hôm nay: a round over every word whose SM-2 review is due, across all handbooks. Scoring is unchanged. */
+    fun startDue() {
+        val uid = session.user.value?.uid ?: return
+        // Keep an unfinished round on recomposition; a finished one starts over with what is due now.
+        if (round.value.handbookId == DUE && !round.value.loading && !round.value.finished) return
+        round.value = Session(DUE, loading = true)
+        viewModelScope.launch {
+            val cards = try { reviews.dueWords(uid) } catch (e: CancellationException) { throw e } catch (_: Exception) { emptyList() }
+            round.value = Session(DUE, DUE_TITLE, cards, loading = false, finished = cards.isEmpty())
         }
     }
 
@@ -96,5 +109,11 @@ class FlashcardViewModel @Inject constructor(
     fun restart(onlyUnknown: Boolean) {
         val s = round.value
         start(s.handbookId, if (onlyUnknown) s.unknown else s.cards)
+    }
+
+    companion object {
+        /** Session id of the due-words round; real handbook ids are positive. */
+        const val DUE = -1L
+        const val DUE_TITLE = "Ôn tập hôm nay"
     }
 }

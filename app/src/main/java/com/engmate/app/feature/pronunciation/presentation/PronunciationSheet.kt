@@ -104,9 +104,7 @@ fun PronunciationSheet(target: String, phonetic: String?, onDismiss: () -> Unit,
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(Spacing.s)) {
             Text(target, style = EngMateTheme.type.vocabulary, textAlign = TextAlign.Center)
             phonetic?.let { IpaText(it) }
-            FilledTonalButton(onClick = { pronounce(target, null) }, modifier = Modifier.heightIn(min = Spacing.touch)) {
-                Icon(painterResource(R.drawable.ic_volume), null, Modifier.size(18.dp)); Spacer(Modifier.width(Spacing.s)); Text("Nghe mẫu")
-            }
+            TonalButton("Nghe mẫu", { pronounce(target, null) }, icon = R.drawable.ic_volume)
         }
         Box(Modifier.fillMaxWidth().semantics { liveRegion = LiveRegionMode.Polite }, contentAlignment = Alignment.Center) {
             when (val p = phase) {
