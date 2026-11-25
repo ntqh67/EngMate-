@@ -6,6 +6,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
+import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -29,8 +30,10 @@ private val muted = Color(0xFF565B62)
 
 private fun number(n: Number) = NumberFormat.getIntegerInstance(Locale.forLanguageTag("vi")).format(n.toLong())
 
-@Composable fun ProgressScreen(vm: ProgressViewModel) {
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable fun ProgressScreen(vm: ProgressViewModel, refreshing: Boolean = false, onRefresh: () -> Unit = {}) {
     val s by vm.state.collectAsStateWithLifecycle()
+    PullToRefreshBox(isRefreshing = refreshing, onRefresh = onRefresh, modifier = Modifier.fillMaxSize()) {
     Column(Modifier.fillMaxSize().background(Color(0xFFF3F9FF)).verticalScroll(rememberScrollState()).statusBarsPadding()
         .padding(horizontal = 24.dp, vertical = 16.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
         Text("Thống kê tiến độ", fontSize = 24.sp, fontWeight = FontWeight.Bold, color = ink)
@@ -75,6 +78,7 @@ private fun number(n: Number) = NumberFormat.getIntegerInstance(Locale.forLangua
             LinearProgressIndicator(progress = { (s.accuracy ?: 0) / 100f }, modifier = Modifier.fillMaxWidth().height(9.dp).clip(RoundedCornerShape(50)),
                 color = Color(0xFF9886FE), trackColor = Color(0xFFE1F0FF), gapSize = 0.dp, drawStopIndicator = {})
         }
+    }
     }
 }
 
