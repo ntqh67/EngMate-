@@ -1,7 +1,20 @@
 # Đặc tả giao diện EngMate
 
-Trạng thái: **bản nháp chờ duyệt**. Nguồn chuẩn hình ảnh: Figma "EngMate · Brand + Đông" (bảng màu Pastel Sky & Mango,
-thang chữ, icon, mockup 14–20, E01, E05). Tài liệu này mô tả bố cục và hành vi; token cụ thể nằm ở `docs/design-system.md`.
+Trạng thái: **đã duyệt, cập nhật theo bản cài đặt cuối**. Nguồn chuẩn hình ảnh: Figma "EngMate · Brand + Đông" (bảng màu
+Pastel Sky & Mango, thang chữ, icon, mockup 14–20, E01, E05). Tài liệu này mô tả bố cục và hành vi; token cụ thể nằm ở
+`docs/design-system.md`.
+
+### Khác với bản duyệt (chỉnh khi xem ảnh chụp thật)
+
+- Trang chủ: thanh trên chỉ có nút Tra từ (bỏ chuông); Từ cần ôn và Tiếp tục là hai thẻ cùng chiều cao.
+- Danh sách ngữ pháp: nút tìm nằm cạnh thanh "Đã học x/y bài", bấm mới mở ô tìm.
+- Huy hiệu trình độ A2 dùng `primary` (xanh đậm) để không chìm trên nền brand.
+- Câu điền từ: ô nhập nằm ngay dưới câu hỏi (bàn phím chiếm phần dưới); câu trắc nghiệm giữ đáp án ở vùng ngón cái.
+- Hồ sơ: thẻ hồ sơ chỉ hiện trình độ và mục tiêu ngày (chuỗi ngày và XP đã có ở ô thống kê ngay dưới). Màn Sửa hồ sơ luôn có
+  thanh Hủy / Lưu hồ sơ; Lưu chỉ bật khi có thay đổi, Hủy đóng màn khi chưa sửa gì.
+- Nhắc học: bỏ làm mờ phần giờ khi tắt (giảm tương phản); thay bằng nút chính "Bật nhắc học lúc …" ở thanh đáy khi đang tắt.
+- Flashcard: hai nút chấm dùng nền `errorContainer` / success container kèm icon.
+- Nút tonal dùng `TonalButton` (nền xanh), vì nút tonal mặc định của Material lấy màu cam `secondaryContainer`.
 
 ## 0. Nguyên tắc dùng cho mọi màn
 
