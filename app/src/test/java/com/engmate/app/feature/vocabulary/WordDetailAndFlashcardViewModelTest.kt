@@ -67,7 +67,9 @@ class WordDetailAndFlashcardViewModelTest {
     }
 
     @Test fun wordDetailEditsOneCardAndSavesToHandbooks() = runTest(dispatcher) {
-        val vm = WordDetailViewModel(session, words, notes, handbooks)
+        val vm = WordDetailViewModel(session, words, notes, handbooks, object : com.engmate.app.feature.dictionary.domain.DictionaryRepository {
+            override suspend fun lookup(raw: String, save: Boolean) = com.engmate.app.feature.dictionary.domain.LookupResult.NotFound
+        })
         backgroundScope.launch { vm.state.collect {} }
         vm.open("Nuance")
         assertEquals("A minor distinction.", await({ vm.state.value.word }) { it != null }!!.meaningEn)

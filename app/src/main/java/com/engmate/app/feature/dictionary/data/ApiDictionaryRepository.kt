@@ -4,6 +4,8 @@ import com.engmate.app.feature.dictionary.data.remote.DictionaryApi
 import com.engmate.app.feature.dictionary.data.remote.toCachedWord
 import com.engmate.app.feature.dictionary.domain.DictionaryRepository
 import com.engmate.app.feature.dictionary.domain.LookupResult
+import com.engmate.app.feature.vocabulary.domain.CachedWord
+import com.engmate.app.feature.vocabulary.domain.Word
 import com.engmate.app.feature.vocabulary.domain.WordKey
 import com.engmate.app.feature.vocabulary.domain.WordRepository
 import java.io.IOException
@@ -15,7 +17,7 @@ class ApiDictionaryRepository @Inject constructor(
     private val api: DictionaryApi,
     private val words: WordRepository,
 ) : DictionaryRepository {
-    override suspend fun lookup(raw: String): LookupResult {
+    override suspend fun lookup(raw: String, save: Boolean): LookupResult {
         val key = WordKey.of(raw)
         words.observe(key).first()?.let { return LookupResult.Found(it) }
         if (!DictionaryRepository.canLookup(key)) return LookupResult.NotFound
@@ -26,6 +28,7 @@ class ApiDictionaryRepository @Inject constructor(
                 !response.isSuccessful -> LookupResult.Failed
                 else -> {
                     val entry = response.body().orEmpty().toCachedWord() ?: return LookupResult.NotFound
+                    if (!save) return LookupResult.Found(entry.unsaved())
                     words.cache(entry)
                     words.observe(entry.word).first()?.let { LookupResult.Found(it) } ?: LookupResult.Failed
                 }
@@ -34,4 +37,8 @@ class ApiDictionaryRepository @Inject constructor(
         } catch (_: IOException) { LookupResult.Offline
         } catch (_: Exception) { LookupResult.Failed }
     }
+
+    /** A search result that only lives in memory until the user opens it. */
+    private fun CachedWord.unsaved() = Word(0, null, WordKey.of(word), phonetic, partOfSpeech, meaningEn.trim(), null,
+        exampleSentence, null, audioUrl, emptyList(), emptyList(), isCached = false)
 }
